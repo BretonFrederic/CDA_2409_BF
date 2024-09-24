@@ -9,7 +9,7 @@ namespace IntervalleEntreDeuxNombres
     */
     class Program
     {
-        //Fonction qui demande un nombre à l'utilisateur
+        // Fonction qui demande un nombre à l'utilisateur
         static int DemanderNombreUtilisateur()
         {
             int nombre;
@@ -23,12 +23,12 @@ namespace IntervalleEntreDeuxNombres
                 }
                 catch
                 {
-                    System.Console.WriteLine("ERREUR : Donnée invalide.");
+                    Console.WriteLine("ERREUR : Donnée invalide.");
                 }
             }
         }
 
-        //Fonction qui créer un tableau de nombres de l'intervalle de 2 nombres
+        // Fonction qui créer un tableau de nombres de l'intervalle de 2 nombres
         static List<int> NombresDeIntervalle(int nbr1, int nbr2)
         {
             bool ordreDecroissant = false;
@@ -43,7 +43,7 @@ namespace IntervalleEntreDeuxNombres
                 ordreDecroissant = true;
             }
 
-            //création de la liste de nombres
+            // Création de la liste de nombres
             for (int i = nbr1; i <= nbr2; i++)
             {
                 intervalle.Add(i);
@@ -56,7 +56,7 @@ namespace IntervalleEntreDeuxNombres
             return intervalle;
         }
 
-        //Fonction qui affiche une liste de nombres
+        // Fonction qui affiche une liste de nombres
         static void AfficherListeNombres(List<int> nombres)
         {
             for (int i = 0; i < nombres.Count; i++)
