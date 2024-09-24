@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleSaisieLimite", "..\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntervalleEntreDeuxNombres", "..\..\02-Algorithmes\IntervalleEntreDeuxNombres\IntervalleEntreDeuxNombres.csproj", "{F5FFC56C-39EE-4357-A931-D6DDACF9325B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiviseursUnNombre", "..\..\02-Algorithmes\DiviseursUnNombre\DiviseursUnNombre.csproj", "{04DA3745-0640-45D2-AF5C-6A66C0599975}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{F5FFC56C-39EE-4357-A931-D6DDACF9325B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5FFC56C-39EE-4357-A931-D6DDACF9325B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5FFC56C-39EE-4357-A931-D6DDACF9325B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04DA3745-0640-45D2-AF5C-6A66C0599975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04DA3745-0640-45D2-AF5C-6A66C0599975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04DA3745-0640-45D2-AF5C-6A66C0599975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04DA3745-0640-45D2-AF5C-6A66C0599975}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
