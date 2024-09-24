@@ -65,7 +65,8 @@ namespace IntervalleEntreDeuxNombres
             int nombre1, nombre2;
             List<int> nombres = new List<int>();
 
-            /* DEBUT PROGRAMME */
+            /* TRAITEMENT */
+
             //L'utilisateur entre les 2 nombres
             nombre1 = DemanderNombreUtilisateur();
             nombre2 = DemanderNombreUtilisateur();
@@ -74,7 +75,7 @@ namespace IntervalleEntreDeuxNombres
             //Déterminer les nombres de l'intervalle
             nombres = NombresDeIntervalle(nombre1, nombre2);
 
-            //Afficher le résultat
+            /* AFFICHAGE */
             if(nombre1 < nombre2)
             {
                 for(int i = 0; i < nombres.Count; i++)
