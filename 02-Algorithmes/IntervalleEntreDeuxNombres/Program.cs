@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace IntervalleEntreDeuxNombres
 {
@@ -12,7 +13,7 @@ namespace IntervalleEntreDeuxNombres
         static int DemanderNombreUtilisateur()
         {
             int nombre;
-            while(true)
+            while (true)
             {
                 try
                 {
@@ -25,43 +26,49 @@ namespace IntervalleEntreDeuxNombres
                     System.Console.WriteLine("ERREUR : Donnée invalide.");
                 }
             }
-        
+        }
+
         //Fonction qui créer un tableau de nombres de l'intervalle de 2 nombres
-        
+        static List<int> NombresDeIntervalle(int nbr1, int nbr2)
+        {
+            bool ordreDecroissant = false;
+            List<int> intervalle = new List<int>();
+            //nbr1 plus petit que nbr2
+            int temp;
+            if (nbr1 > nbr2)
+            {
+                temp = nbr1;
+                nbr1 = nbr2;
+                nbr2 = temp;
+                ordreDecroissant = true;
+            }
+
+            //création de la liste de nombres
+            for (int i = nbr1; i <= nbr2; i++)
+            {
+                intervalle.Add(i);
+            }
+
+            if (ordreDecroissant)
+            {
+                intervalle = intervalle.OrderDescending().ToList();
+            }
+            return intervalle;
+        }
 
         //Fonction qui affiche une liste de nombres
         static void AfficherListeNombres(List<int> nombres)
         {
-            //
+            for (int i = 0; i < nombres.Count; i++)
+            {
+                System.Console.Write(nombres[i] + " ");
+            }
         }
-            
-        }
+
         static void Main(string[] args)
         {
-            static List<int> NombresDeIntervalle(int nbr1, int nbr2)
-        {
-            List<int> intervalle = new List<int>();
-            if(nbr2 > nbr1)
-            {
-                //intervalle.Add(nombre1);
-                for(int i = nbr1; i < nbr2; i++)
-                {
-                    intervalle.Add(i);
-                }
-                intervalle.Add(nbr2);
-            }
-            else if(nbr1 > nbr2)
-            {
-                intervalle.Add(nbr2);
-                for(int i = nbr2; i < nbr1; i++)
-                {
-                    intervalle.Add(i);
-                }
-                intervalle.Add(nbr1);
-            }
-            return intervalle;
-        }
             /* VARIABLES */
+
             int nombre1, nombre2;
             List<int> nombres = new List<int>();
 
@@ -76,23 +83,8 @@ namespace IntervalleEntreDeuxNombres
             nombres = NombresDeIntervalle(nombre1, nombre2);
 
             /* AFFICHAGE */
-            if(nombre1 < nombre2)
-            {
-                for(int i = 0; i < nombres.Count; i++)
-                {
-                System.Console.Write(nombres[i] + " ");
-                }
-            }
-            else if(nombre1 > nombre2)
-            {
-                for(int i = nombres.Count-1; i > 0; i--)
-                {
-                System.Console.Write(nombres[i] + " ");
-                }
-            }
-            
 
-            /* FIN PROGRAMME */
+            AfficherListeNombres(nombres);
         }
     }
 }
