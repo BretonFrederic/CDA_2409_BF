@@ -21,7 +21,7 @@ namespace ControleSaisie
                     prenomUtilisateur = Console.ReadLine();
 
                     //Vérification pas d'alphanumérique dans le prénom
-                    if(prenomUtilisateur.Any(char.IsDigit))
+                    if (prenomUtilisateur.Any(char.IsDigit))
                     {
                         System.Console.WriteLine("Attention, le prénom ne doit pas contenir de chiffres");
                         prenomUtilisateur = " ";
@@ -31,7 +31,7 @@ namespace ControleSaisie
                 {
                     System.Console.WriteLine("ERREUR : prénom invalide.");
                 }
-                
+
             }
 
             //Quand le prénom convient on affiche le message suivi du prénom
@@ -41,3 +41,4 @@ namespace ControleSaisie
         }
     }
 }
+

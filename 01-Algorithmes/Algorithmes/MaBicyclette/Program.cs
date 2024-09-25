@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace MaBicyclette
+﻿namespace MaBicyclette
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
@@ -81,6 +79,7 @@ namespace MaBicyclette
             }
 
             /* FIN PROGRAMME */
+
         }
     }
 }

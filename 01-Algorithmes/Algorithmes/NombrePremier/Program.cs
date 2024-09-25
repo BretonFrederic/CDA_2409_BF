@@ -8,8 +8,10 @@ namespace DiviseursUnNombre
     {
         /* CONSIGNE */
 
-        //Exercice 3a.4 : Recherche des diviseurs d’un nombre.
-        //Lire un nombre entier et afficher tous ses diviseurs autres que 1 et lui-même.
+        //Exercice 3a.5 : Nombre premier
+
+        //Lire un nombre N et déterminer s’il est un nombre premier.
+        //Un nombre premier n’est divisible que par 1 et par lui-même.
 
         /* FONCTIONS */
 
@@ -45,28 +47,41 @@ namespace DiviseursUnNombre
                 return DemanderNombrePositif(message);
         }
 
-        //Fonction création liste diviseurs
-        static List<int> DefinirDiviseurs(int nombre) 
+        // Fonction qui détermine si un nombre est premier ou pas
+        static bool DefinirNombrePremier(int nombre)
         {
             List<int> diviseurs = new List<int>();
-            //Sélection des diviseurs du nombre utilisateur et ajout dans la liste
+            var nombrePremier = false;
+            // Sélection des diviseurs du nombre utilisateur et ajout dans la liste
             for (int i = 2; i < nombre; i++)
             {
-                if (nombre%i == 0)
+                if (nombre % i == 0)
                 {
                     diviseurs.Add(i);
                 }
+
+                // Validation nombre premier car pas de diviseurs autres que 1 et lui même
+                if (diviseurs.Count() == 0)
+                {
+                    nombrePremier = true;
+                }
             }
-            return diviseurs;
+            return nombrePremier;
         }
 
-        // Fonction qui affiche une liste de nombres
-        static void AfficherListeNombres(List<int> nombres)
+        // Fonction qui affiche si un nombre est premier ou pas
+        static void AfficherListeNombres(bool isPrime)
         {
-            for (int i = 0; i < nombres.Count; i++)
+            string message = "Le nombre saisi ";
+            if (isPrime)
             {
-                System.Console.Write(nombres[i] + " ");
+                message += "est un nombre premier.";
             }
+            else if (!isPrime)
+            {
+                message += "n'est pas un nombre premier.";
+            }
+            Console.WriteLine(message);
         }
 
         static void Main(string[] args)
@@ -74,27 +89,28 @@ namespace DiviseursUnNombre
             /* VARIABLES */
 
             int nombreUtilisateur;
-            List<int> diviseurs;
+            bool estNombrePremier;
             string messageInstruction;
 
             /* TRAITEMENT */
 
             // Initialisation
             nombreUtilisateur = 0;
-            diviseurs = new List<int>();
+            estNombrePremier = false;
             messageInstruction = "Entrer un nombre positif non nul : ";
 
             // Demander de saisir un nombre positif non nul
             nombreUtilisateur = DemanderNombrePositif(messageInstruction);
 
             // Définir la liste des diviseurs
-            diviseurs = DefinirDiviseurs(nombreUtilisateur);
+            estNombrePremier = DefinirNombrePremier(nombreUtilisateur);
 
 
             /* AFFICHAGE */
 
             //Afficher la liste des diviseurs
-            AfficherListeNombres(diviseurs);
+            AfficherListeNombres(estNombrePremier);
         }
     }
 }
+
