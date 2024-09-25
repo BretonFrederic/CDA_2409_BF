@@ -2,6 +2,7 @@
 using System.Net;
 using System.Text;
 using System.Threading.Channels;
+
 namespace RechercheOccurencesLettrePhrase
 {
     internal class Program
@@ -37,15 +38,23 @@ namespace RechercheOccurencesLettrePhrase
             lettre = 'A';
 
             // Chercher le nombre d'occurences de la lettre dans la phrase
-            /*foreach(char ch in phrase)
+            
+            /* OrdinalIgnoreCase traite les caractères des chaînes à comparer 
+             * comme s'ils étaient convertis en majuscules à l'aide des conventions
+             * de la culture invariante, puis effectue une simple comparaison
+             * d'octets indépendante de la langue. */
+
+            // Solution 1
+            /*foreach (char ch in phrase)
             {
-                if (ch.Equals(lettre))
+                if (ch.ToString().Equals(lettre.ToString(), StringComparison.OrdinalIgnoreCase))
                 {
                     occurences++;
                 }
             }*/
 
-            occurences = String.IndexOf(phrase).Where(ch => ch.Equals(lettre)).Count();
+            // Solution 2
+            occurences = phrase.Where(ch => ch.ToString().Equals(lettre.ToString(), StringComparison.OrdinalIgnoreCase)).Count();
 
             /* AFFICHAGE */
 
