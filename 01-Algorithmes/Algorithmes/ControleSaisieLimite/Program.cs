@@ -19,7 +19,7 @@ namespace ControleSaisieLimite
             /* DEBUT PROGRAMME */
 
             //Tant que nombre Max d'essais n'est pas atteint l'utilisateur peut entrer mot de passe
-            while(nombreEssais < essaisMax)
+            while (nombreEssais < essaisMax)
             {
                 try
                 {
@@ -34,7 +34,7 @@ namespace ControleSaisieLimite
                 nombreEssais += 1;
 
                 //Si mot de passe valide utilisateur connecté fin du programme
-                if(motDePasseUtilisateur.Equals(motDePasseValide))
+                if (motDePasseUtilisateur.Equals(motDePasseValide))
                 {
                     Console.WriteLine("Vous êtes connecté.");
                     break;
@@ -42,13 +42,14 @@ namespace ControleSaisieLimite
             }
 
             //L'utilisateur a atteint nombre Max d'essai compte bloqué fin du programme
-            if(!motDePasseUtilisateur.Equals(motDePasseValide))
+            if (!motDePasseUtilisateur.Equals(motDePasseValide))
             {
                 System.Console.WriteLine("Votre compte est bloqué.");
             }
-            
+
             /* FIN PROGRAMME */
         }
     }
 }
+
 

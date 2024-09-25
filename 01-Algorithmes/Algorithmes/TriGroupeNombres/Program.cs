@@ -1,6 +1,4 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace TriGroupeNombres
+﻿namespace TriGroupeNombres
 {
     internal class Program
     {
@@ -8,29 +6,29 @@ namespace TriGroupeNombres
         {
             /* VARIABLES */
 
-            int[] nombres = new int[]{22, 15, 181};
+            int[] nombres = new int[] { 22, 15, 181 };
             int temp = 0;
 
             /* DEBUT PROGRAMME */
 
             //Boucles de triage des nombres ordre décroissant
-            for(int j = 0; j < nombres.Length-1; j++)
+            for (int j = 0; j < nombres.Length - 1; j++)
             {
-                for(int i = 0; i < nombres.Length-1; i++)
+                for (int i = 0; i < nombres.Length - 1; i++)
                 {
-                    if(nombres[i] < nombres[i+1])
+                    if (nombres[i] < nombres[i + 1])
                     {
-                        temp = nombres[i+1];
-                        nombres[i+1] = nombres[i];
+                        temp = nombres[i + 1];
+                        nombres[i + 1] = nombres[i];
                         nombres[i] = temp;
                         temp = 0;
                     }
                 }
             }
-            
+
 
             //Boucle affichage des nombres triés
-            for(int i = 0; i < nombres.Length; i++)
+            for (int i = 0; i < nombres.Length; i++)
             {
                 string nbre = nombres[i].ToString();
                 Console.Write(nbre + " ");
@@ -38,5 +36,6 @@ namespace TriGroupeNombres
 
             /* FIN PROGRAMME */
         }
+
     }
 }

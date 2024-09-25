@@ -13,11 +13,11 @@
             Console.Write("QUel est votre âge ? : ");
             age = int.Parse(Console.ReadLine());
 
-            if(age < 0)
+            if (age < 0)
             {
                 Console.WriteLine("Vous n'êtes pas né");
             }
-            else if(age >= 18)
+            else if (age >= 18)
             {
                 Console.WriteLine("Vous êtes majeur.");
             }
@@ -26,6 +26,7 @@
                 Console.WriteLine("Vous êtes mineur.");
             }
             /* FIN PROGRAMME */
+
         }
     }
 }

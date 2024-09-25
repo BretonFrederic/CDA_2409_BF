@@ -53,7 +53,7 @@ namespace JeuFourchette
             message += "entre " + min + " et " + max + " : ";
             int nombre = 0;
             nombre = DemanderNombreUtilisateur(message);
-            if(nombre < min || nombre > max)
+            if (nombre < min || nombre > max)
             {
                 Console.WriteLine("Le nombre est hors limite.");
                 return DemanderNombreDansIntervalle(min, max, message);
@@ -66,18 +66,18 @@ namespace JeuFourchette
 
         // Fonction qui valide ou pas la correspondance de deux nombres entiers et renvoie une boolean
         static bool ValiderNombre(int nombreUtilisateur, int nombreValide)
+        {
+            if (nombreUtilisateur.Equals(nombreValide))
             {
-                if(nombreUtilisateur.Equals(nombreValide))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return true;
             }
+            else
+            {
+                return false;
+            }
+        }
 
-    static void Main(string[] args)
+        static void Main(string[] args)
         {
             /* VARIABLES */
             int nombreMystere;
@@ -106,13 +106,13 @@ namespace JeuFourchette
             while (!victoire)
             {
                 // Redéfinir l'intervalle min max en fonction du nombre du joueur
-                if(nombreEssais > 0)
+                if (nombreEssais > 0)
                 {
-                    if(nombreJoueur < nombreMystere)
+                    if (nombreJoueur < nombreMystere)
                     {
                         min = nombreJoueur;
                     }
-                    else if(nombreJoueur > nombreMystere)
+                    else if (nombreJoueur > nombreMystere)
                     {
                         max = nombreJoueur;
                     }
@@ -139,3 +139,4 @@ namespace JeuFourchette
         }
     }
 }
+

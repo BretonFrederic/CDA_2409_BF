@@ -44,17 +44,17 @@ namespace RechercheNombreTableau
             int valeurIndice;
 
             /* TRAITEMENT */
-            tableau = new int[] {128, 16, 256, 64, 8, 32, 512 };
+            tableau = new int[] { 128, 16, 256, 64, 8, 32, 512 };
             nombreN = 0;
             valeurIndice = -1;
 
             Console.Write("Tableau de nombres entier non triés : ");
-            foreach(int element in tableau)
+            foreach (int element in tableau)
             {
                 Console.Write(element + " ");
             }
             Console.WriteLine();
-            
+
             // Trier le tableau des nombres entier
             Array.Sort(tableau);
 
@@ -69,7 +69,7 @@ namespace RechercheNombreTableau
             Console.WriteLine();
 
             // Recherche si le nombre utilisateur est dans le tableau est initialise valeurIndice avec l'index du nombre correspondant dans le tableau
-            for (int position = 0; position < tableau.Length-1; position++)
+            for (int position = 0; position < tableau.Length; position++)
             {
                 if (nombreN.Equals(tableau[position]))
                 {
@@ -79,7 +79,7 @@ namespace RechercheNombreTableau
 
             /*  AFFICHAGE */
 
-            if(valeurIndice >= 0)
+            if (valeurIndice >= 0)
             {
                 Console.WriteLine("La valeur de l'indice du nombre " + tableau[valeurIndice] + " dans le tableau est : " + valeurIndice);
             }
@@ -90,3 +90,4 @@ namespace RechercheNombreTableau
         }
     }
 }
+

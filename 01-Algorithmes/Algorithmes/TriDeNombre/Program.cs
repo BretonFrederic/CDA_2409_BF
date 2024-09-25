@@ -5,13 +5,13 @@
         static int DemanderNombreUtilisateur()
         {
             int nombre;
-            while(true)
+            while (true)
 
             {
                 try
                 {
                     //Demande à l'utilisateur d'entrer un nombre
-                    Console.Write("Entrer le nombre A : ");
+                    Console.Write("Entrer un nombre : ");
                     nombre = int.Parse(Console.ReadLine());
                     return nombre;
                 }
@@ -25,7 +25,7 @@
         static void TriNombres(int nb1, int nb2)
         {
             //Condition pour tri et affichage ordre croissant
-            if(nb1 < nb2)
+            if (nb1 < nb2)
             {
                 Console.Write(nb1.ToString() + ", " + nb2.ToString());
             }
@@ -56,4 +56,5 @@
         }
     }
 }
+
 
