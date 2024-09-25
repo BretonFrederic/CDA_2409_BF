@@ -23,11 +23,13 @@ class Program
     static void Main(string[] args)
     {
         /* VARIABLES */
+
         int[] tab;
         int indice;
         int temp;
 
         /* TRAITEMENT */
+
         tab = new int[] { 128, 64, 8, 512, 16, 32, 256 };
 
         indice = 0;
@@ -49,6 +51,8 @@ class Program
 
 
         /* AFFICHAGE */
+        
+        Console.Write("Tableau trié : ");
         foreach(int element in tab)
         {
             Console.Write(element + " ");
