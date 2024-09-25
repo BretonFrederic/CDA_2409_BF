@@ -9,19 +9,31 @@
         // Compter et afficher le nombre d’occurrences(d’apparitions) de chacune des lettres de l’alphabet.
 
         /* FONCTIONS */
+
+        // Fonction qui renvoie un dictionnaire <clé(lettre), valeur(occurences)> pour les caractères de l'alphabet
+        static Dictionary<char, int> CompterOccurencesCharDansTexte(string alphabet, string texte)
+        {
+            Dictionary<char, int> occurences = new Dictionary<char, int>();
+            foreach (char ch in alphabet)
+            {
+                occurences.Add(ch, texte.Where(lettre => lettre.ToString().Equals(ch.ToString(), StringComparison.OrdinalIgnoreCase)).Count());
+            }
+            return occurences;
+        }
         static void Main(string[] args)
         {
             /* VARIABLES */
+            string alphabet;
             string texte;
             const int nombreCharacteres = 200;
             bool texteValide;
-            string alphabet;
-            Dictionary<char, int> occurences;
+            Dictionary<char, int> occurencesLettres;
 
             /* TRAITEMENT */
-            occurences = new Dictionary<char, int>();
+            occurencesLettres = new Dictionary<char, int>();
             texteValide = false;
             alphabet = "abcdefghijklmnopqrstuvwxyz";
+
 
             // 1 Texte valide 200 caractères
             texte = " La vie est comme une bicyclette, il faut avancer pour ne pas perdre l’équilibre.  – Albert Einstein"+
@@ -31,17 +43,10 @@
             //texte = "La vie est comme une bicyclette, il faut avancer pour ne pas perdre l’équilibre.» – Albert Einstein";
 
             // Contrôler nombre de caractères vaut 120
-            if (nombreCharacteres != texte.Length)
+            if(nombreCharacteres == texte.Length)
             {
-                texteValide = false;
-            }
-            else if(nombreCharacteres == texte.Length)
-            {
-                // Initialisation dictionnaire avec lettres alphabet et occurences
-                foreach (char ch in alphabet)
-                {
-                    occurences.Add(ch, texte.Where(lettre => lettre.ToString().Equals(ch.ToString(), StringComparison.OrdinalIgnoreCase)).Count());
-                }
+                // Compter le nombre d’occurrences (d’apparitions) de chacune des lettres de l’alphabet dans le texte.
+                occurencesLettres = CompterOccurencesCharDansTexte(alphabet, texte);
                 texteValide = true;
             }
 
@@ -51,7 +56,7 @@
                 Console.WriteLine($"Dans le texte : {texte}\n");
                 foreach(char ch in alphabet)
                 {
-                    Console.WriteLine("La lettre " + ch + " apparaît : " + occurences[ch]);
+                    Console.WriteLine("La lettre " + ch + " apparaît : " + occurencesLettres[ch]);
                 }
                 
             }
