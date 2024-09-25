@@ -23,19 +23,45 @@ namespace RechercheOccurencesLettrePhrase
         {
 
             /* VARIABLES */
-            String phrase;
+            string phrase;
             int occurences;
             char lettre;
 
 
             /* TRAITEMENT */
-            String = "Parfois ce sont les gens que personne n’aurait imaginé qui accomplissent des choses que personne n’avait imaginé.";
+
+            //phrase = "";
+            //phrase = ".";
+            phrase = "Parfois ce sont les gens que personne n’aurait imaginé qui accomplissent des choses que personne n’avait imaginé.";
+            occurences = 0;
+            lettre = 'A';
+
+            // Chercher le nombre d'occurences de la lettre dans la phrase
+            /*foreach(char ch in phrase)
+            {
+                if (ch.Equals(lettre))
+                {
+                    occurences++;
+                }
+            }*/
+
+            occurences = String.IndexOf(phrase).Where(ch => ch.Equals(lettre)).Count();
 
             /* AFFICHAGE */
 
-            Console.WriteLine("La phrase est vide.");
-            Console.WriteLine("La lettre n'est pas présente.");
-            Console.WriteLine("La lettre est présente une ou plusieurs fois.");
+            Console.WriteLine("Dans la phrase : " + "\"" + phrase + "\"");
+            if(phrase.Equals("") || phrase.Equals("."))
+            {
+                Console.WriteLine("La phrase est vide.");
+            }
+            else if(occurences == 0)
+            {
+                Console.WriteLine("La lettre n'est pas présente.");
+            }
+            else
+            {
+                Console.WriteLine("La lettre " + lettre + " est présente " + occurences + " fois.");
+            }
         }
     }
 }
