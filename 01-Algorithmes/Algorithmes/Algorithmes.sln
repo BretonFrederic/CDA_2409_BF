@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RechercheNombreTableau", "R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RechercheOccurencesLettrePhrase", "RechercheOccurencesLettrePhrase\RechercheOccurencesLettrePhrase.csproj", "{A7F9840F-6597-4F1C-9873-43C2EC3B01A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DenombrerLettresAlphabetTableau", "DenombrerLettresAlphabetTableau\DenombrerLettresAlphabetTableau.csproj", "{2CF6BC31-82C7-48A7-A424-D18E1BDCBE4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DenombrerLettresAlphabetTableau", "DenombrerLettresAlphabetTableau\DenombrerLettresAlphabetTableau.csproj", "{2CF6BC31-82C7-48A7-A424-D18E1BDCBE4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriTableau", "TriTableau\TriTableau.csproj", "{317467D0-AB97-4C5A-9970-1152B556A0F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{2CF6BC31-82C7-48A7-A424-D18E1BDCBE4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CF6BC31-82C7-48A7-A424-D18E1BDCBE4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CF6BC31-82C7-48A7-A424-D18E1BDCBE4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{317467D0-AB97-4C5A-9970-1152B556A0F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{317467D0-AB97-4C5A-9970-1152B556A0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{317467D0-AB97-4C5A-9970-1152B556A0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{317467D0-AB97-4C5A-9970-1152B556A0F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
