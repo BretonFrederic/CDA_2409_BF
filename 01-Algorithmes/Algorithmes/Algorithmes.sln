@@ -35,7 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DenombrerLettresAlphabetTab
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TriTableau", "TriTableau\TriTableau.csproj", "{317467D0-AB97-4C5A-9970-1152B556A0F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palindrome", "Palindrome\Palindrome.csproj", "{D9FEFDD4-CBA1-4709-A3B6-7A7519475BC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Palindrome", "Palindrome\Palindrome.csproj", "{D9FEFDD4-CBA1-4709-A3B6-7A7519475BC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FruitsEtLegumes", "FruitsEtLegumes\FruitsEtLegumes.csproj", "{0C46AFB6-8A85-4DCD-8A28-561CD7219DCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{D9FEFDD4-CBA1-4709-A3B6-7A7519475BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9FEFDD4-CBA1-4709-A3B6-7A7519475BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9FEFDD4-CBA1-4709-A3B6-7A7519475BC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C46AFB6-8A85-4DCD-8A28-561CD7219DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C46AFB6-8A85-4DCD-8A28-561CD7219DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C46AFB6-8A85-4DCD-8A28-561CD7219DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C46AFB6-8A85-4DCD-8A28-561CD7219DCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
