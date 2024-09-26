@@ -102,6 +102,7 @@ namespace Palindrome
             }
             else
             {
+                Console.WriteLine($"phrase inversée : {phrOrigineInversee}");
                 return false;
             }
         }
