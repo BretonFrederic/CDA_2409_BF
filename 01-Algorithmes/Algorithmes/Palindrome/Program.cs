@@ -30,74 +30,113 @@ namespace Palindrome
 
         /* FONCTIONS */
 
-        // Fonction qui demande une chaîne de caractères à l'utilisateur
-        static string DemanderPhraseUtilisateur()
+        // Fonction qui demande et renvoie un message à l'utilisateur
+        static string DemanderMessageUtilisateur()
         {
-            string phrase;
-            do
+            int compteurPoint = 0;
+            bool pointFin = false;
+            string phrase = "";
+
+            Console.Write("Entrer une phrase : ");
+            phrase = Console.ReadLine();
+
+            // Contrôler si il n'y a que des points dans la chaîne de caractère
+            foreach (char ch in phrase)
             {
-                Console.Write("Entrer une phrase : ");
-                phrase = Console.ReadLine();
-                if(phrase.Length != 0)
+                if (ch == '.')
                 {
-                    if (!(phrase.Length > 1 && phrase[phrase.Length - 1] == '.'))
-                    {
-                        phrase = "...";
-                        Console.WriteLine("La phrase doit se terminer par un point.");
-                    }
+                    compteurPoint++;
                 }
-                
-            } while (phrase.All(ch => ch == '.') && phrase != "");
+            }
 
-            //string charactereSpeciaux = "!:;,§/.?ù*µ%$^£¨&~\"#'{([-|`_\\@)]°=}+- ";
+            // Vérifier si il y a un point final
+            if (phrase.Length > 0)
+            {
+                if (phrase[phrase.Length - 1] == '.')
+                {
+                    pointFin = true;
+                }
+                if (compteurPoint == phrase.Length)
+                {
+                    Console.WriteLine("La phrase ne contient que des points");
+                    return DemanderMessageUtilisateur();
+                }
+            }
 
-            return phrase;
+            if (pointFin)
+            {
+                return phrase;
+            }
+            else if(phrase == "")
+            {
+                Console.WriteLine("La phrase est vide.");
+                return DemanderMessageUtilisateur();
+            }
+            else
+            {
+                Console.WriteLine("Il manque le point final");
+                return DemanderMessageUtilisateur();
+            }
+        }
+
+        // Fonction qui cherche si la phrase est un palindrome et renvoie une boleen
+        static bool RechercherPalindrome(string phr)
+        {
+            string phraseInversee = "";
+            string phrOrigineInversee = "";
+
+            // Retirer le point final et les espaces
+            phrOrigineInversee = phr.Remove(phr.Length - 1);
+            phr = phr.Remove(phr.Length - 1).Replace(" ", "");
+            
+
+            // Inverser la phrase
+            phraseInversee = new string(phr.Reverse().ToArray());
+            phrOrigineInversee = new string(phrOrigineInversee.Reverse().ToArray());
+
+            // Contrôler si phrase palindrome ou pas
+            if (phr == phraseInversee)
+            {
+                Console.WriteLine($"phrase inversée : {phrOrigineInversee}");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        // Fonction qui affiche si la phrase est palindrome ou pas
+        static void AfficherReponse(bool p)
+        {
+            if (!p)
+            {
+                Console.WriteLine("la chaîne de caractères n’est pas un palindrome");
+            }
+            else if (p)
+            {
+                Console.WriteLine("la chaîne de caractères est un palindrome");
+            }
         }
 
         static void Main(string[] args)
         {
             /* VARIABLES */
-            List<string> phrases;
+            string phrase;
             bool estPalindrome;
-            string phraseUtilisateur;
 
             /* TRAITEMENT */
+            phrase = "";
             estPalindrome = false;
-            
-            phrases = new List<string>(){ "", "" };
 
-            // Demander un mot à l'utilisateur
-            phraseUtilisateur = DemanderPhraseUtilisateur();
-            Console.WriteLine(phraseUtilisateur);
+            // Demander une phrase à l'utilisateur
+            phrase = DemanderMessageUtilisateur();
 
-            // Retirer les espaces de la phrase
-            phrases[0] = phraseUtilisateur.Trim();
-
-            // Inverser le mot et stocker dans un new string
-            phrases[1] = new string(phrases[0].Reverse().ToArray());
-
-
-
-            // Comparer le mot avec sa copie inversée. Définir si c'est un palindrome avec une booléen
-            if (phrases[0] == phrases[1])
-            {
-                estPalindrome = true;
-            }
+            // Contrôler si la phrase est un palindrome
+            estPalindrome = RechercherPalindrome(phrase);
 
             /* AFFICHAGE */
-
-            if (phrases[0] == "")
-            {
-                Console.WriteLine("La phrase vide.");
-            }
-            if (estPalindrome)
-            {
-                Console.WriteLine($"Le mot {phrases[0]} inversé est {phrases[1]} c'est un palindrome.");
-            }
-            else
-            {
-                Console.WriteLine($"Le mot {phrases[0]} inversé est {phrases[1]} ce n'est pas un palindrome.");
-            }
+            AfficherReponse(estPalindrome);
         }
     }
 }
