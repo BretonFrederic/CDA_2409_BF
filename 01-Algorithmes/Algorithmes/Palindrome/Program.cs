@@ -30,33 +30,73 @@ namespace Palindrome
 
         /* FONCTIONS */
 
+        // Fonction qui demande une chaîne de caractères à l'utilisateur
+        static string DemanderPhraseUtilisateur()
+        {
+            string phrase;
+            do
+            {
+                Console.Write("Entrer une phrase : ");
+                phrase = Console.ReadLine();
+                if(phrase.Length != 0)
+                {
+                    if (!(phrase.Length > 1 && phrase[phrase.Length - 1] == '.'))
+                    {
+                        phrase = "...";
+                        Console.WriteLine("La phrase doit se terminer par un point.");
+                    }
+                }
+                
+            } while (phrase.All(ch => ch == '.') && phrase != "");
+
+            //string charactereSpeciaux = "!:;,§/.?ù*µ%$^£¨&~\"#'{([-|`_\\@)]°=}+- ";
+
+            return phrase;
+        }
+
         static void Main(string[] args)
         {
             /* VARIABLES */
-            List<string> mots;
+            List<string> phrases;
             bool estPalindrome;
+            string phraseUtilisateur;
 
             /* TRAITEMENT */
             estPalindrome = false;
+            
+            phrases = new List<string>(){ "", "" };
+
+            // Demander un mot à l'utilisateur
+            phraseUtilisateur = DemanderPhraseUtilisateur();
+            Console.WriteLine(phraseUtilisateur);
+
+            // Retirer les espaces de la phrase
+            phrases[0] = phraseUtilisateur.Trim();
+
             // Inverser le mot et stocker dans un new string
-            mots = new List<string>(){ "LONDRES", "" };
-            mots[1] = new string(mots[0].Reverse().ToArray());
+            phrases[1] = new string(phrases[0].Reverse().ToArray());
+
+
 
             // Comparer le mot avec sa copie inversée. Définir si c'est un palindrome avec une booléen
-            if (mots[0] == mots[1])
+            if (phrases[0] == phrases[1])
             {
                 estPalindrome = true;
             }
 
             /* AFFICHAGE */
 
+            if (phrases[0] == "")
+            {
+                Console.WriteLine("La phrase vide.");
+            }
             if (estPalindrome)
             {
-                Console.WriteLine($"Le mot {mots[0]} inversé est {mots[1]} c'est un palindrome.");
+                Console.WriteLine($"Le mot {phrases[0]} inversé est {phrases[1]} c'est un palindrome.");
             }
             else
             {
-                Console.WriteLine($"Le mot {mots[0]} inversé est {mots[1]} ce n'est pas un palindrome.");
+                Console.WriteLine($"Le mot {phrases[0]} inversé est {phrases[1]} ce n'est pas un palindrome.");
             }
         }
     }
