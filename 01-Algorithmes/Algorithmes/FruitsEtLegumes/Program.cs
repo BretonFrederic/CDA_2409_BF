@@ -1,4 +1,5 @@
 ﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+using static FruitsEtLegumes.AskUser;
 
 namespace FruitsEtLegumes
 {
@@ -19,12 +20,16 @@ namespace FruitsEtLegumes
 
 
         /* FONCTIONS */
+
+        // 
         static void Main(string[] args)
         {
             /* VARIABLES */
+            string message = "Entrer un prix";
             Dictionary<string, float> ingredients = new Dictionary<string, float>();
             float prixMin = 0.0f;
             string fruitMoinsCher = "";
+            AskUser demanderNombre = new AskUser(message, prixMin);
 
             /* TRAITEMENT */
             ingredients.Add("pommes", 2.42f);
@@ -45,6 +50,7 @@ namespace FruitsEtLegumes
             }
 
             /* AFFICHAGE */
+
             Console.WriteLine("Le fruit le moins cher au kilo : {0} {1}", fruitMoinsCher, prixMin);
         }
     }

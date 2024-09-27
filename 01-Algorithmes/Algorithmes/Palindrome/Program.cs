@@ -59,7 +59,7 @@ namespace Palindrome
                 if (compteurPoint == phrase.Length)
                 {
                     Console.WriteLine("La phrase ne contient que des points");
-                    return DemanderMessageUtilisateur();
+                    DemanderMessageUtilisateur();
                 }
             }
 
