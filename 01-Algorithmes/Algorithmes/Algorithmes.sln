@@ -39,9 +39,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Palindrome", "Palindrome\Pa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FruitsEtLegumes", "FruitsEtLegumes\FruitsEtLegumes.csproj", "{0C46AFB6-8A85-4DCD-8A28-561CD7219DCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeuDuZeroUnDeux", "JeuDuZeroUnDeux\JeuDuZeroUnDeux.csproj", "{6A715E91-DFA2-4DEC-A4C6-44B8E929DFC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JeuDuZeroUnDeux", "JeuDuZeroUnDeux\JeuDuZeroUnDeux.csproj", "{6A715E91-DFA2-4DEC-A4C6-44B8E929DFC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculNombrePersonnes", "CalculNombrePersonnes\CalculNombrePersonnes.csproj", "{8D62E83D-24C0-4214-9714-ABBEC600F6B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculNombrePersonnes", "CalculNombrePersonnes\CalculNombrePersonnes.csproj", "{8D62E83D-24C0-4214-9714-ABBEC600F6B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DenombrerLettresAlphabet", "DenombrerLettresAlphabet\DenombrerLettresAlphabet.csproj", "{236F3084-4C18-4A16-A154-09157D70BA5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +131,10 @@ Global
 		{8D62E83D-24C0-4214-9714-ABBEC600F6B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D62E83D-24C0-4214-9714-ABBEC600F6B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D62E83D-24C0-4214-9714-ABBEC600F6B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{236F3084-4C18-4A16-A154-09157D70BA5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{236F3084-4C18-4A16-A154-09157D70BA5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{236F3084-4C18-4A16-A154-09157D70BA5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{236F3084-4C18-4A16-A154-09157D70BA5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
