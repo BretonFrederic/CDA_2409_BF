@@ -41,6 +41,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FruitsEtLegumes", "FruitsEt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeuDuZeroUnDeux", "JeuDuZeroUnDeux\JeuDuZeroUnDeux.csproj", "{6A715E91-DFA2-4DEC-A4C6-44B8E929DFC1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculNombrePersonnes", "CalculNombrePersonnes\CalculNombrePersonnes.csproj", "{8D62E83D-24C0-4214-9714-ABBEC600F6B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +125,10 @@ Global
 		{6A715E91-DFA2-4DEC-A4C6-44B8E929DFC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A715E91-DFA2-4DEC-A4C6-44B8E929DFC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A715E91-DFA2-4DEC-A4C6-44B8E929DFC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D62E83D-24C0-4214-9714-ABBEC600F6B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D62E83D-24C0-4214-9714-ABBEC600F6B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D62E83D-24C0-4214-9714-ABBEC600F6B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D62E83D-24C0-4214-9714-ABBEC600F6B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
