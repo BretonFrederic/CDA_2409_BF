@@ -124,11 +124,13 @@ namespace JeuDuZeroUnDeux
 
             /* TRAITEMENT */
 
+            // Consignes
             Console.WriteLine("L’ordinateur et le joueur choisissent un nombre qui ne peut prendre que 3 valeurs: 0, 1 ou 2.");
             Console.WriteLine("Le jeu se termine quand un des deux joueurs (l’ordinateur ou le joueur humain) totalise 10 points ou quand l’être humain introduit un nombre négatif qui indique sa volonté d’arrêter de jouer.");
 
             do
             {
+                // Terminer partie si nombre négatif
                 nombreJoueur = DemanderUnNombreDansIntervalle(nombreMin, nombreMax);
                 if(nombreJoueur < 0)
                 {
@@ -143,6 +145,8 @@ namespace JeuDuZeroUnDeux
                     scores = CalculerPoints(nombreJoueur, nombreOrdinateur);
                     pointsJoueur += scores[0];
                     pointsOrdinateur += scores[1];
+
+                    // Terminer partie si un score atteint 10
                     if (pointsJoueur == 10 || pointsOrdinateur == 10)
                     {
                         partieTerminee = true;
@@ -155,6 +159,15 @@ namespace JeuDuZeroUnDeux
             {
                 Console.WriteLine("Score joueur : {0}", pointsJoueur);
                 Console.WriteLine("Score ordinateur : {0}", pointsOrdinateur);
+                Console.WriteLine();
+                if(pointsJoueur > pointsOrdinateur)
+                {
+                    Console.WriteLine("Bravo vous avez gagné !");
+                }
+                else
+                {
+                    Console.WriteLine("Vous aavez perdu !");
+                }
             }
             
         }
