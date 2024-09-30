@@ -66,6 +66,8 @@ namespace CalculNombrePersonnes
             /* TRAITEMENT */
 
             Console.WriteLine("Vous devez saisir l'âge de 20 personnes.");
+
+            // Dénombrer les personnes en fonction de leurs âges
             for(int i = 0; i < echantillon.Length; i++)
             {
                 echantillon[i] = DemanderNombrePositif();
