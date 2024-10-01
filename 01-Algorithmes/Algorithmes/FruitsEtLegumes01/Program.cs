@@ -21,7 +21,7 @@
             string saisieUtilisateur = "";
             string alphaNum = "0123456789";
             int nombreLegumes = 0;
-            string[][] legumesPrix;
+            string[] legumesPrix;
 
             /* TRAITEMENT */
 
@@ -35,7 +35,7 @@
                     int j = 0;
                     while (j < alphaNum.Length)
                     {
-                        if (saisieUtilisateur[i - 1] == ' ' && saisieUtilisateur[i] == alphaNum[j])
+                        if (saisieUtilisateur[i] == alphaNum[j] && saisieUtilisateur[i - 1] == ' ')
                         {
                             nombreLegumes++;
                             nomsLegumes += saisieUtilisateur+"\n";
@@ -48,13 +48,36 @@
                 }
             }
 
-            legumesPrix = new string[nombreLegumes][];
+            legumesPrix = new string[nombreLegumes];
+            int positionLegume = 0;
 
-
+            for(int i = 0; i < nomsLegumes.Length; i++)
+            {
+                for(int j = 0; j < alphaNum.Length; j++)
+                {
+                    if (nomsLegumes[i] == '\n')
+                    {
+                        // stocker prix
+                        legumesPrix[positionLegume] = nomsLegumes.Remove(i-1);
+                        positionLegume++;
+                        i = 0;
+                    }
+                    /*if (nomsLegumes[i] == alphaNum[j] && nomsLegumes[i - 1] == ' ')
+                    {
+                        // stocker légume
+                        legumesPrix[0,0] = nomsLegumes.Remove(i);
+                    }*/
+                }
+            }
 
             /* AFFICHAGE */
             Console.WriteLine("Chaine de caractères de légumes et prix : " + "\n"+ nomsLegumes);
             Console.WriteLine("Nombre de légumes : " + nombreLegumes);
+            foreach(string l in legumesPrix)
+            {
+                Console.WriteLine("une chaine de caractères légume et prix : " + l);
+            }
+            
         }
     }
 }
