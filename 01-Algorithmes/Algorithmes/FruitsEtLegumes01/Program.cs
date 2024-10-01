@@ -19,53 +19,42 @@
             /* VARIABLES */
             string nomsLegumes = "";
             string saisieUtilisateur = "";
+            string alphaNum = "0123456789";
+            int nombreLegumes = 0;
+            string[][] legumesPrix;
 
             /* TRAITEMENT */
-            //saisieUtilisateur = DemanderLegumePrix();
-            //static string DemanderLegumePrix()
-            //{
-                int i = 0;
-                int indexDebut = 0;
-                int indexFin = 0;
-                string alphaNum = "0123456789";
-                string alphabet = "abcdefghijklmnopqrstuvwxyz";
-                Console.Write("Saisir un légume et son prix : ");
-                string saisie = Console.ReadLine();
 
-                // Chercher indexDepart prix
-                while( i < saisie.Length && indexDebut == 0)
+            while (saisieUtilisateur != "go")
+            {
+                Console.Write("Saisier un légume et son prix : ");
+                saisieUtilisateur = Console.ReadLine();
+                int i = 0;
+                while (i < saisieUtilisateur.Length)
                 {
-                    foreach(char c in alphaNum)
+                    int j = 0;
+                    while (j < alphaNum.Length)
                     {
-                        if (saisie[i].Equals(c))
+                        if (saisieUtilisateur[i - 1] == ' ' && saisieUtilisateur[i] == alphaNum[j])
                         {
-                            indexDebut = i;
+                            nombreLegumes++;
+                            nomsLegumes += saisieUtilisateur+"\n";
+                            i = saisieUtilisateur.Length;
+                            j = alphaNum.Length;
                         }
+                        j++;
                     }
                     i++;
                 }
-
-            // Chercher indexFin prix
-            i = indexDebut;
-            while (i < saisie.Length)
-            {
-                foreach (char c in alphabet)
-                {
-                    if (saisie[i].Equals(c))
-                    {
-                        indexFin = i-1;
-                    }
-                }
-                i++;
             }
 
+            legumesPrix = new string[nombreLegumes][];
 
-            // return saisie;
-            //}
+
 
             /* AFFICHAGE */
-            Console.WriteLine(saisieUtilisateur);
-            Console.WriteLine(index);
+            Console.WriteLine("Chaine de caractères de légumes et prix : " + "\n"+ nomsLegumes);
+            Console.WriteLine("Nombre de légumes : " + nombreLegumes);
         }
     }
 }
