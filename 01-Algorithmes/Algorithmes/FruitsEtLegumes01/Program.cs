@@ -21,13 +21,13 @@
             string saisieUtilisateur = "";
             string alphaNum = "0123456789";
             int nombreLegumes = 0;
-            string[] legumesPrix;
+            string[,] tableauLegumesEtPrix;
 
             /* TRAITEMENT */
 
             while (saisieUtilisateur != "go")
             {
-                Console.Write("Saisier un légume et son prix : ");
+                Console.Write("Saisir un légume et son prix : ");
                 saisieUtilisateur = Console.ReadLine();
                 int i = 0;
                 while (i < saisieUtilisateur.Length)
@@ -35,10 +35,15 @@
                     int j = 0;
                     while (j < alphaNum.Length)
                     {
+                        // Détecter le prix chiffre précédé d'un espace cas particulier pomme de terre 1.80
                         if (saisieUtilisateur[i] == alphaNum[j] && saisieUtilisateur[i - 1] == ' ')
                         {
+                            // compteur de légumes
                             nombreLegumes++;
+
+                            // Affecter le légume et son prix. Ajouter un séparateur
                             nomsLegumes += saisieUtilisateur+"\n";
+                            // Retour vers choix saisir ou go pour finir
                             i = saisieUtilisateur.Length;
                             j = alphaNum.Length;
                         }
@@ -48,35 +53,49 @@
                 }
             }
 
-            legumesPrix = new string[nombreLegumes];
-            int positionLegume = 0;
+            // Remplir tableau éléments légumes et prix
 
-            for(int i = 0; i < nomsLegumes.Length; i++)
+            float prixMoinsCher = 1000.0f;
+            tableauLegumesEtPrix = new string[nombreLegumes, 2];
+            int indexLegumesPrix = 0;
+            int indexPrixMoinsCher = 0;
+
+
+            for (int i = 0; i < nomsLegumes.Length; i++)
             {
                 for(int j = 0; j < alphaNum.Length; j++)
                 {
-                    if (nomsLegumes[i] == '\n')
+                    if (nomsLegumes.Length != 0)
                     {
-                        // stocker prix
-                        legumesPrix[positionLegume] = nomsLegumes.Remove(i-1);
-                        positionLegume++;
-                        i = 0;
+                        if (nomsLegumes[i] == alphaNum[j] && nomsLegumes[i - 1] == ' ')
+                        {
+                            tableauLegumesEtPrix[indexLegumesPrix, 0] = nomsLegumes.Substring(i - i, i - 1);
+                            nomsLegumes = nomsLegumes.Remove(i - i, i);
+                            i -= i;
+                        }
+                        if (nomsLegumes[i] == '\n')
+                        {
+                            tableauLegumesEtPrix[indexLegumesPrix, 1] = nomsLegumes.Substring(i - i, i);
+                            nomsLegumes = nomsLegumes.Remove(i - i, i + 1);
+
+                            // Trouver index prix moins cher
+                            if(float.Parse(tableauLegumesEtPrix[indexLegumesPrix, 1]) < prixMoinsCher)
+                            {
+                                indexPrixMoinsCher = i;
+                            }
+                            prixMoinsCher = float.Parse(tableauLegumesEtPrix[indexLegumesPrix, 1]);
+
+                            indexLegumesPrix++;
+                            i = 0;
+                        }
                     }
-                    /*if (nomsLegumes[i] == alphaNum[j] && nomsLegumes[i - 1] == ' ')
-                    {
-                        // stocker légume
-                        legumesPrix[0,0] = nomsLegumes.Remove(i);
-                    }*/
+                    
                 }
             }
-
+           
             /* AFFICHAGE */
-            Console.WriteLine("Chaine de caractères de légumes et prix : " + "\n"+ nomsLegumes);
-            Console.WriteLine("Nombre de légumes : " + nombreLegumes);
-            foreach(string l in legumesPrix)
-            {
-                Console.WriteLine("une chaine de caractères légume et prix : " + l);
-            }
+
+            Console.WriteLine("Légumes moins cher : " + tableauLegumesEtPrix[indexPrixMoinsCher, 0]);
             
         }
     }
