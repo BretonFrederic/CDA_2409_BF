@@ -69,19 +69,25 @@
                     {
                         if (nomsLegumes[i] == alphaNum[j] && nomsLegumes[i - 1] == ' ')
                         {
+                            // Légumes
                             tableauLegumesEtPrix[indexLegumesPrix, 0] = nomsLegumes.Substring(i - i, i - 1);
                             nomsLegumes = nomsLegumes.Remove(i - i, i);
                             i -= i;
                         }
+                        // Séparateur legumePrix
                         if (nomsLegumes[i] == '\n')
                         {
+                            // prix
                             tableauLegumesEtPrix[indexLegumesPrix, 1] = nomsLegumes.Substring(i - i, i);
                             nomsLegumes = nomsLegumes.Remove(i - i, i + 1);
 
+                            // Prix remplacer point par virgule
+                            tableauLegumesEtPrix[indexLegumesPrix, 1] = tableauLegumesEtPrix[indexLegumesPrix, 1].Replace('.', ',');
+
                             // Trouver index prix moins cher
-                            if(float.Parse(tableauLegumesEtPrix[indexLegumesPrix, 1]) < prixMoinsCher)
+                            if (float.Parse(tableauLegumesEtPrix[indexLegumesPrix, 1]) < prixMoinsCher)
                             {
-                                indexPrixMoinsCher = i;
+                                indexPrixMoinsCher = indexLegumesPrix;
                             }
                             prixMoinsCher = float.Parse(tableauLegumesEtPrix[indexLegumesPrix, 1]);
 
@@ -92,10 +98,15 @@
                     
                 }
             }
-           
-            /* AFFICHAGE */
 
-            Console.WriteLine("Légumes moins cher : " + tableauLegumesEtPrix[indexPrixMoinsCher, 0]);
+            /* AFFICHAGE */
+            Console.WriteLine();
+            for (int i = 0; i < tableauLegumesEtPrix.GetLength(0); i++)
+            {
+                Console.WriteLine("1 kilogramme de " + tableauLegumesEtPrix[i, 0] + " coûte " + tableauLegumesEtPrix[i, 1] + " euros.");
+            }
+            Console.WriteLine();
+            Console.WriteLine("Légumes moins cher au kilo : " + tableauLegumesEtPrix[indexPrixMoinsCher, 0]);
             
         }
     }
