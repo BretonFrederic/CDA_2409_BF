@@ -52,7 +52,7 @@ namespace FruitsEtLegumes
         static List<string> AjouterLegumePrix(string saisieLegumePrix)
         {
             List<string> legumePrix = new List<string>() { "0", "0"};
-;           string alphaNum = "0123456789";
+            string alphaNum = "0123456789";
             bool estUnNombre = false;
             
 
