@@ -29,7 +29,7 @@ namespace Yaourts
     {
         static void Main(string[] args)
         {
-            var webClient = new WebClient();
+            // code
         }
     }
 }
