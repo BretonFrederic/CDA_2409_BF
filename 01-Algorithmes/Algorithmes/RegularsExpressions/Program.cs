@@ -23,14 +23,36 @@ namespace RegularsExpressions
                 while(!Regex.IsMatch(prenom, formatPrenom, RegexOptions.IgnoreCase))
                 {
                     Console.WriteLine("Saisissez un vrai prénom !");
-                    Console.ReadLine();
+                    prenom = Console.ReadLine();
                 }
 
                 Console.WriteLine("Bonjour " + prenom);
             }
-            catch(Exception ex)
+            catch
             {
                 Console.WriteLine("Contactez le service informatique.");
+            }
+
+            try
+            {
+                string? dateNaissance;
+
+                Console.WriteLine("Entrer votre date de naissance : ");
+                dateNaissance = Console.ReadLine();
+
+                String formatDate = @"^[\d]{2}/[\d]{2}/[\d]{4}$";
+
+                while (!Regex.IsMatch(dateNaissance, formatDate, RegexOptions.IgnoreCase))
+                {
+                    Console.WriteLine("Saisissez une année de naissance valide !");
+                    dateNaissance = Console.ReadLine();
+                }
+
+                Console.WriteLine("Votre année de " + dateNaissance);
+            }
+            catch
+            {
+                Console.WriteLine("Date de naissance invalide.");
             }
 
             try
@@ -40,7 +62,19 @@ namespace RegularsExpressions
                 Console.WriteLine("Entrer votre mail : ");
                 mail = Console.ReadLine();
 
-                String formatMail = "^[\w\.=-]+@[\w\.-]+\.[\w]{2,3}$";
+                String formatMail = @"^[\w\-\.]+@[\w\-\.]+\.[a-zA-Z]{2,}$";
+
+                while(!Regex.IsMatch(mail, formatMail, RegexOptions.IgnoreCase))
+                {
+                    Console.WriteLine("Saisissez une adresse mail valide !");
+                    mail = Console.ReadLine();
+                }
+
+                Console.WriteLine("Votre adresse mail " + mail);
+            }
+            catch
+            {
+                Console.WriteLine("Adresse mail invalide.");
             }
         }
     }

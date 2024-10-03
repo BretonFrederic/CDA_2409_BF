@@ -55,8 +55,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yaourts", "Yaourts\Yaourts.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegularsExpressions", "RegularsExpressions\RegularsExpressions.csproj", "{DADF5CD6-C65C-4C0C-AD6F-5A3BE1C11C41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaisieFloatDLL", "SaisieFloatDLL\SaisieFloatDLL.csproj", "{271B95D8-D84E-44E5-922B-AA01249617F3}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FBretonTools", "..\FBretonTools\FBretonTools\FBretonTools.csproj", "{33D7E2B7-B187-47B4-A9A2-B19E8021EC50}"
 EndProject
 Global
@@ -169,10 +167,6 @@ Global
 		{DADF5CD6-C65C-4C0C-AD6F-5A3BE1C11C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DADF5CD6-C65C-4C0C-AD6F-5A3BE1C11C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DADF5CD6-C65C-4C0C-AD6F-5A3BE1C11C41}.Release|Any CPU.Build.0 = Release|Any CPU
-		{271B95D8-D84E-44E5-922B-AA01249617F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{271B95D8-D84E-44E5-922B-AA01249617F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{271B95D8-D84E-44E5-922B-AA01249617F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{271B95D8-D84E-44E5-922B-AA01249617F3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{33D7E2B7-B187-47B4-A9A2-B19E8021EC50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{33D7E2B7-B187-47B4-A9A2-B19E8021EC50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33D7E2B7-B187-47B4-A9A2-B19E8021EC50}.Release|Any CPU.ActiveCfg = Release|Any CPU
