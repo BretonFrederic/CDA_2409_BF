@@ -1,4 +1,5 @@
 ﻿namespace MajeurTest
+   
 {
     internal class Program
     {

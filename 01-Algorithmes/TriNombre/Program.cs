@@ -1,4 +1,5 @@
 ﻿using System;
+using FBretonTools;
 
 namespace TriNombre
 {
@@ -27,14 +28,14 @@ namespace TriNombre
         {
             /* VARIABLES */
             int nombreA, nombreB, nombreC, temp;
-            
+
 
             /* DEBUT PROGRAMME */
 
             //Recupère les nombres
-            nombreA = DemanderNombreUtilisateur();
-            nombreB = DemanderNombreUtilisateur();
-            nombreC = DemanderNombreUtilisateur();
+            nombreA = ConsoleTools.DemanderNombreEntier("Entrer un nombre : ");
+            nombreB = ConsoleTools.DemanderNombreEntier("Entrer un nombre : ");
+            nombreC = ConsoleTools.DemanderNombreEntier("Entrer un nombre : ");
             temp = 0;
             
             //tri les nombres

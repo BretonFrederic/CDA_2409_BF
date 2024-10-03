@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FBretonTools\FBretonTools\FBretonTools.csproj" />
+    <ProjectReference Include="..\..\FBretonTools\FBretonTools\FBretonTools.csproj" />
   </ItemGroup>
 
 </Project>
