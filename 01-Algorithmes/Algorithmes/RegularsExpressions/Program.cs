@@ -6,7 +6,7 @@ namespace RegularsExpressions
     {
         static void Main(string[] args)
         {
-            /*
+            
             try
             {
                 string? prenom;
@@ -16,7 +16,7 @@ namespace RegularsExpressions
                 être non définie ou manquante. Par exemple, un champ de base de données peut contenir true ou false, ou il peut ne contenir aucune valeur, 
                 c’est-à-dire NULL. Vous pouvez utiliser le type bool? dans ce scénario.
                  */
-                /*
+                
                 String formatPrenom = "^[a-z]{2,32}$"; // longueur min/max prénom recherche internet
 
                 do
@@ -44,7 +44,7 @@ namespace RegularsExpressions
 
                 } while (!DateTime.TryParse(dateNaissance, out datetime)); // Essayer de convertir la saisie en date 
 
-                Console.WriteLine("Votre année de " + dateNaissance);
+                Console.WriteLine("Votre date de naissance est : " + dateNaissance);
             }
             catch
             {
@@ -69,25 +69,18 @@ namespace RegularsExpressions
             {
                 Console.WriteLine("Adresse mail invalide.");
             }
-            */
+            
             try
             {
                 string? numSecu;
 
-                //string sexe = "^[1|2]{1}$";
-                //string annee = @"^[\d]{2}$";
-                //string mois = "^(0[1-9]|10|11|12)$";
-                //string departement = @"^[0-9][1-9]$";
-                //string communne = "^[0-9]{2}[1-9]$";
-                //string enregistrement = "^[0-9]{2}[1-9]$";
-                //string formatNumSecu = @"^[1|2]{1}[\d]{2}(0[1-9]|10|11|12)[0-9][1-9][0-9]{2}[1-9][0-9]{2}[1-9][0-9]{2}[1-9]$";
-                // String formatNumSecu = @"^[1-2]{1}[0-9]{2}12|11|10|0[1-9]0|[1-9][0-9][[0-9]{3}]{2}{13}$"; // sexe/année naissance
+                string formatNumSecu = @"^[1|2]{1}[\d]{2}(0[1-9]|10|11|12)[0-9][1-9]([0-9]{2}[1-9]){2}$";
 
                 do
                 {
                     Console.WriteLine("Entrer votre numéro de sécurité sociale : ");
                     numSecu = Console.ReadLine();
-                } while (!Regex.IsMatch(numSecu, mois, RegexOptions.IgnoreCase));
+                } while (!Regex.IsMatch(numSecu, formatNumSecu, RegexOptions.IgnoreCase));
 
                 Console.WriteLine("Votre numéro de sécurité sociale est : " + numSecu);
             }
