@@ -56,7 +56,7 @@ internal class Program
         */
 
         string motDePasse;
-        string formatMotDePasse = @"^([a-zA-Z0-9]+){12,20}$";
+        string formatMotDePasse = @"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{12,20}|^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{20,}";
 
         do
         {

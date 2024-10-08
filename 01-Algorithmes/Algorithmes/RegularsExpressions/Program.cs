@@ -55,7 +55,7 @@ namespace RegularsExpressions
             {
                 string? mail;
 
-                string formatMail = @"^[\w\-\.]+@[\w\-\.]+\.[a-zA-Z]{2,}$";
+                string formatMail = @"^[\w\-\.]+@[\w\-\.]+?\.[a-zA-Z]{2,6}$";
 
                 do
                 {
