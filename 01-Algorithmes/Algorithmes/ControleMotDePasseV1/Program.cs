@@ -61,6 +61,7 @@ internal class Program
         do
         {
             Console.WriteLine("Entrer mot de passe : ");
+            Console.WriteLine("");
             motDePasse = Console.ReadLine() ?? "";
         } while (!Regex.IsMatch(motDePasse, formatMotDePasse, RegexOptions.IgnoreCase));
 
