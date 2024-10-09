@@ -45,6 +45,7 @@ namespace RestaurantCRM
                 if (saisie.Equals(utilisateurs[i]))
                 {
                     utilisateurValide = true;
+                    Console.WriteLine("Carte valide.");
                     Console.Write("Nom : " + utilisateurs[i] + "\nNuméro de carte : " + (i+1) + "\nsolde : " + sommes[i] + " euros." + " ");
                     // Y’a-t-il suffisamment de fonds disponibles ?
                     if (int.TryParse(sommes[i], out sommeInt))
