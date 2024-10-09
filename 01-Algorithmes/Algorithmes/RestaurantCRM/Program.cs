@@ -1,11 +1,12 @@
 ﻿using FBretonTools;
 using System.Text.RegularExpressions;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace RestaurantCRM
 {
     internal class Program
     {
         /*
-         Solutionnez la problématique suivante dans une application en mode « Console » dans un des langages suivants : 
+        Solutionnez la problématique suivante dans une application en mode « Console » dans un des langages suivants : 
         C#.
 
         Au CRM, chaque stagiaire et chaque membre du personnel dispose d’une carte à son nom. 
@@ -28,52 +29,53 @@ namespace RestaurantCRM
         static void Main(string[] args)
         {
             /* VARIABLES */
-            string[] utilisateurs = new string[] {"", "Benjamin", "Marie", "Laurent", "Jerome"};
-            string[] sommes = new string[] {"50", "18", "36", "45", "0"};
+            string[] utilisateurs = new string[] {"Fabrice", "Benjamin", "Marie", "Laurent", "Jerome"};
+            string[] sommes = new string[] { "65", "18", "3", "5", "0" };
+            int sommeInt;
             const int PRIX_REPAS = 4;
-            string carteValide = "^[a-zA-Z]{4,32}$";
+            string saisie;
+            bool utilisateurValide = false;
 
             /* TRAITEMENT */
+            // Les données de la carte correspondent-elle à une personne enregistrée ?
+            Console.Write("Saisir un nom : ");
+            saisie = Console.ReadLine() ?? "";
             for(int i = 0; i < utilisateurs.Length; i++)
             {
-                if (Regex.IsMatch(utilisateurs[i], carteValide))
+                if (saisie.Equals(utilisateurs[i]))
                 {
-                    Console.WriteLine("Carte " + (i+1) + " valide propriétaire : " + utilisateurs[i]);
-                    Console.WriteLine("Fonds disponible : " + sommes[i]);
-                    Console.WriteLine("Prix du repas : " + PRIX_REPAS);
-                    int sommeInt = 0;
-                    bool estConverti = false;
-                    while (!estConverti)
+                    utilisateurValide = true;
+                    Console.Write("Nom : " + utilisateurs[i] + "\nNuméro de carte : " + (i+1) + "\nsolde : " + sommes[i] + " euros." + " ");
+                    // Y’a-t-il suffisamment de fonds disponibles ?
+                    if (int.TryParse(sommes[i], out sommeInt))
                     {
-                        try
+                        // le prix du repas est soustrait de la somme disponible sur la carte.
+                        if (sommeInt >= PRIX_REPAS)
                         {
-
-                            sommeInt = Convert.ToInt32(sommes[i]);
-                            if (sommeInt >= 4)
-                            {
-                                sommeInt -= PRIX_REPAS;
-                                sommes[i] = Convert.ToString(sommeInt);
-                                Console.WriteLine("Nouveau solde : " + sommes[i]);
-                            }
-                            else
-                            {
-                                Console.WriteLine("Solde insuffisante !");
-                            }
-                            estConverti = true;
-
+                            sommeInt -= PRIX_REPAS;
+                            Console.WriteLine();
+                            Console.WriteLine("Repas : " + PRIX_REPAS + " euros.");
+                            Console.WriteLine("Nouveau solde : " + sommeInt);
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            Console.WriteLine(ex.Message);
+                            Console.WriteLine();
+                            Console.WriteLine("Repas : " + PRIX_REPAS + " euros.");
+                            Console.WriteLine("Votre solde est insuffisant.");
                         }
                     }
-                    
-                }
-                else
-                {
-                    Console.WriteLine("Carte " + (i + 1) + " invalide");
+                    else
+                    {
+                        Console.WriteLine("somme invalide.");
+                    }
                 }
             }
+            if (!utilisateurValide)
+            {
+                Console.WriteLine("Carte non enregistrée.");
+            }
+
+
 
             /* AFFICHAGE */
         }
