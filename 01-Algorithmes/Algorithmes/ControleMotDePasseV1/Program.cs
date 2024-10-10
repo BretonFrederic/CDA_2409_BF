@@ -19,6 +19,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        /*
         string motDePasse;
         string regexMinuscules;
         string regexMajuscules;
@@ -52,5 +53,18 @@ internal class Program
         {
             Console.WriteLine("Mot de passe trop faible !");
         }
+        */
+
+        string motDePasse;
+        string formatMotDePasse = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{12,}$|^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{20,}$";
+
+        do
+        {
+            Console.WriteLine("Entrer mot de passe : ");
+            Console.WriteLine("");
+            motDePasse = Console.ReadLine() ?? "";
+        } while (!Regex.IsMatch(motDePasse, formatMotDePasse, RegexOptions.IgnoreCase));
+
+        Console.WriteLine("Mot de passe valide : " + motDePasse);
     }
 }

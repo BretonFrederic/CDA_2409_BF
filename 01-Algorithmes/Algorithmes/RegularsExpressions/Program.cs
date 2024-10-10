@@ -6,6 +6,7 @@ namespace RegularsExpressions
     {
         static void Main(string[] args)
         {
+            
             try
             {
                 string? prenom;
@@ -15,16 +16,14 @@ namespace RegularsExpressions
                 être non définie ou manquante. Par exemple, un champ de base de données peut contenir true ou false, ou il peut ne contenir aucune valeur, 
                 c’est-à-dire NULL. Vous pouvez utiliser le type bool? dans ce scénario.
                  */
-                Console.WriteLine("Entrer votre prénom : ");
-                prenom = Console.ReadLine();
-
+                
                 String formatPrenom = "^[a-z]{2,32}$"; // longueur min/max prénom recherche internet
 
-                while(!Regex.IsMatch(prenom, formatPrenom, RegexOptions.IgnoreCase))
+                do
                 {
-                    Console.WriteLine("Saisissez un vrai prénom !");
+                    Console.WriteLine("Saisissez votre prénom : ");
                     prenom = Console.ReadLine();
-                }
+                } while (!Regex.IsMatch(prenom, formatPrenom, RegexOptions.IgnoreCase)); // Comparer la saisie avec le format regex en ignorant la case
 
                 Console.WriteLine("Bonjour " + prenom);
             }
@@ -36,19 +35,16 @@ namespace RegularsExpressions
             try
             {
                 string? dateNaissance;
+                DateTime datetime;
 
-                Console.WriteLine("Entrer votre date de naissance : ");
-                dateNaissance = Console.ReadLine();
-
-                String formatDate = @"^[\d]{2}/[\d]{2}/[\d]{4}$";
-
-                while (!Regex.IsMatch(dateNaissance, formatDate, RegexOptions.IgnoreCase))
+                do
                 {
-                    Console.WriteLine("Saisissez une année de naissance valide !");
+                    Console.WriteLine("Saisissez votre date de naissance : ");
                     dateNaissance = Console.ReadLine();
-                }
 
-                Console.WriteLine("Votre année de " + dateNaissance);
+                } while (!DateTime.TryParse(dateNaissance, out datetime)); // Essayer de convertir la saisie en date 
+
+                Console.WriteLine("Votre date de naissance est : " + dateNaissance);
             }
             catch
             {
@@ -59,22 +55,38 @@ namespace RegularsExpressions
             {
                 string? mail;
 
-                Console.WriteLine("Entrer votre mail : ");
-                mail = Console.ReadLine();
+                string formatMail = @"^[\w\-\.]+@[\w\-\.]+?\.[a-zA-Z]{2,6}$";
 
-                String formatMail = @"^[\w\-\.]+@[\w\-\.]+\.[a-zA-Z]{2,}$";
-
-                while(!Regex.IsMatch(mail, formatMail, RegexOptions.IgnoreCase))
+                do
                 {
-                    Console.WriteLine("Saisissez une adresse mail valide !");
+                    Console.WriteLine("Entrer votre mail : ");
                     mail = Console.ReadLine();
-                }
+                } while (!Regex.IsMatch(mail, formatMail, RegexOptions.IgnoreCase));
 
-                Console.WriteLine("Votre adresse mail " + mail);
+                Console.WriteLine("Votre adresse mail est : " + mail);
             }
             catch
             {
                 Console.WriteLine("Adresse mail invalide.");
+            }
+            
+            try
+            {
+                string? numSecu;
+
+                string formatNumSecu = @"^[1|2]{1}[\d]{2}(0[1-9]|10|11|12)[0-9][1-9]([0-9]{2}[1-9]){2}$";
+
+                do
+                {
+                    Console.WriteLine("Entrer votre numéro de sécurité sociale : ");
+                    numSecu = Console.ReadLine();
+                } while (!Regex.IsMatch(numSecu, formatNumSecu, RegexOptions.IgnoreCase));
+
+                Console.WriteLine("Votre numéro de sécurité sociale est : " + numSecu);
+            }
+            catch
+            {
+                Console.WriteLine("Numéro de sécurité sociale invalide.");
             }
         }
     }
