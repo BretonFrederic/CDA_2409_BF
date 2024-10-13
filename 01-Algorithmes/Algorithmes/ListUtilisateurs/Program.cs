@@ -84,7 +84,8 @@ namespace ListUtilisateurs
                     DateTime dateActuelle = DateTime.Now;
 
                     // 3. Le programme calcule l'âge de la personne en cours d'ajout.
-                    age = dateActuelle.Year - naissanceDateTime.Year;
+                    TimeSpan interval = dateActuelle - naissanceDateTime;
+                    age = (int)(interval.Days / 365.25);
                     
                     // -Si l’âge est supérieur ou égal à 18(majeur) Le programme demande à l'utilisateur de saisir son métier.
                     if (age >= 18)
