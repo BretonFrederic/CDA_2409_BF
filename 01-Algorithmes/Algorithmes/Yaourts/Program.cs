@@ -7,6 +7,7 @@ using System;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Runtime.CompilerServices;
+using System.Linq;
 
 namespace Yaourts
 {
@@ -82,13 +83,13 @@ namespace Yaourts
 
             string fichierJson;
 
-            Dictionary<string, int> couleursRef = new();
+            Dictionary<string, int> couleursRefOccurences = new();
 
-            List<int> occurencesCouleurs = new();
+            int occurences = 0;
 
             /* TRAITEMENT */
 
-            Console.WriteLine("Début chargement");
+            Console.WriteLine("Début chargement...");
 
             fichierJson = await DownloadAsyncJson(url);
             
@@ -96,14 +97,31 @@ namespace Yaourts
             yourts = JsonConvert.DeserializeObject<Yaourt>(fichierJson);
 
             Console.WriteLine("Fin chargement");
+            Console.WriteLine();
 
             // Parcourir Yaourt.results
             // Stocker couleurs references avec leurs occurences si première occurence sinon stocker juste occurences
-
+            foreach(string c in yourts.results)
+            {
+                if (!couleursRefOccurences.ContainsKey(c))
+                {
+                    couleursRefOccurences.Add(c, 1);
+                }
+                else
+                {
+                    couleursRefOccurences[c] += 1;
+                }
+            }
 
             /* AFFICHAGE */
             Console.WriteLine("Pour le tableau en entrée : ");
             yourts.Afficher();
+            Console.WriteLine();
+            foreach(var c in couleursRefOccurences)
+            {
+                Console.WriteLine(c.Key + " : " + c.Value);
+            }
+
 
         }
     }
