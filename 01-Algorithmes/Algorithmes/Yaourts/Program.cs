@@ -82,7 +82,7 @@ namespace Yaourts
 
             string fichierJson;
 
-            List<string> couleursRef = new List<string>() { "blue", "green", "orange", "red", "yellow" };
+            Dictionary<string, int> couleursRef = new();
 
             List<int> occurencesCouleurs = new();
 
@@ -97,14 +97,10 @@ namespace Yaourts
 
             Console.WriteLine("Fin chargement");
 
-            foreach(string c in couleursRef)
-            {
-                int occurence = yourts.CalculerOccurrences(c, yourts.results);
-                occurencesCouleurs.Add(occurence);
-            }
+            // Parcourir Yaourt.results
+            // Stocker couleurs references avec leurs occurences si première occurence sinon stocker juste occurences
 
 
-            
             /* AFFICHAGE */
             Console.WriteLine("Pour le tableau en entrée : ");
             yourts.Afficher();
