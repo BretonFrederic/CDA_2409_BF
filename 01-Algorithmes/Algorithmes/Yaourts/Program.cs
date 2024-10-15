@@ -28,15 +28,16 @@ namespace Yaourts
     // Les données sont à charger à partir de l’url : https://api.devoldere.net/polls/yoghurts/.
     // Chaque appel à l’api génère un nouveau vote.
 
-    internal class Program
+    class Program
     {
-        class Yourt
+        // Class Yaourt pour créer un objet de type Yaourt à partir du Json déserialisé
+        class Yaourt
         {
             string poll;
             int votes;
             public List<string> results = new();
 
-            public Yourt(string poll, int votes, List<string> results)
+            public Yaourt(string poll, int votes, List<string> results)
             {
                 this.poll = poll;
                 this.votes = votes;
@@ -64,17 +65,22 @@ namespace Yaourts
                 return occurences;
             }
         }
+
+        // Fonction qui télécharge un fichier Json et le renvoie en string
+        static async Task<string> DownloadAsyncJson(string _url)
+        {
+            HttpClient httpClient = new();
+            return await httpClient.GetStringAsync(_url); ;
+        }
         static async Task Main(string[] args)
         {
             /* VARIABLES */
 
             string url = "https://api.devoldere.net/polls/yoghurts/";
 
-            HttpClient httpClient;
+            Yaourt? yourts;
 
-            Yourt? resultatCouleurs;
-
-            string reponse;
+            string fichierJson;
 
             List<string> couleursRef = new List<string>() { "blue", "green", "orange", "red", "yellow" };
 
@@ -84,17 +90,16 @@ namespace Yaourts
 
             Console.WriteLine("Début chargement");
 
-            httpClient = new();
-
-            reponse = await httpClient.GetStringAsync(url);
+            fichierJson = await DownloadAsyncJson(url);
+            
+            // Initialisation de l'objet yaourt avec le Json déserialisé
+            yourts = JsonConvert.DeserializeObject<Yaourt>(fichierJson);
 
             Console.WriteLine("Fin chargement");
 
-            resultatCouleurs = JsonConvert.DeserializeObject<Yourt>(reponse);
-
             foreach(string c in couleursRef)
             {
-                int occurence = resultatCouleurs.CalculerOccurrences(c, resultatCouleurs.results);
+                int occurence = yourts.CalculerOccurrences(c, yourts.results);
                 occurencesCouleurs.Add(occurence);
             }
 
@@ -102,7 +107,7 @@ namespace Yaourts
             
             /* AFFICHAGE */
             Console.WriteLine("Pour le tableau en entrée : ");
-            resultatCouleurs.Afficher();
+            yourts.Afficher();
 
         }
     }
