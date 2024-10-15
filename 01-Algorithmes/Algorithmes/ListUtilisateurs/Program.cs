@@ -103,10 +103,9 @@ namespace ListUtilisateurs
                         metierCouleur = DemanderInfoUtilisateur("Saisir une couleur préférée : ");
                     }
                 }
-                dateNaissance = age.ToString();
 
                 // 4.Lorsque toutes les informations sont saisies Le programme enregistre l'utilisateur
-                listeUtilisateurs.Add(new List<string>() { nomPrenom, dateNaissance, metierCouleur });
+                listeUtilisateurs.Add(new List<string>() { nomPrenom, dateNaissance + " (" + age.ToString() + ")", metierCouleur });
 
                 // 5.Le programme demande à l'utilisateur s'il souhaite ajouter une autre personne.
                 Console.Write("Souhaitez-vous ajouter une autre personne ? (o / n) : ");
