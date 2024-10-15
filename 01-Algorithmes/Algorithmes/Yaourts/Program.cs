@@ -4,7 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.InteropServices;
 using System.Text;
 using System;
-using System.Net;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Runtime.CompilerServices;
+
 namespace Yaourts
 {
     // TP: Yaourts
@@ -27,9 +30,80 @@ namespace Yaourts
 
     internal class Program
     {
-        static void Main(string[] args)
+        class Yourt
         {
-            // code
+            string poll;
+            int votes;
+            public List<string> results = new();
+
+            public Yourt(string poll, int votes, List<string> results)
+            {
+                this.poll = poll;
+                this.votes = votes;
+                this.results = results;
+            }
+
+            public void Afficher()
+            {
+                foreach(string s in results)
+                {
+                    Console.WriteLine(s);
+                }
+            }
+
+            public int CalculerOccurrences(string _couleurReference, List<string> _echantillonCouleurs)
+            {
+                int occurences = 0;
+                foreach(string couleur in _echantillonCouleurs)
+                {
+                    if (_couleurReference.Equals(couleur))
+                    {
+                        occurences++;
+                    }
+                }
+                return occurences;
+            }
+        }
+        static async Task Main(string[] args)
+        {
+            /* VARIABLES */
+
+            string url = "https://api.devoldere.net/polls/yoghurts/";
+
+            HttpClient httpClient;
+
+            Yourt? resultatCouleurs;
+
+            string reponse;
+
+            List<string> couleursRef = new List<string>() { "blue", "green", "orange", "red", "yellow" };
+
+            List<int> occurencesCouleurs = new();
+
+            /* TRAITEMENT */
+
+            Console.WriteLine("Début chargement");
+
+            httpClient = new();
+
+            reponse = await httpClient.GetStringAsync(url);
+
+            Console.WriteLine("Fin chargement");
+
+            resultatCouleurs = JsonConvert.DeserializeObject<Yourt>(reponse);
+
+            foreach(string c in couleursRef)
+            {
+                int occurence = resultatCouleurs.CalculerOccurrences(c, resultatCouleurs.results);
+                occurencesCouleurs.Add(occurence);
+            }
+
+
+            
+            /* AFFICHAGE */
+            Console.WriteLine("Pour le tableau en entrée : ");
+            resultatCouleurs.Afficher();
+
         }
     }
 }
