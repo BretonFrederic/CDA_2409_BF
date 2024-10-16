@@ -85,8 +85,6 @@ namespace Yaourts
 
             Dictionary<string, int> couleursRefOccurences = new();
 
-            int occurences = 0;
-
             /* TRAITEMENT */
 
             Console.WriteLine("Début chargement...");
@@ -112,17 +110,20 @@ namespace Yaourts
                     couleursRefOccurences[c] += 1;
                 }
             }
-
+            // Dictionnaire trié par ordre décroissant
+            couleursRefOccurences = couleursRefOccurences.OrderByDescending(key => key.Value).ToDictionary();
+            
             /* AFFICHAGE */
             Console.WriteLine("Pour le tableau en entrée : ");
             yourts.Afficher();
             Console.WriteLine();
-            foreach(var c in couleursRefOccurences)
+            Console.Write("La réponse est : ");
+            foreach(KeyValuePair<string, int> c in couleursRefOccurences.Take(2).ToDictionary())
             {
-                Console.WriteLine(c.Key + " : " + c.Value);
+                Console.Write(c.Key + " ");
             }
-
-
+            Console.WriteLine();
+            Console.WriteLine("Car le " + couleursRefOccurences.Keys.First() + " a obtenu ");
         }
     }
 }
