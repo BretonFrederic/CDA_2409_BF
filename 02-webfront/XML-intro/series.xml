@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<netflix>
+    <series>
+        <ranking>
+            <number id="1">Monstres</number>
+            <number id="2">Nobody Wants This</number>
+            <number id="3">Tomb Raider, la légende de Lara Croft</number>
+            <number id="4">Territory</number>
+            <number id="5">The Madness</number>
+        </ranking>
+    </series>
+</netflix>
