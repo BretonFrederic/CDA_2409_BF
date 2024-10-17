@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!-- Element racine ListeUtilisateurs-->
+<ListeUtilisateurs>
+	<Utilisateur id="1">
+		<id>1</id>
+		<pseudo/>
+		<pseudo></pseudo>
+		<nom>DEV</nom>
+		<prenom>Fred</prenom>
+		<!-- format standard date-->
+		<dateDeNaissance format="yyyy-mm-dd hh:ii:ss">1977-05-17 19:38:40</dateDeNaissance>
+	</Utilisateur>
+</ListeUtilisateurs>

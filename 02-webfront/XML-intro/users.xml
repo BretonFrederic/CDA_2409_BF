@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Users>
+    <User id="1">
+        <username>fbreton</username>
+        <lastename>DEV</lastename>
+        <firstname>Fred</firstname>
+        <birthday format="yyyy-mm-dd">1977-05-17</birthday>
+    </User>
+    <User id="2">
+        <username>gigi</username>
+        <lastename>Kerry</lastename>
+        <firstname>John</firstname>
+        <birthday format="yyyy-mm-dd">1968-02-21</birthday>
+    </User>
+    <User id="3">
+        <username>ricky</username>
+        <lastename>Watson</lastename>
+        <firstname>Derrick</firstname>
+        <birthday format="yyyy-mm-dd">1987-09-08</birthday>
+    </User>
+    <User id="4">
+        <username>brichard</username>
+        <lastename>Richard</lastename>
+        <firstname>Brandon</firstname>
+        <birthday format="yyyy-mm-dd">1992-12-25</birthday>
+    </User>
+    <User id="5">
+        <username>jenny</username>
+        <lastename>kelly</lastename>
+        <firstname>jennyfer</firstname>
+        <birthday format="yyyy-mm-dd">1998-08-12</birthday>
+    </User>
+</Users>
