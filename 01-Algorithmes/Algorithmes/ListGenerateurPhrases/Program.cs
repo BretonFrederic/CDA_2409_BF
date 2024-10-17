@@ -36,6 +36,8 @@ namespace ListGenerateurPhrases
             Console.WriteLine("Par exemple\n\tsujet : Une grand-mère\tverbe : attrape\tcomplément : le soleil.");
             Console.WriteLine();
             
+            
+
             do
             {
                 // Récupère le string sujet

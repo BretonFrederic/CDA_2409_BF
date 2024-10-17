@@ -7,10 +7,12 @@ namespace AnalyseVotes
 {
     public class AnalyseVotes
     {
-        public string? poll { get; private set; }
-        public int votes { get; private set; }
-        public List<string>? results { get; private set; }
+        /* VARIABLES INSTANCE */
+        public string? poll { get; init; }
+        public int votes { get; init; }
+        public List<string>? results { get; init; }
 
+        /* CONSTRUCTEUR */
         public AnalyseVotes(string poll, int votes, List<string> results)
         {
             this.poll = poll;
@@ -18,6 +20,7 @@ namespace AnalyseVotes
             this.results = results;
         }
 
+        /* METHODES */
         public void AfficherCouleurs()
         {
             foreach (string s in results)
@@ -26,17 +29,21 @@ namespace AnalyseVotes
             }
         }
 
-        public int CalculerOccurrences(string _couleurReference, List<string> _echantillonCouleurs)
+        public Dictionary<string, int> CompterVotesParCouleur()
         {
-            int occurences = 0;
-            foreach (string couleur in _echantillonCouleurs)
+            Dictionary<string, int> couleurs = new();
+            foreach (string c in this.results)
             {
-                if (_couleurReference.Equals(couleur))
+                if (!couleurs.ContainsKey(c))
                 {
-                    occurences++;
+                    couleurs.Add(c, 1);
+                }
+                else
+                {
+                    couleurs[c] += 1;
                 }
             }
-            return occurences;
+            return couleurs;
         }
     }
 }

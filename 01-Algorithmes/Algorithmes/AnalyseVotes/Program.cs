@@ -58,19 +58,8 @@ namespace AnalyseVotes
             Console.WriteLine("Fin chargement");
             Console.WriteLine();
 
-            // Parcourir AnalyseVotes.results
             // Stocker couleurs references avec leurs occurences si première occurence sinon stocker juste occurences
-            foreach (string c in analyse.results)
-            {
-                if (!couleurs.ContainsKey(c))
-                {
-                    couleurs.Add(c, 1);
-                }
-                else
-                {
-                    couleurs[c] += 1;
-                }
-            }
+            couleurs = analyse.CompterVotesParCouleur();
 
             // Dictionnaire trié par ordre décroissant
             couleurs = couleurs.OrderByDescending(key => key.Value).ToDictionary();
@@ -101,11 +90,15 @@ namespace AnalyseVotes
             }
             else
             {
+                Console.WriteLine("Car le " + couleurs.Keys.ElementAt(1) +
+                                  " a obtenu " + couleurs.Values.ElementAt(1) +
+                                  " votes.");
                 Console.WriteLine("Le " + couleurs.Keys.ElementAt(2) +
                                   " et le " + couleurs.Keys.ElementAt(3) +
                                   " ont " + couleurs.Values.ElementAt(2) + " votes.");
-                Console.WriteLine("Le " + couleurs.Keys.ElementAt(2) + " apparait en 1er dans le tableau");
-                Console.WriteLine("Le " + couleurs.Keys.ElementAt(2) + " l'emporte sur le " + couleurs.Keys.ElementAt(3));
+                Console.WriteLine();
+                Console.WriteLine("\tLe " + couleurs.Keys.ElementAt(2) + " apparait en 1er dans le tableau");
+                Console.WriteLine("\tLe " + couleurs.Keys.ElementAt(2) + " l'emporte sur le " + couleurs.Keys.ElementAt(3));
             }
         }
     }
