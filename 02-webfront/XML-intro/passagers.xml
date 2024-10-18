@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<passagers>
+    <passager id="1">
+        <nom>Folichon Robert</nom>
+        <carride>Paris-Toulouse</carride>
+    </passager>
+    <passager id="2">
+        <nom>Pasclaire Edouard</nom>
+        <carride>Paris-Toulouse</carride>
+    </passager>
+    <passager id="3">
+        <nom>Deschamp Margueritte</nom>
+        <carride>Paris-Toulouse</carride>
+    </passager>
+</passagers>
+    
+    

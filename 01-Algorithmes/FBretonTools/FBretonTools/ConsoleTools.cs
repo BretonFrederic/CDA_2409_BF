@@ -84,5 +84,40 @@ namespace FBretonTools
             // Console.WriteLine("Mot de passe valide : " + motDePasse);
             return motDePasse;
         }
+
+        // Fonction qui demande et renvoie une chaîne de caractères
+        public static string DemanderString(string _question = "Saisir du texte")
+        {
+            string texte;
+            Console.Write(_question);
+            texte = Console.ReadLine() ?? "";
+            return texte;
+        }
+
+        // Fonction qui demande de choisir entre o(oui) et n(non) et renvoie un booleen true o, false n
+        public static bool DemanderChoixOuiNon(string _question = "Voulez-vous continuer ? (o/n) : ")
+        {
+            char choixCaractere = ' ';
+            bool choixBool = false;
+            bool reponseValide = false;
+            do
+            {
+                Console.Write(_question);
+                choixCaractere = Console.ReadKey().KeyChar;
+                Console.WriteLine();
+                
+                if(choixCaractere == 'o' || choixCaractere == 'O')
+                {
+                    reponseValide = true;
+                    choixBool = true;
+                }
+                else if(choixCaractere == 'n' || choixCaractere == 'N')
+                {
+                    reponseValide = true;
+                    choixBool = false;
+                }
+            } while (!reponseValide);
+            return choixBool;
+        }
     }
 }

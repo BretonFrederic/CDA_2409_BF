@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<countries>
+    <country id="DE">
+        <name>Germany</name>
+        <continent>europe</continent>
+        <EuropeanUnion>yes</EuropeanUnion>
+    </country>
+    <country id="AT">
+        <name>Austria</name>
+        <continent>europe</continent>
+        <EuropeanUnion>yes</EuropeanUnion>
+    </country>
+    <country id="BE">
+        <name>Belgium</name>
+        <continent>europe</continent>
+        <EuropeanUnion>yes</EuropeanUnion>
+    </country>
+    <country id="BG">
+        <name>Bulgaria</name>
+        <continent>europe</continent>
+        <EuropeanUnion>yes</EuropeanUnion>
+    </country>
+</countries>

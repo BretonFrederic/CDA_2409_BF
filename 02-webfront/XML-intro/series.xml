@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<series>
+    <serie id="1">
+        <nom>Monstres</nom>
+        <classement>1</classement>
+        <platform>netflix</platform>
+    </serie>
+    <serie id="2">
+        <nom>Nobody Wants This</nom>
+        <classement>2</classement>
+        <platform>netflix</platform>
+    </serie>
+    <serie id="3">
+        <nom>Tomb Raider, la légende de Lara Croft</nom>
+        <classement>3</classement>
+        <platform>netflix</platform>
+    </serie>
+    <serie id="4">
+        <nom>Territory</nom>
+        <classement>4</classement>
+        <platform>netflix</platform>
+    </serie>
+    <serie id="5">
+        <nom>The Madness</nom>
+        <classement>5</classement>
+        <platform>netflix</platform>
+    </serie>
+</series>

@@ -86,22 +86,26 @@ namespace ListUtilisateurs
                     // 3. Le programme calcule l'âge de la personne en cours d'ajout.
                     TimeSpan interval = dateActuelle - naissanceDateTime;
                     age = (int)(interval.Days / 365.25);
-                    
+
+
+                    if (age <= 0)
+                    {
+                        Console.WriteLine("Date invalide.");
+                    }
                     // -Si l’âge est supérieur ou égal à 18(majeur) Le programme demande à l'utilisateur de saisir son métier.
-                    if (age >= 18)
+                    else if (age >= 18)
                     {
                         metierCouleur = DemanderInfoUtilisateur("Saisir un métier : ");
                     }
                     // - Si l’âge est inférieur à 18(mineur) Le programme demande à l'utilisateur de saisir sa couleur préférée.
-                    else
+                    else if(age > 0 || age < 18)
                     {
                         metierCouleur = DemanderInfoUtilisateur("Saisir une couleur préférée : ");
                     }
                 }
-                dateNaissance = age.ToString();
 
                 // 4.Lorsque toutes les informations sont saisies Le programme enregistre l'utilisateur
-                listeUtilisateurs.Add(new List<string>() { nomPrenom, dateNaissance, metierCouleur });
+                listeUtilisateurs.Add(new List<string>() { nomPrenom, dateNaissance + " (" + age.ToString() + ")", metierCouleur });
 
                 // 5.Le programme demande à l'utilisateur s'il souhaite ajouter une autre personne.
                 Console.Write("Souhaitez-vous ajouter une autre personne ? (o / n) : ");
@@ -114,10 +118,14 @@ namespace ListUtilisateurs
             // - Afficher tous les utilisateurs enregistrés en respectant ce format : -Nom Prénom - Date de naissance(âge) -Métier / Couleur préférée
             Console.WriteLine();
             Console.WriteLine("Liste des personnes enregistrées : ");
-            for (int i = 0; i < listeUtilisateurs.Count; i++)
+            if(age > 0)
             {
-                Console.WriteLine("- " + listeUtilisateurs[i][0] + " - " + listeUtilisateurs[i][1] + " ans" + " - " + listeUtilisateurs[i][2]);
+                for (int i = 0; i < listeUtilisateurs.Count; i++)
+                {
+                    Console.WriteLine("- " + listeUtilisateurs[i][0] + " - " + listeUtilisateurs[i][1] + " ans" + " - " + listeUtilisateurs[i][2]);
+                }
             }
+            
 
             // 6.Le programme remercie l'utilisateur et se termine
             Console.WriteLine();

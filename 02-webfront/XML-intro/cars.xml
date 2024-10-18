@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cars>
+    <car id="342">
+        <name>Mazda RX-7 GS</name>
+        <model>1980</model>
+        <cylinders>3</cylinders>
+        <horsepower>100</horsepower>
+        <weight>2420</weight>
+        <origin>JP</origin>
+    </car>
+    <car id="251">
+        <name>Mazda RX-4</name>
+        <model>1977</model>
+        <cylinders>3</cylinders>
+        <horsepower>100</horsepower>
+        <weight>2720</weight>
+        <origin>JP</origin>
+    </car>
+    <car id="119">
+        <name>Mazda RX3</name>
+        <model>1973</model>
+        <cylinders>3</cylinders>
+        <horsepower>90</horsepower>
+        <weight>2124</weight>
+        <origin>JP</origin>
+    </car>
+    <car id="79">
+        <name>Mazda RX2 Coupe</name>
+        <model>1972</model>
+        <cylinders>3</cylinders>
+        <horsepower>97</horsepower>
+        <weight>2330</weight>
+        <origin>JP</origin>
+    </car>
+    <car id="388">
+        <name>Mercury Lynx I</name>
+        <model>1982</model>
+        <cylinders>4</cylinders>
+        <horsepower>70</horsepower>
+        <weight>2125</weight>
+        <origin>US</origin>
+    </car>
+    <car id="387">
+        <name>Plymouth Horizon Miser</name>
+        <model>1982</model>
+        <cylinders>4</cylinders>
+        <horsepower>63</horsepower>
+        <weight>2125</weight>
+        <origin>US</origin>
+    </car>
+    <car id="404">
+        <name>Dodge Rampage</name>
+        <model>1982</model>
+        <cylinders>4</cylinders>
+        <horsepower>84</horsepower>
+        <weight>2295</weight>
+        <origin>US</origin>
+    </car>
+</cars>
