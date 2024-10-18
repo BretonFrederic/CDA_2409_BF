@@ -13,7 +13,7 @@
       <ul>
         <li>Accueil</li>
         <li>Boutique</li>
-        <li>Formulaire</li>
+        <li><a href="#form">Formulaire</a></li>
       </ul>
     </nav>
     <header>
@@ -44,7 +44,7 @@
         <img src="./images/plage.jpg" height="200" alt="Photo plage des caraïbes">
         <div>
             <h4>Tableaux</h4>
-            <table border="4" cellpadding="10" cellspacing="4" style="text-align: center;">
+            <table border="2" cellpadding="10" cellspacing="4" style="text-align: center;">
                 <!-- thead est pour l'entête du tableau -->
                 <thead>
                     <tr>
@@ -65,8 +65,66 @@
                 </tbody>
             </table>
         </div>
+        <div>
+          <h5><span>&#8594;</span> liens</h5>
+          <!-- _blank permet de créer un nouvel onglet -->
+          <a href="https://htmlcheatsheet.com" target="_blank">HTML CheatSheet</a>
+        </div>
+        <div>
+          <h6><i>&#128190;</i> Vidéos</h6>
+          <video src="./videos/video.mp4" height="200" autoplay muted loop></video>
+        </div>
+      </section>
+      <section id="form">
+        <h2>Les formulaires</h2>
+        <form action="">
+          <!-- "for et "id" permettent de lier le label à l'input -->
+          <label for="name">Nom</label>
+          <input type="text" id="name" placeholder="Entrer votre nom"/>
+          <br/>
+          <label for="age">Entrer votre age</label>
+          <input type="number" id="age" value="18"/>
+
+          <br>
+
+          <!-- input de type select -->
+           <label for="gender">Gender</label>
+           <select id="gender">
+            <option value="Homme">Homme</option>
+            <option selected="selected" value="Femme">Femme</option>
+            <option value="Autre">Autre</option>
+           </select>
+
+           <!-- input de type radio -->
+           <div>
+            <input type="radio" name="type" id="human"/>
+            <label for="human">Humain</label>
+
+            <input type="radio" name="type" id="dog"/>
+            <label for="dog">Chien</label>
+
+            <input type="radio" name="type" id="cat"/>
+            <label for="cat">Chat</label>
+           </div>
+           <textarea placeholder="Votre message..." cols="20" rows="5"></textarea>
+           <br>
+
+           <!-- input de type checkbox -->
+            <input type="checkbox" name="" id="cgv">
+           <label for="cgv">Accepter les conditiopns générales</label>
+
+           <!-- input de type submit permet de valider -->
+           <input type="submit" value="Valider formulaire">
+          </form>
+
+          <button>Ceci est un boutton</button>
       </section>
     </main>
-    <footer></footer>
+
+    <!-- mail et envoi de fichiers -->
+    <footer>
+      <a href="mailto:fred.codeur@gmail.com">Contactez moi !</a>
+      <a href="./notice.txt" download="Notice">Télécharger la notice</a>
+    </footer>
   </body>
 </html>
