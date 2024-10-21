@@ -36,16 +36,10 @@ footer{
 a{
     text-decoration: none;
     color: #CCCCFF;
-
 }
 
 ul{
     margin:0px;
-}
-
-ul a
-{
-    width: 100%;
 }
 
 ul li{
@@ -60,4 +54,57 @@ ul li{
 
 ul li:hover{
     background-color: #446844;
+}
+
+/* SECTION 2 */
+
+#liste-avions div{
+    display: flex;
+    justify-content: center;
+}
+
+#liste-avions div div{
+    background-color: white;
+    width: 846px;
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+}
+
+th, td{
+    padding: 10px 20px;
+    border-top: 2px solid #999999;
+}
+
+th{
+    border-right: 2px solid black;
+}
+
+table{
+    background-color: white;
+    border-collapse: collapse;
+    min-width: 846px;
+    width: auto;
+    color: black;
+    border: 3px solid black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.background-grey{
+    background-color: #eeeeee;
+}
+
+/* SECTION 3 */
+
+.gallerie a img{
+    max-width: 230px;
+    height: 150px;
+}
+
+#galleries-images div{
+    display: flex;
+    gap: 20px;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
 }
