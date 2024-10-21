@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #224422;
+}
+
+li{
+    padding: 0;
+    list-style: none;
+}
+
+#logo-avion{
+    height: 100px;
+}
+
+h1, h2{
+   color: #CCFFCC;
+}
+
+p{
+    color: #FFFFFF;
+}
+
+footer{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: #CCCCFF;
+
+}
+
+ul{
+    margin:0px;
+}
+
+ul a
+{
+    width: 100%;
+}
+
+ul li{
+
+    padding-left:1em;
+    padding-right:1em;
+    font-size: 18px;
+    padding-bottom:3px;
+    padding-top:3px;
+    background-color: #315031;
+}
+
+ul li:hover{
+    background-color: #446844;
+}
