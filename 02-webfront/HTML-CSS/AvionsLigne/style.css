@@ -1,0 +1,39 @@
+/* GENERAL */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+
+#container-header{
+    background-color: #224422;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#container-header img{
+    width: 100px;
+    height:100%;
+}
+
+#container-header h1{
+    height:100px;
+    color: #ccfecb;
+}
+
+#container-header ul{
+    height:100px;
+}
+
+li{
+    list-style: none;
+    color: #c2ccff;
+}
+
+/* MAIN */
+
+/* FOOTER */
