@@ -77,7 +77,7 @@ th, td{
 }
 
 th{
-    border-right: 2px solid black;
+    border-right: 2px solid rgb(42, 0, 139);
 }
 
 table{
@@ -96,15 +96,34 @@ table{
 
 /* SECTION 3 */
 
-.gallerie a img{
-    max-width: 230px;
+#container-gallerie{
+    display: flex;
+    justify-content: center;
+}
+
+.avion div img{
+    border: 1px solid black;
+    padding: 8px;
+    width: 230px;
     height: 150px;
 }
 
-#galleries-images div{
+.gallerie{
+    max-width: 862px;
+    margin: 8px;
+    background-color: white;
     display: flex;
-    gap: 20px;
-    flex-flow: row wrap;
     justify-content: space-around;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
 }
+
+.avion{
+    margin: 8px;
+    color: black;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: bolder;
+}
+
