@@ -1,0 +1,93 @@
+
+body{
+    display: grid;
+    grid-template-areas:"header header header"
+                        "nav main main"
+                        "nav footer footer";
+    gap: 10px;
+}
+
+header{
+    grid-area: header;
+    display: grid;
+    grid-template-areas: "h1 h1 aside";
+    gap: 10px;
+}
+
+header h1{
+    background-color:rgb(2, 138, 54);
+    grid-area: h1;
+    margin: 0;
+    align-content: center;
+    padding-left: 20px;
+    height: 50px;
+}
+
+header aside{
+    background-color:yellow;
+    grid-area: aside;
+    align-content: center;
+    padding-left: 20px;
+}
+
+
+nav{
+    background-color: blueviolet;
+    grid-area: nav;
+    width: 200px;
+}
+
+nav h2{
+    margin-left: 20px;
+}
+
+main{
+    background-color: blue;
+    grid-area: main;
+}
+
+footer{
+    background-color:cadetblue;
+    grid-area: footer;
+}
+
+footer p{
+    margin: 0;
+    margin-left: 20px;
+    height: 50px;
+    align-content: center;
+}
+
+/* ARTICLE */
+
+main{
+    background-color: brown;
+    display: flex;
+    justify-content:end;
+    position: relative;
+}
+
+.principal{
+    max-width: 98%;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    
+}
+
+.principal h2{
+    position: absolute;
+    margin: 0;
+    margin-left: 20px;
+    top: 20px;
+    left: 0;
+}
+
+.principal section{
+    background-color: aliceblue;
+    width: 500px;
+    height: 120px;
+    margin: 5px;
+}
