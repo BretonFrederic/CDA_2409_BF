@@ -1,4 +1,6 @@
 
+/* GRID */
+
 body{
     display: grid;
     grid-template-areas:"header header header"
@@ -15,26 +17,29 @@ header{
 }
 
 header h1{
-    background-color:rgb(2, 138, 54);
+    background-color: #BBCCFF;
     grid-area: h1;
     margin: 0;
     align-content: center;
     padding-left: 20px;
     height: 50px;
+    font-size: small;
 }
 
 header aside{
-    background-color:yellow;
+    background-color: #BBCCFF;
     grid-area: aside;
     align-content: center;
     padding-left: 20px;
+    font-weight: bolder;
 }
 
 
 nav{
-    background-color: blueviolet;
+    background-color:  #BBCCFF;
     grid-area: nav;
-    width: 200px;
+    width: 300px;
+    font-size:small;
 }
 
 nav h2{
@@ -42,12 +47,11 @@ nav h2{
 }
 
 main{
-    background-color: blue;
     grid-area: main;
 }
 
 footer{
-    background-color:cadetblue;
+    background-color: #BBCCFF;
     grid-area: footer;
 }
 
@@ -56,25 +60,26 @@ footer p{
     margin-left: 20px;
     height: 50px;
     align-content: center;
+    font-weight: bold;
 }
 
 /* ARTICLE */
 
 main{
-    background-color: brown;
+    background-color:  #BBCCFF;
     display: flex;
     justify-content:end;
     position: relative;
 }
 
 .principal{
-    max-width: 98%;
+    max-width: 94%;
     margin-top: 80px;
     margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
-
-    
+    justify-content:end;
+    margin-right: 2%;
 }
 
 .principal h2{
@@ -87,7 +92,10 @@ main{
 
 .principal section{
     background-color: aliceblue;
-    width: 500px;
-    height: 120px;
+    width: 46%;
     margin: 5px;
+}
+
+.principal section h3, p{
+    margin: 2%;
 }
