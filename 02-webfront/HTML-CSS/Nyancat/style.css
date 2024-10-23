@@ -1,0 +1,19 @@
+/* GENERAL */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* MAIN */
+
+.principale{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    background-color: blueviolet;
+    width: 500px;
+    height: 400px;
+}
