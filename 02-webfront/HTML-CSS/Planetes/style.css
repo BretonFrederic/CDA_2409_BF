@@ -1,0 +1,34 @@
+/* GENERAL */
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/* MAIN */
+
+.principale{
+    background-image: url("./img/univers.gif");
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    display: flex;
+    align-items: end;
+}
+
+#image1{
+    height: 240px;
+}
+
+#image2{
+    height: 320px;
+}
+
+#image3{
+    height: 400px;
+}
