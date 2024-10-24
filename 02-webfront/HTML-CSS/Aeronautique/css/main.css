@@ -1,0 +1,129 @@
+body{
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #224422;
+}
+
+li{
+    padding: 0;
+    list-style: none;
+}
+
+#logo-avion{
+    height: 100px;
+}
+
+h1, h2{
+   color: #CCFFCC;
+}
+
+p{
+    color: #FFFFFF;
+}
+
+footer{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: #CCCCFF;
+}
+
+ul{
+    margin:0px;
+}
+
+ul li{
+
+    padding-left:1em;
+    padding-right:1em;
+    font-size: 18px;
+    padding-bottom:3px;
+    padding-top:3px;
+    background-color: #315031;
+}
+
+ul li:hover{
+    background-color: #446844;
+}
+
+/* SECTION 2 */
+
+#liste-avions div{
+    display: flex;
+    justify-content: center;
+}
+
+#liste-avions div div{
+    background-color: white;
+    width: 846px;
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+}
+
+th, td{
+    padding: 10px 20px;
+    border-top: 2px solid #999999;
+}
+
+th{
+    border-right: 2px solid rgb(42, 0, 139);
+}
+
+table{
+    background-color: white;
+    border-collapse: collapse;
+    min-width: 846px;
+    width: auto;
+    color: black;
+    border: 3px solid black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.background-grey{
+    background-color: #eeeeee;
+}
+
+/* SECTION 3 */
+
+#container-gallerie{
+    display: flex;
+    justify-content: center;
+}
+
+.avion div img{
+    border: 1px solid black;
+    padding: 8px;
+    width: 230px;
+    height: 150px;
+}
+
+.gallerie{
+    max-width: 862px;
+    margin: 8px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.avion{
+    margin: 8px;
+    color: black;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: bolder;
+}
+

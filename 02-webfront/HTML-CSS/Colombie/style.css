@@ -1,0 +1,53 @@
+/* GENERAL */
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/* MAIN */
+
+/* Section flag-yellow */
+#flag-yellow{
+    height: 40vh;
+    background-color: #FCD116
+    ;
+}
+
+/* Section flag-blue */
+#flag-blue{
+    height: 20vh;
+    background-color: #003893;
+}
+
+/* Section flag-red */
+#flag-red{
+    height: 20vh;
+    background-color:  #CE1126;
+}
+
+/* Section flag-white */
+#flag-white{
+    height: 20vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#flag-white div{
+    display: flex;
+    justify-content: center;
+}
+
+#titre{
+    border-bottom: 1px solid black;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+.bold{
+    font-weight: bold;
+}
+

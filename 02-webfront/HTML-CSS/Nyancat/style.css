@@ -1,0 +1,55 @@
+/* GENERAL */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* MAIN */
+
+header{
+    background-color: blue;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-size:8vh;
+    font-weight: bolder;
+    color: white;
+}
+
+.principale{
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+}
+
+.container{
+    background-color: white;
+    border-radius: 3em;
+    min-width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#border-image{
+    background-color: blue;
+    border-radius: 2.8em;
+    width: 70vw;
+    margin: 0.8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    background-color:transparent;
+    width: 60vw;
+}
+
+footer{
+    background-color: blue;
+    height: 15vh;
+}
