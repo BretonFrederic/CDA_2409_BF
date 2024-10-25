@@ -65,3 +65,10 @@ header .wrapper h1{
     height: 50%;
     margin: 10px;
 }
+
+/*
+Notes : 
+préférer background-images pour ce cas plutôt que img dans html
+fit-content = total tailles des images avec leurs margin et padding et centre le tout
+
+*/
