@@ -1,0 +1,61 @@
+/* GENERAL */
+
+@font-face {
+    font-family: 'Goldman-Bold';
+    src: url("../assets/fonts/Goldman-Bold.ttf") format(truetype);
+}
+
+@font-face {
+    font-family: 'Oswald-Bold';
+    src: url("../assets/fonts/Oswald-Bold.ttf") format(truetype);
+}
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url("../assets/fonts/OpenSans-Regular.ttf") format(truetype);
+}
+
+@font-face {
+    font-family: 'RobotoCondensed-Regular';
+    src: url("../assets/fonts/RobotoCondensed-Regular.ttf") format(truetype);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    h1{
+        font-family: 'Goldman-Bold', Arial, Helvetica, sans-serif;
+    }
+    h2{
+        font-family: 'Oswald-Bold', Arial, Helvetica, sans-serif;
+        font-size: 64px;
+    }
+    p{
+        font-family: 'OpenSans-Regular', Arial, Helvetica, sans-serif;
+        font-size: 24px;
+        line-height: 200%;
+    }
+    button{
+        font-family: 'RobotoCondensed-Regular', Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        background-color: #5476db;
+        width: 355px;
+        height: 85px;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        border: none;
+    }
+    button:hover{
+        cursor: pointer;
+        background-color: black;
+    }
+}
+
+.wrapper{
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 200px;
+    display: flex;
+    justify-content: center;
+}
