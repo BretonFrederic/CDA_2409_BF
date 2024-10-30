@@ -20,7 +20,7 @@
     src: url("../assets/fonts/RobotoCondensed-Regular.ttf") format(truetype);
 }
 
-body{
+*{
     margin: 0;
     padding: 0;
     h1{
@@ -29,6 +29,14 @@ body{
     h2{
         font-family: 'Oswald-Bold', Arial, Helvetica, sans-serif;
         font-size: 64px;
+    }
+    h3{
+        font-family: 'Oswald-Bold', Arial, Helvetica, sans-serif;
+        font-size: 32px;
+    }
+    h4{
+        font-family: 'Oswald-Bold', Arial, Helvetica, sans-serif;
+        font-size: 28px; 
     }
     p{
         font-family: 'OpenSans-Regular', Arial, Helvetica, sans-serif;

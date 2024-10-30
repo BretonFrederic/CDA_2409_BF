@@ -1,0 +1,37 @@
+/* SERVICES */
+
+#services{
+    background-color: #ecf0fb;
+}
+
+#services h2{
+    text-align: center;
+}
+
+.services-items{
+    background-color: white;
+}
+
+.grid-services{
+    display: grid;
+    gap: 37px;
+    grid-template-columns: repeat(3, 450px);
+    margin: 105px 0;
+}
+
+#services #item-a{
+    margin: 0 0 22px 0;
+    grid-column: 1/-1;
+}
+
+.services-items{
+    padding: 25px;
+}
+
+.services-icons{
+    width: 101px;
+}
+
+#services h3{
+    margin-top: 0;
+}

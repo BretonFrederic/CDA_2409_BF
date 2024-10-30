@@ -8,17 +8,17 @@
 
 #home .container{
     position: relative;
-    width: 1520px;
+    width: 1424px;
     height: 1500px;
 }
 
 #certification{
     position: absolute;
-    left: 676px;
-    top: 700px;
+    right: 78px;
+    top: 660px;;
     background-color: white;
-    width: 672px;
-    height: 582px;
+    width: 622px;
+    height: 542px;
     padding: 44px;
 }
 
@@ -27,20 +27,20 @@
 }
 
 #certification p{
-    margin: 80px 0;
+    margin: 50px 0;
     line-height: 200%;
 }
 
 #home img{
     position: absolute;
-    top: 216px;
-    left: 86px;
-    width: 1350px;
+    top: 204px;
+    right: 78px;
+    width: 1266px;
 }
 
 #rect-1{
     position: absolute;
-    left:890px;
+    right: 0px;
     top: 122px;
     background-color: #b5c4f1;
     width: 630px;
@@ -50,8 +50,8 @@
 #rect-2{
     position: absolute;
     left: 0px;
-    top: 638px;
+    top: 600px;
     background-color: #b5c4f1;
-    width: 605px;
-    height: 565px;
+    width: 564px;
+    height: 526px;
 }

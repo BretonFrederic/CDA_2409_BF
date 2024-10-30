@@ -1,0 +1,44 @@
+#choose{
+    background-color: #ecf0fb;
+}
+
+.container-choose{
+    margin: 146px 0;
+    width: 1424px;
+    height: 580px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-choose article{
+    width: 662px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-choose article p{
+    margin: 22px 0;
+}
+
+#choose article a button{
+    margin: 22px 0;
+}
+
+.ace{
+    background-color: white;
+    width: 524px;
+    height: 115px;
+    padding: 30px 38px;
+}
+
+.container-choose div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ace p{
+    font-size: 18px;
+    line-height: 150%;
+}
