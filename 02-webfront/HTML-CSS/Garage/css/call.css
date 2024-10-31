@@ -1,0 +1,25 @@
+.container-call{
+    width: 1424px;
+    height: 594px;
+    display: flex;
+    align-items: center;
+}
+
+.container-call img{
+    height: 444px;
+    margin-right: 75px;
+}
+
+.container-call h2{
+    margin-bottom: 50px;
+}
+
+.container-call h2{
+    font-family: 'Figtree-VariableFont_wght', Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+#num-color{
+    color: #5476db;
+    font-weight:bold;
+}

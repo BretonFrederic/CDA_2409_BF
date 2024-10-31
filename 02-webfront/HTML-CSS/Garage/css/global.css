@@ -20,6 +20,11 @@
     src: url("../assets/fonts/RobotoCondensed-Regular.ttf") format(truetype);
 }
 
+@font-face {
+    font-family: 'Figtree-VariableFont_wght';
+    src: url("../assets/fonts/Figtree-VariableFont_wght.ttf") format(truetype);
+}
+
 *{
     margin: 0;
     padding: 0;
