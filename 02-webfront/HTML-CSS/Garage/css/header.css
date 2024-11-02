@@ -19,11 +19,6 @@ nav{
     text-decoration: none;
 }
 
-.brand h1{
-    font-size: 22px;
-    color: black;
-}
-
 .logo{
     width: 140px;
 }
@@ -52,4 +47,32 @@ nav{
     border-top: 2px solid transparent;
     color: #5476db;
     border-bottom: 2px solid #5476db;
+}
+
+@media only screen and (max-width:1920px){
+    nav{
+        width: 996px;
+    } 
+}
+
+@media only screen and (max-width:1280px) {
+    
+    nav{
+        width: 597.6px;
+    }
+    .logo{
+        width: 84px;
+    }
+    #menu li{
+        margin-left: 24px;
+    }
+    
+    #menu a{
+        font-size: 14px;
+    }
+    
+    #menu a:hover{
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid #5476db;
+    }
 }

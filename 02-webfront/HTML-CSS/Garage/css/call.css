@@ -23,3 +23,35 @@
     color: #5476db;
     font-weight:bold;
 }
+
+@media only screen and (max-width:1920px) {
+    .container-call{
+        width: 996px;
+        height: 415.8px;
+    }
+    
+    .container-call img{
+        height: 310.8px;
+        margin-right: 52.5px;
+    }
+    
+    .container-call h2{
+        margin-bottom: 35px;
+    }
+}
+
+@media only screen and (max-width:1280px) {
+    .container-call{
+        width: 597.6px;
+        height: 249.48px;
+    }
+    
+    .container-call img{
+        height: 186.48px;
+        margin-right: 31.5px;
+    }
+    
+    .container-call h2{
+        margin-bottom: 21px;
+    }
+}

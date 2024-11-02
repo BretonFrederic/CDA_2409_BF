@@ -35,3 +35,40 @@
 #services h3{
     margin-top: 0;
 }
+
+@media only screen and (max-width:1920px) {
+    
+    .grid-services{
+        gap: 25.5px;
+        grid-template-columns: repeat(3, 315px);
+        margin: 73.5px 0;
+    }
+    #services #item-a{
+        margin: 0 0 15.4px 0;
+        grid-column: 1/-1;
+    }
+    .services-items{
+        padding: 17.5px;
+    }
+    .services-icons{
+        width: 70.7px;
+    }
+}
+
+@media only screen and (max-width:1280px) {
+    .grid-services{
+        gap: 15.3px;
+        grid-template-columns: repeat(3, 189px);
+        margin: 44.1px 0;
+    }
+    #services #item-a{
+        margin: 0 0 9.24px 0;
+        grid-column: 1/-1;
+    }
+    .services-items{
+        padding: 10.5px;
+    }
+    .services-icons{
+        width: 42.42px;
+    }
+}

@@ -39,6 +39,58 @@
 }
 
 .ace p{
-    font-size: 18px;
+    font-size: 1.13em;
     line-height: 150%;
+}
+
+@media only screen and (max-width:1920px) {
+    .container-choose{
+        margin: 102.2px 0;
+        width: 996px;
+        height: 406px;
+    }
+    .container-choose article{
+        width: 463.4px;
+    }
+    .container-choose article p{
+        margin: 15.4px 0;
+    }
+    #choose article a button{
+        margin: 15.4px 0;
+    }
+    .ace{
+        width: 366.8px;
+        height: 80.5px;
+        padding: 21px 26.6px;
+    }
+    .ace p{
+        font-size: 0.8em;
+        line-height: 150%;
+    }
+}
+
+@media only screen and (max-width:1280px) {
+    .container-choose{
+        margin: 61.32px 0;
+        width: 597.6px;
+        height: 243.6px;
+    }
+    .container-choose article{
+        width: 278.04px;
+    }
+    .container-choose article p{
+        margin: 9.24px 0;
+    }
+    #choose article a button{
+        margin: 9.24px 0;
+    }
+    .ace{
+        width: 221.28px;
+        height: 48.3px;
+        padding: 12.6px 15px;
+    }
+    .ace p{
+        font-size: 0.5em;
+        line-height: 150%;
+    }
 }

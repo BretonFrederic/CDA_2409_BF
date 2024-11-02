@@ -30,23 +30,25 @@
     padding: 0;
     h1{
         font-family: 'Goldman-Bold', Arial, Helvetica, sans-serif;
+        font-size: 1.38em;
+        color: black;
     }
     h2{
         font-family: 'Oswald-Bold', Arial, Helvetica, sans-serif;
-        font-size: 64px;
+        font-size: 4em;
     }
     h3{
         font-family: 'Oswald-Bold', Arial, Helvetica, sans-serif;
-        font-size: 32px;
+        font-size: 2em;
     }
     h4{
         font-family: 'Oswald-Bold', Arial, Helvetica, sans-serif;
-        font-size: 28px; 
+        font-size: 1.75em; 
     }
     p{
         font-family: 'OpenSans-Regular', Arial, Helvetica, sans-serif;
-        font-size: 24px;
-        line-height: 200%;
+        font-size: 1.5em;
+        line-height: 2em;
     }
     button{
         font-family: 'RobotoCondensed-Regular', Arial, Helvetica, sans-serif;
@@ -54,7 +56,7 @@
         background-color: #5476db;
         width: 355px;
         height: 85px;
-        font-size: 18px;
+        font-size: 1.13em;
         font-weight: bold;
         color: white;
         border: none;
@@ -71,4 +73,58 @@
     padding: 0 200px;
     display: flex;
     justify-content: center;
+}
+
+@media only screen and (max-width:1920px) {
+    *{
+        h2{
+            font-size: 2.8em;
+        }
+        h3{
+            font-size: 1.4em;
+        }
+        h4{
+            font-size: 1.22em; 
+        }
+        p{
+            font-size: 1.05em;
+            /* line-height: 1.4em; */
+        }
+    }
+    button{
+        width: 248px;
+        height: 59px;
+        font-size: 0.8em;
+    }
+    .wrapper{
+        padding: 0 140px;
+    }
+}
+
+@media only screen and (max-width:1280px) {
+    *{
+        h1{
+            font-size: 0.9em;
+        }
+        h2{
+            font-size: 2em;
+        }
+        h3{
+            font-size: 1em;
+        }
+        h4{
+            font-size: 0.8em; 
+        }
+        p{
+            font-size: 0.7em;
+            /* line-height: 1.4em; */
+        }
+    }
+    button{
+        width: 148.8px;
+        height: 35.4px;
+    }
+    .wrapper{
+        padding: 0 84px;
+    }
 }
