@@ -115,8 +115,7 @@ main{
 }
 main div.container img{
     display: block;
-    max-width: 100%;
-    justify-self: center;
+    height: 90vh;
 }
 
 /* PRESENTATION */
@@ -124,6 +123,7 @@ main div.container img{
 section.presentation{
     background-image: url("./assets/img/background-presentation.jpg");
     background-size: 100vw;
+    height: 100vh;
     background-repeat: no-repeat;
 }
 
@@ -161,6 +161,7 @@ section.presentation div.presentation p{
 
 section.services{
     background-color: #8d8171;
+    height: 100vh;
 }
 
 section.services div.container{
@@ -199,11 +200,12 @@ section.services div.grid-services{
     margin-top: 0;
 }
 
-/* CARROUSEL */
+/* CERTIFICATION */
 
 section.certification{
     background-image: url("./assets/img/backgroundcarrousel.jpg");
     background-size: 100vw;
+    height: 100vh;
     background-repeat: no-repeat;
 }
 
