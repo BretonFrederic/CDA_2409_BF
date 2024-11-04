@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    padding: 1%;
+}
+
+.flag{
+    display: flex;
+    justify-content: center;
+    background-color: grey;
+}
+
+.flag img{
+    margin: 2em auto;
+    height: 4em;
+}
+
+table.towns{
+    border: 1px solid blue;
+}
