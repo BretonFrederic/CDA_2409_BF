@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./responsive.css">
     <title>Mon blog technique</title>
 </head>
 <body>
@@ -15,28 +16,43 @@
     <main>
         <div class="container">
             <nav>
-                <h2>Menu</h2>
+                <div>
+                    <h2>Menu</h2>
+                </div>
                 <ul>
-                    <li><a href="">Accueil</a></li>
-                    <li><a href="">Articles</a></li>
-                    <li><a href="">Tutoriaux</a></li>
-                    <li><a href="">A Propos</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="https://arfp.github.io/tp/web/html-css/31-basic-template" target="_blank">Accueil</a></li>
+                    <li><a href="https://arfp.github.io/tp/web/html-css/31-basic-template" target="_blank">Articles</a></li>
+                    <li><a href="https://arfp.github.io/tp/web/html-css/31-basic-template" target="_blank">Tutoriaux</a></li>
+                    <li><a href="https://arfp.github.io/tp/web/html-css/31-basic-template" target="_blank">A Propos</a></li>
+                    <li><a href="https://arfp.github.io/tp/web/html-css/31-basic-template" target="_blank">Contact</a></li>
                 </ul>
             </nav>
             <div class="welcome">
-                <h2>Bienvenue sur notre site</h2>
-                <div class="Article a1"></div>
-                <div class="Article a2"></div>
-                <div class="Article a3"></div>
-                <div class="Article a4"></div>
-                <div class="Article a5"></div>
-                <div class="Article a6"></div>
+                <div class="title-welcome">
+                    <h2>Bienvenue sur notre site</h2>
+                </div>
+                <div class="center">
+                    <div class="grid-articles">
+                        <div class="article a1">Article #1</div>
+                        <div class="article a2">Article #2</div>
+                        <div class="article a3">Article #3</div>
+                        <div class="article a4">Article #4</div>
+                        <div class="article a5">Article #5</div>
+                        <div class="article a6">Article #6</div>
+                    </div>
+                </div>
             </div>
             <aside>
                 <h3>Publicité</h3>
                 <img src="./img/basic-template-aside.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt facere libero at eaque modi aspernatur debitis molestiae. Sint esse amet distinctio autem quo? Vel adipisci maiores sint recusandae deleniti quos.</p>
+                <p>Ce livre sur l'algorithmique s'adresse à toute personne désireuse de maîtriser les bases essentielles de la programmation. 
+                    Pour apprendre à programmer, il faut d'abord comprendre ce qu'est vraiment un ordinateur, comment il fonctionne et surtout 
+                    comment il peut faire fonctionner des programmes, comment il manipule et stocke les données et les instructions, quelle 
+                    est sa logique. Alors, au fur et à mesure, le reste devient évidence : variables, conditions, boucles...
+                </p>
+                <button>
+                    <a href="https://www.amazon.fr/Algorithmique-Techniques-fondamentales-programmation-informatique/dp/2409012264" target="_blank">J'achète !</a>
+                </button>
             </aside>
         </div>
     </main>

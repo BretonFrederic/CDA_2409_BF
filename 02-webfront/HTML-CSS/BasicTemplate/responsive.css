@@ -1,0 +1,22 @@
+@media screen and (max-width:1480px) {
+    .grid-articles {
+        grid-template-columns: repeat(1, 415px);
+        grid-template-rows: repeat(6, 100px);
+        row-gap: 20px;
+    }
+}
+
+@media screen and (max-width:940px) {
+
+    main div.container{
+        position: relative;
+    }
+    nav{
+        position: absolute;
+        height: 100%;
+        left: -230px;
+    }
+    .title-welcome{
+        justify-content: center;
+    }
+}
