@@ -1,0 +1,16 @@
+/* GLOBAL */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+
+header{
+    background-image: url("../Images/Group\ 5\ \(2\).png");
+    background-size:cover;
+    min-width: 1440px;
+    height: 806px;
+    background-repeat: no-repeat;
+}
