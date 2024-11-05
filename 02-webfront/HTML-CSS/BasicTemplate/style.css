@@ -30,7 +30,7 @@ header {
 h1{
     text-align: center;
     color: white;
-    font-size: 28px;
+    font-size: 1.75em;
     padding-top: 10px;
 }
 
@@ -50,6 +50,12 @@ nav h2,nav a{
 
 nav h2{
     height: 50px;
+    justify-content: space-between;
+}
+
+.cross-icon{
+    display: none;
+    margin-top: 24px;
 }
 
 nav div{
@@ -88,6 +94,11 @@ main div.container{
     background-color: #212121;
     height: 50px;
 }
+.burger-icon{
+    display: none;
+    margin-top: 4px;
+}
+
 .welcome h2{
     background-color: #212121;
     margin-left: 16px;
@@ -102,7 +113,7 @@ main div.container{
 .grid-articles {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(2, 415px);
+    grid-template-columns: repeat(2, 21vw);
     grid-template-rows: repeat(4, 100px);
     column-gap: 130px;
     row-gap: 20px;
@@ -140,7 +151,7 @@ aside img{
 }
 
 aside p{
-    font-size: 11px;
+    font-size: 0.7em;
     text-align: justify;
     padding: 8px;
 }

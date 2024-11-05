@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./responsive.css">
+    <script src="script.js" defer></script>
     <title>Mon blog technique</title>
 </head>
 <body>
@@ -15,9 +16,14 @@
     </header>
     <main>
         <div class="container">
-            <nav>
+            <nav id="navigation">
                 <div>
-                    <h2>Menu</h2>
+                    <h2>Menu
+                        <div class="cross-icon" id="close-btn">
+                            <img src="./img/cross-icon.svg" alt="croix icône">
+                        </div>
+                    </h2>
+                    
                 </div>
                 <ul>
                     <li><a href="https://arfp.github.io/tp/web/html-css/31-basic-template" target="_blank">Accueil</a></li>
@@ -26,9 +32,12 @@
                     <li><a href="https://arfp.github.io/tp/web/html-css/31-basic-template" target="_blank">A Propos</a></li>
                     <li><a href="https://arfp.github.io/tp/web/html-css/31-basic-template" target="_blank">Contact</a></li>
                 </ul>
-            </nav>
+            </nav id="nav-side">
             <div class="welcome">
                 <div class="title-welcome">
+                    <div class="burger-icon" id="open-btn">
+                        <img src="./img/burger-icon.svg" alt="burger icône">
+                    </div>
                     <h2>Bienvenue sur notre site</h2>
                 </div>
                 <div class="center">
