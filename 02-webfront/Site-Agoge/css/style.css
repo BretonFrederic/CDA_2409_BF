@@ -1,0 +1,86 @@
+/* GLOBAL */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    max-width: 1440px;
+}
+
+header p, header h1, a{
+    font-family: 'Karantina', Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: white;
+}
+
+/* HEADER */
+
+header .container{
+    background-image: url("../img/Group\ 5\ \(2\).png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    height: 806px;
+    margin: 0 auto;
+}
+
+/* NAVBAR */
+
+header .navbar ul{
+    display: flex;
+    justify-content: center;
+    height: 54px;
+    padding-top: 23px;
+}
+
+header .navbar ul li{
+    margin-right: 10px;
+    margin-left: 10px;
+    list-style: none;
+}
+
+header .navbar ul li a{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+header .navbar ul li a:hover{
+    color: #26C1DC;
+}
+
+/* TITLE */
+
+header .title{
+    display: flex;
+    justify-content: center;
+    margin-top: 174px;
+}
+
+header h1{
+    font-size: 290px;
+    font-weight: 400;
+    color: #26C1DC;
+    text-shadow: 
+    7px 7px 0 white, 
+    -9px 7px 0 white,
+    -7px -9px 0 white,
+    9px -9px 0 white;
+    padding-right: 118px;
+    line-height: 330px;
+}
+
+header p{
+    font-size: 101px;
+    font-weight: 400;
+    width: 125px;
+    margin-right: 24px;
+}
+
+/* ARROW DOWN */
+
+header 
