@@ -3,12 +3,21 @@
     background-color: #26C1DC;
     display: flex;
     margin: 0 auto;
-    max-width: 1440px;
-    height: 903px;
+    justify-content:space-between;
+    align-items: center;
 }
 
-#concept .container .text-area{
-    max-width: 833px;
+#concept .text-area{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 62.708vw;
+    margin: 0 3.63%;
+}
+
+#concept .text-area .text{
+    max-width: 723px;
 }
 
 #concept h2,#concept p, #concept h3{
@@ -18,35 +27,36 @@
 }
 
 #concept h2{
-    font-family: 'Karantina', Arial, Helvetica, sans-serif;
-    font-size: 40px;
+    font-size: 2.5em;
     font-weight: 400;
-    margin: 80px 66px 20px 66px;
     text-align: end;
+    margin-bottom: 20px;
 }
 
 #concept p{
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 0.938em;
     font-weight: 400;
-    margin: 20px 66px 50px 66px;
     text-align: end;
     text-transform:lowercase;
+    margin-bottom: 40px;
 }
 
 #concept h3{
-    font-family: 'Karantina', Arial, Helvetica, sans-serif;
-    font-size: 30px;
+    font-size: 1.875em;
     font-weight: 400;
+    text-align: center;
+    margin-top: 80px;
 }
 
 #concept .center-icon{
     display: flex;
     justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 150px;
 }
 
-#concept h3{
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 25px;
+#concept .concept-img{
+    width: 42.153vw;
+    height: 62.708vw;
 }

@@ -1,7 +1,9 @@
 /* GLOBAL */
 
-@import "./programs.css";
 @import "./concept.css";
+@import "./programs.css";
+@import "./clubs.css";
+@import "./inscription.css";
 
 *{
     margin: 0;
@@ -9,12 +11,12 @@
 }
 
 .container{
-    max-width: 1440px;
+    /* max-width: 1440px; */
 }
 
 header p, header h1, a{
     font-family: 'Karantina', Arial, Helvetica, sans-serif;
-    font-size: 30px;
+    font-size: 1.875em;
     font-weight: 400;
     text-transform: uppercase;
     color: white;
@@ -36,7 +38,7 @@ header .container{
 header .navbar ul{
     display: flex;
     justify-content: center;
-    height: 54px;
+    height: 3.75vw;
     padding-top: 23px;
 }
 
@@ -48,7 +50,7 @@ header .navbar ul li{
 
 header .navbar ul li a{
     text-decoration: none;
-    font-size: 30px;
+    font-size: 1.875em;
     font-weight: 400;
 }
 
@@ -69,14 +71,14 @@ header .text{
 }
 
 header p{
-    font-size: 101px;
+    font-size: 6.313em;
     font-weight: 400;
     margin-right: 24px;
     text-align: end;
 }
 
 header h1{
-    font-size: 290px;
+    font-size: 18.125em;
     font-weight: 400;
     color: #26C1DC;
     text-shadow: 
