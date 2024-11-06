@@ -82,17 +82,18 @@ header h1{
     -7px -9px 0 white,
     9px -9px 0 white;
     padding-right: 140px;
-    line-height: 330px;
+    line-height: 320px;
 }
 
 /* ARROW DOWN */
 
-.center-icon{
+header .center-icon{
     display: flex;
     justify-content: center;
 }
 
-.center-icon img{
+header .center-icon img{
     background-color: #26C1DC;
     border-radius: 50%;
+    margin-right: 50px;
 }

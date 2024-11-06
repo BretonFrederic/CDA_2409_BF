@@ -1,0 +1,52 @@
+
+#concept .container{
+    background-color: #26C1DC;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1440px;
+    height: 903px;
+}
+
+#concept .container .text-area{
+    max-width: 833px;
+}
+
+#concept h2,#concept p, #concept h3{
+    font-family: 'Karantina', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: white;
+}
+
+#concept h2{
+    font-family: 'Karantina', Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin: 80px 66px 20px 66px;
+    text-align: end;
+}
+
+#concept p{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 20px 66px 50px 66px;
+    text-align: end;
+    text-transform:lowercase;
+}
+
+#concept h3{
+    font-family: 'Karantina', Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+#concept .center-icon{
+    display: flex;
+    justify-content: center;
+}
+
+#concept h3{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 25px;
+}
