@@ -1,3 +1,7 @@
+#programs .container{
+
+}
+
 #programs h2{
     text-align: center;
     font-family: 'Karantina', Arial, Helvetica, sans-serif;
@@ -5,7 +9,8 @@
     font-weight: 400;
     font-size: 70px;
     color: #26C1DC;
-    margin: 50px 0;
+    margin-top: 50px;
+    margin-bottom: 25px;
 }
 
 #programs p{
@@ -15,5 +20,17 @@
     font-weight: 400;
     font-size: 30px;
     color: #26C1DC;
-    margin-top: 50px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+#programs .cards-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 375px);
+    grid-template-rows: repeat(2, 695px);
+}
+
+#programs .card{
+    background-color: #26C1DC;
+
 }

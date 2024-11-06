@@ -1,5 +1,8 @@
 /* GLOBAL */
 
+@import "./programs.css";
+@import "./concept.css";
+
 *{
     margin: 0;
     padding: 0;
