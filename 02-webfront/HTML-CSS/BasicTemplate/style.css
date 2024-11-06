@@ -1,0 +1,174 @@
+/* GLOBAL */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+h1, h2, h3, p, a{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: #49accb;
+}
+
+/* HEADER */
+
+header {
+    background-image: url("./img/basic-template-banner.png");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size:cover;
+    height: 200px;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-size: 1.75em;
+    padding-top: 10px;
+}
+
+/* NAVBAR */
+
+nav{
+    background-color: #212121;
+}
+
+nav h2,nav a{
+    display: flex;
+    align-items: center;
+    width: 230px;
+    height: 38px;
+    padding-left: 10px;
+}
+
+nav h2{
+    height: 50px;
+    justify-content: space-between;
+}
+
+.cross-icon{
+    display: none;
+    margin-top: 24px;
+}
+
+nav div{
+    margin-bottom: 16px;
+    background-color: #303030;
+}
+
+li{
+    margin-bottom: 10px;
+    background-color: #303030;
+    list-style: none;
+    
+}
+
+a:hover{
+    color: aqua;
+}
+
+
+/* MAIN */
+
+
+main div.container{
+    display: flex;
+
+}
+
+.welcome{
+    background-color: #111111;
+    width: 100%;
+}
+
+.welcome .title-welcome{
+    display: flex;
+    align-items: center;
+    background-color: #212121;
+    height: 50px;
+}
+.burger-icon{
+    display: none;
+    margin-top: 4px;
+}
+
+.welcome h2{
+    background-color: #212121;
+    margin-left: 16px;
+
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+.grid-articles {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 21vw);
+    grid-template-rows: repeat(4, 100px);
+    column-gap: 130px;
+    row-gap: 20px;
+}
+
+.article{
+    background-color: #303030;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+/* ASIDE */
+
+aside{
+    padding: 0 5px;
+    background-color: #212121;
+    width: 240px;
+}
+
+aside h3{
+    text-align: center;
+    color: #49accb;
+    margin-top: 8px;
+    padding-top: 5px;
+    width: 230px;
+    height: 36px;
+    background-color: #303030;
+}
+
+aside img{
+    width: 230px;
+    margin-bottom: 10px;
+}
+
+aside p{
+    font-size: 0.7em;
+    text-align: justify;
+    padding: 8px;
+}
+
+button{
+    margin: 10px auto 74px;
+    border: none;
+}
+
+button a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 228px;
+    height: 28px;
+    background-color: #18bae0;
+    color: black;
+    font-weight: bold;
+    
+}

@@ -1,0 +1,35 @@
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 10em 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    gap: 8px;
+}
+
+header{
+    grid-column: 1/-1;/* prendre la largeur totale même si on rajout un élément */
+    display: grid;
+    gap: 8px;
+    h1{
+        grid-column: 1 / 6;
+        margin: 0px;
+        background-color: skyblue;
+    }
+    aside{
+        grid-column: 6/7;
+        background-color: skyblue;
+    }
+}
+
+nav{
+    grid-row: 2/4;
+    background-color: skyblue;
+}
+
+main{
+    background-color: skyblue;
+}
+
+footer{
+    background-color: skyblue;
+}
