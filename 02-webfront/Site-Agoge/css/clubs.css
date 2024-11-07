@@ -39,10 +39,60 @@
 }
 
 #clubs .map-clubs{
+    position: relative;
     background-image: url("../img/Carte\ de\ France.png");
     background-repeat: no-repeat;
     background-size: contain;
     width: 762px;
     height: 801px;
     margin-right: 50px;
+}
+
+#clubs .map-clubs .location{
+    position: absolute;
+    background-image: url("../img/location_icon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 86px;
+    height: 86px;
+}
+
+#clubs .map-clubs .Lilles-icon{
+    top: -27px;
+    left: 380px;
+}
+
+#clubs .map-clubs .Paris-icon{
+    top: 150px;
+    left: 388px;
+}
+
+#clubs .map-clubs .Rennes-icon{
+    top: 0px;
+    left: 0px;
+}
+
+#clubs .map-clubs .Strasbourg-icon{
+    top: 0px;
+    left: 0px;
+}
+
+#clubs .map-clubs .Nantes-icon{
+    top: 0px;
+    left: 0px;
+}
+
+#clubs .map-clubs .Lyon-icon{
+    top: 0px;
+    left: 0px;
+}
+
+#clubs .map-clubs .Marseille-icon{
+    top: 0px;
+    left: 0px;
+}
+
+#clubs .map-clubs .Bordeaux-icon{
+    top: 0px;
+    left: 0px;
 }
