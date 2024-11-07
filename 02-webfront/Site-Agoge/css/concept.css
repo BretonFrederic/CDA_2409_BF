@@ -11,13 +11,10 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
-    height: 62.708vw;
-    margin: 0 3.63%;
-}
-
-#concept .text-area .text{
+    height: 903px;
+    margin: 0 auto;
     max-width: 723px;
+    padding: 0 55px;
 }
 
 #concept h2,#concept p, #concept h3{
@@ -31,6 +28,7 @@
     font-weight: 400;
     text-align: end;
     margin-bottom: 20px;
+    margin-top: 80px;
 }
 
 #concept p{
@@ -53,10 +51,10 @@
     display: flex;
     justify-content: center;
     margin-top: 30px;
-    margin-bottom: 150px;
+    margin-bottom: auto;
 }
 
 #concept .concept-img{
-    width: 42.153vw;
-    height: 62.708vw;
+    width: 607px;
+    height: 903px;
 }

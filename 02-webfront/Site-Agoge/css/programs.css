@@ -26,14 +26,17 @@
 
 #programs .cards-grid{
     display: grid;
-    grid-template-columns: repeat(4, minmax(25%, auto));
-    grid-template-rows: repeat(2, 48.2vw);
+    grid-template-columns: repeat(4, minmax(36px, auto));
+    grid-template-rows: repeat(2, minmax(1fr, auto));
 }
 
 #programs .card{
     position: relative;
     background-repeat: no-repeat;
     background-size:cover;
+    max-width: 360px;
+    height: 48.264vw;
+    max-height: 695px;
 }
 
 #programs #card-1{
