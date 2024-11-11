@@ -1,9 +1,10 @@
 /* GLOBAL */
 
-@import "./concept.css";
-@import "./programs.css";
-@import "./clubs.css";
-@import "./inscription.css";
+@import url("./concept.css");
+@import url("./programs.css");
+@import url("./clubs.css");
+@import url("./inscription.css");
+@import url("./footer.css");
 
 *{
     margin: 0;
@@ -12,7 +13,8 @@
 }
 
 .container{
-    max-width: 100%;
+    max-width: 100vw;
+    min-width: 425px;
 }
 
 header p, header h1, a{
@@ -26,6 +28,7 @@ header p, header h1, a{
 /* HEADER */
 
 header .container{
+    position: relative;
     background-image: url("../img/Group\ 5\ \(2\).png");
     background-repeat: no-repeat;
     background-position: center;
@@ -39,7 +42,7 @@ header .container{
 header .navbar ul{
     display: flex;
     justify-content: center;
-    height: 54px;
+    height: 100%;
     padding-top: 23px;
 }
 
@@ -47,6 +50,7 @@ header .navbar ul li{
     margin-right: 10px;
     margin-left: 10px;
     list-style: none;
+    height: 54px;
 }
 
 header .navbar ul li a{
@@ -59,16 +63,28 @@ header .navbar ul li a:hover{
     color: #26C1DC;
 }
 
+/* BURGER-MENU */
+
+header .burger-menu{
+    display: none;
+}
+
+/* MENU-ICON */
+
+header .menu-icon{
+    position: absolute;
+    z-index: 99;
+    display:none;
+    top: 24px;
+    right: 64px;
+}
+
 /* TITLE */
 
 header .title{
     display: flex;
     justify-content: center;
-    margin-top: 174px;
-}
-
-header .text{
-    display: block;
+    padding-top: 174px;
 }
 
 header p{
@@ -87,19 +103,31 @@ header h1{
     -9px 7px 0 white,
     -7px -9px 0 white,
     9px -9px 0 white;
-    padding-right: 140px;
+    margin-right: 140px;
     line-height: 320px;
 }
 
 /* ARROW DOWN */
 
 header .center-icon{
+    position: relative;
     display: flex;
     justify-content: center;
 }
 
+header .center-icon svg{
+    position: absolute;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+
 header .center-icon img{
+    position: absolute;
     background-color: #26C1DC;
     border-radius: 50%;
     margin-right: 50px;
+}
+
+header .center-icon svg:hover{
+    cursor: pointer;
 }

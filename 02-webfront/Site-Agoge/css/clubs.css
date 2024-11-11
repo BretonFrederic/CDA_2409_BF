@@ -1,5 +1,4 @@
 #clubs .container{
-    /* margin: 0 auto; */
     background-color: #D9D9D9;
     padding-top: 100px;
     padding-bottom: 134px;
@@ -17,9 +16,8 @@
 }
 
 #clubs .text-clubs {
-    width: 304px;
     height: 846px;
-    padding: 0 40px;
+    padding: 0 8.335%;
 }
 
 #clubs .text-clubs p{
@@ -46,7 +44,7 @@
     background-size: contain;
     width: 762px;
     height: 801px;
-    margin-right: 50px;
+    margin-right: 3.472vw;
 }
 
 #clubs .map-clubs .location{
@@ -59,13 +57,13 @@
 }
 
 #clubs .map-clubs .Lille-icon{
-    top: -27px;
-    left: 426px;
+    top: -3.372%;
+    left: 55.906%;
 }
 
 #clubs .map-clubs .Paris-icon{
-    top: 150px;
-    left: 388px;
+    top: 18.728%;
+    left: 50.92%;
 }
 
 #clubs .map-clubs .Rennes-icon{
@@ -74,8 +72,8 @@
 }
 
 #clubs .map-clubs .Strasbourg-icon{
-    top: 180px;
-    left: 680px;
+    top: 22.473%;
+    left: 89.24%;
 }
 
 #clubs .map-clubs .Nantes-icon{

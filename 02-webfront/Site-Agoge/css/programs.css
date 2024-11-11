@@ -9,8 +9,8 @@
     font-weight: 400;
     font-size: 4.375em;
     color: #26C1DC;
-    margin-top: 50px;
-    margin-bottom: 25px;
+    margin-top: 3.473%;
+    margin-bottom: 1.737%;
 }
 
 #programs .title-programs p{
@@ -22,6 +22,10 @@
     color: #000000;
     margin-top: 25px;
     margin-bottom: 50px;
+}
+
+#programs .title-programs p br{
+    display:none;
 }
 
 #programs .cards-grid{
@@ -85,9 +89,8 @@
 }
 
 #programs .overlay .text-card{
-    width: 268px;
-    height: 357px;
-    margin-bottom: 30px;
+    width: 74.445%;
+    margin-bottom:  8.335%;
 }
 
 #programs .cards-grid h3{
@@ -109,4 +112,8 @@
 
 #programs .overlay:hover{
     opacity: 80%;
+}
+
+#programs #slider{
+    display: none;
 }
