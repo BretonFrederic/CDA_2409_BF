@@ -1,24 +1,40 @@
 /* VARIABLES */
 
+/* Burger menu */
 const itemsMenu = document.querySelectorAll('a.items-menu');
 const burgerMenu = document.querySelector('.burger-menu');
 const burgerIcon = document.querySelector('.burger-icon');
 const menuIcon = document.querySelector('.menu-icon');
 const crossIcon = document.querySelector('.cross-icon');
+
+/* Buttons scroll down */
 const arrowDown = document.querySelectorAll('.center-icon svg');
+
+/* Slide */
+const toggleBtns = document.querySelectorAll('.t-btn');
+const slide = ['./img/musculation.png', './img/cardio_training.png' ,'./img/natation.png', './img/boxing.png', './img/nutrition.png', './img/yoga.png', './img/zumba.png', './img/sauna.png'];
+const textSlide = document.querySelectorAll('.text-slide');
+let currentSlide = 0;
+let timer = 6000;
+let isAutoSlide = false;
 
 /* FUNCTIONS */
 
+/* Burger menu */
 function ShowHideMenu(){
     if(burgerMenu.style.top < "0px"){
         burgerMenu.style.top = "0px";
         crossIcon.style.visibility = "visible";
         burgerIcon.style.visibility = "hidden";
+        // document.querySelector('body').style.position="fixed";
+        document.querySelector('body').style.overflow="hidden";
     }
     else{
         burgerMenu.style.top = "-1260px";
         crossIcon.style.visibility = "hidden";
         burgerIcon.style.visibility = "visible";
+        // document.querySelector('body').style.position="static";
+        document.querySelector('body').style.overflow="visible";
     }
 }
 
@@ -26,10 +42,42 @@ function HideMenu(){
     burgerMenu.style.top = "-1260px";
     crossIcon.style.visibility = "hidden";
     burgerIcon.style.visibility = "visible";
+    // document.querySelector('body').style.position="static";
+    document.querySelector('body').style.overflow="visible";
 }
 
+/* Buttons scroll down */
 function MoveDown(){
     document.querySelector('#inscription').scrollIntoView();
+}
+
+/* Slide */
+function SelectSlide(_slideNumber){
+    console.log(timer);
+    document.querySelector('#slide').style.backgroundImage="url("+slide[_slideNumber]+")";
+    for(let i = 0; i < textSlide.length; i++){
+        textSlide[i].style.display="none";
+    }
+    textSlide[_slideNumber].style.display="block";
+    for(let i = 0; i < toggleBtns.length; i++){
+        toggleBtns[i].style.backgroundColor="white";
+    }
+    toggleBtns[_slideNumber].style.backgroundColor="#26C1DC";
+    currentSlide = _slideNumber;
+    isAutoSlide = false;
+}
+
+function AutoSlide(){
+    currentSlide+=1;
+    if(currentSlide>=8){
+        currentSlide=0;
+    }
+    SelectSlide(currentSlide);
+    isAutoSlide = true;
+}
+
+function ResetTimer(){
+    timer = 0;
 }
 
 /* PROCESSING */
@@ -45,6 +93,16 @@ for(let i = 0; i < itemsMenu.length; i++){
 for(let i = 0; i < arrowDown.length; i++){
 arrowDown[i].addEventListener('click', MoveDown);
 }
+
+/* Slider management */
+if (!isAutoSlide) {
+    timer = 6000;
+}
+if(window.innerWidth)
+setInterval("AutoSlide()", timer);
+
+
+
 
 // window.addEventListener('mousedown', Position);
 
