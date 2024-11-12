@@ -26,15 +26,14 @@ function ShowHideMenu(){
         burgerMenu.style.top = "0px";
         crossIcon.style.visibility = "visible";
         burgerIcon.style.visibility = "hidden";
-        // document.querySelector('body').style.position="fixed";
-        document.querySelector('body').style.overflow="hidden";
+        document.querySelector('nav').style.position="sticky";
+        document.querySelector('nav').style.top="0px";
     }
     else{
         burgerMenu.style.top = "-1260px";
         crossIcon.style.visibility = "hidden";
         burgerIcon.style.visibility = "visible";
-        // document.querySelector('body').style.position="static";
-        document.querySelector('body').style.overflow="visible";
+        document.querySelector('nav').style.position="static";
     }
 }
 
