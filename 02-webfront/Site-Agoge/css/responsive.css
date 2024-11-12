@@ -89,8 +89,8 @@
         position: absolute;
         top: -1260px;
         z-index: 99;
-        background-color: rgba(0, 0, 0, 0.96);
-        /* backdrop-filter: blur(2px); */
+        background-color: rgba(0, 0, 0, 0.664);
+        backdrop-filter: blur(2px);
         display: block ;
         text-align: center;
         width: 100%;
