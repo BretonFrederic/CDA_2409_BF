@@ -105,7 +105,7 @@ setInterval("AutoSlide()", timer);
 
 
 // window.addEventListener('mousedown', Position);
-
+// const Position = () => { ou bien :
 // function Position(){
 //     let arrowPosX = arrowDown.offsetLeft+(arrowDown.offsetWidth/2);
 //     let arrowPosY = arrowDown.offsetTop+(arrowDown.offsetHeight/2);
