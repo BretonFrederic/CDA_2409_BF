@@ -26,14 +26,16 @@ function ShowHideMenu(){
         burgerMenu.style.top = "0px";
         crossIcon.style.visibility = "visible";
         burgerIcon.style.visibility = "hidden";
-        document.querySelector('nav').style.position="sticky";
         document.querySelector('nav').style.top="0px";
+        menuIcon.style.position="fixed";
+        burgerMenu.style.position="fixed";
     }
     else{
         burgerMenu.style.top = "-1260px";
         crossIcon.style.visibility = "hidden";
         burgerIcon.style.visibility = "visible";
-        document.querySelector('nav').style.position="static";
+        menuIcon.style.position="absolute";
+        burgerMenu.style.position="absolute";
     }
 }
 
@@ -41,6 +43,7 @@ function HideMenu(){
     burgerMenu.style.top = "-1260px";
     crossIcon.style.visibility = "hidden";
     burgerIcon.style.visibility = "visible";
+    menuIcon.style.position="static";
     // document.querySelector('body').style.position="static";
     document.querySelector('body').style.overflow="visible";
 }
@@ -97,8 +100,14 @@ arrowDown[i].addEventListener('click', MoveDown);
 if (!isAutoSlide) {
     timer = 6000;
 }
-if(window.innerWidth)
+
 setInterval("AutoSlide()", timer);
+
+// addEventListener('resize', (ev)=>{
+//     let screenWidth = window.innerWidth;
+//     if(screenWidth > "980px")
+// })
+
 
 
 
