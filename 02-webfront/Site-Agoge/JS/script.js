@@ -26,7 +26,7 @@ function ShowHideMenu(){
         burgerMenu.style.top = "0px";
         crossIcon.style.visibility = "visible";
         burgerIcon.style.visibility = "hidden";
-        document.querySelector('nav').style.top="0px";
+        // document.querySelector('nav').style.top="0px";
         menuIcon.style.position="fixed";
         burgerMenu.style.position="fixed";
     }
