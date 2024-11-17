@@ -1,0 +1,122 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Goldman:wght@400;700&family=Limelight&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Goldman:wght@400;700&family=Imperial+Script&family=Limelight&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: rgba(0, 0, 0, 0.80);
+}
+header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%;
+}
+header img{
+    width: 4em;
+}
+header .logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    padding: 17px 0;
+    text-transform: uppercase;
+    font-family: 'Limelight',Arial, Helvetica, sans-serif;
+}
+header h1{
+    font-size: 36px;
+    color: white;
+}
+header li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 24px;
+}
+header a{
+    text-decoration: none;
+    font-family: 'Figtree', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    padding-bottom: 15px;
+}
+header a:hover{
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid white;
+}
+
+#Accueil{
+    background-image: url("./images/65-ford-mustang-4k.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+#Accueil .container{
+    height: 945px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+#Accueil h2{
+    font-family: 'Goldman',Arial, Helvetica, sans-serif;
+    color: white;
+    text-shadow: 5px 5px 1px black;
+    margin-bottom: 30px;
+}
+
+#Presentation{
+    background-color: #333333;
+}
+#Presentation .container{
+    height: 1080px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Presentation .background-img{
+    position: relative;
+    background-image: url("./images/background-presentation.jpg");
+    background-size: cover;
+    width: 800px;
+    height: 50%;
+    border: 4px solid white;
+    border-radius: 8px;
+}
+#Presentation .presentation-img{
+    position: absolute;
+    top: 330px;
+    left: -100px;
+    background-image: url("./images/presentation.jpg");
+    background-size: cover;
+    width: 180px;
+    height: 50%;
+    border: 4px solid white;
+    border-radius: 8px;
+}
+#Presentation .text-area{
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    top: -100px;
+    right: -100px;
+    width: 250px;
+    height: 60%;
+    border: 4px solid white;
+    border-radius: 8px;
+}
+#Presentation h2{
+    font-family: 'Oswald',Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+#Presentation p{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    line-height: 24px;
+    text-align: justify;
+    margin-top: 20px;
+}
