@@ -1,0 +1,104 @@
+#clubs .container{
+    background-color: #D9D9D9;
+    padding-top: 100px;
+    padding-bottom: 134px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#clubs .text-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42%;
+    height: 100%;
+}
+
+#clubs .text-clubs {
+    height: 846px;
+    padding: 0 8.335%;
+}
+
+#clubs .text-clubs p{
+    font-family: 'Karantina',Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.625em;
+    line-height: 1.25em;
+}
+
+#clubs .text-clubs ul{
+    margin-top: 80px;
+    margin-left: 40px;
+}
+
+#clubs .text-clubs li p{
+    line-height: 2.25em;
+}
+
+#clubs .map-clubs{
+    position: relative;
+    background-image: url("../img/Carte\ de\ France.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 762px;
+    height: 801px;
+    margin-right: 3.472vw;
+}
+
+#clubs .map-clubs .location{
+    position: absolute;
+    background-image: url("../img/location_icon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 86px;
+    height: 86px;
+}
+
+#clubs .map-clubs .Lille-icon{
+    top: -3.372%;
+    left: 55.906%;
+}
+
+#clubs .map-clubs .Paris-icon{
+    top: 18.728%;
+    left: 50.92%;
+}
+
+#clubs .map-clubs .Rennes-icon{
+    top: 143px;
+    left: 123px;
+}
+
+#clubs .map-clubs .Strasbourg-icon{
+    top: 22.473%;
+    left: 89.24%;
+}
+
+#clubs .map-clubs .Nantes-icon{
+    top: 251px;
+    left: 147px;
+}
+
+#clubs .map-clubs .Lyon-icon{
+    top: 403px;
+    left: 510px;
+}
+
+#clubs .map-clubs .Marseille-icon{
+    top: 628px;
+    left: 532px;
+}
+
+#clubs .map-clubs .Bordeaux-icon{
+    top: 450px;
+    left: 160px;
+}
+
+#clubs .map-clubs .location:hover{
+    cursor: pointer;
+    background-position: -5px -5px;
+    width: 96px;
+    height: 96px;
+}

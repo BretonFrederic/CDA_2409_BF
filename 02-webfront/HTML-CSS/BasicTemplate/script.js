@@ -8,8 +8,18 @@ burgerBtn.onclick = function OpenClose(){
 };
 
 crossBtn.onclick = function OpenClose(){
-    navbar.style.left = "-240px";
+    navbar.style.left = "-380px";
 };
+
+addEventListener('resize', BurgerMenuOff);
+
+function BurgerMenuOff(){
+    let screenWidth = window.innerWidth;
+    if(screenWidth >= 1280){
+        navbar.style.left = "-380px";
+        console.log("resize");
+    }
+}
 
 
 

@@ -6,7 +6,7 @@
     }
 }
 
-@media screen and (max-width:940px) {
+@media screen and (max-width:1280px) {
 
     main div.container{
         position: relative;
@@ -17,7 +17,7 @@
     nav{
         position: absolute;
         height: 100%;
-        left: -240px;
+        left: -380px;
         z-index: 1;
         transition: left 0.5s ease;
     }
@@ -31,7 +31,7 @@
 
 @media screen and (max-width:768px) {
     .grid-articles {
-        grid-template-columns: repeat(1, 80vw);
+        grid-template-columns: repeat(1, minmax(240px, 80vw));
     }
 
     main div.container{
@@ -44,7 +44,6 @@
     nav{
         position: absolute;
         height: 100%;
-        left: -240px;
     }
     .active{
         left: 0px;

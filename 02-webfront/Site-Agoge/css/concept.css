@@ -1,0 +1,87 @@
+
+#concept .container{
+    background-color: #26C1DC;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+#concept .text-area{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 903px;
+    margin: 0 auto;
+    padding: 0 3.473%;
+}
+
+#concept .text-area br{
+    display: none;
+}
+
+#concept h2,#concept p, #concept h3{
+    font-family: 'Karantina', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: white;
+}
+
+#concept h2{
+    font-size: 2.5em;
+    font-weight: 400;
+    text-align: end;
+    margin-bottom: 2.768%;
+    margin-top: 11.067%;
+}
+
+#concept p{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 0.938em;
+    font-weight: 400;
+    text-align: end;
+    text-transform:lowercase;
+    margin-bottom: 5.533%;
+    max-width: 723px;
+}
+
+#concept h3{
+    font-size: 1.875em;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 11.067%;
+}
+
+/* ARROW DOWN */
+
+#concept .center-icon{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: auto;
+}
+
+#concept .center-icon svg{
+    position: absolute;
+    border-radius: 50%;
+}
+
+#concept .center-icon img{
+    position: absolute;
+    background-color: #26C1DC;
+    border-radius: 50%;
+}
+
+#concept .center-icon svg:hover{
+    cursor: pointer;
+}
+
+/* CONCEPT IMAGE */
+
+#concept .concept-img{
+    background-image: url("../img/Group\ 4.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 607px;
+    height: 903px;
+}

@@ -1,5 +1,63 @@
 /* GLOBAL */
 
+@media (prefers-color-scheme: dark){
+    .welcome .title-welcome, aside, nav{
+        background-color: #212121;
+    }
+    h1, h2, p {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+    }
+    div.center{
+        background-color: black;
+    }
+    .article, li, aside h3, nav div {
+        background-color: #303030;
+    }
+    .article{
+        color: white;
+    }
+    h3{
+        color: #49accb;
+    }
+    button a{
+        background-color: #18bae0;
+        color: black;
+    }
+    a{
+        color: #49accb;
+    }
+}
+
+@media (prefers-color-scheme: light){
+    .welcome .title-welcome, aside, nav {
+        background-color: #b1b1b1;
+    }
+    h2, p {
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+    }
+    h1{
+        color: white;
+    }
+    div.center{
+        background-color: #cccccc;
+    }
+    .article, li, aside h3, nav div {
+        background-color: #bebebe;
+    }
+    h3{
+        color: #085e8f;
+    }
+    button a{
+        background-color: #085e8f;
+        color: white;
+    }
+    a{
+        color: #085e8f;
+    }
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -9,17 +67,21 @@
 
 h1, h2, h3, p, a{
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    /* color: white; */
 }
 
 a{
     text-decoration: none;
-    color: #49accb;
+    /* color: #49accb; */
+}
+
+.container{
+    min-width: 380px;
 }
 
 /* HEADER */
 
-header {
+header .container{
     background-image: url("./img/basic-template-banner.png");
     background-repeat: no-repeat;
     background-position: 50%;
@@ -29,23 +91,20 @@ header {
 
 h1{
     text-align: center;
-    color: white;
+    /* color: white; */
     font-size: 1.75em;
     padding-top: 10px;
 }
 
 /* NAVBAR */
 
-nav{
-    background-color: #212121;
-}
-
 nav h2,nav a{
     display: flex;
     align-items: center;
-    width: 230px;
+    width: 360px;
     height: 38px;
     padding-left: 10px;
+    padding-right: 10px;
 }
 
 nav h2{
@@ -60,12 +119,12 @@ nav h2{
 
 nav div{
     margin-bottom: 16px;
-    background-color: #303030;
+    /* background-color: #303030; */
 }
 
 li{
     margin-bottom: 10px;
-    background-color: #303030;
+    /* background-color: #303030; */
     list-style: none;
     
 }
@@ -84,14 +143,14 @@ main div.container{
 }
 
 .welcome{
-    background-color: #111111;
+    /* background-color: #111111; */
     width: 100%;
 }
 
 .welcome .title-welcome{
     display: flex;
     align-items: center;
-    background-color: #212121;
+    /* background-color: #212121; */
     height: 50px;
 }
 .burger-icon{
@@ -100,7 +159,7 @@ main div.container{
 }
 
 .welcome h2{
-    background-color: #212121;
+    /* background-color: #212121; */
     margin-left: 16px;
 
 }
@@ -120,9 +179,9 @@ main div.container{
 }
 
 .article{
-    background-color: #303030;
+    /* background-color: #303030; */
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    /* color: white; */
     padding-top: 5px;
     padding-left: 5px;
 }
@@ -131,18 +190,18 @@ main div.container{
 
 aside{
     padding: 0 5px;
-    background-color: #212121;
+    /* background-color: #212121; */
     width: 240px;
 }
 
 aside h3{
     text-align: center;
-    color: #49accb;
+    /* color: #49accb; */
     margin-top: 8px;
     padding-top: 5px;
     width: 230px;
     height: 36px;
-    background-color: #303030;
+    /* background-color: #303030; */
 }
 
 aside img{
@@ -167,8 +226,8 @@ button a{
     align-items: center;
     width: 228px;
     height: 28px;
-    background-color: #18bae0;
-    color: black;
+    /* background-color: #18bae0; */
+    /* color: black; */
     font-weight: bold;
     
 }

@@ -1,0 +1,134 @@
+/* GLOBAL */
+
+@import url("./concept.css");
+@import url("./programs.css");
+@import url("./clubs.css");
+@import url("./inscription.css");
+@import url("./footer.css");
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.container{
+    max-width: 100vw;
+    min-width: 425px;
+    overflow: hidden;
+}
+
+header p, header h1, a{
+    font-family: 'Karantina', Arial, Helvetica, sans-serif;
+    font-size: 1.875em;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: white;
+}
+
+/* HEADER */
+
+header .container{
+    position: relative;
+    background-image: url("../img/Group\ 5\ \(2\).png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    height: 806px;
+    margin: 0 auto;
+}
+
+/* NAVBAR */
+
+header .navbar ul{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    padding-top: 23px;
+}
+
+header .navbar ul li{
+    margin-right: 10px;
+    margin-left: 10px;
+    list-style: none;
+    height: 54px;
+}
+
+header .navbar ul li a{
+    text-decoration: none;
+    font-size: 1.875em;
+    font-weight: 400;
+}
+
+header .navbar ul li a:hover{
+    color: #26C1DC;
+}
+
+/* BURGER-MENU */
+
+header .burger-menu{
+    display: none;
+}
+
+/* MENU-ICON */
+
+header .menu-icon{
+    position: absolute;
+    z-index: 99;
+    display:none;
+    top: 24px;
+    right: 64px;
+}
+
+/* TITLE */
+
+header .title{
+    display: flex;
+    justify-content: center;
+    padding-top: 174px;
+}
+
+header p{
+    font-size: 6.313em;
+    font-weight: 400;
+    margin-right: 24px;
+    text-align: end;
+}
+
+header h1{
+    font-size: 18.125em;
+    font-weight: 400;
+    color: #26C1DC;
+    text-shadow: 
+    7px 7px 0 white, 
+    -9px 7px 0 white,
+    -7px -9px 0 white,
+    9px -9px 0 white;
+    margin-right: 140px;
+    line-height: 320px;
+}
+
+/* ARROW DOWN */
+
+header .center-icon{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+header .center-icon svg{
+    position: absolute;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+
+header .center-icon img{
+    position: absolute;
+    background-color: #26C1DC;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+
+header .center-icon svg:hover{
+    cursor: pointer;
+}
