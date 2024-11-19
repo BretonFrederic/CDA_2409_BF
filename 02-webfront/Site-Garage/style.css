@@ -132,7 +132,7 @@ header a:hover{
     background-color: #333333;
 }
 #Presentation .container{
-    height: 1080px;
+    height: 950px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -233,7 +233,7 @@ section.certification{
 }
 
 section.certification div.container{
-    height: 1200px;
+    height: 950px;
     display: flex;
     justify-content: space-around;
     align-items: end;
@@ -269,74 +269,16 @@ article.certification p{
 
 /* QUESTIONS */
 
-section.questions{
-    background-color: #8d9595;
-}
-
-section.questions div.container{
-    display: flex;
-    justify-content: center;
-}
-
-section.questions div.questions{
-    width: 1424px;
-    height: 790px;
-    padding-top: 100px;
-    overflow: hidden;
-}
-
-div.questions h2{
+#faq h2{
     text-align: center;
 }
 
-div.questions p{
-    text-align:center;
-}
-
-.common-questions, .answers{
-    width: 1348px;
-}
-
-.common-questions{
-    background-color: #b5c4f1;
-    color: white;
-    margin-top: 10px;
-    padding: 0 38px;
-    height: 95px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    p{
-        font-size: 2.5em;
-        font-weight: bold;
-    }
+#faq p{
+    text-align: center;
 }
 
 .question-area{
-    position: relative;
-    height: 95px;
-}
-
-.answers{
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    overflow: hidden;
-    background-color: white;
-    padding: 38px;
-    p{
-        text-align: start;
-    }
-}
-
-.question-area:hover{
-    :nth-child(2){
-        z-index: 0;
-        top: 95px;
-    }
-    overflow: hidden;
-    height: 315px;
-    transition: height 0.4s ease-out;
+    background-color: aqua;
 }
 
 /* CONTACT */
