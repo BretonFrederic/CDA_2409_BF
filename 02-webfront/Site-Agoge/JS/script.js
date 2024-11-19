@@ -49,8 +49,11 @@ function HideMenu(){
 }
 
 /* Buttons scroll down */
-function MoveDown(){
-    document.querySelector('#inscription').scrollIntoView();
+function MoveToConcept(){
+    document.querySelector('#concept').scrollIntoView();
+}
+function MoveToPrograms(){
+    document.querySelector('#programs').scrollIntoView();
 }
 
 /* Slide */
@@ -92,9 +95,8 @@ for(let i = 0; i < itemsMenu.length; i++){
 }
 
 /* ArrowDown management */
-for(let i = 0; i < arrowDown.length; i++){
-arrowDown[i].addEventListener('click', MoveDown);
-}
+arrowDown[0].addEventListener('click', MoveToConcept);
+arrowDown[1].addEventListener('click', MoveToPrograms);
 
 /* Slider management */
 if (!isAutoSlide) {

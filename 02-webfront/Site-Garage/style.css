@@ -1,0 +1,378 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Goldman:wght@400;700&family=Limelight&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Goldman:wght@400;700&family=Imperial+Script&family=Limelight&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+    font-size: 2em;
+}
+h3{
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+    font-size: 2em;
+}
+h4{
+    font-family: 'Oswald-Bold', Arial, Helvetica, sans-serif;
+    font-size: 1.75em; 
+}
+p{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+button{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    background-color: #5476db;
+    width: 240px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+button:hover{
+    cursor: pointer;
+    background-color: black;
+}
+
+header{
+    background-color: rgba(0, 0, 0, 0.80);
+}
+header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%;
+}
+header img{
+    width: 4em;
+}
+header .logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    padding: 17px 0;
+    text-transform: uppercase;
+    font-family: 'Limelight',Arial, Helvetica, sans-serif;
+}
+header h1{
+    font-size: 36px;
+    color: white;
+}
+header li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 24px;
+}
+header a{
+    text-decoration: none;
+    font-family: 'Figtree', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    padding-bottom: 15px;
+}
+header a:hover{
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid white;
+}
+
+#Accueil{
+    background-image: url("./images/65-ford-mustang-4k.jpg");
+    background-size: cover;
+    background-position: 86%;
+    height: 945px;
+}
+#Accueil .container{
+    height: 945px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+#Accueil h2{
+    font-family: 'Goldman',Arial, Helvetica, sans-serif;
+    color: white;
+    text-shadow: 5px 5px 1px black;
+    margin-bottom: 30px;
+}
+
+#Presentation{
+    background-color: #333333;
+}
+#Presentation .container{
+    height: 1080px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Presentation .background-img{
+    position: relative;
+    background-image: url("./images/background-presentation.jpg");
+    background-position: 35%;
+    background-size: cover;
+    width: 74%;
+    min-width: 555px;
+    max-width: 960px;
+    height: 60%;
+    /* border: 2px solid white; */
+}
+#Presentation .presentation-img{
+    position: absolute;
+    top: 330px;
+    left: -100px;
+    background-image: url("./images/presentation.jpg");
+    background-size: cover;
+    width: 260px;
+    height: 60%;
+    border: 2px solid white;
+}
+#Presentation .text-area{
+    position: absolute;
+    background-color:rgba(244, 244, 244, 0.8);
+    top: -100px;
+    right: -100px;
+    text-align: center;
+    width: 380px;
+    /* height: 100%; */
+    border: 2px solid white;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+}
+#Presentation h2{
+    font-family: 'Oswald',Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+#Presentation p{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    text-align: justify;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+/* SERVICES */
+
+section.services{
+    background-color: #8d9595;
+    height: 100vh;
+}
+
+section.services div.container{
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+}
+
+section.services h2.item-a{
+    height: 100px;
+    text-align: center;
+    align-content: center;
+    background-color: rgba(244, 244, 244, 0.8);
+    grid-column: 1/-1;
+}
+
+div.services-items{
+    background-color: rgba(244, 244, 244, 0.8);
+}
+
+section.services div.grid-services{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 25vw);
+}
+
+.services-items{
+    padding: 25px;
+}
+
+.services-icons{
+    width: 101px;
+}
+
+#services h3{
+    margin-top: 0;
+}
+
+/* CERTIFICATION */
+
+section.certification{
+    background-image: url("./images/backgroundcarrousel.jpg");
+    background-size: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+section.certification div.container{
+    position: relative;
+    height: 1200px;
+}
+
+section.certification .certification{
+    position: absolute;
+}
+
+section.certification div.certification{
+    background-color: blue;
+    top: 400px;
+    left: 0px;
+    width: 500px;
+    height: 400px;
+}
+
+article.certification{
+    top: 300px;
+    right: 0px;
+    text-align: center;
+    width: 380px;
+    border: 5px solid white;
+    background-color:rgba(244, 244, 244, 0.8);
+    color: rgb(0, 0, 0);
+    padding: 20px;
+}
+
+article.certification h2{
+    margin: 20px auto 20px;
+    text-align: start;
+}
+
+article.certification p{
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* QUESTIONS */
+
+section.questions{
+    background-color: #8d9595;
+}
+
+section.questions div.container{
+    display: flex;
+    justify-content: center;
+}
+
+section.questions div.questions{
+    width: 1424px;
+    height: 790px;
+    padding-top: 150px;
+    overflow: hidden;
+}
+
+div.questions h2{
+    text-align: center;
+}
+
+div.questions p{
+    text-align:center;
+}
+
+.common-questions, .answers{
+    width: 1348px;
+}
+
+.common-questions{
+    background-color: #b5c4f1;
+    color: white;
+    margin-top: 10px;
+    padding: 0 38px;
+    height: 95px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p{
+        font-size: 2.5em;
+        font-weight: bold;
+    }
+}
+
+.question-area{
+    position: relative;
+    height: 95px;
+}
+
+.answers{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    overflow: hidden;
+    background-color: white;
+    padding: 38px;
+    p{
+        text-align: start;
+    }
+}
+
+.question-area:hover{
+    :nth-child(2){
+        z-index: 0;
+        top: 95px;
+    }
+    overflow: hidden;
+    height: 315px;
+    transition: height 0.4s ease-out;
+}
+
+/* CONTACT */
+
+section.contact div.container{
+    display: flex;
+    justify-content: center;
+}
+
+section.contact div.contact{
+    margin: 100px auto;
+}
+
+form *{
+    display: block;
+}
+
+/* MAP */
+
+section.map div.container{
+    display: flex;
+    justify-content: center;
+}
+
+section.map div.map{
+    background-color: blueviolet;
+    margin: 100px auto;
+    width: 80vw;
+    height: 30vh;
+}
+
+/* FOOTER */
+
+footer{
+    background-color: #8d8171;
+}
+
+footer div.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer div.container div.logo{
+    display: flex;
+}
+
+footer .logo{
+    font-family: 'Limelight',Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    height: 100px;
+    align-content: center;
+}
+
+@media screen and(min-width:768px) {
+    
+}
