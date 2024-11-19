@@ -113,7 +113,7 @@ header a:hover{
     background-position: 86%;
 }
 #Accueil .container{
-    height: 65vw;
+    height: 930px;
     display: flex;
     justify-content: center;
     align-items: end;
@@ -254,7 +254,7 @@ section.certification div.certification{
     background-color: blue;
     width: 500px;
     height: 400px;
-    margin-bottom: 280px;
+    margin-bottom: 380px;
 }
 
 article.certification h2{
@@ -269,9 +269,14 @@ article.certification p{
 
 /* QUESTIONS */
 
+#faq{
+    background-color: #8d9595;
+}
+
 #faq .container{
     display: flex;
     justify-content: center;
+    padding: 80px 0;
 }
 
 .questions{
@@ -282,15 +287,11 @@ article.certification p{
 
 #faq h2{
     text-align: center;
-}
-
-#faq p{
-    text-align: center;
+    margin-bottom: 50px;
 }
 
 .question-area{
     background-color: aqua;
-    padding: 0 10px;
 }
 
 .common-questions{
@@ -298,6 +299,8 @@ article.certification p{
     justify-content: space-between;
     align-items: center;
     background-color: blueviolet;
+    height: 60px;
+    padding: 0 20px;
 }
 
 .common-questions p{
@@ -307,6 +310,11 @@ article.certification p{
 
 .answers{
     background-color: red;
+}
+
+.answers p{
+    text-align: left;
+    padding: 20px;
 }
 
 /* CONTACT */
