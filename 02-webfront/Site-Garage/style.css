@@ -269,6 +269,17 @@ article.certification p{
 
 /* QUESTIONS */
 
+#faq .container{
+    display: flex;
+    justify-content: center;
+}
+
+.questions{
+    width: 80%;
+    max-width: 1440px;
+    min-width: 380px;
+}
+
 #faq h2{
     text-align: center;
 }
@@ -279,6 +290,23 @@ article.certification p{
 
 .question-area{
     background-color: aqua;
+    padding: 0 10px;
+}
+
+.common-questions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blueviolet;
+}
+
+.common-questions p{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.answers{
+    background-color: red;
 }
 
 /* CONTACT */
