@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Goldman:wght@400;700&family=Limelight&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Goldman:wght@400;700&family=Imperial+Script&family=Limelight&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url("./responsive.css");
 
 *{
     margin: 0;
@@ -43,16 +43,19 @@ button:hover{
     background-color: black;
 }
 
+/* HEADER */
+
 header{
     background-color: rgba(0, 0, 0, 0.80);
 }
 header .container{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 4%;
+    padding: 0 24px;
 }
-header img{
+.logo img{
     width: 4em;
 }
 header .logo{
@@ -86,24 +89,44 @@ header a:hover{
     border-bottom: 5px solid white;
 }
 
+/* BURGER MENU */
+
+.burger-menu{
+    display: none;
+}
+
+/* MENU-ICON */
+
+.menu-icon{
+    position: absolute;
+    z-index: 99;
+    display:none;
+    top: 36px;
+    right: 64px;
+}
+
+/* Accueil */
+
 #Accueil{
     background-image: url("./images/65-ford-mustang-4k.jpg");
     background-size: cover;
     background-position: 86%;
-    height: 945px;
 }
 #Accueil .container{
-    height: 945px;
+    height: 65vw;
     display: flex;
     justify-content: center;
     align-items: end;
 }
 #Accueil h2{
     font-family: 'Goldman',Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
     color: white;
     text-shadow: 5px 5px 1px black;
     margin-bottom: 30px;
 }
+
+/* PRESENTATION */
 
 #Presentation{
     background-color: #333333;
@@ -163,7 +186,6 @@ header a:hover{
 
 section.services{
     background-color: #8d9595;
-    height: 100vh;
 }
 
 section.services div.container{
@@ -206,37 +228,33 @@ section.services div.grid-services{
 
 section.certification{
     background-image: url("./images/backgroundcarrousel.jpg");
-    background-size: 100vw;
-    height: 100vh;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 section.certification div.container{
-    position: relative;
     height: 1200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    padding-bottom: 100px;
 }
 
 section.certification .certification{
-    position: absolute;
+    text-align: center;
+    width: 380px;
+    height: 320px;
+    border: 2px solid white;
+    background-color:rgba(244, 244, 244, 0.8);
+    color: rgb(0, 0, 0);
+    padding: 20px;
 }
 
 section.certification div.certification{
     background-color: blue;
-    top: 400px;
-    left: 0px;
     width: 500px;
     height: 400px;
-}
-
-article.certification{
-    top: 300px;
-    right: 0px;
-    text-align: center;
-    width: 380px;
-    border: 5px solid white;
-    background-color:rgba(244, 244, 244, 0.8);
-    color: rgb(0, 0, 0);
-    padding: 20px;
+    margin-bottom: 280px;
 }
 
 article.certification h2{
@@ -245,7 +263,7 @@ article.certification h2{
 }
 
 article.certification p{
-    margin-bottom: 20px;
+    margin-bottom: 60px;
     text-align: justify;
 }
 
@@ -263,7 +281,7 @@ section.questions div.container{
 section.questions div.questions{
     width: 1424px;
     height: 790px;
-    padding-top: 150px;
+    padding-top: 100px;
     overflow: hidden;
 }
 
