@@ -37,6 +37,7 @@ button{
     color: white;
     border: none;
     border-radius: 8px;
+    align-self: center;
 }
 button:hover{
     cursor: pointer;
@@ -290,10 +291,6 @@ article.certification p{
     margin-bottom: 50px;
 }
 
-.question-area{
-    /* background-color: aqua; */
-}
-
 .common-questions{
     display: flex;
     justify-content: space-between;
@@ -332,17 +329,47 @@ article.certification p{
 
 /* CONTACT */
 
-section.contact div.container{
+#contact .container{
     display: flex;
     justify-content: center;
+    padding: 80px 0;
+    background-color: #333333;
 }
 
-section.contact div.contact{
-    margin: 100px auto;
+#contact h2{
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
 }
 
-form *{
-    display: block;
+form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+form label{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    padding: 10px 0;
+}
+
+form input{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 10px;
+}
+
+#contact textarea{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 74vw;
+    min-width: 380px;
+    max-width: 700px;
 }
 
 /* MAP */
