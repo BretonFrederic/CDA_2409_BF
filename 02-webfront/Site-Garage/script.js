@@ -13,6 +13,6 @@ for(let i = 0; i < questions.length; i++){
             });
         });
         answers[i].style.display="block";
-        document.querySelectorAll('.common-questions p')[i].innerHTML="--";
+        document.querySelectorAll('.common-questions p')[i].innerHTML="-";
     });
 }

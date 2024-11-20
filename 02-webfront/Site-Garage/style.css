@@ -280,23 +280,31 @@ article.certification p{
     padding: 80px 0;
 }
 
-.questions{
-    width: 80%;
-    max-width: 1440px;
-    min-width: 380px;
-}
+/* .questions{
+
+} */
 
 #faq h2{
     text-align: center;
     margin-bottom: 50px;
 }
 
+.question-area{
+    width: 74vw;
+    max-width: 980px;
+    min-width: 350px;
+}
+
 .common-questions{
     display: flex;
     justify-content: space-between;
     background-color: #5476db;
-    height: 60px;
     padding: 0 20px;
+    border-radius: 8px;
+}
+
+#faq h4{
+    margin-right: 50px;
 }
 
 .common-questions :hover{
@@ -316,6 +324,7 @@ article.certification p{
 .answers{
     background-color: white;
     display: none;
+    border-radius: 8px;
 }
 
 /* .active{
@@ -368,28 +377,33 @@ form input{
     padding: 10px;
     margin-bottom: 20px;
     width: 74vw;
-    min-width: 380px;
-    max-width: 700px;
+    min-width: 284px;
+    max-width: 500px;
 }
 
 /* MAP */
 
-section.map div.container{
+#map div.container{
     display: flex;
     justify-content: center;
+    background-color: #8d9595;
+    padding: 80px 0;
 }
 
-section.map div.map{
-    background-color: blueviolet;
-    margin: 100px auto;
-    width: 80vw;
-    height: 30vh;
+#map iframe{
+    border-radius: 8px;
+    width: 74vw;
+    min-width: 304px;
+    max-width:800px;
+    height:54vw;
+    max-height: 600px;
+    border:0;
 }
 
 /* FOOTER */
 
 footer{
-    background-color: #8d8171;
+    background-color: #333333;
 }
 
 footer div.container{
@@ -405,8 +419,13 @@ footer div.container div.logo{
 footer .logo{
     font-family: 'Limelight',Arial, Helvetica, sans-serif;
     font-size: 24px;
+    color: white;
     height: 100px;
     align-content: center;
+}
+
+footer .logo img{
+    margin-right: 15px;
 }
 
 @media screen and(min-width:768px) {
