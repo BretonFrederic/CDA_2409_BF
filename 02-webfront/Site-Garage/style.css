@@ -291,16 +291,24 @@ article.certification p{
 }
 
 .question-area{
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 .common-questions{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: blueviolet;
+    background-color: #5476db;
     height: 60px;
     padding: 0 20px;
+}
+
+.common-questions :hover{
+    cursor:pointer;
+}
+
+.common-questions > *{
+    padding: 18px 0;
+    color: white;
 }
 
 .common-questions p{
@@ -309,8 +317,13 @@ article.certification p{
 }
 
 .answers{
-    background-color: red;
+    background-color: white;
+    display: none;
 }
+
+/* .active{
+    display: block;
+} */
 
 .answers p{
     text-align: left;
