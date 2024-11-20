@@ -7,7 +7,6 @@
     margin: 0;
     padding: 0;
 }
-
 h2{
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
     font-size: 2em;
@@ -111,20 +110,22 @@ header a:hover{
 #Accueil{
     background-image: url("./images/65-ford-mustang-4k.jpg");
     background-size: cover;
-    background-position: 86%;
+    background-position: 100%;
+    max-height: 945px;
+    height: 65vw;
 }
 #Accueil .container{
-    height: 930px;
     display: flex;
     justify-content: center;
     align-items: end;
+    max-height: 945px;
+    height: 65vw;
 }
 #Accueil h2{
     font-family: 'Goldman',Arial, Helvetica, sans-serif;
-    font-size: 1.2em;
     color: white;
     text-shadow: 5px 5px 1px black;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 /* PRESENTATION */
@@ -147,7 +148,7 @@ header a:hover{
     min-width: 555px;
     max-width: 960px;
     height: 60%;
-    /* border: 2px solid white; */
+    border-radius: 8px;
 }
 #Presentation .presentation-img{
     position: absolute;
@@ -158,6 +159,17 @@ header a:hover{
     width: 260px;
     height: 60%;
     border: 2px solid white;
+    border-radius: 8px;
+}
+.text-area-2{
+    display: none;
+    text-align: center;
+    width: 380px;
+    background-color:rgba(244, 244, 244, 0.8);
+    border: 2px solid white;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    padding: 20px;
 }
 #Presentation .text-area{
     position: absolute;
@@ -166,8 +178,8 @@ header a:hover{
     right: -100px;
     text-align: center;
     width: 380px;
-    /* height: 100%; */
     border: 2px solid white;
+    border-radius: 8px;
     color: rgb(0, 0, 0);
     padding: 20px;
 }
@@ -185,32 +197,34 @@ header a:hover{
 
 /* SERVICES */
 
-section.services{
+#services{
     background-color: #8d9595;
 }
 
-section.services div.container{
+#services .container{
     padding: 100px 0;
     display: flex;
     justify-content: center;
 }
-
-section.services h2.item-a{
+#services h2.item-a{
     height: 100px;
     text-align: center;
     align-content: center;
     background-color: rgba(244, 244, 244, 0.8);
     grid-column: 1/-1;
+    border-radius: 8px;
 }
 
-div.services-items{
+.services-items{
     background-color: rgba(244, 244, 244, 0.8);
+    border-radius: 8px;
 }
 
-section.services div.grid-services{
+#services .grid-services{
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(3, 25vw);
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    max-width: 80%;
 }
 
 .services-items{
@@ -227,21 +241,20 @@ section.services div.grid-services{
 
 /* CERTIFICATION */
 
-section.certification{
+#certification{
     background-image: url("./images/backgroundcarrousel.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-section.certification div.container{
+#certification .container{
     height: 950px;
     display: flex;
     justify-content: space-around;
-    align-items: end;
-    padding-bottom: 100px;
+    align-items: center;
 }
 
-section.certification .certification{
+article{
     text-align: center;
     width: 380px;
     height: 320px;
@@ -249,21 +262,24 @@ section.certification .certification{
     background-color:rgba(244, 244, 244, 0.8);
     color: rgb(0, 0, 0);
     padding: 20px;
+    border-radius: 8px;
+    margin-top: 380px;
 }
 
-section.certification div.certification{
+.carrousel{
     background-color: blue;
     width: 500px;
     height: 400px;
     margin-bottom: 380px;
+    border-radius: 8px;
 }
 
-article.certification h2{
+article h2{
     margin: 20px auto 20px;
     text-align: start;
 }
 
-article.certification p{
+article p{
     margin-bottom: 60px;
     text-align: justify;
 }
@@ -385,7 +401,9 @@ form input{
 
 #map div.container{
     display: flex;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
     background-color: #8d9595;
     padding: 80px 0;
 }
@@ -398,6 +416,7 @@ form input{
     height:54vw;
     max-height: 600px;
     border:0;
+    margin-top: 50px;
 }
 
 /* FOOTER */

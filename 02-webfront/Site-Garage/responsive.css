@@ -56,4 +56,110 @@
         position: absolute;
         visibility: hidden;
     }
+
+    /*---- ACCUEIL ----*/
+
+    /*---- PRESENTATION ----*/
+
+    #Presentation div.container{
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    #Presentation .container .background-img{
+        width: 86%;
+        min-width: 304px;
+        max-width: 810px;
+        height: 38%;
+        border-radius: 8px;
+    }
+
+    #Presentation .container .presentation-img{
+        display: none;
+    }
+
+    #Presentation .container .text-area{
+        display: none;
+    }
+
+    #Presentation .container .text-area-2{
+        display: block;
+        width: 80%;
+        min-width: 304px;
+    }
+
+    /*---- SERVICES ----*/
+
+    #services .container .grid-services {
+        grid-template-columns: repeat(auto-fit, minmax(304px, 1fr));
+        max-width: 80%;
+    }
+
+    /*---- CERTIFICATION ----*/
+
+    #certification .container {
+        flex-direction: column;
+        padding-bottom: 0px;
+    }
+
+    #certification .carrousel {
+        width: 80%;
+        min-width: 304px;
+        height: 400px;
+        margin-bottom: 0px;
+    }
+
+    #certification article{
+        margin-top: 0px;
+        width: 45%;
+        min-width: 304px;
+        height: 400px;
+    }
+
+    /*---- FAQ ----*/
+
+
+    /*---- CONTACT ----*/
+
+
+    /*---- MAP ----*/
+}
+
+@media only screen and (max-width:768px){
+    
+    /* BODY */
+    body h2{
+        font-size: 24px;
+    }
+    body h3{
+        font-size: 24px;
+    }
+    body h4{
+        font-size: 22px; 
+    }
+    body p{
+        font-size: 14px;
+    }
+    
+    body button{
+        font-size: 14px;
+    }
+
+    /* HEADER */
+    header .container .logo {
+        display: flex;
+        justify-content:initial;
+        align-items: center;
+        width: 250px;
+        padding: 17px 0;
+    }
+    header .container .logo h1{
+        font-size: 22px;
+        margin-left: 20px;
+    }
+
+    /* ACCUEIL */
+    #Accueil .container h2 {
+        font-size: 20PX;
+    }
 }
