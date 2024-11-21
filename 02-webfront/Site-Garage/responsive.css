@@ -103,9 +103,10 @@
     }
 
     #certification .carrousel {
-        width: 80%;
-        min-width: 304px;
-        height: 400px;
+        width: 67.48%;
+        min-width: 350px;
+        height: 44vw;
+        min-height: 250px;
         margin-bottom: 0px;
     }
 
