@@ -278,18 +278,18 @@ article{
     border-radius: 8px;
 }
 
-#preview-slide{
+#slide-1{
     position: absolute;
     background-repeat: no-repeat;
     background-size:cover;
     background-position: 50%;
-    left: 100%;
+    left: -100%;
     width: 100%;
     height: 100%;
     transition: 5s;
 }
 
-#active-slide{
+#slide-2{
     position: absolute;
     background-repeat: no-repeat;
     background-size:cover;
@@ -300,12 +300,12 @@ article{
     transition: 5s;
 }
 
-#next-slide{
+#slide-3{
     position: absolute;
     background-repeat: no-repeat;
     background-size:cover;
     background-position: 50%;
-    left: -100%;
+    left: 100%;
     width: 100%;
     height: 100%;
     transition: 5s;
