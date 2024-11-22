@@ -252,6 +252,7 @@ header a:hover{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    overflow: hidden;
 }
 
 article{
@@ -275,6 +276,7 @@ article{
     width: 500px;
     height: 360px;
     margin-bottom: 380px;
+    border: 2px solid white;
     border-radius: 8px;
 }
 
