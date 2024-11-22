@@ -24,7 +24,7 @@ let interval = setInterval(AutoSlide, 1000);
 let newIndex = 12;
 
 function AutoSlide(){
-    // Quand interval est sup à 5 on incrémente l'index de la séquence active
+    // Quand interval est sup à 3 (donc slide transition = 3s css terminée) on incrémente l'index de la séquence active
     interval += 1;
     if(interval > 3){
         interval = 0;
@@ -54,7 +54,7 @@ function AutoSlide(){
             position[i].style.backgroundImage = "url(./images/carrousel/"+slides[newIndex]+")";
         }
         else{
-            position[i].style.zIndex = 99999;
+            position[i].style.zIndex = 999;
         }
     }
 }

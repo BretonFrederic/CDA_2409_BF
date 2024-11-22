@@ -6,6 +6,7 @@
 *{
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 h2{
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
@@ -43,33 +44,41 @@ button:hover{
     background-color: black;
 }
 
+.min-width{
+    min-width: 380px;
+}
+
 /* HEADER */
 
 header{
-    background-color: rgba(0, 0, 0, 0.80);
+    background-color: rgba(0, 0, 0, 0.86);
+    width: 100%;
+    z-index: 99999;
+    position: fixed;
 }
 header .container{
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 24px;
+    padding: 10px 24px;
 }
 .logo img{
     width: 4em;
 }
 header .logo{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     width: 250px;
-    padding: 17px 0;
+    height: 50px;
     text-transform: uppercase;
     font-family: 'Limelight',Arial, Helvetica, sans-serif;
 }
 header h1{
-    font-size: 36px;
+    font-size: 28px;
     color: white;
+    margin-left: 20px;
 }
 header li{
     list-style: none;
@@ -85,8 +94,9 @@ header a{
     padding-bottom: 15px;
 }
 header a:hover{
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid white;
+    border-top: 3px solid transparent;
+    color: #5476db;
+    border-bottom: 3px solid #5476db;
 }
 
 /* BURGER MENU */
@@ -101,7 +111,7 @@ header a:hover{
     position: absolute;
     z-index: 99;
     display:none;
-    top: 36px;
+    top: 32%;
     right: 64px;
 }
 
@@ -125,7 +135,7 @@ header a:hover{
     font-family: 'Goldman',Arial, Helvetica, sans-serif;
     color: white;
     text-shadow: 5px 5px 1px black;
-    margin-bottom: 20px;
+    margin-bottom: 1%;
 }
 
 /* PRESENTATION */
@@ -159,6 +169,7 @@ header a:hover{
     width: 260px;
     height: 60%;
     border: 2px solid white;
+    box-shadow: 1px 0px 24px black;
     border-radius: 8px;
 }
 .text-area-2{
@@ -169,6 +180,7 @@ header a:hover{
     border: 2px solid white;
     border-radius: 8px;
     color: rgb(0, 0, 0);
+    box-shadow: 1px 0px 24px black;
     padding: 20px;
 }
 #Presentation .text-area{
@@ -180,6 +192,7 @@ header a:hover{
     width: 380px;
     border: 2px solid white;
     border-radius: 8px;
+    box-shadow: 1px 0px 24px black;
     color: rgb(0, 0, 0);
     padding: 20px;
 }
@@ -212,11 +225,13 @@ header a:hover{
     align-content: center;
     background-color: rgba(244, 244, 244, 0.8);
     grid-column: 1/-1;
+    border: 2px solid #333333;
     border-radius: 8px;
 }
 
 .services-items{
     background-color: rgba(244, 244, 244, 0.8);
+    border: 2px solid #333333;
     border-radius: 8px;
 }
 
@@ -258,10 +273,10 @@ header a:hover{
 article{
     text-align: center;
     width: 380px;
-    height: 320px;
     border: 2px solid white;
     background-color:rgba(244, 244, 244, 0.8);
     color: rgb(0, 0, 0);
+    box-shadow: 1px 0px 24px black;
     padding: 20px;
     border-radius: 8px;
     margin-top: 380px;
@@ -277,6 +292,7 @@ article{
     height: 360px;
     margin-bottom: 380px;
     border: 2px solid white;
+    box-shadow: 1px 0px 24px black;
     border-radius: 8px;
 }
 
@@ -355,6 +371,7 @@ article p{
     justify-content: space-between;
     background-color: #5476db;
     padding: 0 20px;
+    border: 2px solid white;
     border-radius: 8px;
 }
 
@@ -411,12 +428,13 @@ form{
     flex-direction: column;
     background-color: white;
     padding: 20px;
+    border: 4px solid #8d9595;
     border-radius: 8px;
 }
 
 form label{
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    font-size: 24px;
+    font-size: 18px;
     padding: 10px 0;
 }
 
@@ -424,6 +442,8 @@ form input{
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 16px;
     padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
 }
 
 #contact textarea{
@@ -434,6 +454,8 @@ form input{
     width: 74vw;
     min-width: 284px;
     max-width: 500px;
+    border: 2px solid black;
+    border-radius: 8px;
 }
 
 /* MAP */
@@ -453,8 +475,10 @@ form input{
     min-width: 304px;
     max-width:800px;
     height:54vw;
+    min-height: 205px;
     max-height: 600px;
-    border:0;
+    /* border:0; */
+    border: 2px solid #333333;
     margin-top: 50px;
 }
 
@@ -468,6 +492,7 @@ footer div.container{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px 0;
 }
 
 footer div.container div.logo{
@@ -478,14 +503,10 @@ footer .logo{
     font-family: 'Limelight',Arial, Helvetica, sans-serif;
     font-size: 24px;
     color: white;
-    height: 100px;
+    height: 80px;
     align-content: center;
 }
 
 footer .logo img{
     margin-right: 15px;
-}
-
-@media screen and(min-width:768px) {
-    
 }

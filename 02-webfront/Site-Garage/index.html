@@ -10,7 +10,7 @@
     <title>Pégase</title>
 </head>
 <body>
-    <header>
+    <header class="min-width">
         <div class="container">
             <div class="logo">
                 <img src="./images/logo-ford-mustang.png" alt="logo-ford-mustang">
@@ -19,16 +19,16 @@
             <nav class="navigation">
                 <ul>
                     <li><a href="">Accueil</a></li>
-                    <li><a href="">Présentation</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="#Presentation">Présentation</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <!--Burger menu-->
             <nav class="burger-menu">
                 <ul>
                     <li><a class="items-menu" href="#">Accueil</a></li>
-                    <li><a class="items-menu" href="#">Présentation</a></li>
+                    <li><a class="items-menu" href="#Presentation">Présentation</a></li>
                     <li><a class="items-menu" href="#">Services</a></li>
                     <li><a class="items-menu" href="#">Contact</a></li>
                 </ul>
@@ -39,12 +39,12 @@
             </div>
         </div>
     </header>
-    <main id="Accueil">
+    <main id="Accueil"  class="min-width">
         <div class="container">
             <h2>Ford Motor Compagny . 1964</h2>
         </div>
     </main>
-    <section id="Presentation">
+    <section id="Presentation"  class="min-width">
         <div class="container">
             <div class="text-area-2">
                 <h2>Présentation</h2>
@@ -77,7 +77,7 @@
             </div>
         </div>
     </section>
-    <section id="services">
+    <section id="services"  class="min-width">
         <div class="container">
             <div class="grid-services">
                 <h2 class="item-a">Nos services</h2>
@@ -114,12 +114,12 @@
             </div>
         </div>
     </section>
-    <section id="certification">
+    <section id="certification"  class="min-width">
         <div class="container">
             <div id="carrousel">
-                <div class="slide">1</div>
-                <div class="slide">2</div>
-                <div class="slide">3</div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
             </div>
             <article>
                 <h2>Certification SERMI</h2>
@@ -132,7 +132,7 @@
             </article>
         </div>
     </section>
-    <section id="faq">
+    <section id="faq"  class="min-width">
         <div class="container">
             <div class="questions">
                 <h2>Questions</h2>
@@ -166,31 +166,31 @@
             </div> 
         </div>
     </section>
-    <section id="contact">
+    <section id="contact"  class="min-width">
         <div class="container">
             <div class="contact">
                 <h2>Nous Ecrire</h2>
                 <form action="">
-                    <label for="name">Nom : </label>
+                    <label for="name">NOM : </label>
                     <input type="text" id="name" placeholder="Entrer votre Nom">
-                    <label for="firstname">Prénom : </label>
+                    <label for="firstname">PRÉNOM : </label>
                     <input type="text" id="firstname" placeholder="Entrer votre Prénom">
-                    <label for="mail">Mail : </label>
+                    <label for="mail">E-MAIL : </label>
                     <input type="email" id="mail" placeholder="Entrer votre mail">
-                    <label for="message">Message : </label>
+                    <label for="message">MESSAGE : </label>
                     <textarea name="" id="message" placeholder="Entrer votre message..."></textarea>
-                    <button type="submit">Envoyer</button>
+                    <button type="submit">ENVOYER</button>
                 </form>
             </div>
         </div>
     </section>
-    <section id="map">
+    <section id="map"  class="min-width">
         <div class="container">
             <h2>Plan du site</h2>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42751.77409414103!2d0.15845286712576884!3d47.95599709999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e28fad5242c195%3A0xe9ae326c6c02c174!2sCircuit%20des%2024%20Heures%20du%20Mans!5e0!3m2!1sfr!2sfr!4v1732137236477!5m2!1sfr!2sfr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
-    <footer>
+    <footer  class="min-width">
         <div class="container">
             <div class="logo">
                 <img class="logo" src="./images/logo-ford-mustang.png" alt="logo voiture de course">

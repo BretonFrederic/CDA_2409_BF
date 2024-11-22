@@ -57,7 +57,10 @@
         visibility: hidden;
     }
 
-    /*---- ACCUEIL ----*/
+    /* ACCUEIL */
+    #Accueil .container h2 {
+        font-size: 24PX;
+    }
 
     /*---- PRESENTATION ----*/
 
@@ -71,6 +74,8 @@
         min-width: 304px;
         max-width: 810px;
         height: 38%;
+        border: 2px solid white;
+        box-shadow: 1px 0px 24px black;
         border-radius: 8px;
     }
 
@@ -114,7 +119,6 @@
         margin-top: 0px;
         width: 45%;
         min-width: 304px;
-        height: 400px;
     }
 
     /*---- FAQ ----*/
@@ -136,7 +140,7 @@
         font-size: 24px;
     }
     body h4{
-        font-size: 22px; 
+        font-size: 18px; 
     }
     body p{
         font-size: 14px;
@@ -147,20 +151,35 @@
     }
 
     /* HEADER */
+header{
+    position: fixed;
+}
+
     header .container .logo {
         display: flex;
         justify-content:initial;
         align-items: center;
         width: 250px;
-        padding: 17px 0;
     }
     header .container .logo h1{
         font-size: 22px;
         margin-left: 20px;
     }
+    header .logo img{
+        width: 3em;
+    }
 
     /* ACCUEIL */
     #Accueil .container h2 {
-        font-size: 20PX;
+        font-size: 16PX;
     }
+
+    /* SERVICES */
+    #services .services-icons {
+        width: 64px;
+    }
+}
+
+@media only screen and (max-width:380px){
+
 }
