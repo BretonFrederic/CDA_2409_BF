@@ -29,19 +29,20 @@ p{
 button{
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     text-transform: uppercase;
-    background-color: #5476db;
+    background-color: #dbbe94;
     width: 240px;
     height: 50px;
     font-size: 16px;
     font-weight: bold;
-    color: white;
-    border: none;
+    color: #333333;
+    border: 1px solid white;
     border-radius: 8px;
     align-self: center;
 }
 button:hover{
     cursor: pointer;
-    background-color: black;
+    color: white;
+    background-color: #333333;
 }
 
 .min-width{
@@ -95,8 +96,8 @@ header a{
 }
 header a:hover{
     border-top: 3px solid transparent;
-    color: #5476db;
-    border-bottom: 3px solid #5476db;
+    color: #dbbe94;
+    border-bottom: 3px solid #dbbe94;
 }
 
 /* BURGER MENU */
@@ -369,9 +370,9 @@ article p{
 .common-questions{
     display: flex;
     justify-content: space-between;
-    background-color: #5476db;
+    background-color: #333333;
     padding: 0 20px;
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 8px;
 }
 
@@ -426,7 +427,7 @@ article p{
 form{
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: rgba(244, 244, 244, 0.8);
     padding: 20px;
     border: 4px solid #8d9595;
     border-radius: 8px;
@@ -442,7 +443,7 @@ form input{
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 16px;
     padding: 10px;
-    border: 2px solid black;
+    border: 1.6px solid #333333;
     border-radius: 8px;
 }
 
@@ -454,7 +455,7 @@ form input{
     width: 74vw;
     min-width: 284px;
     max-width: 500px;
-    border: 2px solid black;
+    border: 1.6px solid #333333;
     border-radius: 8px;
 }
 

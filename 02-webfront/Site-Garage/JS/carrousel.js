@@ -1,26 +1,32 @@
-// Les 3 slides du carrousel
+// Récupère les 3 éléments de class slide du carrousel dans un tableau position
 let position = document.querySelectorAll('.slide');
 
 // Tableau images
-const slides = ['car-01.jpg', 'car-02.jpg', 'car-03.jpg', 
-                'car-04.jpg', 'car-05.jpg', 'car-06.jpg', 'car-07.jpg', 
-                'car-08.jpg', 'car-09.jpg', 'car-10.jpg', 'car-11.jpg', 'car-12.jpg', 'car-13.jpg'];
+const slides = ['car-01.jpg', 'car-02.jpg', 'car-03.jpg', 'car-04.jpg', 
+                'car-05.jpg', 'car-06.jpg', 'car-07.jpg', 'car-08.jpg', 
+                'car-09.jpg', 'car-10.jpg', 'car-11.jpg', 'car-12.jpg', 
+                'car-13.jpg'];
 
 // Initialisation du backgroundImage des 3 slides
 position[0].style.backgroundImage = "url(./images/carrousel/"+slides[0]+")";
 position[1].style.backgroundImage = "url(./images/carrousel/"+slides[1]+")";
 position[2].style.backgroundImage = "url(./images/carrousel/"+slides[2]+")";
 
-// Tableau de séquences d'animation
-const tab = [["0%", "100%", "200%"], ["0%", "100%", "-100%"], ["100%", "200%", "0%"], ["100%", "-100%", "0%"], ["200%", "0%", "100%"], ["-100%", "0%", "100%"]];
+// Tableau de séquences d'animation et réinitialisation des slides
+const tab = [["0%", "100%", "200%"], ["0%", "100%", "-100%"], 
+             ["100%", "200%", "0%"], ["100%", "-100%", "0%"], 
+             ["200%", "0%", "100%"], ["-100%", "0%", "100%"]];
 
 // Index max du tableau images
 const maxIndex = slides.length-1;
-// Index de la séquence active
+
+// Initialisation de l'index de la séquence active
 let index = 0;
-// Appel de la fonction AutoSlide
+
+// Appel de la fonction AutoSlide dans un setInterval
 let interval = setInterval(AutoSlide, 1000);
 
+// Initialisation de l'index de l'image suivante
 let newIndex = 12;
 
 function AutoSlide(){
