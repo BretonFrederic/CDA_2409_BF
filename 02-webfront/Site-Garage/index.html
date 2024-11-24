@@ -5,47 +5,199 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./images/logo-ford-mustang.png">
     <link rel="stylesheet" href="./style.css">
+    <script src="./JS/faq.js" async></script>
+    <script src="./JS/carrousel.js" async></script>
+    <script src="./burgerMenu.js" async></script>
     <title>Pégase</title>
 </head>
 <body>
-    <header>
+    <header class="min-width">
         <div class="container">
             <div class="logo">
                 <img src="./images/logo-ford-mustang.png" alt="logo-ford-mustang">
                 <h1>Pégase</h1>
             </div>
-            <nav>
+            <nav class="navigation">
                 <ul>
-                    <li><a href="">Accueil</a></li>
-                    <li><a href="">Présentation</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a class="items-menu" href="">Accueil</a></li>
+                    <li><a class="items-menu" href="#Presentation">Présentation</a></li>
+                    <li><a class="items-menu" href="#services">Services</a></li>
+                    <li><a class="items-menu" href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <!--Burger menu-->
+            <nav class="burger-menu">
+                <ul>
+                    <li><a class="items-menu" href="">Accueil</a></li>
+                    <li><a class="items-menu" href="#Presentation">Présentation</a></li>
+                    <li><a class="items-menu" href="#services">Services</a></li>
+                    <li><a class="items-menu" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-icon">
+                <img class="burger-icon" src="./images/burger_icon.png" alt="">
+                <img class="cross-icon items-menu" src="./images/cross_icon.png" alt="">
+            </div>
         </div>
     </header>
-    <main id="Accueil">
+    <main id="Accueil"  class="min-width">
         <div class="container">
             <h2>Ford Motor Compagny . 1964</h2>
         </div>
     </main>
-    <section id="Presentation">
+    <section id="Presentation"  class="min-width">
         <div class="container">
+            <div class="text-area-2">
+                <h2>Présentation</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Fugit, illum? Tempore ut accusamus in ipsa provident, 
+                    possimus quaerat nemo, neque quam quos quisquam maxime 
+                    necessitatibus cumque aut illo quas nulla magnam 
+                    excepturi cum? Minus eius in obcaecati saepe aperiam 
+                    cumque ad velit, ut quas itaque modi et quibusdam delectus autem.
+                </p>
+                <a href="#certification">
+                    <button type="button">En savoir +</button>
+                </a> 
+            </div>
             <div class="background-img">
                 <div class="presentation-img"></div>
                 <div class="text-area">
                     <h2>Présentation</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur 
-                        adipiscing elit, sed do eiusmod tempor 
-                        incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud 
-                        exercitation ullamco laboris nisi ut aliquip 
-                        ex ea commodo consequat.</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        Fugit, illum? Tempore ut accusamus in ipsa provident, 
+                        possimus quaerat nemo, neque quam quos quisquam maxime 
+                        necessitatibus cumque aut illo quas nulla magnam 
+                        excepturi cum? Minus eius in obcaecati saepe aperiam 
+                        cumque ad velit, ut quas itaque modi et quibusdam delectus autem.
+                    </p>
+                    <a href="#certification">
+                        <button type="button">En savoir +</button>
+                    </a> 
                 </div>
             </div>
         </div>
     </section>
-    <section id="Services"></section>
-    <section id="Contact"></section>
+    <section id="services"  class="min-width">
+        <div class="container">
+            <div class="grid-services">
+                <h2 class="item-a">Nos services</h2>
+                <div class="services-items item-b">
+                    <h3>Réparation</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <img class="services-icons" src="./images/icon-1.png" alt="icône tournevis et clé plate">
+                </div>
+                <div class="services-items item-c">
+                    <h3>Diagnostique</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <img class="services-icons" src="./images/icon-2.png" alt="icône mécanicien regarde sous capot moteur">
+                </div>
+                <div class="services-items item-d">
+                    <h3>Vitrages</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <img class="services-icons" src="./images/icon-3.png" alt="icône portière de voiture">
+                </div>
+                <div class="services-items item-e">
+                    <h3>Vidange</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <img class="services-icons" src="./images/icon-4.png" alt="icône bidon huile moteur et voiture">
+                </div>
+                <div class="services-items item-f">
+                    <h3>Entretien</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <img class="services-icons" src="./images/icon-5.png" alt="icône voiture de face dans garage">
+                </div>
+                <div class="services-items item-g">
+                    <h3>Géométrie</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <img class="services-icons" src="./images/icon-6.png" alt="icône clé plate écrou au dessus de voiture de face">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="certification"  class="min-width">
+        <div class="container">
+            <div id="carrousel">
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+            </div>
+            <article>
+                <h2>Certification SERMI</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quae quisquam iusto facilis accusamus fuga aliquam quos dolorem, 
+                    vitae dignissimos natus repudiandae temporibus.</p>
+                <a href="#services">
+                    <button type="button">Besoin d'une révision ?</button>
+                </a> 
+            </article>
+        </div>
+    </section>
+    <section id="faq"  class="min-width">
+        <div class="container">
+            <div class="questions">
+                <h2>Questions</h2>
+                <div class="question-area">
+                    <div class="common-questions">
+                        <h4>Quand dois-je faire la vidange ?</h4>
+                        <p>+</p>
+                    </div>
+                    <div class="answers">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti obcaecati qui laudantium suscipit eius officiis quis tenetur doloremque? Corrupti, numquam voluptas tempore hic nulla magni optio atque sint eius deleniti beatae vitae vel nemo deserunt neque? Commodi incidunt porro vel.</p>
+                    </div>
+                </div>
+                <div class="question-area">
+                    <div class="common-questions">
+                        <h4>Quand dois-je changer la courroie de distribution ?</h4>
+                        <p>+</p>
+                    </div>
+                    <div class="answers">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti obcaecati qui laudantium suscipit eius officiis quis tenetur doloremque? Corrupti, numquam voluptas tempore hic nulla magni optio atque sint eius deleniti beatae vitae vel nemo deserunt neque? Commodi incidunt porro vel.</p>
+                    </div>
+                </div>
+                <div class="question-area">
+                    <div class="common-questions">
+                        <h4>Quels sont les avantages d'avoir un compte client ?</h4>
+                        <p>+</p>
+                    </div>
+                    <div class="answers">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti obcaecati qui laudantium suscipit eius officiis quis tenetur doloremque? Corrupti, numquam voluptas tempore hic nulla magni optio atque sint eius deleniti beatae vitae vel nemo deserunt neque? Commodi incidunt porro vel.</p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </section>
+    <section id="contact"  class="min-width">
+        <div class="container">
+            <div class="contact">
+                <h2>Nous Ecrire</h2>
+                <form action="">
+                    <label for="name">NOM : </label>
+                    <input type="text" id="name" placeholder="Entrer votre Nom">
+                    <label for="firstname">PRÉNOM : </label>
+                    <input type="text" id="firstname" placeholder="Entrer votre Prénom">
+                    <label for="mail">E-MAIL : </label>
+                    <input type="email" id="mail" placeholder="Entrer votre mail">
+                    <label for="message">MESSAGE : </label>
+                    <textarea name="" id="message" placeholder="Entrer votre message..."></textarea>
+                    <button type="submit">ENVOYER</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="map"  class="min-width">
+        <div class="container">
+            <h2>Plan du site</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42751.77409414103!2d0.15845286712576884!3d47.95599709999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e28fad5242c195%3A0xe9ae326c6c02c174!2sCircuit%20des%2024%20Heures%20du%20Mans!5e0!3m2!1sfr!2sfr!4v1732137236477!5m2!1sfr!2sfr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+    <footer  class="min-width">
+        <div class="container">
+            <div class="logo">
+                <img class="logo" src="./images/logo-ford-mustang.png" alt="logo voiture de course">
+                <h4 class="logo">Pégase</h4>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

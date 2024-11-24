@@ -1,0 +1,145 @@
+@media only screen and (max-width:980px){
+
+    /*---- HEADER ----*/
+
+    /* Navbar */
+
+    header .navigation{
+        display: none;
+    }
+
+     /* Burger-menu */
+
+     header .menu-icon{
+        display:block;
+    }
+    header .burger-menu{
+        display: block;
+    }
+
+    /* ACCUEIL */
+    #Accueil .container h2 {
+        font-size: 24PX;
+    }
+
+    /*---- PRESENTATION ----*/
+
+    #Presentation div.container{
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    #Presentation .container .background-img{
+        width: 86%;
+        min-width: 304px;
+        max-width: 810px;
+        height: 38%;
+        border: 2px solid white;
+        box-shadow: 1px 0px 24px black;
+        border-radius: 8px;
+    }
+
+    #Presentation .container .presentation-img{
+        display: none;
+    }
+
+    #Presentation .container .text-area{
+        display: none;
+    }
+
+    #Presentation .container .text-area-2{
+        display: block;
+        width: 80%;
+        min-width: 304px;
+    }
+
+    /*---- SERVICES ----*/
+
+    #services .container .grid-services {
+        grid-template-columns: repeat(auto-fit, minmax(304px, 1fr));
+        max-width: 80%;
+    }
+
+    /*---- CERTIFICATION ----*/
+
+    #certification .container {
+        flex-direction: column;
+        padding-bottom: 0px;
+    }
+
+    #certification #carrousel {
+        width: 67.48%;
+        min-width: 350px;
+        height: 44vw;
+        min-height: 250px;
+        margin-bottom: 0px;
+    }
+
+    #certification article{
+        margin-top: 0px;
+        width: 45%;
+        min-width: 304px;
+    }
+
+    /*---- FAQ ----*/
+
+
+    /*---- CONTACT ----*/
+
+
+    /*---- MAP ----*/
+}
+
+@media only screen and (max-width:768px){
+    
+    /* BODY */
+    body h2{
+        font-size: 24px;
+    }
+    body h3{
+        font-size: 24px;
+    }
+    body h4{
+        font-size: 18px; 
+    }
+    body p{
+        font-size: 14px;
+    }
+    
+    body button{
+        font-size: 14px;
+    }
+
+    /* HEADER */
+header{
+    position: fixed;
+}
+
+    header .container .logo {
+        display: flex;
+        justify-content:initial;
+        align-items: center;
+        width: 250px;
+    }
+    header .container .logo h1{
+        font-size: 22px;
+        margin-left: 20px;
+    }
+    header .logo img{
+        width: 3em;
+    }
+
+    /* ACCUEIL */
+    #Accueil .container h2 {
+        font-size: 16PX;
+    }
+
+    /* SERVICES */
+    #services .services-icons {
+        width: 64px;
+    }
+}
+
+@media only screen and (max-width:380px){
+
+}

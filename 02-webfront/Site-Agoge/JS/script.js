@@ -105,10 +105,10 @@ if (!isAutoSlide) {
 
 setInterval("AutoSlide()", timer);
 
-// addEventListener('resize', (ev)=>{
-//     let screenWidth = window.innerWidth;
-//     if(screenWidth > "980px")
-// })
+addEventListener('resize', (ev)=>{
+    let screenWidth = window.innerWidth;
+    if(screenWidth > "980px");
+})
 
 
 
