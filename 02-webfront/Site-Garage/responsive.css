@@ -8,53 +8,13 @@
         display: none;
     }
 
-    /* Burger-menu */
+     /* Burger-menu */
 
-    .burger-menu{
-        position: absolute;
-        top: 0px;
-        left: 0%;
+     header .menu-icon{
+        display:block;
+    }
+    header .burger-menu{
         display: block;
-        background-color: rgba(0, 0, 0, 0.8);
-        padding: 0 20px;
-        width: 100%;
-    }
-
-    header .burger-menu ul{
-        display: flex;
-        flex-direction: column;
-        padding-top: 23px;
-    }
-    
-    header .burger-menu li{
-        list-style: none;
-        margin: 76px auto;
-        height: 54px;
-    }
-    
-    header .burger-menu a{
-        text-decoration: none;
-        font-size: 2.2em;
-        font-weight: 400;
-    }
-    
-    header .burger-menu ul li a:hover{
-        color: #26C1DC;
-    }
-
-    /* Burger menu-icon */
-
-    header .menu-icon{
-        display: block;
-    }
-
-    header .burger-icon{
-        position: absolute;
-    }
-
-    header .cross-icon{
-        position: absolute;
-        visibility: hidden;
     }
 
     /* ACCUEIL */
