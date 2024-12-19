@@ -64,14 +64,28 @@ WHERE acteur_prenom = "Jean" AND acteur_prenom = "Eva";
 
 
 /* 3. Sélectionner tous les acteurs (identifiant, nom, prénom) triés par nom (ordre alphabétique) */
-
+SELECT acteur_id, acteur_nom, acteur_prenom
+FROM acteur
+ORDER BY acteur_nom;
 
 
 /* 4. Sélectionner les réalisateurs (nom, prénom) triés par nom et par ordre décroissant */
-
+SELECT acteur_nom, acteur_prenom
+FROM acteur
+ORDER BY acteur_nom DESC;
 
 
 
 /* 2. Sélectionner le film n°3 (identifiant, titre, duree) */
+SELECT film_id, film_titre, film_duree
+FROM film
+WHERE film_id = 3;
+
 /* 3. Sélectionner tous les films triés par durée du plus long au plus court */
+SELECT MAX(film_titre)
+FROM film;
+
 /* 7. Sélectionner les films (titre, durée) avec pour chacun d'entre eux, le nom et prénom du réalisateur */
+SELECT film_titre, film_duree, realisateur_nom, realisateur_prenom
+FROM film
+INNER JOIN realisateur ON film_id = realisateur.realisateur_id;

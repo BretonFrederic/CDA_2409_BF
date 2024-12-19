@@ -36,3 +36,12 @@ VALUES
 ("Watson", "Emma"),
 ("Green", "Eva"),
 ("Holland", "Tom");
+
+INSERT INTO film
+(film_titre, film_duree)
+VALUES
+("Léon", "103"),
+("L'Arme fatale", "117"),
+("Harry Potter : Retour à Poudlard", "102"),
+("300 : La Naissance d'un Empire", "102"),
+("Spider-Man: No Way Home", "150");
