@@ -27,8 +27,12 @@ VALUES
 INSERT INTO categories_questions
 (question_id, category_name)
 VALUES
-(1, 'Bases de données et SQL'),
-(2, 'Bases de données et SQL'),
+(1, 'Bases de données'),
+(1, 'SQL'),
+(2, 'Bases de données'),
+(2, 'SQL'),
 (3, 'Bases de données'),
-(4, 'Bases de données et SQL'),
-(5, 'Bases de données et NoSQL');
+(4, 'Bases de données'),
+(4, 'SQL'),
+(5, 'Bases de données'),
+(5, 'NoSQL');
