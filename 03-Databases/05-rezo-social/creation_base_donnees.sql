@@ -11,8 +11,8 @@ USE rezo_social;
 CREATE TABLE utilisateur
 (
 	id INT,
-    nom_utilisateur VARCHAR(32) NOT NULL,
-    email VARCHAR(128) NOT NULL,
+    nom_utilisateur VARCHAR(32) NOT NULL UNIQUE,
+    email VARCHAR(128) UNIQUE NOT NULL,
     PRIMARY KEY(id)
 );
 
@@ -22,8 +22,8 @@ CREATE TABLE publication
     pub_date DATETIME NOT NULL,
     pub_titre VARCHAR(255) NOT NULL,
     pub_contenu TEXT NOT NULL,
-    PRIMARY KEY(pub_id),
     id INT,
+    PRIMARY KEY(pub_id),
     FOREIGN KEY(id) REFERENCES utilisateur(id)
 );
 
@@ -35,3 +35,14 @@ CREATE TABLE aimer
     FOREIGN KEY(id) REFERENCES utilisateur(id),
     FOREIGN KEY(pub_id) REFERENCES publication(pub_id)
 );
+
+/* AJOUTER LES CLES ETRANGERES EN DEHORS DES TABLES PERMET DE CREER LES TABLES SANS RESPECT UN ORDRE DE CREATION */
+
+/* Modifier la table publication et y ajouter une clé étrangère */
+/* ALTER TABLE publication ADD FOREIGN KEY (id) REFERENCES utilisateur(id); */
+
+/* Modifier la table aimer ajouter et retirer clé étrangère */
+/* ALTER TABLE aimer ADD CONSTRAINT fk_aimer_utilisateur FOREIGN KEY(id) REFERENCES utilisateur(id); */
+/* ALTER TABLE aimer ADD CONSTRAINT fk_aimer_publication FOREIGN KEY(pub_id) REFERENCES publication(pub_id); */
+
+/* ALTER TABLE aimer DROP CONSTRAINT fk_aimer_utilisateur; */
