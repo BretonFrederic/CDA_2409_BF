@@ -16,7 +16,7 @@ CREATE TABLE users
 CREATE TABLE questions
 (
 	question_id INT PRIMARY KEY AUTO_INCREMENT,
-    question_date DATETIME NOT NULL,
+    question_date DATE NOT NULL,
     question_label VARCHAR(255) NOT NULL,
     question_response TEXT(65535) NOT NULL,
     user_id INT

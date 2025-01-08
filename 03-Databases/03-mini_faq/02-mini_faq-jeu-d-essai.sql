@@ -5,7 +5,7 @@ INSERT INTO users
 VALUES
 ('zorb@example.com', 'Rabbit', 'Zora'),
 ('patchouli@example.fr', 'Patchouli', 'Édouard'),
-('eva.stt@example.com', 'Rabbit', 'Zora');
+('eva.stt@example.com', 'Satiti', 'Eva');
 
 INSERT INTO categories
 (category_name, category_description, category_order)
