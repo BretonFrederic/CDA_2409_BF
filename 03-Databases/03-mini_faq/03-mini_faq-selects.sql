@@ -4,7 +4,7 @@ SELECT user_id, user_lastname, user_firstname, user_email
 FROM users;
 
 /* 2. Sélectionner toutes les questions (date, intitulé, réponse, identifiant utilisateur) triées par date de la plus ancienne à la plus récente. */
-SELECT question_id, question_date, question_label, question_response, user_id
+SELECT question_date, question_label, question_response, user_id
 FROM questions
 ORDER BY question_date ASC;
 
@@ -37,6 +37,7 @@ INNER JOIN users ON questions.question_id = users.user_id ORDER BY question_labe
 
 
 /* 8. Sélectionner les catégories (nom) avec, pour chaque catégorie le nombre de questions associées (nécessite une jointure). */
-SELECT categories.category_name, COUNT(question_id)
+SELECT categories.category_name, COUNT(categories_questions.category_name)
 FROM categories
-INNER JOIN categories_questions ON categories.category_name = categories_questions.id;
+INNER JOIN categories_questions ON categories.category_name = categories_questions.category_name
+GROUP BY categories.category_name;
