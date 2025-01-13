@@ -94,7 +94,13 @@ HAVING COUNT(ename) >= 2
 ORDER BY deptno;
  
 -- 16. Liste des employés (Nom, département, salaire) de même emploi que JONES
-
+SELECT ename, deptno, sal
+FROM emp
+WHERE job = (
+SELECT job
+FROM emp
+WHERE ename = 'Jones'
+);
 
 -- 17. Liste des employés (nom, salaire) dont le salaire est supérieur à la moyenne globale des salaires
 
