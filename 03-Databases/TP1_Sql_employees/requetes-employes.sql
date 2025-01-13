@@ -82,7 +82,8 @@ GROUP BY deptno;
 -- 14. Donner département par département masse salariale, nombre d'employés, salaire moyen par type d'emploi.
 SELECT SUM(sal + ifnull(comm,0)) AS masse_salariale, COUNT(ename) AS nbr_employes, round(AVG(sal), 2) AS salaire_moyen, deptno, job
 FROM emp 
-GROUP BY deptno, job order by deptno;
+GROUP BY deptno, job 
+ORDER BY deptno;
 
 
 -- 15. Même question mais on se limite aux sous-ensembles d'au moins 2 employés
