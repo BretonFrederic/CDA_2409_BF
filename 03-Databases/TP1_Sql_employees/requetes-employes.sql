@@ -88,8 +88,9 @@ GROUP BY deptno, job order by deptno;
 -- 15. Même question mais on se limite aux sous-ensembles d'au moins 2 employés
 SELECT SUM(sal + ifnull(comm,0)) AS masse_salariale, COUNT(ename) AS nbr_employes, round(AVG(sal), 2) AS salaire_moyen, deptno, job
 FROM emp 
-GROUP BY deptno, job order by deptno
-HAVING COUNT(ename) >= 2;
+GROUP BY deptno, job
+HAVING COUNT(ename) >= 2
+ORDER BY deptno;
  
 -- 16. Liste des employés (Nom, département, salaire) de même emploi que JONES
 
