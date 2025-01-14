@@ -103,22 +103,137 @@ WHERE ename = 'Jones'
 );
 
 -- 17. Liste des employés (nom, salaire) dont le salaire est supérieur à la moyenne globale des salaires
+SELECT ename, sal, deptno
+FROM emp
+WHERE sal > (
+SELECT AVG(sal)
+FROM emp
+);
 
 
 -- 18. Création d'une table PROJET avec comme colonnes numéro de projet (3 chiffres), nom de projet(5 caractères), budget. Entrez les valeurs suivantes:
 -- 101, ALPHA, 96000
 -- 102, BETA, 82000
 -- 103, GAMMA, 15000
+CREATE TABLE projet (
+num_proj SMALLINT AUTO_INCREMENT,
+nom_proj CHAR(5) NOT NULL,
+budjet_proj DECIMAL(8,2) NOT NULL, CONSTRAINT PK_projet PRIMARY KEY(num_proj)
+);
+
+
+ ALTER TABLE projet AUTO_INCREMENT = 101;
+
+INSERT INTO projet 
+(nom_proj, budjet_proj)
+VALUES
+('alpha',96000),
+('beta',82000),
+('gamma',15000);
+
+ALTER TABLE projet RENAME COLUMN budjet_proj TO budget_proj;
 
 -- 19. Ajouter l'attribut numéro de projet à la table EMP et affecter tous les vendeurs du département 30 au projet 101, et les autres au projet 102
 
+ALTER TABLE EMP ADD num_proj SMALLINT;
+
+UPDATE emp SET num_proj = 101
+WHERE deptno = 30 AND job = 'salesman';
+
+UPDATE emp SET num_proj = 102
+WHERE   (deptno=30 and job<>'salesman') xor deptno<>30 ;
+
+update emp set num_proj =102 where empno!=all(select empno where deptno = 30 AND job = 'salesman'); 
+
+
+-- update emp set  num_proj=null; 
+ALTER TABLE emp ADD CONSTRAINT fk_proj FOREIGN KEY (num_proj) REFERENCES projet(num_proj);
 
 -- 20. Créer une vue comportant tous les employés avec nom, job, nom de département et nom de projet
--- 		OFP DI/M1S/C1/TP-07/01 Fichier : TP1_Sql_lmd_tp_enonces_vide (1).doc Page 4 sur 8
-
+CREATE VIEW projet_details AS
+SELECT ename, job, dname, nom_proj
+FROM emp
+JOIN dept
+  ON emp.deptno = dept.deptno
+JOIN projet
+  ON emp.num_proj = projet.num_proj;
+  
+SELECT * FROM projet_details;
+-- DROP VIEW projet_details;
 
 -- 21. A l'aide de la vue créée précédemment, lister tous les employés avec nom, job, nom de département 
 -- 		et nom de projet triés sur nom de département et nom de projet
-
+SELECT ename, job, dname, nom_proj
+FROM projet_details
+ORDER BY dname, nom_proj;
 
 -- 22. Donner le nom du projet associé à chaque manager
+SELECT ename, job, dname, nom_proj
+FROM projet_details
+WHERE job = 'manager';
+
+-- Deuxième partie ------------------------------------------------------------------------------------------
+
+-- 1. Afficher la liste des managers des départements 20 et 30
+SELECT ename
+FROM emp
+WHERE job = (SELECT job WHERE job = 'manager' AND deptno IN(20, 30));
+
+-- 2. Afficher la liste des employés qui ne sont pas manager et qui ont été embauchés en 81
+SELECT ename, job, hiredate
+FROM emp
+WHERE ename = (SELECT ename WHERE job <> 'manager' AND date_format(hiredate, "%y") = '81');
+
+-- 3. Afficher la liste des employés ayant une commission
+SELECT ename, comm
+FROM emp
+WHERE comm <> 'NULL';
+
+-- 4. Afficher la liste des noms, numéros de département, jobs et date d'embauche triés par Numero de 
+-- Département et JOB les derniers embauches d'abord.
+SELECT ename, deptno, job, hiredate
+FROM emp
+ORDER BY deptno, hiredate DESC;
+
+-- 5. Afficher la liste des employés travaillant à DALLAS
+SELECT ename, loc
+FROM
+
+-- 6. Afficher les noms et dates d'embauche des employés embauchés avant leur manager, avec le nom et
+-- date d'embauche du manager.
+
+-- 7. Lister les numéros des employés n'ayant pas de subordonné.
+
+-- 8. Afficher les noms et dates d'embauche des employés embauchés avant BLAKE.
+
+-- 9. Afficher les employés embauchés le même jour que FORD.
+
+-- 10. Lister les employés ayant le même manager que CLARK.
+
+-- 11. Lister les employés ayant même job et même manager que TURNER.
+
+-- 12. Lister les employés du département RESEARCH embauchés le même jour que quelqu'un du 
+-- département SALES.
+
+-- 13. Lister le nom des employés et également le nom du jour de la semaine correspondant à leur date
+-- d'embauche.
+
+-- 14. Donner, pour chaque employé, le nombre de mois qui s'est écoulé entre leur date d'embauche et la
+-- date actuelle.
+
+-- 15. Afficher la liste des employés ayant un M et un A dans leur nom.
+
+-- 16. Afficher la liste des employés ayant deux 'A' dans leur nom.
+
+-- 17. Afficher les employés embauchés avant tous les employés du département 10.
+
+-- 18. Sélectionner le métier où le salaire moyen est le plus faible.
+
+-- 19. Sélectionner le département ayant le plus d'employés.
+
+-- 20. Donner la répartition en pourcentage du nombre d'employés par département selon le modèle cidessous
+-- Département Répartition en % 
+----------- ---------------- 
+-- 10 21.43 
+-- 20 35.71 
+-- 30 42.86 
