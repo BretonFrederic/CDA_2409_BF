@@ -197,12 +197,21 @@ ORDER BY deptno, hiredate DESC;
 
 -- 5. Afficher la liste des employés travaillant à DALLAS
 SELECT ename, loc
-FROM
+FROM emp
+JOIN dept ON emp.deptno = dept.deptno
+WHERE loc = 'DALLAS';
 
 -- 6. Afficher les noms et dates d'embauche des employés embauchés avant leur manager, avec le nom et
 -- date d'embauche du manager.
+SELECT emp_e.ename, emp_e.hiredate, emp_m.hiredate, emp_m.ename
+FROM emp AS emp_e
+JOIN emp AS emp_m ON emp_m.mgr = emp_e.empno
+WHERE emp_e.hiredate < emp_m.hiredate;
 
 -- 7. Lister les numéros des employés n'ayant pas de subordonné.
+SELECT empno
+FROM emp
+WHERE mgr IS NULL;
 
 -- 8. Afficher les noms et dates d'embauche des employés embauchés avant BLAKE.
 
