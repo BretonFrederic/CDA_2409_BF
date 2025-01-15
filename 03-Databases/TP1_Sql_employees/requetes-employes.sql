@@ -214,35 +214,99 @@ FROM emp
 WHERE mgr IS NULL;
 
 -- 8. Afficher les noms et dates d'embauche des employés embauchés avant BLAKE.
+SELECT ename, hiredate
+FROM emp
+WHERE hiredate < (SELECT hiredate
+	FROM emp
+	WHERE ename = 'Blake' 
+);
 
 -- 9. Afficher les employés embauchés le même jour que FORD.
+SELECT ename
+FROM emp
+WHERE hiredate = (SELECT hiredate
+	FROM emp
+    WHERE ename = 'Ford'
+)
+AND ename <> 'Ford';
 
 -- 10. Lister les employés ayant le même manager que CLARK.
+SELECT ename
+FROM emp
+WHERE mgr = (SELECT mgr
+	FROM emp
+    WHERE ename = 'Clark'
+)
+AND ename <> 'Clark';
 
 -- 11. Lister les employés ayant même job et même manager que TURNER.
+SELECT ename, job, mgr
+FROM emp
+WHERE job = (SELECT job
+	FROM emp
+    WHERE ename = 'Turner'
+)
+AND ename <> 'Turner';
 
 -- 12. Lister les employés du département RESEARCH embauchés le même jour que quelqu'un du 
 -- département SALES.
+SELECT ename, dname
+FROM emp
+JOIN dept
+ON emp.deptno = dept.deptno
+WHERE hiredate = (SELECT hiredate
+    WHERE dname = 'sales'
+    );
 
 -- 13. Lister le nom des employés et également le nom du jour de la semaine correspondant à leur date
 -- d'embauche.
+SELECT ename, UPPER(date_format(hiredate, '%a')) AS day
+FROM emp;
 
 -- 14. Donner, pour chaque employé, le nombre de mois qui s'est écoulé entre leur date d'embauche et la
 -- date actuelle.
+SELECT ename, DATE_FORMAT(NOW(), '%Y-%m-%d') AS today, hiredate, TIMESTAMPDIFF(month, hiredate, DATE_FORMAT(NOW(),'%Y-%m-%d')) AS months_diff
+FROM emp;
 
 -- 15. Afficher la liste des employés ayant un M et un A dans leur nom.
+SELECT ename AS contain_M_A
+FROM emp
+WHERE ename LIKE '%M%'AND ename LIKE '%A%';
 
 -- 16. Afficher la liste des employés ayant deux 'A' dans leur nom.
+SELECT ename AS contain_2_A
+FROM emp
+WHERE ename LIKE '%A%A%';
 
 -- 17. Afficher les employés embauchés avant tous les employés du département 10.
+SELECT ename, hiredate
+FROM emp
+WHERE hiredate < ANY (
+	SELECT hiredate
+    FROM emp
+    WHERE deptno = 10
+    );
 
 -- 18. Sélectionner le métier où le salaire moyen est le plus faible.
+SELECT ROUND(AVG(sal)) AS avg_sal
+FROM emp
+GROUP BY job
+ORDER BY avg_sal ASC
+LIMIT 1;
 
 -- 19. Sélectionner le département ayant le plus d'employés.
+SELECT dname, COUNT(empno) AS nbr_emp
+FROM dept
+JOIN emp
+ON dept.deptno = emp.deptno
+GROUP BY dname
+ORDER BY nbr_emp DESC
+LIMIT 1;
 
--- 20. Donner la répartition en pourcentage du nombre d'employés par département selon le modèle cidessous
+-- 20. Donner la répartition en pourcentage du nombre d'employés par département selon le modèle ci-dessous
 -- Département Répartition en % 
 ----------- ---------------- 
 -- 10 21.43 
 -- 20 35.71 
--- 30 42.86 
+-- 30 42.86
+
