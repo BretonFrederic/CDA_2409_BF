@@ -309,4 +309,6 @@ LIMIT 1;
 -- 10 21.43 
 -- 20 35.71 
 -- 30 42.86
-
+SELECT deptno, CONCAT(ROUND(COUNT(empno)/14*100, 2), ' %') AS emp_perc
+FROM emp
+GROUP BY deptno;
