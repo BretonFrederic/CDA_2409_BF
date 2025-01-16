@@ -205,7 +205,7 @@ WHERE loc = 'DALLAS';
 -- date d'embauche du manager.
 SELECT emp_e.ename, emp_e.hiredate, emp_m.hiredate, emp_m.ename
 FROM emp AS emp_e
-JOIN emp AS emp_m ON emp_m.mgr = emp_e.empno
+JOIN emp AS emp_m ON emp_e.mgr = emp_m.empno
 WHERE emp_e.hiredate < emp_m.hiredate;
 
 -- 7. Lister les numéros des employés n'ayant pas de subordonné.
