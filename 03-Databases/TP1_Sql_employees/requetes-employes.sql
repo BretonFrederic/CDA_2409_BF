@@ -209,9 +209,12 @@ JOIN emp AS emp_m ON emp_e.mgr = emp_m.empno
 WHERE emp_e.hiredate < emp_m.hiredate;
 
 -- 7. Lister les numéros des employés n'ayant pas de subordonné.
-SELECT empno
-FROM emp
-WHERE mgr IS NULL;
+SELECT empno, ename, job 
+FROM emp 
+WHERE empno NOT IN(SELECT DISTINCT mgr 
+	FROM emp
+    WHERE mgr IS NOT NULL 
+    );
 
 -- 8. Afficher les noms et dates d'embauche des employés embauchés avant BLAKE.
 SELECT ename, hiredate
@@ -312,3 +315,39 @@ LIMIT 1;
 SELECT deptno, CONCAT(ROUND(COUNT(empno)/(SELECT COUNT(*) FROM emp)*100, 2), ' %') AS emp_perc
 FROM emp
 GROUP BY deptno;
+
+-- PROCEDURE STOCKEE ------------------------------------------------------------------------------
+
+-- Paramètre de sens IN modifiée en local dans la procédure
+
+DELIMITER |
+CREATE PROCEDURE affichernbrempl(IN _job VARCHAR(30))
+BEGIN
+	SELECT COUNT(empno), job, AVG(sal)
+    FROM emp
+	WHERE job = _job
+    GROUP BY job;
+END | 
+DELIMITER ;
+
+DROP PROCEDURE affichernbrempl;
+
+SET @nbremp := 'clerk';
+CALL affichernbrempl(@nbremp);
+
+-- Paramètre de sens OUT modifiée en GLOBAL hors de la procédure
+
+DELIMITER |
+CREATE PROCEDURE augmentersal(OUT _newsal SMALLINT, IN _ename VARCHAR(50), IN _augmentation SMALLINT)
+BEGIN
+	SELECT _ename, sal+_augmentation AS newsal
+    FROM emp
+    WHERE ename = '_ename';
+
+END | 
+DELIMITER ;
+
+DROP PROCEDURE augmentersal;
+
+SET @newsal := 0;
+CALL augmentersal(@newsal , 'Smith', 500);

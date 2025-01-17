@@ -31,23 +31,53 @@ CREATE DATABASE type_check02;
 
 USE type_check02;
 
-CREATE TABLE Etudiants(
+CREATE TABLE Etudiants01(
 	id_etud INT AUTO_INCREMENT PRIMARY KEY,
     nom_etud VARCHAR(255) NOT NULL,
     prenom_etud VARCHAR (100) NOT NULL,
     datentree_etud DATE NOT NULL
 );
 
-CREATE TABLE Matieres(
+CREATE TABLE Matieres01(
 	id_mat INT AUTO_INCREMENT PRIMARY KEY,
     lib_mat VARCHAR (50) NOT NULL UNIQUE,
     coef_mat INT NOT NULL
 );
 
-CREATE TABLE Controle(
+CREATE TABLE Controle01(
 	id_etud INT,
     id_mat INT,
     cont_moy DECIMAL(4, 2),
-    CONSTRAINT FK_ETUD FOREIGN KEY (id_etud) REFERENCES Etudiants(id_etud),
-    CONSTRAINT FK_MAT FOREIGN KEY (id_mat) REFERENCES Matieres(id_mat)
+    CONSTRAINT FK_ETUD FOREIGN KEY (id_etud) REFERENCES Etudiants01(id_etud),
+    CONSTRAINT FK_MAT FOREIGN KEY (id_mat) REFERENCES Matieres01(id_mat)
+);
+
+-- ENONCE 3 ---------------------------------------------------------------------------
+DROP DATABASE IF EXISTS type_check03;
+
+CREATE DATABASE type_check03;
+
+USE type_check03;
+
+CREATE TABLE Etudiants03(
+	id_etud INT AUTO_INCREMENT PRIMARY KEY,
+    nom_etud VARCHAR(255) NOT NULL,
+    prenom_etud VARCHAR (100) NOT NULL,
+    datentree_etud DATE NOT NULL
+);
+
+CREATE TABLE Matieres03(
+	id_mat INT AUTO_INCREMENT PRIMARY KEY,
+    lib_mat VARCHAR (50) NOT NULL UNIQUE,
+    coef_mat INT NOT NULL,
+    CONSTRAINT CK_COEF CHECK(coef_mat <= 10)
+);
+
+CREATE TABLE Controle03(
+	id_etud INT,
+    id_mat INT,
+    cont_moy DECIMAL(4, 2) NOT NULL,
+    CONSTRAINT FK_ETUD FOREIGN KEY (id_etud) REFERENCES Etudiants03(id_etud),
+    CONSTRAINT FK_MAT FOREIGN KEY (id_mat) REFERENCES Matieres03(id_mat),
+    CONSTRAINT CK_MOY CHECK(cont_moy <= 20)
 );
