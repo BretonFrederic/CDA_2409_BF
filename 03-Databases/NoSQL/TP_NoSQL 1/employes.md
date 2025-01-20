@@ -36,8 +36,8 @@
 
 8. Liste des différents emplois
 
-   db.emp.distinct("job")
-   ou
+   db.emp.distinct("job")  
+   ou  
    db.emp.aggregate({$group:{_id:"$job"}})
    
 
