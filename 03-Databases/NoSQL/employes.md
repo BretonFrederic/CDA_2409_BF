@@ -46,19 +46,19 @@
 
 10. Liste des employés avec nom du département, nom, job, salaire classés par noms de départements etpar salaires décroissants.
 
-   db.emp.find({}, {dname:1, ename:1, job:1, sal:1, deptno:1}).sort({dname:-1, sal:-1})
+    db.emp.find({}, {dname:1, ename:1, job:1, sal:1, deptno:1}).sort({dname:-1, sal:-1})
    
 
 11. Liste des employés vendeurs (SALESMAN) avec affichage de nom, salaire, commissions, salaire + commissions
 
-   db.emp.find({job:"SALESMAN"}, {ename:1, sal:1, comm:1, totalSaleAmount:{$sum:{$add:["$sal", "$comm"]}},job:1})
+      db.emp.find({job:"SALESMAN"}, {ename:1, sal:1, comm:1, totalSaleAmount:{$sum:{$add:["$sal", "$comm"]}},job:1})
    
 
 12. Donner le salaire le plus élevé par département
 
-   db.emp.aggregate({$group:{_id:"$dname", salMax:{$max:"$sal"}}})
+      db.emp.aggregate({$group:{_id:"$dname", salMax:{$max:"$sal"}}})
    
 
 13. Donner département par département masse salariale, nombre d'employés, salaire moyen par type d'emploi.
 
-   db.emp.aggregate({$group:{_id:"$dname", totalSum:{$sum:"$emp.sal"}}})
+      db.emp.aggregate({$group:{_id:"$dname", totalSum:{$sum:"$emp.sal"}}})
