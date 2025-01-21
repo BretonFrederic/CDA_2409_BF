@@ -23,6 +23,10 @@
 ```
    db.emp.find({deptno:{$eq:10}, deptno:{$eq:30}},{ename:1, deptno:1}).sort({ename:1})
    ```
+ou  
+```
+   db.emp.find({deptno : {$in : [10,30] }}, {}).sort({ename : 1})
+```
 
 6. Liste des employés du département 30 classés dans l'ordre des salaires croissants
 ```
