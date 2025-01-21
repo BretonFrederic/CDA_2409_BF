@@ -1,8 +1,8 @@
 ## TP_NoSQL 1 MongoDB
 1. Donner nom, job, numéro et salaire de tous les employés, puis seulement des employés du département 10
-
+```
    db.emp.find({deptno:10}, {ename:1, job:1, _id:1, sal:1, deptno:1})
-   
+   ```
 
 2. Donner nom, job et salaire des employés de type MANAGER dont le salaire est supérieur à 2800
 
