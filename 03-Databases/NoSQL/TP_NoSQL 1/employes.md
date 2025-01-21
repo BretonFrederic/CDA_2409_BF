@@ -41,26 +41,26 @@
    db.emp.aggregate({$group:{_id:"$job"}})
    
 
-10. Donner le nom du département où travaille ALLEN
+9. Donner le nom du département où travaille ALLEN
 
    db.emp.find({ename:{$eq:"ALLEN"}}, {ename:1, deptno:1})
    
 
-11. Liste des employés avec nom du département, nom, job, salaire classés par noms de départements etpar salaires décroissants.
+10. Liste des employés avec nom du département, nom, job, salaire classés par noms de départements etpar salaires décroissants.
 
     db.emp.find({}, {dname:1, ename:1, job:1, sal:1, deptno:1}).sort({dname:-1, sal:-1})
    
 
-12. Liste des employés vendeurs (SALESMAN) avec affichage de nom, salaire, commissions, salaire + commissions
+11. Liste des employés vendeurs (SALESMAN) avec affichage de nom, salaire, commissions, salaire + commissions
 
       db.emp.find({job:"SALESMAN"}, {ename:1, sal:1, comm:1, totalSaleAmount:{$sum:{$add:["$sal", "$comm"]}},job:1})
    
 
-13. Donner le salaire le plus élevé par département
+12. Donner le salaire le plus élevé par département
 
       db.emp.aggregate({$group:{_id:"$dname", salMax:{$max:"$sal"}}})
    
 
-14. Donner département par département masse salariale, nombre d'employés, salaire moyen par type d'emploi.($count n'est pas utilisable avec $group)
+13. Donner département par département masse salariale, nombre d'employés, salaire moyen par type d'emploi.($count n'est pas utilisable avec $group)
 
       db.emp.aggregate({$group:{_id:"$dname", payroll:{$sum:"$sal"}, nbremp:{$sum:1}, avgsale:{$avg:"$sal"}}})
