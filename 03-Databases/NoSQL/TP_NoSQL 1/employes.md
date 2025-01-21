@@ -70,5 +70,5 @@ ou
 
 13. Donner département par département masse salariale, nombre d'employés, salaire moyen par type d'emploi.($count n'est pas utilisable avec $group)
 ```
-      db.emp.aggregate([{$group:{_id: {departement: "$dname", job: "$job"}, masse_salariale: {$sum:"$sal"}, nbr_employes: {$sum: 1}, salaire_moyen: {$avg: "$sal"}}}])
+      db.emp.aggregate([{$group:{_id: {departement: "$dname", job: "$job"}, payroll:{$sum:{$add:["$sal", "$comm"]}}, nbr_employes: {$sum: 1}, avg_sal: {$avg: "$sal"}}}])
 ```
