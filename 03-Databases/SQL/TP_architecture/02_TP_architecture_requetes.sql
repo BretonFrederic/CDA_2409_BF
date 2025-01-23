@@ -35,17 +35,15 @@ ON projets.emp_matricule = employes.emp_matricule
 WHERE fonction_id = (SELECT fonction_id FROM fonctions WHERE fonction_nom = 'Architecte');
     
 /* 6. Sélectionner tous les projets (dates, superficies, prix) avec le nombre d'intervenants autres que le client et l'architecte */
-SELECT projet_date_depot, projet_date_fin_prevue, projet_date_fin_effective, projet_superficie_totale, projet_superficie_batie, projet_prix, COUNT(participer.emp_matricule) AS nbremp
+SELECT participer.projet_ref, projet_date_depot, projet_date_fin_prevue, projet_date_fin_effective, projet_superficie_totale, projet_superficie_batie, projet_prix, COUNT(participer.emp_matricule) AS nbremp
 FROM projets
 JOIN participer
 ON projets.projet_ref = participer.projet_ref
-JOIN employes
-ON projets.emp_matricule = employes.emp_matricule
-WHERE fonction_id <> 'Architecte'
-GROUP BY projets.projet_ref;
+GROUP BY participer.projet_ref
+ORDER BY participer.projet_ref DESC;
 
 /* 7. Sélectionner les types de projets avec, pour chacun d'entre eux, le nombre de projets associés et le prix moyen pratiqué */
-SELECT type_projet_libelle, COUNT(projet_ref), AVG(projet_prix)
+SELECT type_projet_libelle, COUNT(projet_ref), ROUND(AVG(projet_prix), 2)
 FROM type_projets
 JOIN projets
 ON type_projets.type_projet_id = projets.type_projet_id
