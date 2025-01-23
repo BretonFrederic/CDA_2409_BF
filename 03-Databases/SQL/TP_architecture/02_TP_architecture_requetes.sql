@@ -41,9 +41,40 @@ JOIN participer
 ON projets.projet_ref = participer.projet_ref
 JOIN employes
 ON projets.emp_matricule = employes.emp_matricule
+WHERE fonction_id <> 'Architecte'
 GROUP BY projets.projet_ref;
 
 /* 7. Sélectionner les types de projets avec, pour chacun d'entre eux, le nombre de projets associés et le prix moyen pratiqué */
-/* 8. Sélectionner les types de travaux avec, pour chacun d'entre eux, la superficie du projet la pls grande */
+SELECT type_projet_libelle, COUNT(projet_ref), AVG(projet_prix)
+FROM type_projets
+JOIN projets
+ON type_projets.type_projet_id = projets.type_projet_id
+GROUP BY type_projet_libelle;
+
+/* 8. Sélectionner les types de travaux avec, pour chacun d'entre eux, la superficie du projet la plus grande */
+SELECT type_travaux_libelle, MAX(projet_superficie_totale)
+FROM type_travaux
+JOIN projets
+ON type_travaux.type_travaux_id = projets.type_travaux_id
+GROUP BY type_travaux_libelle;
+
 /* 9. Sélectionner l'ensembles des projets (dates, prix) avec les informations du client (nom, telephone, adresse), le type de travaux et le type de projet. */
+SELECT projet_date_depot, projet_date_fin_prevue, projet_date_fin_effective, projet_prix, client_nom, client_telephone, CONCAT(adresse_voie,' ',adresse_num_voie,' ',adresse_ville,' ',adresse_code_postal) AS adresse, type_travaux_libelle, type_projet_libelle
+FROM projets
+JOIN clients
+ON projets.client_ref = clients.client_ref
+JOIN adresses
+ON clients.adresse_id = adresses.adresse_id
+JOIN type_travaux
+ON projets.type_travaux_id = type_travaux.type_travaux_id
+JOIN type_projets
+ON projets.type_projet_id = type_projets.type_projet_id;
+
 /* 10. Sélectionner les projets dont l'adresse est identique au client associé */
+SELECT projets.projet_ref, adresses.adresse_ville, projets.client_ref, clients.client_ref, adresses.adresse_ville
+FROM projets
+JOIN adresses
+ON projets.adresse_id = adresses.adresse_id
+JOIN clients
+ON clients.adresse_id = adresses.adresse_id
+WHERE projets.client_ref = clients.client_ref;
