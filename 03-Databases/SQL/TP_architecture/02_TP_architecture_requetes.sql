@@ -43,7 +43,7 @@ GROUP BY participer.projet_ref
 ORDER BY participer.projet_ref DESC;
 
 /* 7. Sélectionner les types de projets avec, pour chacun d'entre eux, le nombre de projets associés et le prix moyen pratiqué */
-SELECT type_projet_libelle, COUNT(projet_ref), AVG(projet_prix)
+SELECT type_projet_libelle, COUNT(projet_ref), ROUND(AVG(projet_prix), 2)
 FROM type_projets
 JOIN projets
 ON type_projets.type_projet_id = projets.type_projet_id
