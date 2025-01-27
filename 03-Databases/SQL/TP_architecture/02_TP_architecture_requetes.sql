@@ -69,10 +69,10 @@ JOIN type_projets
 ON projets.type_projet_id = type_projets.type_projet_id;
 
 /* 10. Sélectionner les projets dont l'adresse est identique au client associé */
-SELECT projets.projet_ref, adresses.adresse_ville, projets.client_ref, clients.client_ref, adresses.adresse_ville
+SELECT projet_ref, client_nom
 FROM projets
-JOIN adresses
-ON projets.adresse_id = adresses.adresse_id
 JOIN clients
-ON clients.adresse_id = adresses.adresse_id
-WHERE projets.client_ref = clients.client_ref;
+ON projets.client_ref = clients.client_ref
+JOIN adresses
+ON clients.adresse_id = adresses.adresse_id 
+WHERE projets.adresse_id = clients.adresse_id ;
