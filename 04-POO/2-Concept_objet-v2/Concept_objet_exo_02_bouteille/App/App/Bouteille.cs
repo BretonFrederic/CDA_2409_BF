@@ -21,7 +21,7 @@ namespace App
             this.marque = "inconnu";
             this.typeContenu = "eau";
             this.volume = 1.0;
-            this.quantite = 0.0;
+            this.quantite = 1.0;
             this.estOuverte = false;
         }
 
@@ -40,15 +40,13 @@ namespace App
         {
             if (!this.estOuverte)
             {
-                // je peux ouvrir la bouteille si elle est fermée
                 this.estOuverte = true;
-                // l'action ouvrir a été réalisé
+                Console.WriteLine("La bouteille a été ouverte.\n");
                 return true;
             }
             else
             {
-                // bouteille déjà ouverte je pas pas l'ouvrir
-                // l'action ouvrir n'a pas été réalisé
+                Console.WriteLine("Echec. La bouteille est ouverte.\n");
                 return false;
             }
         }
@@ -57,49 +55,86 @@ namespace App
         {
             if (this.estOuverte)
             {
-                // je peux fermer la bouteille si elle est ouverte
                 this.estOuverte = false;
-                // l'action fermer a été réalisé
+                Console.WriteLine("La bouteille a été fermée.\n");
                 return true;
             }
             else
             {
-                // bouteille déjà fermée je pas pas la fermer
-                // l'action fermer n'a pas été réalisé
+                Console.WriteLine("La bouteille est déjà fermée.\n");
                 return false;
             }
         }
-        public bool Vider()
+
+        public bool Vider(double _quantiteRetiree)
         {
-            if (this.estOuverte && this.quantite > 0)
+            // Projection de la nouvelle quantité du liquide dans la bouteille
+            double nouvelleQuantite = this.quantite - _quantiteRetiree;
+
+            // Volume libre disponible dans la bouteille
+            double volumeLibre = this.volume - this.quantite;
+
+            // Boolean retournée
+            bool estVidee = false;
+
+            if (this.estOuverte)
             {
-                // Bouteille ouverte on vide la bouteille
-                this.quantite = 0.0;
-                // l'action vider a été réalisé
-                return true;
+                if (this.quantite >= _quantiteRetiree)
+                {
+                    // Bouteille ouverte on vide la bouteille
+                    this.quantite = nouvelleQuantite;
+
+                    // l'action vide a été réalisé
+                    estVidee = true;
+                    Console.WriteLine($"La bouteille contient à présent {this.quantite} litre(s)");
+                }
+                else
+                {
+                    Console.WriteLine($"Echec, quantité à vider {_quantiteRetiree} litre(s), la bouteille contient {this.quantite}/{this.volume} litre(s).");
+                }
+
             }
             else
             {
-                // bouteille fermée impossible de vider
-                // l'action vider n'a pas été réalisé
-                return false;
+                Console.WriteLine("La bouteille est fermée !");
             }
+            Console.WriteLine();
+            return estVidee;
         }
-        public bool Remplir()
+        public bool Remplir(double _quantiteAjoutee)
         {
-            if (this.estOuverte && this.quantite < this.volume)
+            // Projection de la nouvelle quantité du liquide dans la bouteille
+            double nouvelleQuantite = _quantiteAjoutee + this.quantite;
+
+            // Volume libre disponible dans la bouteille
+            double volumeLibre = this.volume - this.quantite;
+
+            // Boolean retournée
+            bool estRemplie = false;
+
+            if (this.estOuverte)
             {
-                // Bouteille ouverte on rempli la bouteille
-                this.quantite = this.volume;
-                // l'action remplir a été réalisé
-                return true;
+                if(nouvelleQuantite <= this.volume)
+                {
+                    // Bouteille ouverte on rempli la bouteille
+                    this.quantite = nouvelleQuantite;
+
+                    // l'action remplir a été réalisé
+                    estRemplie = true;
+                    Console.WriteLine($"La bouteille contient à présent {nouvelleQuantite} litre(s).");
+                }
+                else
+                {
+                    Console.WriteLine($"Echec, quantité à remplir {_quantiteAjoutee} litre(s), la bouteille contient {this.quantite}/{this.volume} litre(s)");
+                }
+                
             }
             else
             {
-                // bouteille fermée impossible de remplir
-                // l'action remplir n'a pas été réalisé
-                return false;
+                Console.WriteLine("La bouteille est ouverte !");
             }
+            Console.WriteLine();
+            return estRemplie;
         }
     }
 
