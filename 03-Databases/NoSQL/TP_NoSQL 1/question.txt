@@ -1,0 +1,58 @@
+Première partie
+
+Nom de la base de donnees
+nom de la collection emp
+
+
+1. Donner nom, job, numéro et salaire seulement des employés du département 10
+
+db.emp.find({"deptno":10}, {ename:1,job:1,_id:1,sal:1 })
+
+2. Donner nom, job et salaire des employés de type MANAGER dont le salaire est supérieur à 2800
+
+db.emp.find( {sal: {$gte:2800 } }, {ename:1,job:1,sal:1})
+
+3. Donner la liste des MANAGER n'appartenant pas au département 30
+
+db.emp.find({$and :[{job:{$eq:"MANAGER"}},{deptno: {$ne:30}}]},{ename:1,job:1,dname:1,sal:1})
+
+4. Liste des employés de salaire compris entre 1200 et 1400
+
+db.emp.find({sal: {$gte:1200,$lte:1400}},{ename:1,job:1,dname:1,sal:1})
+
+5. Liste des employés des départements 10 et 30 classés dans l'ordre alphabétique
+
+db.emp.find({deptno:{$in: [10,30]}},{ename:1,job:1,dname:1,deptno:1}).sort({ename:1});
+
+6. Liste des employés du département 30 classés dans l'ordre des salaires croissants
+
+db.emp.find({deptno:30},{ename:1,job:1,dname:1,sal:1 }).sort({sal:-1});
+
+db.emp.find({deptno:{$eq:30}},{ename:1,job:1,dname:1,sal:1 }).sort({sal:-1});
+
+7. Liste de tous les employés classés par emploi et salaires décroissants
+
+db.emp.find({},{ename:1,job:1,dname:1,sal:1 }).sort({job:1,sal:-1})
+
+8. Liste des différents emplois
+
+db.emp.distinct("job")
+
+9. Donner le nom du département où travaille ALLEN
+
+db.emp.find({ename:"ALLEN"},{ename:1,dname:1});
+( il n'y a pas de jointure tous es dans la même table)
+
+10. Liste des employés avec nom du département, nom, job, salaire classés par noms de départements et par salaires décroissants.
+
+db.emp.find({},{dname:1,ename:1,job:1,sal:1}).sort({dname:1,sal:-1})
+
+12. Donner le salaire le plus élevé par département
+
+db.emp.aggregate({$group:{_id:"$dname",salaire_max:{$max:"$sal"}}},{$sort:{salaire_max:-1}})
+
+13. Donner département par département masse salariale, nombre d'employés, salaire moyen ( la question est resolu sans faire la  
+
+db.emp.aggregate({$group:{_id:{dep:"$dname",job:"$job"},Effectif:{$count:{}},Masse_salariale:{$sum:"$sal"},Salaire_moyen:{$avg:"$sal"}}})
+
+
