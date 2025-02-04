@@ -66,13 +66,31 @@ namespace App
             }
         }
 
+        public void ViderTout()
+        {
+            if (this.estOuverte)
+            {
+                if (this.quantite > 0)
+                {
+                    this.quantite = 0;
+                    Console.WriteLine($"La bouteille contient à présent {this.quantite} litre(s)");
+                }
+                else
+                {
+                    Console.WriteLine("La bouteille est déjà vide.");
+                }
+
+            }
+            else
+            {
+                Console.WriteLine($"Echec, la bouteille bouteille est fermée.");
+            }
+        }
+
         public bool Vider(double _quantiteRetiree)
         {
             // Projection de la nouvelle quantité du liquide dans la bouteille
             double nouvelleQuantite = this.quantite - _quantiteRetiree;
-
-            // Volume libre disponible dans la bouteille
-            double volumeLibre = this.volume - this.quantite;
 
             // Boolean retournée
             bool estVidee = false;
@@ -101,6 +119,28 @@ namespace App
             Console.WriteLine();
             return estVidee;
         }
+
+        public void RemplirTout()
+        {
+            if (this.estOuverte)
+            {
+                if (this.quantite < this.volume)
+                {
+                    this.quantite = this.volume;
+                    Console.WriteLine($"La bouteille contient à présent {this.quantite} litre(s)");
+                }
+                else
+                {
+                    Console.WriteLine("La bouteille est déjà pleine.");
+                }
+
+            }
+            else
+            {
+                Console.WriteLine($"Echec, la bouteille est fermée.");
+            }
+        }
+
         public bool Remplir(double _quantiteAjoutee)
         {
             // Projection de la nouvelle quantité du liquide dans la bouteille

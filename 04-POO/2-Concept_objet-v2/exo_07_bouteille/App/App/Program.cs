@@ -36,13 +36,15 @@ namespace App
             do
             {
                 int menu = 0;
-                while (menu < 1 || menu > 4)
+                while (menu < 1 || menu > 6)
                 {
                     AfficherInfo(bouteilleVittel);
                     Console.WriteLine("\nChoisir :\n\t1 - Ouvrir la bouteille" +
                                               "\n\t2 - Fermer la bouteille" +
                                               "\n\t3 - Vider la bouteille" +
-                                              "\n\t4 - Remplir la bouteille");
+                                              "\n\t4 - Remplir la bouteille" +
+                                              "\n\t5 - Vider toute la bouteille" +
+                                              "\n\t6 - Remplir toute la bouteille");
                     try
                     {
                         menu = int.Parse(Console.ReadLine()?? "");
@@ -69,6 +71,14 @@ namespace App
                     case 4:
                         Console.WriteLine("Vous avez choisi Remplir.");
                         bouteilleVittel.Remplir(ChoisirQuantite());
+                        break;
+                    case 5:
+                        Console.WriteLine("Vous avez choisi Vider toute la bouteille.");
+                        bouteilleVittel.ViderTout();
+                        break;
+                    case 6:
+                        Console.WriteLine("Vous avez choisi Remplir toute la bouteille.");
+                        bouteilleVittel.RemplirTout();
                         break;
                     default:
                         // Console.WriteLine("Saisie menu incorrect.");
