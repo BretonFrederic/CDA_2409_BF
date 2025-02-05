@@ -89,34 +89,41 @@ namespace App
 
         public bool Vider(double _quantiteRetiree)
         {
-            // Projection de la nouvelle quantité du liquide dans la bouteille
-            double nouvelleQuantite = this.quantite - _quantiteRetiree;
-
             // Boolean retournée
             bool estVidee = false;
 
-            if (this.estOuverte)
+            if (_quantiteRetiree > 0)
             {
-                if (this.quantite >= _quantiteRetiree)
-                {
-                    // Bouteille ouverte on vide la bouteille
-                    this.quantite = nouvelleQuantite;
+                // Projection de la nouvelle quantité du liquide dans la bouteille
+                double nouvelleQuantite = this.quantite - _quantiteRetiree;
 
-                    // l'action vide a été réalisé
-                    estVidee = true;
-                    Console.WriteLine($"La bouteille contient à présent {this.quantite} litre(s)");
+                if (this.estOuverte)
+                {
+                    if (this.quantite >= _quantiteRetiree)
+                    {
+                        // Bouteille ouverte on vide la bouteille
+                        this.quantite = nouvelleQuantite;
+
+                        // l'action vide a été réalisé
+                        estVidee = true;
+                        Console.WriteLine($"La bouteille contient à présent {this.quantite} litre(s)");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Echec, quantité à vider {_quantiteRetiree} litre(s), la bouteille contient {this.quantite}/{this.volume} litre(s).");
+                    }
+
                 }
                 else
                 {
-                    Console.WriteLine($"Echec, quantité à vider {_quantiteRetiree} litre(s), la bouteille contient {this.quantite}/{this.volume} litre(s).");
+                    Console.WriteLine("La bouteille est fermée !");
                 }
-
+                Console.WriteLine();
             }
             else
             {
-                Console.WriteLine("La bouteille est fermée !");
+                Console.WriteLine("Echec vous avez saisie une valeur négative.");
             }
-            Console.WriteLine();
             return estVidee;
         }
 
@@ -143,37 +150,41 @@ namespace App
 
         public bool Remplir(double _quantiteAjoutee)
         {
-            // Projection de la nouvelle quantité du liquide dans la bouteille
-            double nouvelleQuantite = _quantiteAjoutee + this.quantite;
-
-            // Volume libre disponible dans la bouteille
-            double volumeLibre = this.volume - this.quantite;
-
             // Boolean retournée
             bool estRemplie = false;
-
-            if (this.estOuverte)
+            if (_quantiteAjoutee > 0)
             {
-                if(nouvelleQuantite <= this.volume)
-                {
-                    // Bouteille ouverte on rempli la bouteille
-                    this.quantite = nouvelleQuantite;
+                // Projection de la nouvelle quantité du liquide dans la bouteille
+                double nouvelleQuantite = _quantiteAjoutee + this.quantite;
 
-                    // l'action remplir a été réalisé
-                    estRemplie = true;
-                    Console.WriteLine($"La bouteille contient à présent {nouvelleQuantite} litre(s).");
+                if (this.estOuverte)
+                {
+                    if (nouvelleQuantite <= this.volume)
+                    {
+                        // Bouteille ouverte on rempli la bouteille
+                        this.quantite = nouvelleQuantite;
+
+                        // l'action remplir a été réalisé
+                        estRemplie = true;
+                        Console.WriteLine($"La bouteille contient à présent {nouvelleQuantite} litre(s).");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Echec, quantité à remplir {_quantiteAjoutee} litre(s), la bouteille contient {this.quantite}/{this.volume} litre(s)");
+                    }
+
                 }
                 else
                 {
-                    Console.WriteLine($"Echec, quantité à remplir {_quantiteAjoutee} litre(s), la bouteille contient {this.quantite}/{this.volume} litre(s)");
+                    Console.WriteLine("La bouteille est ouverte !");
                 }
-                
+                Console.WriteLine();
+
             }
             else
             {
-                Console.WriteLine("La bouteille est ouverte !");
+                Console.WriteLine("Echec vous avez saisie une valeur négative.");
             }
-            Console.WriteLine();
             return estRemplie;
         }
     }

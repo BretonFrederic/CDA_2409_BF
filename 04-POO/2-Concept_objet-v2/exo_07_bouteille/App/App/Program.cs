@@ -10,7 +10,7 @@ namespace App
             double quantiteDeplacee = 0.0;
             Console.Write("Choisir la quantité en litres (ex : 0,7) : ");
             bool nombreValide = double.TryParse(Console.ReadLine(), out quantiteDeplacee);
-            if (!nombreValide && quantiteDeplacee <= 0 || quantiteDeplacee < 0)
+            if (!nombreValide && quantiteDeplacee <= 0)
             {
                 Console.WriteLine("Erreur saisie quantité en litres supérieur à 0. Le séparateur doit être une virgule.");
                 return ChoisirQuantite();
