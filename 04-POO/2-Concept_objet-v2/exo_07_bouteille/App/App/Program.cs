@@ -10,11 +10,6 @@ namespace App
             double quantiteDeplacee = 0.0;
             Console.Write("Choisir la quantité en litres (ex : 0,7) : ");
             bool nombreValide = double.TryParse(Console.ReadLine(), out quantiteDeplacee);
-            if (!nombreValide && quantiteDeplacee <= 0)
-            {
-                Console.WriteLine("Erreur saisie quantité en litres supérieur à 0. Le séparateur doit être une virgule.");
-                return ChoisirQuantite();
-            }
             return quantiteDeplacee;
         }
 
@@ -66,11 +61,25 @@ namespace App
                         break;
                     case 3:
                         Console.WriteLine("Vous avez choisi Vider.");
-                        bouteilleVittel.Vider(ChoisirQuantite());
+                        try
+                        {
+                            bouteilleVittel.Vider(ChoisirQuantite());
+                        }
+                        catch(ArgumentException e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
                         break;
                     case 4:
                         Console.WriteLine("Vous avez choisi Remplir.");
-                        bouteilleVittel.Remplir(ChoisirQuantite());
+                        try
+                        {
+                            bouteilleVittel.Remplir(ChoisirQuantite());
+                        }
+                        catch(ArgumentException e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
                         break;
                     case 5:
                         Console.WriteLine("Vous avez choisi Vider toute la bouteille.");
@@ -93,7 +102,6 @@ namespace App
                 Console.WriteLine();
                 Console.WriteLine();
             } while (!quitter);
-
         }
     }
 }

@@ -122,7 +122,8 @@ namespace App
             }
             else
             {
-                Console.WriteLine("Echec vous avez saisie une valeur négative.");
+                throw new ArgumentException("Echec vous avez saisie une valeur invalide.");
+                //Console.WriteLine("Echec vous avez saisie une valeur négative.");
             }
             return estVidee;
         }
@@ -183,7 +184,8 @@ namespace App
             }
             else
             {
-                Console.WriteLine("Echec vous avez saisie une valeur négative.");
+                throw new ArgumentException("Echec vous avez saisie une valeur invalide.");
+                //Console.WriteLine("Echec vous avez saisie une valeur négative.");
             }
             return estRemplie;
         }
