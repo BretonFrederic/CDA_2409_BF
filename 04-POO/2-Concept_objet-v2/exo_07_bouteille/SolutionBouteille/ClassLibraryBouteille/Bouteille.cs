@@ -10,12 +10,13 @@ namespace ClassLibraryBouteille
         public double contenanceEnLitre { get; private set; }
         public bool estOuverte { get; private set; }
 
+        /*
         // Constructeur par défaut
         public Bouteille()
         {
             nom = "Vittel";
-            capaciteEnLitre = 1.5;
-            contenanceEnLitre = 1.5;
+            capaciteEnLitre = 15;
+            contenanceEnLitre = 15;
             estOuverte = false;
         }
 
@@ -28,7 +29,7 @@ namespace ClassLibraryBouteille
             this.estOuverte = estOuverte;
         }
 
-        // constructeur hybride
+        // constructeur hybride (interdépendance)
         public Bouteille(string nom, double capaciteEnLitre, double contenanceEnLitre) : this(nom, 
                                                                                                 capaciteEnLitre, 
                                                                                                 contenanceEnLitre, 
@@ -45,8 +46,37 @@ namespace ClassLibraryBouteille
             contenanceEnLitre = bouteilleACopier.contenanceEnLitre;
             estOuverte = bouteilleACopier.estOuverte;
         }
+        */
 
-        // Méthodes
+        // Constructeur par défaut (interdépendance)
+
+        public Bouteille():this("Vittel", 1.5, 1.5, false)
+        {
+        }
+
+        // constructeur principal classique
+        public Bouteille(string nom, double capaciteEnLitre, double contenanceEnLitre, bool estOuverte)
+        {
+            this.nom = nom;
+            this.capaciteEnLitre = capaciteEnLitre;
+            this.contenanceEnLitre = contenanceEnLitre;
+            this.estOuverte = estOuverte;
+        }
+
+        // constructeur hybride (interdépendance)
+        public Bouteille(string nom, double capaciteEnLitre, double contenanceEnLitre) : this(nom,
+                                                                                              capaciteEnLitre,
+                                                                                              contenanceEnLitre,
+                                                                                              false)
+        {
+
+        }
+
+        // constructeur par clonage (interdépendance)
+        public Bouteille(Bouteille bouteilleACopier):this(bouteilleACopier.nom, bouteilleACopier.capaciteEnLitre, bouteilleACopier.contenanceEnLitre, bouteilleACopier.estOuverte)
+        {
+        }
+
         public bool Ouvrir()
         {
             if(this.estOuverte)

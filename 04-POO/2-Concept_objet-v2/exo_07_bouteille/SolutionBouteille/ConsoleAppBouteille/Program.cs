@@ -28,11 +28,11 @@ namespace ConsoleAppBouteille
             bool vittelTestRemplir = vittel.Remplir();
             //vittelTestRemplir = vittel.Remplir();
 
-            bool vittelTestViderQuantite = vittel.Vider(0.7);
+            bool vittelTestViderQuantite = vittel.Vider(7);
             //vittelTestViderQuantite = vittel.Vider(-0.9);
 
-            bool vittelTestRemplirQuantite = vittel.Remplir(0.5);
-            vittelTestRemplirQuantite = vittel.Remplir(0.2);
+            bool vittelTestRemplirQuantite = vittel.Remplir(5);
+            vittelTestRemplirQuantite = vittel.Remplir(2);
 
             bool vittelTestFermer = vittel.Fermer();
             //vittelTestFermer = vittel.Fermer();
