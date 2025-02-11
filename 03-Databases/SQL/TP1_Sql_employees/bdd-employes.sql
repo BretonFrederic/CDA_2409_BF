@@ -32,4 +32,4 @@ CREATE TABLE emp
 -- AJOUTERCLES ETRANGERES
 ALTER TABLE emp
 	ADD CONSTRAINT fk_temp_mgr FOREIGN KEY (mgr) REFERENCES emp(empno),
-    ADD CONSTRAINT fk_emp_deptno FOREIGN KEY (deptno) REFERENCES dept(deptno);
+    ADD CONSTRAINT fk_emp_deptno FOREIGN KEY (deptno) REFERENCES dept(deptno);biblio
