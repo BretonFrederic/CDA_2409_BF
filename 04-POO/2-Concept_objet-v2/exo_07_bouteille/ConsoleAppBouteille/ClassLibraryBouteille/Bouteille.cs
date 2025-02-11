@@ -6,8 +6,46 @@ namespace ClassLibraryBouteille
     {
         // Attributs
         public string? nom { get; private set; }
-        public float capaciteEnLitre { get; init; }
-        public float contenuEnLitre { get; private set; }
+
+        float _capaciteEnLitre;
+        public float capaciteEnLitre 
+        { 
+            get 
+            {
+                return _capaciteEnLitre;
+            } 
+            init 
+            { 
+                if(value <= 0)
+                {
+                    throw new ArgumentException("Erreur : capaciteEnLitre doit être supérieur à 0.");
+                }
+                else
+                {
+                    _capaciteEnLitre = value;
+                }
+            } 
+        }
+
+        float _contenuEnLitre;
+        public float contenuEnLitre 
+        {
+            get
+            {
+                return _contenuEnLitre;
+            }
+            set
+            {
+                if (value <= 0 || value > _capaciteEnLitre)
+                {
+                    throw new ArgumentException("Erreur : contenuEnLitre doit être supérieur à 0. Valeur Max égal à capaciteEnLitre.");
+                }
+                else
+                {
+                    _contenuEnLitre = value;
+                }
+            }
+        }
         public bool estOuverte { get; private set; }
 
         // Constructeur par défaut (interdépendance)
@@ -47,9 +85,9 @@ namespace ClassLibraryBouteille
         /// <param name="capaciteEnLitre">Quantité max du volume Bouteille en litre de type float.</param>
         /// <param name="contenuEnLitre">Quantité à l'intérieur de Bouteille en litre de type float</param>
         public Bouteille(string nom, float capaciteEnLitre, float contenuEnLitre) : this(nom,
-                                                                                              capaciteEnLitre,
-                                                                                              contenuEnLitre,
-                                                                                              false)
+                                                                                         capaciteEnLitre,
+                                                                                         contenuEnLitre,
+                                                                                         false)
         {
             
         }
