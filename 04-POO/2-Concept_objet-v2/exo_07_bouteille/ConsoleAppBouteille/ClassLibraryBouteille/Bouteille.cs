@@ -131,10 +131,10 @@ namespace ClassLibraryBouteille
             }
             else if (quantiteEnLitre <= 0 || quantiteEnLitre > this.contenuEnLitre)
             {
-                throw new ArgumentException(String.Format("Erreur. La quantité à vider " +
-                                                          "ne peut pas être inférieur à 0 Litre ou supérieur à {0} Litre.",
-                                                          this.contenuEnLitre), nameof(quantiteEnLitre));
-                //return false;
+                //throw new ArgumentException(String.Format("Erreur. La quantité à vider " +
+                //                                          "ne peut pas être inférieur à 0 Litre ou supérieur à {0} Litre.",
+                //                                          this.contenuEnLitre), nameof(quantiteEnLitre));
+                return false;
             }
             else
             {
@@ -175,10 +175,10 @@ namespace ClassLibraryBouteille
             }
             else if (quantiteEnLitre <= 0 || quantiteEnLitre > volumeLibreEnLitre)
             {
-                throw new ArgumentException(String.Format("Erreur. La quantité à remplir " +
-                                                          "ne peut pas être inférieur à 0 Litre ou supérieur à {0} Litre.",
-                                                          volumeLibreEnLitre), nameof(quantiteEnLitre));
-                //return false;
+                // throw new ArgumentException(String.Format("Erreur. La quantité à remplir " +
+                //                                          "ne peut pas être inférieur à 0 Litre ou supérieur à {0} Litre.",
+                //                                          volumeLibreEnLitre), nameof(quantiteEnLitre));
+                return false;
             }
             else
             {

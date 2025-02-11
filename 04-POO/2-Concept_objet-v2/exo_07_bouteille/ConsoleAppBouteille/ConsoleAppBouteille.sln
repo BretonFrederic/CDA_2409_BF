@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppBouteille", "ConsoleAppBouteille\ConsoleAppBouteille.csproj", "{3CE089CF-D6B6-4969-BEC0-5C1B1E3726DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppBouteille", "ConsoleAppBouteille\ConsoleAppBouteille.csproj", "{3CE089CF-D6B6-4969-BEC0-5C1B1E3726DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryBouteille", "ClassLibraryBouteille\ClassLibraryBouteille.csproj", "{7FAA140C-BDBA-4F36-AFB5-486E1374F13E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibraryBouteille", "ClassLibraryBouteille\ClassLibraryBouteille.csproj", "{7FAA140C-BDBA-4F36-AFB5-486E1374F13E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsBouteille", "TestsBouteille\TestsBouteille.csproj", "{2C9A0559-DEE8-4283-A5ED-2813070E434F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7FAA140C-BDBA-4F36-AFB5-486E1374F13E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FAA140C-BDBA-4F36-AFB5-486E1374F13E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FAA140C-BDBA-4F36-AFB5-486E1374F13E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C9A0559-DEE8-4283-A5ED-2813070E434F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C9A0559-DEE8-4283-A5ED-2813070E434F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C9A0559-DEE8-4283-A5ED-2813070E434F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C9A0559-DEE8-4283-A5ED-2813070E434F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
