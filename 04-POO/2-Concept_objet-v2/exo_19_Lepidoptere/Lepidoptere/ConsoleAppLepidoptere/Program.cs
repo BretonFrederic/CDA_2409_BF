@@ -9,6 +9,8 @@ namespace ConsoleAppLepidoptere
             Lepidoptere monLepi = new Lepidoptere("Le vulcain");
             monLepi.SeMetamorphoser();
             monLepi.SeDeplacer();
+            monLepi.SeMetamorphoser();
+            monLepi.SeDeplacer();
         }
     }
 }

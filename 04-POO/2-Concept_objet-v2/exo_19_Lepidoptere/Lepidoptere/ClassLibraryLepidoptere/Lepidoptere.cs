@@ -15,11 +15,11 @@
         // Méthodes
         public void SeMetamorphoser()
         {
-            sonStadeCourant.SeMetamorphoser();
+            this.sonStadeCourant = sonStadeCourant.SeMetamorphoser();
         }
         public void SeDeplacer()
         {
-            sonStadeCourant.SeDeplacer();
+            this.sonStadeCourant.SeDeplacer();
         }
     }
 }
