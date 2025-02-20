@@ -14,11 +14,11 @@ namespace ClassLibraryLepidoptere
         }
         public override StadeEvolution SeMetamorphoser()
         {
-            return new Chenille();
+            return this;
         }
         public override void SeDeplacer()
         {
-            Console.WriteLine("Je peux voler !");
+            Console.WriteLine("Je peux voler, je suis un papillon !");
         }
 
     }

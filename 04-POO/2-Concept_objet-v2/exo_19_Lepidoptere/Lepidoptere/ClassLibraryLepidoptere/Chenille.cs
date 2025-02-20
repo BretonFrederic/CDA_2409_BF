@@ -18,7 +18,7 @@ namespace ClassLibraryLepidoptere
         }
         public override void SeDeplacer()
         {
-            Console.WriteLine("Je peux ramper !");
+            Console.WriteLine("Je peux ramper, je suis une chenille !");
         }
 
     }
