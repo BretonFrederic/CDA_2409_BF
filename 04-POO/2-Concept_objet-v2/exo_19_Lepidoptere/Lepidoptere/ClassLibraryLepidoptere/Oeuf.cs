@@ -18,7 +18,7 @@ namespace ClassLibraryLepidoptere
         }
         public override void SeDeplacer()
         {
-            Console.WriteLine("Je peux pas !");
+            Console.WriteLine("Je peux pas, je suis un oeuf !");
         }
 
     }

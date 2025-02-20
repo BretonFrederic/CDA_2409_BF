@@ -18,7 +18,7 @@ namespace ClassLibraryLepidoptere
         }
         public override void SeDeplacer()
         {
-            Console.WriteLine("Je peux pas je suis en mutation !");
+            Console.WriteLine("Je peux pas, je suis en mutation !");
         }
 
     }

@@ -14,7 +14,8 @@ namespace ClassLibraryLepidoptere
         }
         public override StadeEvolution SeMetamorphoser()
         {
-            return new Chenille();
+            Console.WriteLine("Je suis un papillon je ne peux plus me métamorphoser !");
+            return this;
         }
         public override void SeDeplacer()
         {
