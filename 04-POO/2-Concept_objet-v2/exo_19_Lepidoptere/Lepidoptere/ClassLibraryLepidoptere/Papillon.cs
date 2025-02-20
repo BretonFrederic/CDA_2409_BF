@@ -14,11 +14,12 @@ namespace ClassLibraryLepidoptere
         }
         public override StadeEvolution SeMetamorphoser()
         {
+            Console.WriteLine("Je suis un papillon je ne peux plus me métamorphoser !");
             return this;
         }
         public override void SeDeplacer()
         {
-            Console.WriteLine("Je peux voler, je suis un papillon !");
+            Console.WriteLine("Je peux voler !");
         }
 
     }
