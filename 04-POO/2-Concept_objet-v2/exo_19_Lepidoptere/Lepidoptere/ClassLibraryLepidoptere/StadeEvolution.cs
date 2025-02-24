@@ -8,6 +8,10 @@ namespace ClassLibraryLepidoptere
 {
     public abstract class StadeEvolution
     {
+        public StadeEvolution()
+        {
+
+        }
         public abstract StadeEvolution SeMetamorphoser();
         public abstract void SeDeplacer();
     }
