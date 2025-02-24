@@ -1,0 +1,1 @@
+document.querySelector("#rouge").innerHTML="<b>mon premier code</b>";
