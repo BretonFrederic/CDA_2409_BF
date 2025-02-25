@@ -1,7 +1,7 @@
 const sizeUp = document.querySelector(".font-size-up");
 const sizeDown = document.querySelector(".font-size-down");
 const inputValue = document.querySelector("#name");
-const text = document.querySelector("p");
+let tabText = document.querySelectorAll("p");
 
 var size = 16;
 
@@ -15,7 +15,9 @@ function IncreaseSize(){
         size = 16;
     }
     // document.querySelector("#number").innerHTML = size;
-    text.style.fontSize = size + "px";
+
+
+    tabText.forEach(element => {element.style.fontSize = size + "px"}) ;
 }
 
 function DecreaseSize(){
@@ -24,7 +26,7 @@ function DecreaseSize(){
         size = 16;
     }
     // document.querySelector("#number").innerHTML = size;
-    text.style.fontSize = size + "px";
+    tabText.forEach(element => {element.style.fontSize = size + "px"});
 }
 
 function ChangeValue(){
