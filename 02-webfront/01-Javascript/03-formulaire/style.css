@@ -1,0 +1,66 @@
+body, h1{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    width: 800px;
+    margin-top: 20px;
+}
+
+.mg-btm{
+    margin-bottom: 10px;
+}
+
+form{
+    display: flex;
+
+    align-items: center;
+}
+
+#formulaire{
+    padding: 10px;
+}
+
+#resultat{
+    border-top: 2px solid black;
+}
+
+.bd-b{
+    border: 2px solid blue;
+}
+
+input{
+    font-size: 16px;
+    width: 100px;
+    height: 35px;
+}
+
+#prenom{
+    width: 200px;
+}
+
+button{
+    height: 40px;
+    color: blue;
+}
+
+label, button{
+
+    font-size: 20px;
+}
+
+.color-blue-bold{
+    color: blue;
+    font-weight: bold;
+}
+
+.mg-r-22{
+    margin-right: 22px;
+}
