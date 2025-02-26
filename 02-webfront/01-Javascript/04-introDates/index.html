@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" async></script>
     <title>Intro dates</title>
 </head>
 <body>
-    <form action="" method="post">
-        <h1>Ma date de naissance</h1>
-        <label for="name">Date de naissance : </label>
-        <input type="datetime-local" name="name" id="name">
-        <button>Calculer</button>
-        <p>Sélectionner une date dans le passé.</p>
-    </form>
+    <div class="container">
+        <h1 class="mg-btm-18" >Ma date de naissance</h1>
+        <form class="mg-btm-18" action="" method="post">
+            <div>
+                <label class="mg-r-22" for="date">Date de naissance : </label>
+                <input class="bd-b mg-r-22" type="datetime-local" name="date" id="date">
+            </div>
+            <div>
+                <button id="btn-valider" class="bd-b" type="button">Calculer</button>
+            </div>
+        </form>
+        <p id="resultat">Sélectionner une date dans le passé.</p>
+    </div>
 </body>
 </html>
