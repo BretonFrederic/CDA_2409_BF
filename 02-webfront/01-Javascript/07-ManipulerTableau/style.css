@@ -25,4 +25,5 @@ table{
 
 th, td{
     border: 2px solid #accbe1;
+    padding: 8px;
 }
