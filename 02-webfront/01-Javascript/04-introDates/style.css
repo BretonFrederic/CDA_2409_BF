@@ -40,3 +40,8 @@ input{
 .mg-r-22{
     margin-right: 22px;
 }
+
+.color-blue-bold{
+    color: blue;
+    font-weight: bold;
+}
