@@ -22,7 +22,6 @@ listePersonnes.forEach(element => {
     // Creer et afficher ligne du tableau avec valeurs des colonnes
     let tr = document.createElement('tr');
     tableauBody.appendChild(tr);
-    tr.setAttribute('id', element);
 
     inscrit.forEach(colonne => {
         let td = document.createElement('td');

@@ -1,8 +1,9 @@
 let resultat = document.querySelector("#resultat");
-let btnValider = document.querySelector("#btn-valider");
+let btnCalculer = document.querySelector("#btn-calculer");
+let container = document.querySelector(".container");
 const d1 = new Date();
 
-btnValider.addEventListener('click', function(){
+btnCalculer.addEventListener('click', function(){
     // Recupere la date choisie par l'utilisateur
     const dateUtilisateur = document.querySelector("#date").value;
 
@@ -13,6 +14,7 @@ btnValider.addEventListener('click', function(){
         // Calculer la difference entre la dateActuelle et la dateAnniversaire
         const dateDiff = d1.getTime() - d2.getTime();
         if(dateDiff < 0){
+            resultat.innerHTML = "Erreur la date renseignée doit être dans le passé.";
             console.log("Erreur la date renseignée doit être dans le passé.");
         }
         else{
@@ -20,10 +22,23 @@ btnValider.addEventListener('click', function(){
             // Millisecondes/1000 -> secondes | secondes/60 -> minutes | minutes/60 -> heures | heures/24 -> jours | jours/365,25 -> années
             const anneeDiff = ((((dateDiff/1000)/60)/60)/24)/365.25;
 
+            resultat.innerHTML = "Vous êtes né le : <span class='color-blue-bold'>" + d2.toLocaleDateString("fr") + "</span> à <span class='color-blue-bold'>" + d2.toLocaleTimeString() +
+            ".</span><br><br>Il s'est écoulé " + Math.floor(anneeDiff) + " année(s) depuis votre naissance";
             console.log("Vous êtes né le : " + d2.toLocaleDateString("fr") + " à " + d2.toLocaleTimeString());
 
             // Math.floor arrondir années complètes (-5.1 -> -6 / 10.60 -> 10)
             console.log("Il s'est écoulé " + Math.floor(anneeDiff) + " depuis votre naissance");
+
+            // Ajouter une balise p pour afficher le signe astrologique
+            let astroResult = document.createElement('p');
+            astroResult.append("Votre signe astro...");
+            container.appendChild(astroResult);
+
+            // Style quand affichage résultat
+            resultat.style.borderTop='2px solid black';
+            resultat.style.paddingTop='20px';
+            resultat.style.borderBottom='2px solid black';
+            resultat.style.paddingBottom='20px';
         }
     }
     else{
