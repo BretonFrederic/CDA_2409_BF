@@ -24,6 +24,10 @@ form{
     margin-bottom: 18px;
 }
 
+.mg-top-18{
+    margin-top: 18px;
+}
+
 .bd-b{
     border: 2px solid blue;
 }

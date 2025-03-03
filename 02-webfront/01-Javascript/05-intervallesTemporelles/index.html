@@ -9,21 +9,36 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="mg-btm-18" >Gestion des dates et des intervalles</h1>
-        <form class="mg-btm-18" action="" method="post">
-            <div>
-                <label class="mg-r-22" for="date">Date actuelle : </label>
-                <input class="bd-b mg-r-22" type="date" name="date" id="date">
-            </div>
-            <div>
-                <label class="mg-r-22" for="time">Heure actuelle : </label>
-                <input class="bd-b mg-r-22" type="time" name="time" id="time">
-            </div>
-            <div>
-                <button id="btn-afficher" class="bd-b" type="button">Afficher Date du jour</button>
-            </div>
-        </form>
-        <p id="resultat-date">Compléter la date et l'heure.</p>
+        <div id="gestion-form">
+            <h1 class="mg-btm-18" >Gestion des dates et des intervalles</h1>
+            <form class="mg-btm-18" action="" method="">
+                <div>
+                    <label class="mg-r-22" for="date">Date actuelle : </label>
+                    <input class="bd-b mg-r-22" type="date" name="date" id="date">
+                </div>
+                <div>
+                    <label class="mg-r-22" for="time">Heure actuelle : </label>
+                    <input class="bd-b mg-r-22" type="time" name="time" id="time">
+                </div>
+                <div>
+                    <button id="btn-afficher" class="bd-b" type="button">Afficher Date du jour</button>
+                </div>
+            </form>
+            <p id="resultat-date"></p>
+        </div>
+        <div id="selection-form" style="display: none;">
+            <h1 class="mg-btm-18 mg-top-18" >Sélectionner une date et une heure :</h1>
+            <form class="mg-btm-18" action="" method="">
+                <div>
+                    <label class="mg-r-22" for="datetime">Date : </label>
+                    <input class="bd-b mg-r-22" type="datetime-local" name="datetime" id="datetime">
+                </div>
+                <div>
+                    <button id="btn-calculer" class="bd-b" type="button">Calculer l'intervalle</button>
+                </div>
+            </form>
+            <p id="resultat-intervalle"></p>
+        </div>
     </div>
 </body>
 </html>
