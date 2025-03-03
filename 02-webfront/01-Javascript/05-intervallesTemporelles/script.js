@@ -25,14 +25,26 @@ btnAfficherDate.addEventListener('click', function Afficher(){
     console.log(dateActuelle);
 });
 
-btnCalculerIntervalle.addEventListener('click', function Calculer(){
+btnCalculerIntervalle.addEventListener('click', function CalculerIntervalle(){
     let dateSelect = document.querySelector("#datetime").value;
-    const dateInter = Math.abs(new Date(dateSelect) - dateActuelle);
-    const intervalle = Math.round(dateInter/1000/60/60/24);
-    console.log(new Date(dateSelect) + " - " + dateActuelle);
-    console.log(intervalle);
-    document.querySelector("#resultat-intervalle").innerHTML = "Il y a " + intervalle + 
-                                                               " jours entre aujourd'hui et le <span class='color-blue-bold'>" + 
-                                                               new Date(dateSelect).toLocaleDateString() + 
-                                                               " à " + new Date(dateSelect).toLocaleTimeString() + "</span>.";
+    const dateInter = new Date(dateActuelle) - new Date(dateSelect);
+    const absInter = Math.abs(dateInter);
+
+    const jours = Math.floor(absInter/(1000*60*60*24));
+    const heures = Math.floor((absInter%(1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((absInter%(1000*60*60))/(1000*60));
+
+    if(dateInter < 0){
+        document.querySelector("#resultat-intervalle").innerHTML = "Dans " + jours + 
+        " jours, " + heures + " heures et " + minutes + " minutes, nous seront le <span class='color-blue-bold'>" + 
+        new Date(dateSelect).toLocaleDateString() + 
+        " à " + new Date(dateSelect).toLocaleTimeString("fr", {hour:"2-digit", minute:"2-digit"}) + "</span>.";
+    }
+    else if(dateInter > 0){
+        document.querySelector("#resultat-intervalle").innerHTML = "il y a " + jours + 
+        " jours, " + heures + " heures et " + minutes + " minutes, nous étions le <span class='color-blue-bold'>" + 
+        new Date(dateSelect).toLocaleDateString() + 
+        " à " + new Date(dateSelect).toLocaleTimeString("fr", {hour:"2-digit", minute:"2-digit"}) + "</span>.";
+    }
+
 });
