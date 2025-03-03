@@ -5,7 +5,6 @@ const d1 = new Date();
 let astroResult = "";
 let textAstro = false;
 let signeAstroUtilisateur = "";
-const messageAstro = "Votre signe astrologique : ";
 
 btnCalculer.addEventListener('click', ()=>{
     // Recupere la date choisie par l'utilisateur
@@ -38,62 +37,62 @@ btnCalculer.addEventListener('click', ()=>{
 
             //-------Capricorne----------------
             if((d2.getMonth()==11 && d2.getDate() >= 22) || (d2.getMonth()==0 && d2.getDate() <= 19)){
-                signeAstroUtilisateur = messageAstro + "<span class='color-blue-bold'>Capricorne</span>.";
+                signeAstroUtilisateur = "Capricorne";
             }
 
             //-------Verseau----------------
             if((d2.getMonth()==0 && d2.getDate() >=20) || (d2.getMonth()==1 && d2.getDate() <=18)){
-                    signeAstroUtilisateur = messageAstro + "<span class='color-blue-bold'>Verseau</span>.";
+                    signeAstroUtilisateur = "Verseau";
             }
             
             //-------Poissons----------------
             if((d2.getMonth()==1 && d2.getDate() >= 19) || (d2.getMonth()==2 && d2.getDate() <= 20)){
-                signeAstroUtilisateur = messageAstro + "<span class='color-blue-bold'>Poissons</span>.";
+                signeAstroUtilisateur = "Poissons";
             }
 
             //-------Bélier----------------
             if((d2.getMonth()==2 && d2.getDate() >= 21) || (d2.getMonth()==3 && d2.getDate() <= 19)){
-                signeAstroUtilisateur = messageAstro + "<span class='color-blue-bold'>Bélier</span>.";
+                signeAstroUtilisateur = "Bélier";
             }
 
             //-------Taureau----------------
             if((d2.getMonth()==3 && d2.getDate() >= 20) || (d2.getMonth()==4 && d2.getDate() <= 20)){
-                signeAstroUtilisateur = messageAstro + "<span class='color-blue-bold'>Taureau</span>.";
+                signeAstroUtilisateur = "Taureau";
             }
 
             //-------Gémeaux----------------
             if((d2.getMonth()==4 && d2.getDate() >= 21) || (d2.getMonth()==5 && d2.getDate() <= 20)){
-                signeAstroUtilisateur = messageAstro + "<span class='color-blue-bold'>Gémeaux</span>.";
+                signeAstroUtilisateur = "Gémeaux";
             }
 
             //-------Cancer----------------
             if((d2.getMonth()==5 && d2.getDate() >= 21) || (d2.getMonth()==6 && d2.getDate() <= 22)){
-                signeAstroUtilisateur = messageAstro + "<span class='color-blue-bold'>Cancer</span>.";
+                signeAstroUtilisateur = "Cancer";
             }
 
             //-------Lion----------------
             if((d2.getMonth()==6 && d2.getDate() >= 23) || (d2.getMonth()==7 && d2.getDate() <= 22)){
-                signeAstroUtilisateur = messageAstro + "<span class='color-blue-bold'>Lion</span>.";
+                signeAstroUtilisateur = "Lion";
             }
 
             //-------Vierge----------------
             if((d2.getMonth()==7 && d2.getDate() >= 23) || (d2.getMonth()==8 && d2.getDate() <= 22)){
-                signeAstroUtilisateur = messageAstro + "<span class='color-blue-bold'>Vierge</span>.";
+                signeAstroUtilisateur = "Vierge";
             }
 
             //-------Balance----------------
             if((d2.getMonth()==8 && d2.getDate() >= 23) || (d2.getMonth()==9 && d2.getDate() <= 22)){
-                signeAstroUtilisateur = messageAstro + "<span class='color-blue-bold'>Balance</span>.";
+                signeAstroUtilisateur = "Balance";
             }
 
             //-------Scorpion----------------
             if((d2.getMonth()==9 && d2.getDate() >= 23) || (d2.getMonth()==10 && d2.getDate() <= 21)){
-                signeAstroUtilisateur = messageAstro + "<span class='color-blue-bold'>Scorpion</span>.";
+                signeAstroUtilisateur = "Scorpion";
             }
 
             //-------Sagittaire----------------
             if((d2.getMonth()==10 && d2.getDate() >= 22) || (d2.getMonth()==11 && d2.getDate() <= 21)){
-                signeAstroUtilisateur = messageAstro + "<span class='color-blue-bold'>Sagittaire</span>.";
+                signeAstroUtilisateur = "Sagittaire";
             }
 
             // Ajouter une balise p pour afficher le signe astrologique
@@ -104,7 +103,7 @@ btnCalculer.addEventListener('click', ()=>{
                 astroResult.style.borderTop='2px solid black';
                 astroResult.style.paddingTop='20px';
             }
-            document.querySelector("#astro-result").innerHTML = signeAstroUtilisateur;
+            document.querySelector("#astro-result").innerHTML = "Votre signe astrologique : <span class='color-blue-bold'>" + signeAstroUtilisateur + " </span>.";
             textAstro = true;
 
             // Style quand affichage résultat
