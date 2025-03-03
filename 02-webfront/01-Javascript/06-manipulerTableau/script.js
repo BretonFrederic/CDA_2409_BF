@@ -2,12 +2,19 @@ const people = ['Mike Dev', 'John Makenzie', 'Léa grande'];
 const root = document.querySelector('div');
 
 // Afficher une liste désordonnée des personnes de listePersonnes
-let ul = document.querySelector('#listePersonnes');
-people.forEach(element => {
-    let li = document.createElement('li');
-    li.append(element);
-    ul.appendChild(li);
-});
+const ul = document.querySelector('#people-list');
+
+function displayPeopleList(){
+    ul.innerHTML = "";
+    people.forEach(element => {
+        let li = document.createElement('li');
+        li.textContent = element;
+        ul.appendChild(li);
+    });
+}
+
+
+displayPeopleList();
 
 // Créer tableau
 let myTable = document.createElement('table');
@@ -63,8 +70,14 @@ for (let i = 0; i < people.length; i++) {
 const allRowSupp = document.querySelectorAll('.rowSupp');
 
 allRowSupp.forEach(element => {
-    element.addEventListener('click', function (){
-        // myTable.deleteRow(element.parentElement.rowIndex);
-        // supprimer dans people
+    element.addEventListener('click', function () {
+        let myRow = element.parentElement;
+        let rowIndice = myRow.rowIndex - 1;
+        
+        if (rowIndice >= 0) {
+            people.splice(rowIndice, 1);
+            myBody.deleteRow(rowIndice);
+            displayPeopleList();
+        }
     });
 });
