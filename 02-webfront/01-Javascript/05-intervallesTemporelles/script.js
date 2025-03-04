@@ -1,17 +1,18 @@
 const btnAfficherDate = document.querySelector("#btn-afficher");
 const btnCalculerIntervalle = document.querySelector("#btn-calculer");
-let dateActuelle = "";
+let dateValide = false;
 
-btnAfficherDate.addEventListener('click', function Afficher(){
+// Fonction qui recupere et affiche la date du jour et l'heure
+function Afficher(){
     let dateDuJour = new Date().toISOString().split('T')[0];
-    let timeFormat = new Intl.DateTimeFormat("fr-FR", {hour:"2-digit", minute:"2-digit", second:"2-digit"});
 
-    let heureDuJour = timeFormat.format(Date.now());
+    let timeFormat = new Intl.DateTimeFormat("fr-FR", {hour:"2-digit", minute:"2-digit", second:"2-digit"});
+    let heureDuJour = timeFormat.format(new Date());
+
     document.querySelector("#date").value = dateDuJour;
     document.querySelector("#time").value = heureDuJour;
 
-    let dateFormat = new Intl.DateTimeFormat("fr-FR", {dateStyle:"short"});
-    dateDuJour = dateFormat.format(Date.now());
+    dateDuJour = new Date().toLocaleDateString("fr-FR",{year:'numeric', month:'long', day:'numeric'});
 
     document.querySelector("#resultat-date").innerHTML = "Aujourd'hui nous sommes le <span class='color-blue-bold'>" + 
     dateDuJour + "</span>, l'heure courante est : <span class='color-blue-bold'>" + heureDuJour + "</span>.";
@@ -21,13 +22,18 @@ btnAfficherDate.addEventListener('click', function Afficher(){
                                                           "padding: 16px 0px;");
 
     document.querySelector("#selection-form").style.display="block";
-    dateActuelle = new Date();
-    console.log(dateActuelle);
-});
+    if(dateValide === true){
+        CalculerIntervalle();
+    }
+}
 
-btnCalculerIntervalle.addEventListener('click', function CalculerIntervalle(){
-    let dateSelect = document.querySelector("#datetime").value;
-    const dateInter = new Date(dateActuelle) - new Date(dateSelect);
+// Affiche toutes les secondes la date et l'heure
+btnAfficherDate.addEventListener('click', ()=>{setInterval(Afficher, 1000)});
+
+// Fonction qui calcul et affiche l'intervalle entre 2 dates
+function CalculerIntervalle(){
+    const dateSelect = document.querySelector("#datetime").value;
+    const dateInter = new Date() - new Date(dateSelect);
     const absInter = Math.abs(dateInter);
 
     const jours = Math.floor(absInter/(1000*60*60*24));
@@ -37,14 +43,24 @@ btnCalculerIntervalle.addEventListener('click', function CalculerIntervalle(){
     if(dateInter < 0){
         document.querySelector("#resultat-intervalle").innerHTML = "Dans " + jours + 
         " jours, " + heures + " heures et " + minutes + " minutes, nous seront le <span class='color-blue-bold'>" + 
-        new Date(dateSelect).toLocaleDateString() + 
+        new Date(dateSelect).toLocaleDateString("fr-FR",{year:'numeric', month:'long', day:'numeric'}) + 
         " à " + new Date(dateSelect).toLocaleTimeString("fr", {hour:"2-digit", minute:"2-digit"}) + "</span>.";
     }
     else if(dateInter > 0){
         document.querySelector("#resultat-intervalle").innerHTML = "il y a " + jours + 
         " jours, " + heures + " heures et " + minutes + " minutes, nous étions le <span class='color-blue-bold'>" + 
-        new Date(dateSelect).toLocaleDateString() + 
-        " à " + new Date(dateSelect).toLocaleTimeString("fr", {hour:"2-digit", minute:"2-digit"}) + "</span>.";
+        new Date(dateSelect).toLocaleDateString("fr-FR", {year:'numeric', month:'long', day:'numeric'}) + 
+        " à " + new Date(dateSelect).toLocaleTimeString("fr-FR", {hour:"2-digit", minute:"2-digit"}) + "</span>.";
     }
+    return dateSelect;
+}
 
+btnCalculerIntervalle.addEventListener('click', ()=>{
+    if(document.querySelector("#datetime").value !== undefined){
+        dateValide = true;
+    }
+    else{
+        dateValide = false;
+    }
 });
+
