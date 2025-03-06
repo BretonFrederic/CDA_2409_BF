@@ -45,97 +45,146 @@ function addCell(row, text){
     row.appendChild(myCell);
 }
 
-// Générer l'email
+// Fonction qui retire les accents d'un texte. 
+// é.normalize('NFD') décompose les caractères spéciaux : é -> e+◌́  
+// .replace(/[\u0300-\u036f]/g, '') retire les caractères diacritiques : e+◌́  -> e
+function removeAccents(myString) {
+    return myString.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+// Fonction pour générer l'email
 function createMail(fName, lName){
-    const eMail = fName+"."+lName+"@example.com";
-    return eMail;
-}
-//----------------------------------------------------------------------------------
-// Renvoyer un tableau contenant les valeurs d'un objet
-let employeeArray = Object.values(myEmployee);
-
-// Récupérer firstname et lastname de l'objet
-const firstname = myEmployee.firstname;
-const lastname = myEmployee.lastname;
-
-
-
-const eMail = createMail(firstname, lastname);
-
-// Ajout de l'email dans le tableau
-employeeArray.splice(3, 0, eMail.toLowerCase());
-
-// Ajout du symbole monétaire pour salary
-const salary = myEmployee.salary + " €";
-employeeArray.splice(4, 1, salary);
-//-----------------------------------------------------------------------------
-// Ajouter cellule et son texte pour chaque cellule du tbody
-employeeArray.forEach(element => {
-    addCell(myRow, element);
-});
-
-// Pré-remplir le formulaire de profil
-const inputProfil = document.querySelectorAll(".input-profil");
-const infoProfil = Object.values(myEmployee);
-
-for (let index = 0; index < infoProfil.length; index++) {
-    const firstN = myEmployee.firstname;
-    const lastN = myEmployee.lastname;
-    infoProfil.splice(0, 1, firstN);
-    infoProfil.splice(1, 1, lastN);
-    inputProfil[index].value = infoProfil[index]; 
+    return removeAccents(fName.toLowerCase())+"."+removeAccents(lName.toLowerCase())+"@example.com";
 }
 
-// Contrôler les valeurs saisies dans le formulaire
+modifyRow();
+
+// Fonction pour ajouter cellule et son texte pour chaque cellule du tbody
+function modifyRow(){
+    addCell(myRow, myEmployee.lastname);
+    addCell(myRow, myEmployee.firstname);
+    addCell(myRow, myEmployee.birthday);
+    addCell(myRow, createMail(myEmployee.firstname, myEmployee.lastname));
+    addCell(myRow, myEmployee.salary+ " €");
+}
+
+// Fonction pour mettre à jour les cellules
+function updateRow(){
+    tabCell=document.querySelectorAll("td");
+    tabCell.forEach((e)=>{e.remove()});
+    modifyRow();
+}
+
+// Fonction vérification si valeur saisie est valide
+function checkValue(myValue, element){
+    // Vérification nom et prénom
+    if(element == document.querySelector("#lastname") || element == document.querySelector("#firstname")){
+        const regexName = /^[A-Z]{0,1}[a-zàâäéèêëïîôöùûüÿç]{2,20}[-]{0,1}[a-zàâäéèêëïîôöùûüÿç]{0,20}$/;
+        if(myValue.match(regexName)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    // Vérification date de naissance
+    if(element == document.querySelector("#birth-date")){
+        const regexDate = /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/;
+        if(myValue.match(regexDate) && Date.parse(myValue) && Date.now() > new Date(myValue).getTime()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    // Vérification salaire
+    if(element == document.querySelector("#salary") || element == document.querySelector("#salary")){
+        const regexSalary = /^[0-9]{1,}$/;
+        if(myValue.match(regexSalary)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
+
+// Fonction afficher message quand valeur saisie invalide
+function displayInvalid(element, id){
+    if(!document.querySelector('#'+id)){
+        const invalideValue = document.createElement('p');
+        invalideValue.textContent = "* invalide";
+        invalideValue.setAttribute("id", id);
+        invalideValue.setAttribute("style", "display:inline; color:red;");
+        element.parentElement.appendChild(invalideValue);
+    }
+}
+
+// -----------------------------------------------------------------------------------------------------------
+
+// Pré-remplir le profil
+document.querySelector("#lastname").value = myEmployee.lastname;
+document.querySelector("#firstname").value = myEmployee.firstname;
+document.querySelector("#birth-date").value = myEmployee.birthday;
+document.querySelector("#salary").value = myEmployee.salary;
+
+// Fonction pour enregistrer informations formulaire
+function saveInfo(){
+    if(myEmployee.lastname !== document.querySelector('#lastname').value){
+        if(checkValue(document.querySelector('#lastname').value, document.querySelector('#lastname'))){
+            myEmployee.lastname = document.querySelector('#lastname').value;
+            updateRow();
+            if(document.querySelector('#invalid-lname')){
+                document.querySelector('#invalid-lname').remove();
+            }
+        }
+        else{
+            displayInvalid(document.querySelector('#lastname'), "invalid-lname");
+        }
+    }
+    if(myEmployee.firstname !== document.querySelector('#firstname').value){
+        if(checkValue(document.querySelector('#firstname').value, document.querySelector('#firstname'))){
+            myEmployee.firstname = document.querySelector('#firstname').value;
+            updateRow();
+            if(document.querySelector('#invalid-fname')){
+                document.querySelector('#invalid-fname').remove();
+            }
+        }
+        else{
+            displayInvalid(document.querySelector('#firstname'), 'invalid-fname');
+        }
+    }
+    if(myEmployee.birthday !== document.querySelector('#birth-date').value){
+        if(checkValue(document.querySelector('#birth-date').value, document.querySelector('#birth-date'))){
+            myEmployee.birthday = document.querySelector('#birth-date').value;
+            updateRow();
+            if(document.querySelector('#invalid-birthday')){
+                document.querySelector('#invalid-birthday').remove();
+            }
+        }
+        else{
+            displayInvalid(document.querySelector('#birth-date'), 'invalid-birthday');
+        }
+    }
+    if(myEmployee.salary !== document.querySelector('#salary').value){
+        if(checkValue(document.querySelector('#salary').value, document.querySelector('#salary'))&&
+            myEmployee.salary <= document.querySelector('#salary').value){
+            myEmployee.salary = document.querySelector('#salary').value;
+            updateRow();
+            if(document.querySelector('#invalid-salary')){
+                document.querySelector('#invalid-salary').remove();
+            }
+        }
+        else{
+            displayInvalid(document.querySelector('#salary'), 'invalid-salary');
+        }
+    }
+}
+
+// Enregistrer les infos
 const btnSave = document.querySelector("#btn-save");
+btnSave.addEventListener('click', saveInfo);
 
-// const regexName = /^[A-Z]{0,1}[a-zàâäéèêëïîôöùûüÿç]{1,20}[-]{0,1}[a-zàâäéèêëïîôöùûüÿç]{0,20}$/;
-// const regexDate = /^[0-9]{2}-[0-9]{2}-[0-9]{4}$/;
-// const regexSalary = /^[0-9]{1,}$/;
 
-// if(!inputFirstname.match(regexName)){
-//     document.querySelector("#firstname").value = "";
-// }
-// if(!inputLastname.match(regexName)){
-//     document.querySelector("#lastname").value = "";
-// }
-// if(!Number.isNaN(new Date(...inputBirthDate).valueOf())){
-//     document.querySelector("#birth-date").value = "";
-//     console.log("date invalide");
-// }
 
-// Enregistrer les nouvelles valeurs dans le tableau
-btnSave.addEventListener('click', ()=>{
 
-    console.log(employeeArray);
-    console.log(myEmployee);
-    updateEmployee();
-    console.log(myEmployee);
-});
-
-function updateEmployee(){
-    myEmployee.lastname = document.querySelector("#lastname").value;
-    myEmployee.firstname = document.querySelector("#firstname").value;
-    myEmployee.birthday = document.querySelector("#birth-date").value;
-    myEmployee.salary = document.querySelector("#salary").value;
-
-    // Renvoyer un tableau contenant les valeurs d'un objet
-    employeeArray = Object.values(myEmployee);
-    // Supprimer la row du tbody
-    myRow.remove();
-    // Créer le tr (dans le tbody)
-    myRow = myTBody.insertRow();
-    const eMail = createMail(myEmployee.firstname, myEmployee.lastname);
-
-    // Ajout de l'email dans le tableau
-    employeeArray.splice(3, 0, eMail.toLowerCase());
-
-    // Ajout du symbole monétaire pour salary
-    const salary = myEmployee.salary + " €";
-    employeeArray.splice(4, 1, salary);
-
-    // Ajouter cellule et son texte pour chaque cellule du tbody
-    employeeArray.forEach(element => {
-        addCell(myRow, element);
-    });
-}
