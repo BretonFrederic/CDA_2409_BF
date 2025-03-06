@@ -50,7 +50,7 @@ function createMail(fName, lName){
     const eMail = fName+"."+lName+"@example.com";
     return eMail;
 }
-
+//----------------------------------------------------------------------------------
 // Renvoyer un tableau contenant les valeurs d'un objet
 let employeeArray = Object.values(myEmployee);
 
@@ -68,7 +68,7 @@ employeeArray.splice(3, 0, eMail.toLowerCase());
 // Ajout du symbole monétaire pour salary
 const salary = myEmployee.salary + " €";
 employeeArray.splice(4, 1, salary);
-
+//-----------------------------------------------------------------------------
 // Ajouter cellule et son texte pour chaque cellule du tbody
 employeeArray.forEach(element => {
     addCell(myRow, element);
@@ -110,6 +110,7 @@ btnSave.addEventListener('click', ()=>{
     console.log(employeeArray);
     console.log(myEmployee);
     updateEmployee();
+    console.log(myEmployee);
 });
 
 function updateEmployee(){

@@ -13,7 +13,6 @@ function displayPeopleList(){
     });
 }
 
-
 displayPeopleList();
 
 // Créer tableau
@@ -71,8 +70,8 @@ const allRowSupp = document.querySelectorAll('.rowSupp');
 
 allRowSupp.forEach(element => {
     element.addEventListener('click', function () {
-        let myRow = element.parentElement;
-        let rowIndice = myRow.rowIndex - 1;
+        let myBodyTest = element.parentElement;
+        let rowIndice = myBodyTest.rowIndex - 1;
         
         if (rowIndice >= 0) {
             people.splice(rowIndice, 1);
