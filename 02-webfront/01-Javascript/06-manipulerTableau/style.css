@@ -10,11 +10,47 @@ h1{
     margin: 0; 
  }
 
-div{
+ h3{
+    margin-top: 0;
+ }
+
+header:first-child{
     max-width: 80%;
     min-width: 480px;
     margin-top: 15px;
     margin-left: 15px;
     border: 2px solid #accbe1;
     padding: 15px;
+}
+
+#input-area{
+    border: 2px dashed #accbe1;
+    margin-top: 16px;
+    padding: 0px 28px;
+}
+
+form > *{
+    display: inline;
+}
+
+.height-24{
+    height: 24px;
+}
+
+.height-28{
+    height: 28px;
+}
+
+.margin-right-26{
+    margin-right: 26px;
+}
+
+input{
+    border: 1px solid #7C98B3;
+    background-color: rgb(99, 112, 129);
+    color:  #accbe1;;
+}
+
+#result{
+    visibility: hidden;
 }
