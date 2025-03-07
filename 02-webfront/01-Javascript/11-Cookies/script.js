@@ -25,9 +25,8 @@ function CreerCookie(nomCookie, valeurCookie ){
     let dateExpire= new Date(datejour.getFullYear(),datejour.getMonth(),datejour.getDate(), (datejour.getHours()+2), datejour.getMinutes(), datejour.getSeconds() )
 
     let dateExpireTest=dateExpire.toUTCString();
-    // Affecter des clés/valeurs à document.cookie
-    document.cookie=nomCookie+"="+valeurCookie+";expires="+dateExpireTest+ ";SameSite=Strict"; 
- 
+    // Affecter des clés/valeurs à document.cookie (environ 2000 caractères)
+    document.cookie=nomCookie+"="+valeurCookie+";expires="+dateExpireTest+ ";SameSite=Strict"; // SameSite=HTTP pa
 }
 
 const btnC= document.querySelector("#btnCookie");
@@ -36,5 +35,5 @@ btnC.addEventListener("click", function(){
     let user=document.querySelector("#username").value;
     CreerCookie( "Nom",user);
     //window.location.assign("./destination.html");
-    window.open("./destination.html", "_blank");
+    window.location.href="./destination.html";
 })
