@@ -1,13 +1,13 @@
 body{
+    font-family:Tahoma;
     color: #715B64;
     background-color: #d3bdb0;
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 h1{
-    margin: 0px 0px 12px 0px;
+    margin: 2px 0px 12px 4px;
  }
 
 header{
@@ -16,7 +16,7 @@ header{
     margin-top: 15px;
     margin-left: 15px;
     border: 2px solid #a28c8a;
-    padding: 15px;
+    padding: 3px 15px 15px;
 }
 
 label{
@@ -45,10 +45,11 @@ input, button{
     margin-bottom: 24px;
 }
 
-#connexion{
+#connection{
     width: 100px;
     height: 28px;
     margin-top: 12px;
+    cursor: pointer;
 }
 
 #identification{
@@ -56,6 +57,29 @@ input, button{
     padding: 5px;
 }
 
-#identification > *{
+form{
     margin: 16px 0px 0px 24px;
+}
+
+#title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#msg-invalid{
+    padding: 16px 8px;
+    margin: 0px 0px 5px 0px;
+    color: #715B64;
+    background-color: #c1ae9f;
+    border: 2px solid #89937c;
+}
+
+#msg{
+    display:flex;
+    align-items: center;
+}
+
+p{
+    margin-left: 24px;
 }

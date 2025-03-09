@@ -1,33 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Tableau d'objets</title>
-</head>
-<body>
-    <header>
-        <div id="user-area">
-            <h1>Espace membres</h1>
-            <div id="identification">
-                <p>Identification</p>
-                <form action="">
-                    <div>
-                        <label class="mg-btm-24 width-150" for="identifier">Identifiant:</label>
-                        <input class="height-22" type="text" name="identifier" id="identifier">
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./script.js" defer></script>
+        <link rel="stylesheet" href="./style.css">
+        <title>Tableau d'objets</title>
+    </head>
+    <body>
+        <header>
+            <div id="user-area">
+                <div id="title">
+                    <h1>Espace membres</h1>
+                </div>
+                <div id="identification">
+                    <div id="msg">
+                        <p>Identification</p>
                     </div>
-                    <div>
-                        <label class="width-150" for="password">Mot de passe:</label>
-                        <input class="height-22" type="text" name="password" id="password">
-                    </div>
-                    <div>
-                        <input type="button" id="connexion" value="Connexion">
-                    </div>
-                </form>
+                    <form action="">
+                        <div>
+                            <label class="mg-btm-24 width-150" for="identifier">Identifiant:</label>
+                            <input class="height-22" type="text" name="identifier" id="identifier">
+                        </div>
+                        <div>
+                            <label class="width-150" for="password">Mot de passe:</label>
+                            <input class="height-22" type="password" name="password" id="password">
+                        </div>
+                        <div>
+                            <input type="button" id="connection" value="Connexion">
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-    </header>
-</body>
+        </header>
+    </body>
 </html>
