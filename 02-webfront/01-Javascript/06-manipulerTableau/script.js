@@ -67,6 +67,8 @@ function addRow(tableBody){
         const myPerson = people[i].split(" ");
         let firstName = myPerson[0];
         let lastName = myPerson[1];
+        document.querySelector("#result").textContent = `${firstName} ${lastName} à été ajouté !`;
+        
 
         let email=`${firstName}.${lastName}${"@example.com"}`;
         addCell(myRow, lastName);
@@ -83,6 +85,7 @@ addRow(createTBody(myTable));
 
 // Supprimer utilisateurs
 myTable.addEventListener('click', function(event){
+    document.querySelector("#result").setAttribute("style", "visibility:hidden;")
     if(event.target.classList.contains('rowSupp')){
         const usersBody = event.target.parentElement;
         let rowIndice = usersBody.rowIndex - 1;
@@ -119,5 +122,5 @@ btnAdd.addEventListener('click', function addUser(){
     console.log(people);
     displayPeopleList();
     addRow(createTBody(myTable));
-    allRowSupp = document.querySelectorAll('.rowSupp');
+    document.querySelector("#result").setAttribute("style", "visibility:visible;");
 });
