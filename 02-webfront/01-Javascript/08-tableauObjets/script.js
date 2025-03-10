@@ -1,30 +1,3 @@
-const employeeList = [
-    {
-        "id": 1,
-        "lastname": "Doe",
-        "firstname": "John",
-        "birthday": "1981-11-12",
-        "salary": 2250,
-        "password": "1234"
-    },
-    {
-        "id": 2,
-        "lastname": "Grande",
-        "firstname": "Léa",
-        "birthday": "2001-08-28",
-        "salary": 2165,
-        "password": "123456"
-    },
-    {
-        "id": 3,
-        "lastname": "Makenzie",
-        "firstname": "Roy",
-        "birthday": "1992-07-12",
-        "salary": 2090,
-        "password": "azerty"
-    }
-]
-
 // Récupérer le boutton connexion
 const logIn = document.querySelector("#connection");
 
@@ -39,6 +12,7 @@ function checkId(usersList, employeeId){
         if(employeeId == user){
             isValid = true;
             currentUser = element;
+           
         }
     });
     return isValid;
@@ -56,9 +30,14 @@ function checkPassword(usersList, passwordUser){
 }
 
 // Fonction qui affiche un message d'erreur pendant 5 sescondes si identifiant ou mot de passe incorrect
-function displayInvalid(){
+function displayInvalid(myMsg){
     const errMsg = document.createElement("p");
-    errMsg.textContent = "Identifiant ou mot de passe incorrect";
+    if(myMsg !== ""){
+        errMsg.textContent = myMsg;
+    }
+    else{
+        errMsg.textContent = "Identifiant ou mot de passe incorrect";
+    }
     errMsg.setAttribute("id", "msg-invalid");
     errMsg.setAttribute("style", "padding: 12px 8px; margin: 0px 0px 5px 0px; color: #715B64; background-color: #c1ae9f; border: 2px solid #89937c;");
     document.querySelector("#title").appendChild(errMsg);
@@ -169,7 +148,7 @@ function connect(){
     }
     else{
         // Afficher message erreur
-        displayInvalid();
+        displayInvalid("");
     }
 }
 
@@ -182,4 +161,14 @@ function disconnect(){
     document.querySelector("#user-session").remove();
 }
 
-logIn.addEventListener('click', connect);
+
+
+//
+fetch("./data.json").then(response => {
+    return response.json();
+})
+.then((data)=>{
+    employeeList = data;
+    logIn.addEventListener('click', connect);
+})
+.catch(error => displayInvalid(error));
