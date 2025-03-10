@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
     <title>Codes postaux</title>
 </head>
 <body>
     <header>
-        <h1>Info villes</h1>
-        <div>
-            <form action="">
-                <div>
-                    <label for="zip-code">code postal</label>
-                <input type="search" name="zip-code" id="zip-code">
-                </div>
-                <div>
-                    <input type="button" value="Validation">
-                </div>
-            </form>
+        <div id="town-info">
+            <h1 id="title">Info villes</h1>
+            <div id="search">
+                <form action="">
+                    <div>
+                        <label class="mg-r-24" for="zip-code">code postal :</label>
+                        <input list="list-towns" class="mg-r-24" type="search" name="zip-code" id="zip-code">
+                    </div>
+                    <div>
+                        <input type="button" value="Validation" id="validation">
+                        <datalist id="list-towns">
+                        </datalist>
+                    </div>
+                </form>
+            </div>
         </div>
     </header>
 </body>
