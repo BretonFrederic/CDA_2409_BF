@@ -39,8 +39,13 @@ fetch("https://arfp.github.io/tp/web/javascript/02-zipcodes/zipcodes.json")
             console.log(selection.substring(6,));
             // comparer la selection avec la liste
             townsList.forEach(element => {
-                if(selection.substring(6,).match(element.nomCommune)){
+                if(
+                    selection.slice(6).match(element.nomCommune) &&
+                    selection.substring(0, 5).match(element.codePostal)                 
+                ){
                     const infoTown = document.querySelector("#info-selection");
+                    console.log(element);
+                    
                     infoTown.innerHTML = `ville : ${element.nomCommune} <br>code commune : ${element.codeCommune} <br>libelle d'acheminement : ${element.libelleAcheminement} <br>code postal ${element.codePostal}`;
                 }
             });
