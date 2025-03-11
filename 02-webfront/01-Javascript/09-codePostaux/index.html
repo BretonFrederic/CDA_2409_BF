@@ -13,16 +13,19 @@
             <h1 id="title">Info villes</h1>
             <div id="search">
                 <form action="">
-                    <div>
+                    <div id="browsers">
                         <label class="mg-r-24" for="zip-code">code postal :</label>
-                        <input list="list-towns" class="mg-r-24" type="search" name="zip-code" id="zip-code">
+                        <input list="suggestions" class="mg-r-24" type="search"  name="zip-code" id="zip-code" placeholder="ex : 75...">
+                        <datalist id="suggestions">
+                        </datalist>
                     </div>
                     <div>
                         <input type="button" value="Validation" id="validation">
-                        <datalist id="list-towns">
-                        </datalist>
                     </div>
                 </form>
+                <div>
+                    <p id="info-selection"></p>
+                </div>
             </div>
         </div>
     </header>
