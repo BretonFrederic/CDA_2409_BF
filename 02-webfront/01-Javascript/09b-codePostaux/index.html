@@ -15,16 +15,19 @@
                 <form action="">
                     <div id="browsers">
                         <label class="mg-r-24" for="zip-code">code postal :</label>
-                        <input list="suggestions" class="mg-r-24" type="search"  name="zip-code" id="zip-code" placeholder="ex : 75...">
-                        <datalist id="suggestions">
-                        </datalist>
+                        <input class="mg-r-24" type="search" maxlength="5"  name="zip-code" id="zip-code" placeholder="ex : 75...">
                     </div>
                     <div>
-                        <input type="button" value="Validation" id="validation">
+                        <input type="button" value="Valider" class="mg-r-24" id="validation">
                     </div>
+                    <select name="" id="cp-list">
+                        <option value="">- sélectionner une ville -</option>
+                    </select>
                 </form>
+                
                 <div>
                     <p id="info-selection"></p>
+                    <p id="info-town"  class="mg-l-76"></p>
                 </div>
             </div>
         </div>
