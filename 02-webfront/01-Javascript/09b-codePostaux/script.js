@@ -41,7 +41,7 @@ fetch("https://arfp.github.io/tp/web/javascript/02-zipcodes/zipcodes.json")
         checkZipCode(townsList);
         validation.addEventListener('click', function displayInfo(){
             const selected = document.querySelector("#cp-list");
-            const myTown = townsList.find(element => element.codePostal == selected.options[selected.selectedIndex].value);
+            const myTown = townsList.find(element => element.nomCommune == selected.options[selected.selectedIndex].text);
             if(myTown !== undefined){
                 document.querySelector("#info-town").innerHTML = `ville : ${myTown.nomCommune} <br>code commune : ${myTown.codeCommune} <br>libelle d'acheminement : ${myTown.libelleAcheminement} <br>code postal ${myTown.codePostal}`;
             }
