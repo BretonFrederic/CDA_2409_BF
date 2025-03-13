@@ -13,6 +13,10 @@ async function getCardGame(){
         }
         // Récupérer au format json
         tabResult = await response.json();
+
+        console.log(tabResult);
+        
+
         display(tabResult)
     }
     catch(error){
