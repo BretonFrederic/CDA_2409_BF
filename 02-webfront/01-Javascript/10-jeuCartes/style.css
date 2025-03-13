@@ -1,9 +1,11 @@
-table{
-    border-collapse: collapse;
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 table{
+    border-collapse: collapse;
     border: 2px solid black;
+    margin-bottom: 50px;
 }
 
 th{
@@ -13,4 +15,8 @@ th{
 
 .border-r{
     border-right: 1px solid #7676b4;
+}
+
+p{
+    font-size: 18px;
 }
