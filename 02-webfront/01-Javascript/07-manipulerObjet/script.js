@@ -1,3 +1,12 @@
+// Un objet est une structure de données qui regroupe ensemble des couples clé-valeur, 
+// chaque clé représentant une propriété (ou un attribut) de l'objet.
+
+// On parle d'objet littéral pour le différencier des instances de classe qu'on appelle aussi objet. 
+// Quand on dit "objet littéral", on insiste sur le fait qu'on parle de la structure de données, 
+// alors que quand on parle d'"instance" on met l'accent sur le fait qu'il a été instancié via une classe.
+
+// En réalité, dans les 2 cas ce sont bien des objets littéraux qu'on manipule.
+
 const myEmployee = {
     lastname: "Doe", 
     firstname: "John", 

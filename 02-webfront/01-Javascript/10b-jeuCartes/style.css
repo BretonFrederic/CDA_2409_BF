@@ -1,0 +1,16 @@
+table{
+    border-collapse: collapse;
+}
+
+table{
+    border: 2px solid black;
+}
+
+th{
+    background-color: #dddddd;
+    padding: 8px 20px;
+}
+
+.border-r{
+    border-right: 1px solid #7676b4;
+}
