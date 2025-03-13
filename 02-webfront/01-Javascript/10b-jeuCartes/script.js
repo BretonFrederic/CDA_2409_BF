@@ -1,11 +1,3 @@
-// const myTBody = document.querySelector("#data-stats");
-
-// const myRow = myTBody.insertRow();
-
-// const myCell = myRow.insertCell();
-
-// myCell.textContent = "test";
-
 const myTBody = document.querySelector("#data-stats");
 const myTh = document.querySelectorAll("th");
 
@@ -19,34 +11,63 @@ async function getCardGame(){
     const json = await response.json(); // avec await --> objets littéraux | sans await --> promesse
     // console.log(json);
 
-    // Ajouter les cards dans tableau
-    for (let u = 0; u < json.length; u++) {
-        const myRow = myTBody.insertRow();
-        let numLine = u + 1;
-        if(numLine%2 === 0){
-            myRow.setAttribute("style", "background-color:#eeeeee;")
-        }
-        
-        // Titre cellule est égale à clé d'objet ajouter valeur associée dans cellule de ligne courante
-        for (let i = 0; i < myTh.length; i++) {
-            const obj = json.find(element => element.id == numLine);
-            if(myTh[i].textContent == "description"){
-                addCell(myRow, "");
-            }
-            else if(myTh[i].textContent in obj){
-                addCell(myRow, obj[myTh[i].textContent]);
-            }
-            else{
-                addCell(myRow, "unknown");
-            }
-        }
-    } 
+    await addCards(json);
+    await displayMaxVictories(json);
 }
 
 function addCell(row, myText){
     const myCell = row.insertCell();
     myCell.textContent = myText;
-    myCell.setAttribute("style", "text-align:center; padding:8px 0px;")
+    myCell.setAttribute("style", "text-align:center; padding:8px 0px;");
+}
+
+async function addCards(myJson){
+        // Ajouter les cards dans tableau
+        for (let u = 0; u < myJson.length; u++) {
+            const myRow = myTBody.insertRow();
+            let numLine = u + 1;
+            if(numLine%2 === 0){
+                myRow.setAttribute("style", "background-color:#eeeeee;")
+            }
+            
+            // Titre cellule est égale à clé d'objet ajouter valeur associée dans cellule de ligne courante
+            for (let i = 0; i < myTh.length; i++) {
+                const obj = myJson.find(element => element.id == numLine);
+                if(myTh[i].textContent == "description"){
+                    addCell(myRow, "");
+                }
+                else if(myTh[i].textContent in obj){
+                    addCell(myRow, obj[myTh[i].textContent]);
+                }
+                else{
+                    addCell(myRow, "unknown");
+                }
+            }
+        }
+}
+
+async function displayMaxVictories(myJson) {
+    const pVictories = document.querySelector("#max-vitories");
+    let maxPlayed = 0;
+    let nameCard = "";
+    let victoryCard = 0;
+    myJson.forEach(element => { 
+        if(element.played > maxPlayed){
+            maxPlayed = element.played;
+            nameCard = element.name;
+            victoryCard = element.victory;
+        }
+    });
+
+    pVictories.innerHTML = `${nameCard} avec un nombre de victoires de : ${victoryCard} a le plus de parties jouées : ${maxPlayed}`;
+    
+}
+
+async function displayBestRatio(myJson) {
+    const pRatio = document.querySelector("#best-ratio");
+    // algo ...
+    pRatio.innerHTML = `Le nom, nombre de parties et nombre de victoires de la carte ayant le meilleur ratio victoires/défaites (ignorer les machts nuls).`;
+    
 }
 
 getCardGame();
