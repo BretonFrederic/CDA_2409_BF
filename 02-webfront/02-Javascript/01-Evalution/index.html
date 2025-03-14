@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <title>Evalution</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Résultat de l'évalution</h1>
+            <div id="form">
+                <p class="mg-b-24">Ajouter une note</p>
+                <form action="">
+                    <div  class="flex">
+                        <label class="width-190 mg-b-24" for="name">Nom Prénom :</label>
+                        <input type="text" class="height-24" name="name" id="name">
+                    </div>
+                    <div  class="flex">
+                        <label class="width-190 mg-b-24" for="grade">Note :</label>
+                        <input type="text" class="height-24" name="grade" id="grade">
+                    </div>
+                    <input type="button"  class="height-28 width-80 mg-l-24" value="Ajouter">
+                </form>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Note</th>
+                        <th>Obtenu</th>
+                    </tr>
+                </thead>
+                <tbody id="body-table">
+                </tbody>
+            </table>
+            <ul>
+                <li id="nb-students"></li>
+                <li id="avg"></li>
+                <li id="above-avg"></li>
+                <li id="failure"></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        
+    </main>
+    <footer></footer>
+</body>
+</html>

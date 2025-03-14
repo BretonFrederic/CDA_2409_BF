@@ -1,0 +1,84 @@
+:root {
+    --color1: #30343F;
+    --color2: #FAFAFF;
+    --color3: #E4D9FF;
+    --color4: #374479;
+    --color5: #6E7799;
+    --color6: #C490D1;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: var(--color1);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--color3);
+}
+.container{
+    border: 2px solid var(--color3);
+    margin: 16px 0px 0px 16px;
+    padding: 16px;
+    max-width: 768px;
+}
+
+h1{
+    margin: 0px 0px 16px 0px;
+}
+
+#form{
+    border: 2px dashed var(--color3);
+    padding: 5px 0px 5px 24px;
+    margin-bottom: 32px;
+}
+
+.mg-l-24{
+    margin-left: 24px;
+}
+
+.flex{
+    display: flex;
+}
+
+.width-190{
+    width: 190px;
+}
+
+.width-80{
+    width: 80px;
+}
+
+.height-28{
+    height: 28px;
+}
+
+.height-24{
+    height: 24px;
+}
+
+.mg-b-24{
+    margin-bottom: 24px;
+}
+
+input{
+    color: var(--color3);
+    background-color: var(--color4);
+    border: 2px solid var(--color5);
+}
+
+table{
+    border-collapse: collapse;
+    margin-bottom: 32px;
+}
+
+th{
+    border: 2px solid var(--color5);
+    background-color: var(--color4);
+    padding: 5px;
+}
+
+ul{
+    margin-left: 32px;
+}
