@@ -82,3 +82,7 @@ th{
 ul{
     margin-left: 32px;
 }
+
+#btn-add{
+    cursor: pointer;
+}
