@@ -1,5 +1,7 @@
 const myTbody = document.querySelector("#body-table");
+const btnAdd = document.querySelector("#btn-add");
 const failinGrade = 12;
+let studentsData = [];
 
 async function downloadJson() {
     try {
@@ -9,17 +11,23 @@ async function downloadJson() {
             throw new Error(`Reponse status : ${response.status}`);
         }
         const json = await response.json();
+        studentsData = json;
 
-        await addRow(myTbody, json, failinGrade);
+        await addSudent(studentsData);
+        
+        console.log(studentsData);
 
-        await displayInfo(json, failinGrade);
+        await addRow(myTbody, studentsData, failinGrade);
+        await displayInfo(studentsData, failinGrade);
+
     } catch (error) {
         console.log(error.message);
     }   
 }
 
-async function addRow(tBody, jSon, fGrade){
-    const myData = jSon.sort((a, b) => b.grade - a.grade);
+async function addRow(tBody, jsonData, fGrade){
+    tBody.innerHTML = "";
+    const myData = jsonData.sort((a, b) => b.grade - a.grade);
     myData.forEach(student => {
         const tRow = tBody.insertRow();
         const name = student.fullname.split(" ");
@@ -42,19 +50,19 @@ function addCell(tRow, text){
 
 }
 
-async function displayInfo(jSon, fGrade) {
+async function displayInfo(jsonData, fGrade) {
     const nbStudents = document.querySelector("#nb-students");
     const avg = document.querySelector("#avg");
     const aboveAvg = document.querySelector("#above-avg");
     const failure = document.querySelector("#failure");
-    nbStudents.textContent = `Nombre d'étudiants : ${jSon.length}`;
+    nbStudents.textContent = `Nombre d'étudiants : ${jsonData.length}`;
     let sum=0;
-    jSon.forEach(student => {
+    jsonData.forEach(student => {
         sum += student.grade;
     });
-    const avgGrades = sum/jSon.length;
+    const avgGrades = (sum/jsonData.length).toFixed(2);
     let nbAboveAvg = 0;
-    jSon.forEach(student => {
+    jsonData.forEach(student => {
         if(student.grade > avgGrades){
             nbAboveAvg++;
         }
@@ -62,6 +70,26 @@ async function displayInfo(jSon, fGrade) {
     avg.textContent = `Moyenne de la classe : ${avgGrades}`;
     aboveAvg.textContent = `Nombre d'étudiants au dessus de la moyenne : ${nbAboveAvg}`;
     failure.textContent = `Note éliminatoire : ${fGrade}`;
+}
+
+async function addSudent(jsonData){
+    btnAdd.addEventListener('click', ()=>{
+        const regexName = /^[a-zàâäéèêëïîôöùûüÿç]{2,20}\s[a-zàâäéèêëïîôöùûüÿç]{2,20}$/i;
+        let newStudentName = document.querySelector("#name").value;
+        let newStudentGrade = document.querySelector("#grade").value;
+        newStudentGrade = parseFloat(newStudentGrade);
+        if(newStudentName.match(regexName) && newStudentGrade >= 0 && newStudentGrade <= 20){
+            const name = newStudentName.split(" ");
+            const lName = name[0].slice(0,1).toUpperCase()+name[0].slice(1);
+            const fName = name[1].slice(0,1).toUpperCase()+name[1].slice(1);
+            newStudentName = `${lName} ${fName}`;
+            jsonData.push({ "fullname": newStudentName, "grade": newStudentGrade });
+            console.log(studentsData);
+        }
+        // Mise à jour affichage
+        addRow(myTbody, jsonData, failinGrade);
+        displayInfo(jsonData, failinGrade);
+    });
 }
 
 downloadJson();
