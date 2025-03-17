@@ -1,0 +1,47 @@
+:root {
+    --base-bg: #111111;
+    --base-txt: #CCCCCC;
+    --base-link: #E4D9FF;
+    --base-btn: #085E8F;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--base-bg);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--base-txt);
+}
+
+.container{
+    margin: 24px;
+    padding: 12px;
+    border: 2px solid var(--base-txt);
+}
+
+h1{
+    margin: 0px;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.container div{
+    display: flex;
+}
+
+p{
+    background-color: var(--base-link);
+    margin: 1px;
+    padding: 5px;
+    color: var(--base-btn);
+}
+
+table{
+    border-collapse: collapse;
+    background-color: var(--base-btn);
+    border-radius: 5px;
+}
+
+th{
+    padding: 5px;
+}
