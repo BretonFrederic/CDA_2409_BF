@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <title>Course à pied</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Résultat de la course</h1>
+           <div>
+            <p id="nb-participants"></p>
+            <p id="winner"></p>
+            <p id="time-avg"></p>
+           </div>
+           <h3>Filtrer</h3>
+           <form action="">
+            <div class="select-country">
+                <input type="checkbox" name="Allemagne" id="Allemagne">
+                <label for="Allemagne">Allemagne</label>
+            </div>
+            <div class="select-country">
+                <input type="checkbox" name="Autriche" id="Autriche">
+                <label for="Autriche">Autriche</label>
+            </div>
+            <div class="select-country">
+                <input type="checkbox" name="Belgique" id="Belgique">
+                <label for="Belgique">Belgique</label>
+            </div>
+            <div class="select-country">
+                <input type="checkbox" name="Espagne" id="Espagne">
+                <label for="Espagne">Espagne</label>
+            </div>
+            <div class="select-country">
+                <input type="checkbox" name="France" id="France">
+                <label for="France">France</label>
+            </div>
+            <div class="select-country">
+                <input type="checkbox" name="Grece" id="Grece">
+                <label for="Grece">Grèce</label>
+            </div>
+            <div class="select-country">
+                <input type="checkbox" name="Italie" id="Italie">
+                <label for="Italie">Italie</label>
+            </div>
+            <div class="select-country">
+                <input type="checkbox" name="Pays-Bas" id="Pays-Bas">
+                <label for="Pays-Bas">Pays-Bas</label>
+            </div>
+            <div class="select-country">
+                <input type="checkbox" name="Pologne" id="Pologne">
+                <label for="Pologne">Pologne</label>
+            </div>
+            <div class="select-country">
+                <input type="checkbox" name="Portugal" id="Portugal">
+                <label for="Portugal">Portugal</label>
+            </div>
+           </form>
+           <table>
+            <thead id="title-thead">
+                <tr>
+                    <th>Pays</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Temps final</th>
+                </tr>
+            </thead>
+            <tbody id="list-runners">
+            </tbody>
+           </table>
+        </div>
+    </header>
+    <main></main>
+    <footer></footer>
+</body>
+</html>
