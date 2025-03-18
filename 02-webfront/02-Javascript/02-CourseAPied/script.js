@@ -17,7 +17,7 @@ async function downloadJson(jsonUrl){
 
         generateDataTable(dataRunners);
 
-        // Créer liste participants et afficher dans un tableau
+        // Afficher résultat de la course
         nbParticipants.textContent = `${dataRunners.length} participants`;
         const fullname = dataRunners[0].nom.split(" ");
         const lastname = fullname[0];

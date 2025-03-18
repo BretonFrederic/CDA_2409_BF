@@ -39,9 +39,30 @@ p{
 table{
     border-collapse: collapse;
     background-color: var(--base-btn);
-    border-radius: 5px;
+    border-radius: 12px;
 }
 
 th{
     padding: 5px;
+}
+
+form{
+    display: grid;
+    gap: 4px;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    margin-bottom: 24px;
+}
+
+.select-country{
+    height: 35px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    border-radius: 12px;
+    background-color: var(--base-btn);
+}
+
+label{
+    margin-left: 24px;
 }

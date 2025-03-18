@@ -80,8 +80,9 @@ async function addSudent(jsonData){
         newStudentGrade = parseFloat(newStudentGrade);
         if(newStudentName.match(regexName) && newStudentGrade >= 0 && newStudentGrade <= 20){
             const name = newStudentName.split(" ");
-            const lName = name[0].slice(0,1).toUpperCase()+name[0].slice(1);
-            const fName = name[1].slice(0,1).toUpperCase()+name[1].slice(1);
+            // const lName = name[0].charAt(0).toUpperCase()+name[0].substring(1);
+            const lName = name[0].slice(0,1).toUpperCase()+name[0].slice(1).toLowerCase();
+            const fName = name[1].slice(0,1).toUpperCase()+name[1].slice(1).toLowerCase();
             newStudentName = `${lName} ${fName}`;
             jsonData.push({ "fullname": newStudentName, "grade": newStudentGrade });
             console.log(studentsData);
