@@ -1,6 +1,6 @@
-
 const inputValidate = document.getElementById('validate');
 const inputCarName = document.getElementById('carName');
+const result = document.getElementById('result');
 
 async function downloadJson(){
     try {
@@ -12,11 +12,9 @@ async function downloadJson(){
     const myJson = await response.json();
 
     // Trouver par nom de voiture
-    inputValidate.addEventListener('click', () => {
-        const mySelection = findCars(myJson);
-        console.log(mySelection);
-        const selection = myJson.filter(car => car.car_name === inputCarName.value);
-        console.log(selection);
+    inputValidate.addEventListener('click', async ()=> {
+        const dataList = await findSelectedCars(myJson);
+        await displayCars(dataList, result);        
     });
 
     } catch (error) {
@@ -24,35 +22,38 @@ async function downloadJson(){
     } 
 }
 
-// Fonction selection cars
-async function findCars(myJsonFile){
-    //const inputCarName = document.getElementById('carName');
-    const selection = [];
-    if(myJsonFile.car_id === inputCarName.value){
-        selection = myJsonFile.filter(car => car.car_id === inputCarName.value);
+async function findSelectedCars(dataJson){
+    let suggestion = [];
+    for (let index = 0; index < dataJson.length; index++) {
+        
+        if(dataJson[index].car_name.substring(0, inputCarName.value.length) === inputCarName.value){
+            suggestion.push(dataJson[index]);
+        }
     }
-    else if(myJsonFile.car_name === inputCarName.value){
-        selection = myJsonFile.filter(car => car.car_name === inputCarName.value);
-        console.log(selection);
-    }
-    else if(myJsonFile.car_model === inputCarName.value){
-        selection = myJsonFile.filter(car => car.car_model === inputCarName.value);
-    }
-    else if(myJsonFile.car_cylinders === inputCarName.value){
-        selection = myJsonFile.filter(car => car.car_cylinders === inputCarName.value);
-    }
-    else if(myJsonFile.car_horsepower === inputCarName.value){
-        selection = myJsonFile.filter(car => car.car_horsepower === inputCarName.value);
-    }
-    else if(myJsonFile.car_weight === inputCarName.value){
-        selection = myJsonFile.filter(car => car.car_weight === inputCarName.value);
-    }
-    else if(myJsonFile.car_origin === inputCarName.value){
-        selection = myJsonFile.filter(car => car.car_origin === inputCarName.value);
-    }
-    console.log(selection);
-    
-    return selection; 
+     return suggestion;   
+}
+
+async function displayCars(myDataList, myDiv){
+    myDiv.innerHTML = "";
+    myDataList.forEach(currentCar => {
+        const carProperties = document.createElement('ul');
+        myDiv.appendChild(carProperties);
+        const carTitle = document.createElement('h3');
+        carTitle.textContent = currentCar.car_name;
+        carProperties.appendChild(carTitle);
+        addPropList(carProperties, `Numéro identifiant : ${currentCar['car_id']}`);
+        addPropList(carProperties, `Modèle : ${currentCar['car_model']}`);
+        addPropList(carProperties, `Cylindrée : ${currentCar['car_cylinders']}`);
+        addPropList(carProperties, `Puissance(chevaux) : ${currentCar['car_horsepower']}`);
+        addPropList(carProperties, `poids en kg : ${currentCar['car_weight']}`);
+        addPropList(carProperties, `Pays : ${currentCar['car_origin']}`);
+    });
+}
+
+function addPropList(myUl, texte){
+    const carValue = document.createElement('li');
+    carValue.textContent = texte;
+    myUl.appendChild(carValue);
 }
 
 downloadJson();
