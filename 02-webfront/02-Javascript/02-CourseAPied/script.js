@@ -2,6 +2,8 @@ const listRunners = document.querySelector("#list-runners");
 const nbParticipants = document.querySelector("#nb-participants");
 const winner = document.querySelector("#winner");
 const timeAvg = document.querySelector("#time-avg");
+const allCheckbox = document.querySelectorAll(".checkbox");
+
 let dataRunners = [];
 
 // Récupérer le json
@@ -15,22 +17,11 @@ async function downloadJson(jsonUrl){
         dataRunners = myJson;
         console.log(dataRunners);
 
-        generateDataTable(dataRunners);
+        // Générer les données dans le tableau
+        generateDataTable(dataRunners, listRunners);
 
         // Afficher résultat de la course
-        nbParticipants.textContent = `${dataRunners.length} participants`;
-        const fullname = dataRunners[0].nom.split(" ");
-        const lastname = fullname[0];
-        const firstname = fullname[1];
-        winner.textContent = `Gagnant : ${firstname} ${lastname}`;
-        const avgTime = dataRunners.reduce((acc, obj) =>  acc + obj.temps, 0)/dataRunners.length;
-        const avgTimeMin = Math.floor(avgTime/60);
-        let avgTimeSec = Math.floor(avgTime%60);
-        if(avgTimeSec < 10){
-            avgTimeSec = `0${avgTimeSec}`;
-        }
-        timeAvg.textContent = `Temps moyen : ${avgTimeMin} minutes et ${avgTimeSec} secondes`;
-        console.log(avgTimeMin);
+        displayResult(dataRunners);
         
 
     } catch (error) {
@@ -65,17 +56,35 @@ function addRow(myTBody, dataJson, currentIndex){
 }
 
 // Fonction qui génère les données du tableau
-function generateDataTable(dataJson){
-    // listRunners.innerHTML =  "";
+function generateDataTable(dataJson, myTBody){
+    myTBody.innerHTML =  "";
     dataJson.sort((a, b) => a.temps - b.temps);
         for (let index = 0; index < dataJson.length; index++) {
-        addRow(listRunners, dataJson, index);
+        addRow(myTBody, dataJson, index);
     }
 }
 
 // Fonction qui affiche résultat de la course
-function displayResult(){
-
+function displayResult(myData){
+    nbParticipants.textContent = `${myData.length} participants`;
+    const fullname = myData[0].nom.split(" ");
+    const lastname = fullname[0];
+    const firstname = fullname[1];
+    winner.textContent = `Gagnant : ${firstname} ${lastname}`;
+    const avgTime = myData.reduce((acc, obj) =>  acc + obj.temps, 0)/myData.length;
+    const avgTimeMin = Math.floor(avgTime/60);
+    let avgTimeSec = Math.floor(avgTime%60);
+    if(avgTimeSec < 10){
+        avgTimeSec = `0${avgTimeSec}`;
+    }
+    timeAvg.textContent = `Temps moyen : ${avgTimeMin} minutes et ${avgTimeSec} secondes`;
+    console.log(avgTimeMin);
 }
+
+// Fonction qui filtre la liste du tableau
+// function filterDataRunners(inputCheckbox){
+//     const inputCheckbox.filter((myCheckbox)=>myCheckbox.checked === true)
+//         console.log(myCheckbox.value);
+// }
 
 downloadJson("./resultat10000metres.json");
