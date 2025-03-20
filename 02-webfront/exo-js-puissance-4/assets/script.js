@@ -1,5 +1,8 @@
-import {GrillePuissanceQuatre} from "./Grille.js";
+import {PuissanceQuatre} from "./PuissanceQuatre.js";
 const maGrille = document.getElementById("grille");
 
-const monJeu = new GrillePuissanceQuatre(6, 7);
-monJeu.genererGrille(maGrille);
+const monPuissanceQuatre = new PuissanceQuatre(maGrille, 6, 7);
+
+monPuissanceQuatre.genererGrille();
+
+monPuissanceQuatre.ajouterPion();
