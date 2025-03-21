@@ -6,3 +6,4 @@ const monPuissanceQuatre = new PuissanceQuatre(maGrille, 6, 7);
 monPuissanceQuatre.genererGrille();
 
 monPuissanceQuatre.ajouterPion();
+

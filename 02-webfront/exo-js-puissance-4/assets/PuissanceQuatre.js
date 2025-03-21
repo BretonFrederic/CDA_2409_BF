@@ -11,14 +11,15 @@ export class PuissanceQuatre{
         this.ligne = ligne;
         this.colonne = colonne;
         this.balise = balise;
+        this.maTable = "";
     }
 
     // méthodes
     genererGrille(){
-        const maTable = document.createElement("table");
-        this.balise.appendChild(maTable);
+        this.maTable = document.createElement("table");
+        this.balise.appendChild(this.maTable);
         // const monTHead = document.createElement("thead");
-        // maTable.appendChild(monTHead);
+        // this.maTable.appendChild(monTHead);
         // const monTr = document.createElement("tr");
         // monTHead.appendChild(monTr);
         // for (let j = 0; j < this.colonne; j++) {
@@ -28,7 +29,7 @@ export class PuissanceQuatre{
         //     monTr.appendChild(maCellTitre);   
         // }
         const monTBody = document.createElement("tbody");
-        maTable.appendChild(monTBody);
+        this.maTable.appendChild(monTBody);
         for (let i = 0; i < this.ligne; i++) {
             const monTr = document.createElement("tr");
             monTr.id = `row-${i}`;
@@ -46,7 +47,7 @@ export class PuissanceQuatre{
     ajouterPion(){
         let tourNumero = 0;
         this.balise.addEventListener("click", (event)=>{
-            console.log(event.target.textContent);
+            console.log(event.target);
             if(event.target.textContent.length === 3 && tourNumero < 42){
                 let couleurPion = "#000000";
                 let refCouleurCellule = "b";
@@ -66,12 +67,18 @@ export class PuissanceQuatre{
                     }
                 }
                 // console.log(maColonne[maColonne.length-1].textContent);
-                maColonne[maColonne.length-1].textContent = maColonne[maColonne.length-1].textContent.replace("b", refCouleurCellule);
-                maColonne[maColonne.length-1].setAttribute("style", couleurPion);
-                console.log(maColonne[maColonne.length-1].textContent);
-                tourNumero += 1;
-                console.log(tourNumero);
+                if(maColonne.length > 0){
+                    maColonne[maColonne.length-1].textContent = maColonne[maColonne.length-1].textContent.replace("b", refCouleurCellule);
+                    maColonne[maColonne.length-1].setAttribute("style", couleurPion);
+                    tourNumero += 1;
+                    console.log(tourNumero);
+                } 
             }
+            this.verifierGagnant();
         });
+    }
+
+    verifierGagnant(){
+        console.log(this.maTable.textContent);
     }
 }
