@@ -74,11 +74,12 @@ export class PuissanceQuatre{
                     console.log(tourNumero);
                 } 
             }
-            this.verifierGagnant();
+            this.#verifierGagnant();
         });
     }
 
-    verifierGagnant(){
+    #verifierGagnant(){
         console.log(this.maTable.textContent);
+        // récupérer ligne courante du bas vers le haut, .test(regex)
     }
 }
