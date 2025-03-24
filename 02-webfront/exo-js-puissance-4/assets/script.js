@@ -1,7 +1,7 @@
 import {PuissanceQuatre} from "./PuissanceQuatre.js";
-const maGrille = document.getElementById("grille");
+const monTBody = document.getElementById("monTbody");
 
-const monPuissanceQuatre = new PuissanceQuatre(maGrille, 6, 7);
+const monPuissanceQuatre = new PuissanceQuatre(monTBody, 6, 7);
 
 monPuissanceQuatre.genererGrille();
 

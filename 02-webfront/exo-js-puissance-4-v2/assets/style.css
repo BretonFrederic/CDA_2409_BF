@@ -59,14 +59,14 @@ h2{
     margin: 0px 0px 12px 0px;
 }
 
-.b{
+.black{
     background-color: var(--emptyBox);
 }
 
-.r{
+.red{
     background-color: var(--Col-1);
 }
 
-.y{
+.yellow{
     background-color: var(--Col-2);
 }
