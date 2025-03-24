@@ -1,59 +1,117 @@
 const monSupport = document.getElementById("support");
 const monTBody = document.getElementById("monTbody");
 
-// Tableau logique
-const monTableau = [];
-const nbrCol = 7;
-const nbrL = 6;
+// Fonction générer la matrice
+function genererTableau(ligneNbr, colonneNbr){
+    const monTableau = [];
 
-for (let i = 0; i < nbrL; i++) {
-    let ligne = [];
-    for (let u = 0; u < nbrCol; u++) {
-        ligne.push("b");
+    for (let i = 0; i < ligneNbr; i++) {
+        let ligne = [];
+        for (let u = 0; u < colonneNbr; u++) {
+            ligne.push("b");
+        }
+        monTableau.push(ligne);
     }
-    monTableau.push(ligne);
-    //console.log(monTableau[0].length);
-    
+    return monTableau;
 }
-//console.log(monTableau);
 
-// Générer tableau graphique
-function genererTableau(tableauLogique){
+// Fonction afficher tableau
+function afficherTableau(monTab){
     monTBody.innerHTML = "";
-    for (let i = 0; i < tableauLogique.length; i++) {
+    for (let i = monTab.length-1; i >= 0; i--) {
         const maLigne = document.createElement("tr");
         monTBody.appendChild(maLigne);
-        for (let u = 0; u < tableauLogique[0].length; u++) {
+        for (let u = 0; u < monTab[0].length; u++) {
             const maCell = document.createElement("td");
             maCell.textContent = `${i}${u}`;
-            console.log(tableauLogique[i][u]);
-            if(tableauLogique[i][u] == "r"){
+            if(monTab[i][u] == "r"){
                 maCell.classList.add("red");
+            }
+            else if(monTab[i][u] == "j"){
+                maCell.classList.add("yellow");
+            }
+            else{
+                maCell.classList.add("black");
             }
             maLigne.appendChild(maCell);
         }
     }
 }
 
-genererTableau(monTableau);
+// Fonction ajouter pion
+function ajouterPion(monTab){
+    let numTour = 0;
+    let gagnant = false;
+    monSupport.addEventListener('click', (event)=>{
+        if(numTour < 42 && gagnant === false && event.target.textContent.length === 2){
+            const celluleCourante = event.target.textContent;
+            const numCol = celluleCourante.charAt(1);
 
-monSupport.addEventListener('click', (event)=>{
-    //console.log(event.target.textContent);
-    console.log(event.target);
+            let ajouterPion = false;
+            for (let i = 0; i < monTab.length; i++) {
+                if(monTab[i][numCol] == "b" && ajouterPion == false){
+                    if(numTour%2 == 0){
+                        monTab[i][numCol] = "r";
+                        ajouterPion = true;
+                        numTour++;
+                    }
+                    else if(numTour%2 != 0){
+                        monTab[i][numCol] = "j";
+                        ajouterPion = true;
+                        numTour++;
+                    }
+                }
+            }
+            ajouterPion = false;
+            const vainqueur = verifierGagnant(monTab);
+            if(vainqueur !== ""){
+                gagnant = true;
+            }
 
-    const celluleCourante = event.target.textContent;
-    console.log(celluleCourante[0]+celluleCourante[1]);
+            afficherTableau(monTab);
+        }  
+    });
+}
 
-    if(monTableau[celluleCourante[0]][celluleCourante[1]] != "b"){
-        for (let i = 0; i < monTableau.length; i++) {
-            monTableau[celluleCourante[i]][celluleCourante[1]] = "r";
+// Fonction vérifier gagnant
+function verifierGagnant(monTab){
+    // check horizontal
+    let gagnant = "";
+    for (let i = monTab.length-1; i >= 0; i--) {
+        if(monTab[i].toString().includes("r,r,r,r")){
+            gagnant = "rouge";
+            console.log("rouge a gagné !"); 
+        }
+        else if(monTab[i].toString().includes("j,j,j,j")){
+            gagnant = "jaune";
+            console.log("jaune a gagné !"); 
         }
     }
-    
 
-    genererTableau(monTableau);
-    
-    // monTableau[0][0] = "r";
-     console.log(monTableau);
-    
-})
+    // check vertical
+    for (let i = 0; i < monTab[0].length; i++) {
+        const colonneCourante = [];
+        for (let u = 0; u < monTab.length; u++) {
+            colonneCourante.push(monTab[u][i]);
+        }
+        if(colonneCourante.toString().includes("r,r,r,r")){
+            gagnant = "rouge";
+            console.log("rouge a gagné !"); 
+        }
+        else if(colonneCourante.toString().includes("j,j,j,j")){
+            gagnant = "jaune";
+            console.log("jaune a gagné !"); 
+        }
+    }
+
+    // check diagonal
+
+
+    return gagnant;
+}
+
+const unTableau = genererTableau(6, 7);
+
+afficherTableau(unTableau);
+
+ajouterPion(unTableau);
