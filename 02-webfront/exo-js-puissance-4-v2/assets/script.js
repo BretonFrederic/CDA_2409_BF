@@ -103,9 +103,25 @@ function verifierGagnant(monTab){
             console.log("jaune a gagné !"); 
         }
     }
-
+    
     // check diagonal
+    for (let u = 0; u <= 3; u++) {
+        for (let i = 0; i < monTab[5].length; i++) {
+            if(5-i >= 0 && i+u < 7){
+                monTab[5-i][i+u] = "r";
+                console.log(monTab[5-i][i]);
+            }  
+        }
+    }
 
+    
+    
+    // for (let i = 0; i < monTab[5].length; i++) {
+    //     if(5-i >= 0){
+    //         monTab[5-i][i] = "r";
+    //         console.log(monTab[5-i][i]);
+    //     }  
+    // }
 
     return gagnant;
 }
