@@ -1,5 +1,5 @@
-const monSupport = document.getElementById("support");
-const monTBody = document.getElementById("monTbody");
+const unSupport = document.getElementById("support");
+const unTBody = document.getElementById("monTbody");
 
 // Fonction générer la matrice
 function genererTableau(ligneNbr, colonneNbr){
@@ -16,7 +16,7 @@ function genererTableau(ligneNbr, colonneNbr){
 }
 
 // Fonction afficher tableau
-function afficherTableau(monTab){
+function afficherTableau(monTab, monTBody){
     monTBody.innerHTML = "";
     for (let i = monTab.length-1; i >= 0; i--) {
         const maLigne = document.createElement("tr");
@@ -39,7 +39,7 @@ function afficherTableau(monTab){
 }
 
 // Fonction ajouter pion
-function ajouterPion(monTab){
+function ajouterPion(monTab, monSupport, monTBody){
     let numTour = 0;
     let gagnant = false;
     monSupport.addEventListener('click', (event)=>{
@@ -68,7 +68,8 @@ function ajouterPion(monTab){
                 gagnant = true;
             }
 
-            afficherTableau(monTab);
+            // Mise à jour du tableau
+            afficherTableau(monTab, monTBody);
         }  
     });
 }
@@ -104,8 +105,7 @@ function verifierGagnant(monTab){
         }
     }
     
-    // Verifier vainqueur sur les diagonales
-
+    // Check diagonales
     const abscisseMax = monTab[0].length-1;
     const ordonneeMax = monTab.length-1;
     const checkHorizontal = monTab[0].length-3;
@@ -115,29 +115,61 @@ function verifierGagnant(monTab){
         const diagonaleCouranteG = [];
         for (let i = 0; i <= ordonneeMax; i++) {
             if(ordonneeMax-i >= 0 && i+u <= abscisseMax){
-                //monTab[ordonneeMax-i][i+u] = "r"; // VALEUR A PUSH
+                //monTab[ordonneeMax-i][i+u] = "r";
                 diagonaleCouranteD.push(monTab[ordonneeMax-i][i+u]);
             }
             if(ordonneeMax-i >= 0 && abscisseMax-i-u >= 0){
-                //monTab[ordonneeMax-i][abscisseMax-i-u] = "r"; // VALEUR A PUSH
+                //monTab[ordonneeMax-i][abscisseMax-i-u] = "r";
                 diagonaleCouranteG.push(monTab[ordonneeMax-i][abscisseMax-i-u]);
             }
         }
         if(diagonaleCouranteD.toString().includes("r,r,r,r") || diagonaleCouranteG.toString().includes("r,r,r,r")){
             gagnant = "rouge";
-            console.log("rouge a gagné !"); 
+            console.log("rouge a gagné !");
         }
         else if(diagonaleCouranteD.toString().includes("j,j,j,j") || diagonaleCouranteG.toString().includes("j,j,j,j")){
             gagnant = "jaune";
-            console.log("jaune a gagné !"); 
+            console.log("jaune a gagné !");
         }
     }
-    
+
+    for (let i = 3; i < ordonneeMax; i++) {
+        const diagonaleCouranteD = [];
+        const diagonaleCouranteG = [];
+        for (let u = 0; u <= abscisseMax; u++) {
+            if(i-u >= 0 && u <= abscisseMax){
+                //monTab[i-u][u] = "r";
+                diagonaleCouranteD.push(monTab[i-u][u]);
+            }
+        }
+        for (let u = 0; u <= abscisseMax; u++) {
+            if(i-u >= 0 && abscisseMax-u >= 0){
+                //monTab[i-u][abscisseMax-u] = "r";
+                diagonaleCouranteG.push(monTab[i-u][abscisseMax-u]);
+            }
+        }
+        if(diagonaleCouranteD.toString().includes("r,r,r,r") || diagonaleCouranteG.toString().includes("r,r,r,r")){
+            gagnant = "rouge";
+            console.log("rouge a gagné !");
+        }
+        else if(diagonaleCouranteD.toString().includes("j,j,j,j") || diagonaleCouranteG.toString().includes("j,j,j,j")){
+            gagnant = "jaune";
+            console.log("jaune a gagné !");
+        } 
+    }
     return gagnant;
 }
 
 const unTableau = genererTableau(6, 7);
 
-afficherTableau(unTableau);
+afficherTableau(unTableau, unTBody);
 
-ajouterPion(unTableau);
+ajouterPion(unTableau, unSupport, unTBody);
+
+// 1 Générer tableau
+// 2 Afficher tableau
+// 3 Afficher tour joueur
+// 4 Ajouter pion
+// 5 Vérifier gagnant
+// 6 Afficher tableau
+// 7 Afficher tour joueur
