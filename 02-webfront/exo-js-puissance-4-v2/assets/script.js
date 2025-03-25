@@ -104,31 +104,63 @@ function verifierGagnant(monTab){
         }
     }
     
-    // check diagonal
-    for (let u = 0; u <= 3; u++) {
-        for (let i = 0; i < monTab[5].length; i++) {
-            if(5-i >= 0 && i+u < 7){
-                monTab[5-i][i+u] = "r";
-                console.log(monTab[5-i][i]);
-            }  
+    // check diagonal G/D
+    // for (let u = 0; u <= 3; u++) {
+    //     const colonneCourante = [];
+    //     for (let i = 0; i < monTab[monTab.length-1].length; i++) {
+    //         if((monTab.length-1)-i >= 0 && i+u < 7){
+    //             colonneCourante.push(monTab[(monTab.length-1)-i][i+u]);
+    //             //monTab[(monTab.length-1)-i][i+u] = "r";
+    //         } 
+    //     }
+    //     if(colonneCourante.toString().includes("r,r,r,r")){
+    //         gagnant = "rouge";
+    //         console.log("rouge a gagné !"); 
+    //     }
+    //     else if(colonneCourante.toString().includes("j,j,j,j")){
+    //         gagnant = "jaune";
+    //         console.log("jaune a gagné !"); 
+    //     }
+    // }
+
+    // for (let u = monTab.length-(monTab.length-1); u < monTab.length-3; u++) {
+    //     const colonneCourante = [];
+    //     console.log(u);
+    //     for (let i = u; i < monTab[monTab.length-1].length ; i++) {
+    //         if((monTab.length-1)-i >= 0 && i < 7){
+    //             colonneCourante.push(monTab[(monTab.length-1)-i][i-u]);
+    //             //monTab[(monTab.length-1)-i][i-u] = "j";  
+    //         }
+    //     }
+    //     if(colonneCourante.toString().includes("r,r,r,r")){
+    //         gagnant = "rouge";
+    //         console.log("rouge a gagné !"); 
+    //     }
+    //     else if(colonneCourante.toString().includes("j,j,j,j")){
+    //         gagnant = "jaune";
+    //         console.log("jaune a gagné !"); 
+    //     }
+    // }
+
+    // check diagonal D/G
+    // monTab[5][6] = "r";
+    // monTab[4][5] = "r";
+    // monTab[3][4] = "r";
+    // monTab[2][3] = "r";
+
+
+     for (let u = 0; u <= 3; u++) { // 4 première case en haut a gauche
+        for (let i = 0; i < monTab[monTab.length-1].length; i++) { // parcours la ligne entière
+            if((monTab.length-1)-i >= 0 && i+u < 7){ // controle valeurs x y dans limite tableau
+                monTab[(monTab.length-1)-i][i+u] = "r"; // y = (ligneMax-1)-i | i de 0 à 6 && x = i+u
+                console.log("y : "+((monTab.length-1)-i)+" x : "+(i+u));
+                console.log(i);
+                
+                
+            } 
         }
     }
 
-
-
-    for (let i = 1; i < monTab[5].length ; i++) {
-        if(5-i >= 0 && i < 7){
-            monTab[5-i][i-1] = "j";  
-        }
-    }
-    for (let i = 2; i < monTab[5].length ; i++) {
-        if(5-i >= 0 && i < 7){
-            monTab[5-i][i-2] = "j";  
-        }
-    }
-    
-
-    console.log(monTab);
     
     return gagnant;
 }
