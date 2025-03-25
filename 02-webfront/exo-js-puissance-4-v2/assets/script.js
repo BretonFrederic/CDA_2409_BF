@@ -114,15 +114,22 @@ function verifierGagnant(monTab){
         }
     }
 
-    
-    
-    // for (let i = 0; i < monTab[5].length; i++) {
-    //     if(5-i >= 0){
-    //         monTab[5-i][i] = "r";
-    //         console.log(monTab[5-i][i]);
-    //     }  
-    // }
 
+
+    for (let i = 1; i < monTab[5].length ; i++) {
+        if(5-i >= 0 && i < 7){
+            monTab[5-i][i-1] = "j";  
+        }
+    }
+    for (let i = 2; i < monTab[5].length ; i++) {
+        if(5-i >= 0 && i < 7){
+            monTab[5-i][i-2] = "j";  
+        }
+    }
+    
+
+    console.log(monTab);
+    
     return gagnant;
 }
 
