@@ -3,8 +3,8 @@
     --blueGrid: #0029d9;
     --emptyBox: #000000;
     --addCell: #ffffff;
-    --Col-1: #ff0000;
-    --Col-2: #ffee00;
+    --Col-1: #c90000;
+    --Col-2: #c9bb00;
 }
 
 body{
@@ -84,11 +84,7 @@ h2{
     text-transform: uppercase;
 }
 
-#info{
-    background-color: var(--Col-1);
-}
-
-#menu{
+#nouvellePartie{
     background-color: var(--blueGrid);
 }
 
