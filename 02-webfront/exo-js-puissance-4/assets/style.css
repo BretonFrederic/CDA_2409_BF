@@ -1,15 +1,16 @@
 :root{
     --bckgColor: #333333;
-    --greenGrid: #006401;
+    --blueGrid: #0029d9;
     --emptyBox: #000000;
     --addCell: #ffffff;
-    --Col-1: #ff0000;
-    --Col-2: #ffee00;
+    --Col-1: #c90000;
+    --Col-2: #c9bb00;
 }
 
 body{
     margin: 0px;
     padding:0px;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container{
@@ -24,21 +25,21 @@ body{
     justify-content:start;
     align-items:center;
     flex-direction: column;
-    padding: 24px 5px 5px 5px;
+    padding: 0px 5px 5px 5px;
 }
 
 #grille{
-    background-color: var(--greenGrid);
+    background-color: var(--blueGrid);
     border-radius: 8px;
 }
 
 td{
-    background-color: var(--emptyBox);
     width: 106px;
     height: 106px;
     border-radius: 50%;
     font-size: 0px;
     cursor: pointer;
+    border: 2px solid white;
 }
 
 th{
@@ -53,20 +54,49 @@ th:hover{
     background-color: var(--selectCol);
 }
 
+#score{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#score > p{
+    margin: 0px;
+    padding: 8px;
+    text-align: center;
+    align-self: center;
+    font-size: 24px;
+    border: 2px solid var(--emptyBox);
+    border-radius: 5px;
+    width: 25%;
+    color: var(--addCell);
+}
+
+#score > p:hover{
+    cursor: pointer;
+}
+
 h2{
     font-size: 36px;
     color: aliceblue;
-    margin: 0px 0px 12px 0px;
+    margin: 12px 0px 24px 0px;
+    text-transform: uppercase;
 }
 
-.b{
+#nouvellePartie{
+    background-color: var(--blueGrid);
+}
+
+.black{
     background-color: var(--emptyBox);
 }
 
-.r{
+.red{
     background-color: var(--Col-1);
 }
 
-.y{
+.yellow{
     background-color: var(--Col-2);
 }
+
