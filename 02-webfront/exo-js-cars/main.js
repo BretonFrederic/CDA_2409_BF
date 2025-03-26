@@ -12,7 +12,8 @@ async function downloadJson(){
     const myJson = await response.json();
 
     // Trouver par nom de voiture
-    inputValidate.addEventListener('click', async ()=> {
+    inputValidate.addEventListener('click', async (event)=> {
+        event.preventDefault();
         const dataList = await findSelectedCars(myJson);
         await displayCars(dataList, result);        
     });
@@ -25,10 +26,14 @@ async function downloadJson(){
 async function findSelectedCars(dataJson){
     let suggestion = [];
     for (let index = 0; index < dataJson.length; index++) {
-        
-        if(dataJson[index].car_name.substring(0, inputCarName.value.length) === inputCarName.value){
+
+        if(dataJson[index].car_name.includes(inputCarName.value.trim())) {
             suggestion.push(dataJson[index]);
         }
+        
+        /*if(dataJson[index].car_name.substring(0, inputCarName.value.length) === inputCarName.value){
+            suggestion.push(dataJson[index]);
+        }*/
     }
      return suggestion;   
 }
