@@ -82,9 +82,16 @@ function displayResult(myData){
 }
 
 // Fonction qui filtre la liste du tableau
-// function filterDataRunners(inputCheckbox){
-//     const inputCheckbox.filter((myCheckbox)=>myCheckbox.checked === true)
-//         console.log(myCheckbox.value);
+// function filterDataRunners(inputCheckbox, dataJson){
+    
+//     return dataJson;
 // }
+
+allCheckbox.forEach(checkbox => {
+    console.log(checkbox.checked);
+    if(checkbox.checked === true){
+        //
+    }
+});
 
 downloadJson("./resultat10000metres.json");
