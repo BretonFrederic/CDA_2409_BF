@@ -1,13 +1,13 @@
 const appEvaluation = {
     data(){
         return{
-           listStudents: [] 
+           listStudents: []
         }
     },
     async created(){
         let response = await fetch("./eval.json");
-        let jsonStudents =await response.json();
-        this.listStudents = jsonStudents;
+        let jsonStudents = await response.json();
+        this.listStudents = jsonStudents.sort((a, b)=> b.grade - a.grade);
     }
 }
 
