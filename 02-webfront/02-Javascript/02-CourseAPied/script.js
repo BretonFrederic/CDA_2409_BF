@@ -1,4 +1,4 @@
-const listRunners = document.querySelector("#list-runners");
+const myTBody = document.querySelector("#tbody");
 const nbParticipants = document.querySelector("#nb-participants");
 const winner = document.querySelector("#winner");
 const timeAvg = document.querySelector("#time-avg");
@@ -15,10 +15,12 @@ async function downloadJson(jsonUrl){
         }
         const myJson = await response.json();
         dataRunners = myJson;
-        console.log(dataRunners);
+
+        // Filtrer les coureurs des pays sélectionnés
+        selectData(dataRunners, allCheckbox, myTBody);
 
         // Générer les données dans le tableau
-        generateDataTable(dataRunners, listRunners);
+        generateDataTable(dataRunners, myTBody);
 
         // Afficher résultat de la course
         displayResult(dataRunners);
@@ -78,20 +80,31 @@ function displayResult(myData){
         avgTimeSec = `0${avgTimeSec}`;
     }
     timeAvg.textContent = `Temps moyen : ${avgTimeMin} minutes et ${avgTimeSec} secondes`;
-    console.log(avgTimeMin);
 }
 
-// Fonction qui filtre la liste du tableau
-// function filterDataRunners(inputCheckbox, dataJson){
-    
-//     return dataJson;
-// }
+// Fonction qui filtre les coureurs par pays sélectionnés
+function selectData(dataParticipants, checkboxParticipants, tBody){
+    let runnerSelected = [...dataParticipants];
+ 
+    checkboxParticipants.forEach(checkbox => checkbox.addEventListener('change', ()=>{
+        runnerSelected.splice(0,runnerSelected.length);
 
-allCheckbox.forEach(checkbox => {
-    console.log(checkbox.checked);
-    if(checkbox.checked === true){
-        //
-    }
-});
+        // Filtrer les coureurs de la liste sélectionnée. Spread [... ] pour passer la liste de node en tableau
+        const countrieSelected = [...checkboxParticipants].filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+        
+        runnerSelected = dataParticipants.filter(data => countrieSelected.includes(data.pays));
+
+        if(countrieSelected.length === 0){
+            // Générer les données dans le tableau
+            generateDataTable(dataParticipants, tBody);
+            displayResult(dataParticipants);
+        }
+        else{
+            // Générer les données dans le tableau
+            generateDataTable(runnerSelected, tBody);
+            displayResult(runnerSelected);
+        }
+    }));
+}
 
 downloadJson("./resultat10000metres.json");
