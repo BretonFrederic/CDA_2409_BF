@@ -1,0 +1,41 @@
+:root{
+    --bckgColor: #30343f;
+    --blueColor: #374479;
+    --whiteColor: #e4d9ff;
+    --greyColor: #6E7799;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--whiteColor);
+    background-color: var(--bckgColor);
+}
+
+#app{
+    background-color: var(--bckgColor);
+    margin: 12px;
+    border: 2px solid var(--whiteColor);
+}
+
+#app h1{
+    margin: 12px 12px 48px 12px;
+}
+
+#myTable{
+    border-collapse: collapse;
+    margin: 0px 12px 24px 24px;
+}
+
+.myTh{
+    background-color: var(--blueColor);
+    border: 2px solid var(--greyColor);
+    padding:5px;
+}
+
+.myTd{
+    background-color: var(--blueColor);
+    border: 2px solid var(--greyColor);
+    padding:5px;
+}

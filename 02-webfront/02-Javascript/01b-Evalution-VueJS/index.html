@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Evalution en VueJS</title>
+</head>
+<body>
+    <header>
+        <div id="app">
+            <h1>Résultat de l'évaluation</h1>
+            <table id="myTable">
+                <thead>
+                    <tr>
+                        <th class="myTh">Nom</th>
+                        <th class="myTh">Prénom</th>
+                        <th class="myTh">Note</th>
+                        <th class="myTh">Obtenu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="student of listStudents">
+                        <td class="myTd">{{ student.fullname }}</td>
+                        <td class="myTd">{{ student.fullname }}</td>
+                        <td class="myTd">{{ student.grade }}</td>
+                        <td class="myTd">{{ student.fullname }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </header>
+</body>
+</html>
