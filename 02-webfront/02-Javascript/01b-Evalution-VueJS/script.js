@@ -7,12 +7,16 @@ const appEvaluation = {
     async created(){
         let response = await fetch("./eval.json");
         let jsonStudents = await response.json();
-        this.listStudents = jsonStudents.sort((a, b)=> b.grade - a.grade);
+        this.listStudents = jsonStudents.sort((a, b)=> b.grade - a.grade).map(student => ({
+            ...student,
+            lastname: student.fullname.split(" ")[0] || "",
+            firstname: student.fullname.split(" ")[1] || ""
+         }));
 
-        this.listStudents.forEach(student => {
-           student["lastname"] = student.fullname.split(" ")[0];
-           student["firstname"] = student.fullname.split(" ")[1];
-        }); 
+        // this.listStudents.forEach(student => {
+        //    student["lastname"] = student.fullname.split(" ")[0];
+        //    student["firstname"] = student.fullname.split(" ")[1];
+        // }); 
     }
 }
 
