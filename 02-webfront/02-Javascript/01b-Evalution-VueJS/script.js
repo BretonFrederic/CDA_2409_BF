@@ -8,6 +8,11 @@ const appEvaluation = {
         let response = await fetch("./eval.json");
         let jsonStudents = await response.json();
         this.listStudents = jsonStudents.sort((a, b)=> b.grade - a.grade);
+
+        this.listStudents.forEach(student => {
+           student["lastname"] = student.fullname.split(" ")[0];
+           student["firstname"] = student.fullname.split(" ")[1];
+        }); 
     }
 }
 

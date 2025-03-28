@@ -18,16 +18,24 @@
                         <th class="myTh">Nom</th>
                         <th class="myTh">Prénom</th>
                         <th class="myTh">Note</th>
+                        <th class="myTh">obtenu</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="student of listStudents">
-                        <td class="myTd">{{ student.fullname }}</td>
-                        <td class="myTd">{{ student.fullname }}</td>
+                        <td class="myTd">{{ student.lastname }}</td>
+                        <td class="myTd">{{ student.firstname }}</td>
                         <td class="myTd">{{ student.grade }}</td>
+                        <td class="myTd">{{}}</td>
                     </tr>
                 </tbody>
             </table>
+            <ul id="statistics">
+                <li>Nombre d'étudiants : </li>
+                <li>moyenne de la classe : </li>
+                <li>Nombre d'étudiants au dessus de la moyenne : </li>
+                <li>Note éliminatoire : </li>
+            </ul>
         </div>
     </header>
 </body>

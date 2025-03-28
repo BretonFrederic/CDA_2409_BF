@@ -39,3 +39,7 @@ body{
     border: 2px solid var(--greyColor);
     padding:5px;
 }
+
+#statistics{
+    margin: 0px 12px 24px 24px;
+}
