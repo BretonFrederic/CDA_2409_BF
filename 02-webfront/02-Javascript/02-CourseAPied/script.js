@@ -73,13 +73,18 @@ function displayResult(myData){
     const lastname = fullname[0];
     const firstname = fullname[1];
     winner.textContent = `Gagnant : ${firstname} ${lastname}`;
-    const avgTime = myData.reduce((acc, obj) =>  acc + obj.temps, 0)/myData.length;
-    const avgTimeMin = Math.floor(avgTime/60);
-    let avgTimeSec = Math.floor(avgTime%60);
-    if(avgTimeSec < 10){
-        avgTimeSec = `0${avgTimeSec}`;
+    
+    // filtrer le meilleur temps en secondes
+    //const bestTime = myData.reduce((acc, obj) =>  acc + obj.temps, 0)/myData.length;
+    const bestTime = myData.sort((a, b) => a.temps - b.temps);
+    console.log(bestTime.temps);
+    
+    const bestTimeMin = Math.floor(bestTime/60);
+    let bestTimeSec = Math.floor(bestTime%60);
+    if(bestTimeSec < 10){
+        bestTimeSec = `0${bestTimeSec}`;
     }
-    timeAvg.textContent = `Temps moyen : ${avgTimeMin} minutes et ${avgTimeSec} secondes`;
+    timeAvg.textContent = `Temps moyen : ${bestTimeMin} minutes et ${bestTimeSec} secondes`;
 }
 
 // Fonction qui filtre les coureurs par pays sélectionnés
