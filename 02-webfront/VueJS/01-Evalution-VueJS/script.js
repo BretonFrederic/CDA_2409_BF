@@ -49,8 +49,34 @@ const appEvaluation = {
             }
         },
         addStudent(){
-            console.log(this.newFullname+" "+this.newGrade);
-            this.listStudents = jsonStudents.push({fullname:"test name", grade:16});
+            // Vérifier que le formulaire est complété
+            const regexName = /^[a-zàâäéèêëïîôöùûüÿç]{2,20}\s[a-zàâäéèêëïîôöùûüÿç]{2,20}$/i;
+            if(regexName.test(this.newFullname) && this.newGrade >= 0 && this.newGrade <= 20){
+
+                // split du fullname pour obtenir lastname et firstname
+                const lName = this.newFullname.split(" ")[0].charAt(0).toUpperCase()+this.newFullname.split(" ")[0].substring(1).toLowerCase();
+                const fName = this.newFullname.split(" ")[1].charAt(0).toUpperCase()+this.newFullname.split(" ")[1].substring(1).toLowerCase();
+
+                const myGrade = parseFloat(this.newGrade);
+                console.log(myGrade);
+                
+                // Création d'un nouvel objet étudiant
+                const newStudent = {
+                    fullname: this.newFullname,
+                    grade: myGrade,
+                    lastname: lName,
+                    firstname: fName,
+                    success: myGrade < this.failinGrade ?"Non":"Oui"
+                }
+                this.listStudents.push(newStudent);
+
+                // Trier par notes
+                this.listStudents.sort((a,b) => b.grade - a.grade);
+            }
+            else{
+                console.log("champ incomplet");
+                return;
+            }
         }
     }
 }
