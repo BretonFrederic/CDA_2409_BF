@@ -2,12 +2,17 @@ const appEvaluation = {
     data(){
         return{
            listStudents: [],
-           failinGrade: 12
+           failinGrade: 12,
+           newFullname: "",
+           newGrade: ""
         }
     },
     async created(){
         let response = await fetch("./eval.json");
         let jsonStudents = await response.json();
+        console.log(jsonStudents);
+        // this.listStudents = jsonStudents.push({fullname:"test name", grade:16});
+        
         this.listStudents = jsonStudents.sort((a, b)=> b.grade - a.grade).map(student => ({
             ...student,
             lastname: student.fullname.split(" ")[0] || "",
@@ -26,7 +31,7 @@ const appEvaluation = {
         },
         calculateGradeAvg(){
             const sumGrades = this.listStudents.reduce((sum, student) => sum + student.grade, 0);
-            const gradeAverage = Math.round(sumGrades/this.listStudents.length);
+            const gradeAverage = parseFloat((sumGrades/this.listStudents.length).toFixed(2));
             return gradeAverage;
         },
         calculateAboveAvgGrades(){
@@ -42,6 +47,10 @@ const appEvaluation = {
             else{
                 return "Oui";
             }
+        },
+        addStudent(){
+            console.log(this.newFullname+" "+this.newGrade);
+            this.listStudents = jsonStudents.push({fullname:"test name", grade:16});
         }
     }
 }
