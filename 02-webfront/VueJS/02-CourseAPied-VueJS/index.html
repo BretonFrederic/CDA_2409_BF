@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://www.unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
+    <script type="module" src="./script.js"></script>
+    <title>Course à pied Vue JS</title>
+</head>
+<body>
+    <header>
+        <div id="app">
+            <h1>Résultat de la course</h1>
+            <div id="result">
+                <p id="nb-participants">10 participants</p>
+                <p id="winner">Gagnant : Roy Makenzie</p>
+                <p id="time-avg">Temps moyen : 28 minutes et 16 secondes</p>
+            </div>
+            <h3>Filtrer</h3>
+            <form>
+                <div v-for="country in participantsCountries" class="select-country">
+                    <input type="checkbox" :value="country" :id="'country-' + country" class="checkbox" v-model="selectedCountries">
+                    <label for="'country-' + country">{{ country }}</label>
+                </div>
+            </form>
+            <table>
+                <thead id="title-thead">
+                    <tr>
+                        <th>Pays</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Temps final</th>
+                        <th>Ecart gagnant</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+    </header>
+    <main></main>
+    <footer></footer>
+</body>
+</html>

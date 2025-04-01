@@ -16,19 +16,31 @@ async function downloadJson(jsonUrl){
         const myJson = await response.json();
         dataRunners = myJson;
 
+        // Ajouter écart de temps
+        const data = addGapTime(dataRunners);
+        console.log(data);
+        
+
         // Filtrer les coureurs des pays sélectionnés
-        selectData(dataRunners, allCheckbox, myTBody);
+        selectData(data, allCheckbox, myTBody);
 
         // Générer les données dans le tableau
-        generateDataTable(dataRunners, myTBody);
+        generateDataTable(data, myTBody);
 
         // Afficher résultat de la course
-        displayResult(dataRunners);
+        displayResult(data);
         
 
     } catch (error) {
         console.log(error.message);
     } 
+}
+
+// Calculer l'écart de temps
+function addGapTime(myJson){
+    const bestTimeInSec = myJson.reduce((acc, obj) => {return obj.temps > acc.temps ? acc : obj}).temps;
+    // pour chaque objet ajouter key gapTime valeur écart de temps
+    return myJson.map(obj => ({...obj, gapTime:`+${obj.temps - bestTimeInSec}s`}));
 }
 
 // Fonction pour ajouter une cellule
@@ -55,9 +67,7 @@ function addRow(myTBody, dataJson, currentIndex){
     }
     const finalTime = `${timeMin}min${timeSec}s`;
     addCell(myRunner, finalTime);
-    const bestTimeInSec = dataJson.reduce((acc, obj) => {return obj.temps > acc.temps ? acc : obj}).temps;
-    const timeGapInSec = `+${dataJson[currentIndex].temps - bestTimeInSec}s`;
-    addCell(myRunner, timeGapInSec);
+    addCell(myRunner, dataJson[currentIndex].gapTime);
 }
 
 // Fonction qui génère les données du tableau
@@ -77,16 +87,15 @@ function displayResult(myData){
     const firstname = fullname[1];
     winner.textContent = `Gagnant : ${firstname} ${lastname}`;
     
-    // filtrer le meilleur temps en secondes
-    const bestTime = myData.reduce((acc, obj) => {return obj.temps > acc.temps ? acc : obj});
-    console.log(bestTime.temps);
+    // Temps moyen
+    const avgTime = myData.reduce((acc, obj) => acc + obj.temps, 0)/myData.length;
     
-    const bestTimeMin = Math.floor(bestTime.temps/60);
-    let bestTimeSec = bestTime.temps%60;
-    if(bestTimeSec < 10){
-        bestTimeSec = `0${bestTimeSec}`;
+    const avgTimeMin = Math.floor(avgTime/60);
+    let avgTimeSec = Math.floor(avgTime%60);
+    if(avgTimeSec < 10){
+        avgTimeSec = `0${avgTimeSec}`;
     }
-    timeAvg.textContent = `Temps moyen : ${bestTimeMin} minutes et ${bestTimeSec} secondes`;
+    timeAvg.textContent = `Temps moyen : ${avgTimeMin} minutes et ${avgTimeSec} secondes`;
 }
 
 // Fonction qui filtre les coureurs par pays sélectionnés

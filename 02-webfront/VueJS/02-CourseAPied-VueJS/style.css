@@ -1,0 +1,68 @@
+:root {
+    --base-bg: #111111;
+    --base-txt: #CCCCCC;
+    --base-link: #E4D9FF;
+    --base-btn: #085E8F;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--base-bg);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--base-txt);
+}
+
+#app{
+    margin: 24px;
+    padding: 12px;
+    border: 2px solid var(--base-txt);
+}
+
+h1{
+    margin: 0px;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+#result{
+    display: flex;
+}
+
+p{
+    background-color: var(--base-link);
+    margin: 1px;
+    padding: 5px;
+    color: var(--base-btn);
+}
+
+table{
+    border-collapse: collapse;
+    background-color: var(--base-btn);
+    border-radius: 12px;
+}
+
+th{
+    padding: 5px;
+}
+
+form{
+    display: grid;
+    gap: 4px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
+    margin-bottom: 24px;
+}
+
+.select-country{
+    height: 35px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    border-radius: 12px;
+    background-color: var(--base-btn);
+}
+
+label{
+    margin-left: 24px;
+}
