@@ -55,6 +55,9 @@ function addRow(myTBody, dataJson, currentIndex){
     }
     const finalTime = `${timeMin}min${timeSec}s`;
     addCell(myRunner, finalTime);
+    const bestTimeInSec = dataJson.reduce((acc, obj) => {return obj.temps > acc.temps ? acc : obj}).temps;
+    const timeGapInSec = `+${dataJson[currentIndex].temps - bestTimeInSec}s`;
+    addCell(myRunner, timeGapInSec);
 }
 
 // Fonction qui génère les données du tableau
@@ -75,12 +78,11 @@ function displayResult(myData){
     winner.textContent = `Gagnant : ${firstname} ${lastname}`;
     
     // filtrer le meilleur temps en secondes
-    //const bestTime = myData.reduce((acc, obj) =>  acc + obj.temps, 0)/myData.length;
-    const bestTime = myData.sort((a, b) => a.temps - b.temps);
+    const bestTime = myData.reduce((acc, obj) => {return obj.temps > acc.temps ? acc : obj});
     console.log(bestTime.temps);
     
-    const bestTimeMin = Math.floor(bestTime/60);
-    let bestTimeSec = Math.floor(bestTime%60);
+    const bestTimeMin = Math.floor(bestTime.temps/60);
+    let bestTimeSec = bestTime.temps%60;
     if(bestTimeSec < 10){
         bestTimeSec = `0${bestTimeSec}`;
     }
