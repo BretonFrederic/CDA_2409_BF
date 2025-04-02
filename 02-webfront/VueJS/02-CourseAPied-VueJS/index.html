@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <script src="https://www.unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!--<script src="https://www.unpkg.com/vue@3.5.13/dist/vue.global.js"></script>-->
     <script type="module" src="./script.js"></script>
     <title>Course à pied Vue JS</title>
 </head>
@@ -19,7 +20,7 @@
             </div>
             <h3>Filtrer</h3>
             <form>
-                <div v-for="country in participantsCountries" class="select-country">
+                <div v-for="country in participantsCountries" :key="country" class="select-country">
                     <input type="checkbox" :value="country" :id="'country-' + country" class="checkbox" v-model="selectedCountries">
                     <label for="'country-' + country">{{ country }}</label>
                 </div>
@@ -35,6 +36,13 @@
                     </tr>
                 </thead>
                 <tbody id="tbody">
+                    <tr v-for="participant of participantsRanking()">
+                        <td>{{ participant.pays }}</td>
+                        <td>{{ participant.nom.split(" ")[0] }}</td>
+                        <td>{{ participant.nom.split(" ")[1] }}</td>
+                        <td>{{ participant.temps }}</td>
+                        <td>{{ participant.temps }}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

@@ -6,11 +6,19 @@ const appCourse = {
         }
     },
     async created(){
-        let response = await fetch("./resultat10000metres.json");
-        let jsonParticipants = await response.json();
-        this.listParticipants = jsonParticipants;
-        console.log(jsonParticipants);
-        console.log(this.listParticipants);
+        try {
+            let response = await fetch("./resultat10000metres.json");
+            if (!response.ok) {
+                throw new Error(`Reponse status : ${response.status}`);
+            }
+            let jsonParticipants = await response.json();
+            this.listParticipants = jsonParticipants;
+            console.log(jsonParticipants);
+            console.log(this.participantsRanking());
+        } catch (error) {
+            console.log(error.message);
+            
+        }
     },
     computed:{
         participantsCountries() {
@@ -18,7 +26,9 @@ const appCourse = {
         }
     },
     methods:{
-        
+        participantsRanking(){
+            return [...this.listParticipants].sort((a, b) => a.temps - b.temps); // spread -> nouveau tableau
+        }
     }
 }
 
