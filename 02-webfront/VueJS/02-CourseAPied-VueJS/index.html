@@ -14,9 +14,9 @@
         <div id="app">
             <h1>Résultat de la course</h1>
             <div id="result">
-                <p id="nb-participants">10 participants</p>
-                <p id="winner">Gagnant : Roy Makenzie</p>
-                <p id="time-avg">Temps moyen : 28 minutes et 16 secondes</p>
+                <p id="nb-participants"> {{ nbParticipants() }} participants</p>
+                <p id="winner">Gagnant : {{ winner() }}</p>
+                <p id="time-avg">Temps moyen : {{ avgTime() }}</p>
             </div>
             <h3>Filtrer</h3>
             <form>
@@ -35,13 +35,13 @@
                         <th>Ecart gagnant</th>
                     </tr>
                 </thead>
-                <tbody id="tbody">
-                    <tr v-for="participant of participantsRanking()">
+                <tbody>
+                    <tr v-for="participant of selectedParticipants()">
                         <td>{{ participant.pays }}</td>
-                        <td>{{ participant.nom.split(" ")[0] }}</td>
-                        <td>{{ participant.nom.split(" ")[1] }}</td>
-                        <td>{{ participant.temps }}</td>
-                        <td>{{ participant.temps }}</td>
+                        <td>{{ participant.lastname }}</td>
+                        <td>{{ participant.firstname }}</td>
+                        <td>{{ participant.finalTime }}</td>
+                        <td>{{ participant.gapTime }}</td>
                     </tr>
                 </tbody>
             </table>
