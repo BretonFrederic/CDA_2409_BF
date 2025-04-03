@@ -1,6 +1,6 @@
 const appCourse = {
     data(){
-        return{
+        return {
             listParticipants: [],
             selectedCountries: [],
             bTime: ""
@@ -62,6 +62,7 @@ const appCourse = {
             return this.listParticipants.reduce((min, participant) => { return participant.temps > min.temps ? min : participant }).nom;
         },
         avgTime(){
+            if (this.listParticipants.length === 0) return;
             const avgInSec = this.listParticipants.reduce((avg, participant) => avg + participant.temps,0)/this.listParticipants.length;
             let avgTimeMin = Math.floor(avgInSec/60);
             let avgTimeSec = Math.floor(avgInSec%60);
