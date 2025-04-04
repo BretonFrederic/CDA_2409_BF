@@ -41,6 +41,7 @@ const appCourse = {
             return fTime;
         },
         bestTime(){
+            if (this.listParticipants.length === 0) return;
             return this.listParticipants.reduce((min, participant) => { return participant.temps > min.temps ? min : participant }).temps;
         },
         gapTime(theBestTime, participantTime){
@@ -59,6 +60,7 @@ const appCourse = {
             return this.participantsRanking().length;
         },
         winner(){
+            if (this.listParticipants.length === 0) return;
             return this.listParticipants.reduce((min, participant) => { return participant.temps > min.temps ? min : participant }).nom;
         },
         avgTime(){
