@@ -10,8 +10,44 @@
     <title>Employees</title>
 </head>
 <body>
-    <header></header>
-    <main></main>
+    <header>
+        <h1>Employees</h1>
+        <p>This is the current list of employees</p>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>EID</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>
+                        <div class="sortable">
+                            <p>Monthly salary</p>
+                            <img class="btn-sortable" src="./assets/sort-49-32.png" alt="">
+                        </div>
+                    </th>
+                    <th>Year of birth</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Tiger Nixon</td>
+                    <td>t.nixon@email.com</td>
+                    <td>26733.33 €</td>
+                    <td>1959</td>
+                    <td>
+                        <div class="action">
+                            <input type="button" value="Duplicate">
+                            <input type="button" value="Delete">
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
     <footer></footer>
 </body>
 </html>

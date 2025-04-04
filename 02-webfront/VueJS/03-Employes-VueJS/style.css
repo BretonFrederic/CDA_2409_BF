@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Helvetica, sans-serif;
+}
+
+table{
+    border-collapse: collapse;
+    margin-top: 50px;
+}
+
+th, td{
+    padding: 8px;
+    text-align: left;
+    border: 1px solid rgb(120, 120, 120);
+    
+}
+
+.sortable{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.btn-sortable{
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-left: 28px;
+    padding: 8px;
+    width: 20%;
+}
+
+.action{
+    display: inline-block;
+}
+
+input{
+    padding: 10px;
+}
