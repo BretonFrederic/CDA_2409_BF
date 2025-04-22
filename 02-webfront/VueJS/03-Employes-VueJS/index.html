@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <!--<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>-->
-    <script src="https://www.unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <!--<script src="https://www.unpkg.com/vue@3.5.13/dist/vue.global.js"></script>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="module" src="./script.js"></script>
     <title>Employees</title>
 </head>
@@ -15,38 +16,41 @@
         <p>This is the current list of employees</p>
     </header>
     <main>
-        <table>
-            <thead>
-                <tr>
-                    <th>EID</th>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>
-                        <div class="sortable">
-                            <p>Monthly salary</p>
-                            <img class="btn-sortable" src="./assets/sort-49-32.png" alt="">
-                        </div>
-                    </th>
-                    <th>Year of birth</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Tiger Nixon</td>
-                    <td>t.nixon@email.com</td>
-                    <td>26733.33 €</td>
-                    <td>1959</td>
-                    <td>
-                        <div class="action">
-                            <input type="button" value="Duplicate">
-                            <input type="button" value="Delete">
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div id="app">
+            <table>
+                <thead>
+                    <tr>
+                        <th>EID</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>
+                            <div class="sortable">
+                                <p>Monthly<br>salary</p>
+                                <button class="btn-s"><i class="fa fa-sort" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>Year of birth</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="data of dataEmp">
+                        <td>{{ data.id }}</td>
+                        <td>{{ data.employee_name }}</td>
+                        <td>t.nixon@email.com</td>
+                        <td>26733.33 €</td>
+                        <td>1959</td>
+                        <td>
+                            <div class="action">
+                                <button class="btn-c"><i class="fa fa-files-o" aria-hidden="true"></i> Duplicate</button>
+                                <button class="btn-d"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </main>
     <footer></footer>
 </body>
