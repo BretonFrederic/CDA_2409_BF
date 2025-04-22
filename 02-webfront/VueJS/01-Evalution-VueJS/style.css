@@ -1,0 +1,90 @@
+:root{
+    --bckgColor: #30343f;
+    --blueColor: #374479;
+    --whiteColor: #e4d9ff;
+    --greyColor: #6E7799;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--whiteColor);
+    background-color: var(--bckgColor);
+}
+
+#app{
+    background-color: var(--bckgColor);
+    margin: 12px;
+    border: 2px solid var(--whiteColor);
+}
+
+#new-student{
+    margin: 12px;
+    border: 2px dashed var(--greyColor);
+    padding: 5px 0px 5px 24px;
+}
+
+#myTable{
+    border-collapse: collapse;
+    margin: 24px 12px 24px 24px;
+}
+
+.myTh{
+    background-color: var(--blueColor);
+    border: 2px solid var(--greyColor);
+    padding:5px;
+}
+
+.myTd{
+    background-color: var(--blueColor);
+    border: 2px solid var(--greyColor);
+    padding:5px;
+    text-align: left;
+}
+
+#td-grade{
+    text-align: right;
+}
+
+#statistics{
+    margin: 0px 12px 24px 24px;
+}
+
+input, button{
+    color: var(--whiteColor);
+    background-color: var(--blueColor);
+    border: 2px solid var(--greyColor);
+}
+
+#add-grade{
+    cursor: pointer;
+}
+
+.mg-b-24{
+    margin-bottom: 24px;
+}
+
+.flex{
+    display: flex;
+}
+
+.width-80{
+    width: 80px;
+}
+
+.width-190{
+    width: 190px;
+}
+
+.height-24{
+    height: 24px;
+}
+
+.height-28{
+    height: 28px;
+}
+
+.mg-l-12{
+    margin-left: 12px;
+}

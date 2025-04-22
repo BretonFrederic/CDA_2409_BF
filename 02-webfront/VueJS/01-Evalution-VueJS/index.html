@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
+    <script type="module" src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Evalution en VueJS</title>
+</head>
+<body>
+    <header>
+        <div id="app">
+            <h1 class="mg-l-12">Résultat de l'évaluation</h1>
+            <form id="new-student">
+                <p id="form-title" class="mg-b-24">Ajouter une note</p>
+                <div id="input-name"  class="mg-b-24 flex">
+                    <label for="name" class="width-190">Nom Prénom : </label>
+                    <input class="height-24" v-model="newFullname" id="name">
+                </div>
+                <div id="input-grade"  class="mg-b-24 flex">
+                    <label for="grade" class="width-190">Note : </label>
+                    <input class="height-24" v-model="newGrade" id="grade">
+                </div>
+                <button type="button" v-on:click="addStudent" id="add-grade" class="height-28 width-80 mg-l-12">Ajouter</button>
+            </form>
+            <table id="myTable">
+                <thead>
+                    <tr>
+                        <th class="myTh">Nom</th>
+                        <th class="myTh">Prénom</th>
+                        <th class="myTh">Note</th>
+                        <th class="myTh">obtenu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="student of listStudents">
+                        <td class="myTd">{{ student.lastname }}</td>
+                        <td class="myTd">{{ student.firstname }}</td>
+                        <td class="myTd" id="td-grade">{{ student.grade }}</td>
+                        <td class="myTd">{{ student.success }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul id="statistics">
+                <li>Nombre d'étudiants : {{ countStudents }}</li>
+                <li>moyenne de la classe : {{ calculateGradeAvg }}</li>
+                <li>Nombre d'étudiants au dessus de la moyenne : {{ calculateAboveAvgGrades }}</li>
+                <li>Note éliminatoire : {{ failinGrade }}</li>
+            </ul>
+        </div>
+    </header>
+</body>
+</html>

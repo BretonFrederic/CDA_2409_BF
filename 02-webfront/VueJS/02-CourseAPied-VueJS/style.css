@@ -13,7 +13,7 @@ body{
     color: var(--base-txt);
 }
 
-.container{
+#app{
     margin: 24px;
     padding: 12px;
     border: 2px solid var(--base-txt);
@@ -25,7 +25,7 @@ h1{
     margin-bottom: 12px;
 }
 
-.container div{
+#result{
     display: flex;
 }
 
@@ -42,8 +42,8 @@ table{
     border-radius: 12px;
 }
 
-th{
-    padding: 5px;
+th, td{
+    padding: 6px;
 }
 
 form{
