@@ -9,11 +9,10 @@ table{
     margin-top: 50px;
 }
 
-th, td{
+.bd, td{
     padding: 8px;
     text-align: left;
-    border: 2px solid #e0e0e0;
-    
+    border: 2px solid #e0e0e0; 
 }
 
 .sortable{
@@ -68,4 +67,16 @@ input{
     padding: 12px 16px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.bd-bottom{
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.bd-right{
+    border-right: 2px solid #e0e0e0;
+}
+
+.container{
+    margin: 10px;
 }

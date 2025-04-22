@@ -22,8 +22,21 @@ const appEmployes = {
             if(this.listEmployes.length === 0) return;
             return [...this.listEmployes].map(employe =>({
                  ...employe,
-                 email: employe.employee_name.split(" ")[0].charAt(0).toLowerCase()
+                 email: `${employe.employee_name.split(" ")[0].charAt(0).toLowerCase()}.${employe.employee_name.split(" ")[1].toLowerCase()}@email.com`,
+                 monthlySal: employe.employee_salary/12,
+                 birthDate: `${new Date().getFullYear() - employe.employee_age}`
             }));
+        },
+        totalEmployes(){
+            if(this.listEmployes.length === 0) return;
+            return this.dataEmp.length;
+        },
+        totalSalaries(){
+            if(this.listEmployes.length === 0) return;
+            const sumSalaries = [...this.dataEmp].reduce((sum, emp) => {
+                return sum + emp.monthlySal
+            }, 0);
+            return sumSalaries;
         }
     }
 }
