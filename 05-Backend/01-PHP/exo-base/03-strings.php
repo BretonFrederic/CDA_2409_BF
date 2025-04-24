@@ -21,7 +21,8 @@ function getFullName($prenom, $nom): string
 /* Fonction retourne un message de bienvenue à un utilisateur et lui pose une question */
 function askUser($prenom, $nom): string
 {
-    return "Bonjour " . getFullName($prenom, $nom) . ". Connaissez-vous " . getMC2() . " ?";
+    $name = explode(' ', getMC2());
+    return "Bonjour " . getFullName($prenom, $nom) . ". Connaissez-vous " . $name[1] . " ?";
 }
 
 echo getMC2();
